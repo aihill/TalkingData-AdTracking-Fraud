@@ -52,7 +52,6 @@ del train; gc.collect()
 # =============================================================================
 # for test
 # =============================================================================
-
 test = utils.read_pickles('../data/test').sort_values(keys)
 
 ip_bk = app_bk = device_bk = os_bk = channel_bk = click_time_bk = None
