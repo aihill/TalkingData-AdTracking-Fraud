@@ -31,7 +31,7 @@ train = utils.read_pickles('../data/train').sort_values(keys)
 
 ip_bk = app_bk = device_bk = os_bk = channel_bk = click_time_bk = None
 li = []
-for ip, app, device, os, channel, click_time in tqdm(train[keys].values):
+for ip, app, device, os, channel, click_time in tqdm(train[keys].values, miniters=99999):
     
     if ip_bk is None:
         li.append(-1)
@@ -57,7 +57,7 @@ test = utils.read_pickles('../data/test').sort_values(keys)
 
 ip_bk = app_bk = device_bk = os_bk = channel_bk = click_time_bk = None
 li = []
-for ip, app, device, os, channel, click_time in tqdm(test[keys].values):
+for ip, app, device, os, channel, click_time in tqdm(test[keys].values, miniters=99999):
     
     if ip_bk is None:
         li.append(-1)
