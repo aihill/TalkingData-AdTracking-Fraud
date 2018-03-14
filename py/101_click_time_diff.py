@@ -25,13 +25,13 @@ keys = list(col[0])+['click_time']
 
 
 # =============================================================================
-# for train
+# for valid
 # =============================================================================
-train = utils.read_pickles('../data/train').sort_values(keys)
+valid = utils.read_pickles('../data/valid').sort_values(utils.sort_keys) # be sure to sort by this keys
 
 ip_bk = app_bk = device_bk = os_bk = channel_bk = click_time_bk = None
 li = []
-for ip, app, device, os, channel, click_time in tqdm(train[keys].values, miniters=99999):
+for ip, app, device, os, channel, click_time in tqdm(valid[keys].values, miniters=99999):
     
     if ip_bk is None:
         li.append(-1)
@@ -42,17 +42,17 @@ for ip, app, device, os, channel, click_time in tqdm(train[keys].values, miniter
     
     ip_bk, app_bk, device_bk, os_bk, channel_bk, click_time_bk = ip, app, device, os, channel, click_time
 
-train['same_ip-app-device-os-channel_diff'] = li
+valid['same_ip-app-device-os-channel_diff'] = li
 
-train[['same_ip-app-device-os-channel_diff']].to_pickle('../data/101_train.p')
+valid[['same_ip-app-device-os-channel_diff']].to_pickle('../data/101_valid.p')
 
-del train; gc.collect()
+del valid; gc.collect()
 
 
 # =============================================================================
 # for test
 # =============================================================================
-test = utils.read_pickles('../data/test').sort_values(keys)
+test = utils.read_pickles('../data/test').sort_values(utils.sort_keys)
 
 ip_bk = app_bk = device_bk = os_bk = channel_bk = click_time_bk = None
 li = []

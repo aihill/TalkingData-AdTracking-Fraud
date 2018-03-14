@@ -1,3 +1,12 @@
+
+"""
+
+base columns
+['ip', 'app', 'device', 'os', 'channel', 'click_time', 
+'attributed_time', 'is_attributed']
+
+"""
+
 import warnings
 warnings.filterwarnings("ignore")
 import pandas as pd
