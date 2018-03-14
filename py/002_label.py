@@ -12,5 +12,5 @@ import utils
 train = utils.read_pickles('../data/train').sort_values(utils.sort_keys)
 
 
-train[['is_attributed']].to_pickle('../data/label.p')
+utils.to_pickles(train[['is_attributed']], '../data/label', 10)
 
