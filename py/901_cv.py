@@ -21,7 +21,7 @@ import utils
 # load valid
 # =============================================================================
 
-valid = pd.concat([utils.read_pickles('../data/valid'),
+valid = pd.concat([utils.read_pickles('../data/valid').sort_values(utils.sort_keys),
                    pd.read_pickle('../data/101_valid.p'),
                    pd.read_pickle('../data/103_valid.p')],
                   axis=1)
@@ -72,6 +72,8 @@ param = {'colsample_bylebel': 0.8,
 y = valid.is_attributed
 valid.drop(['ip', 'app', 'device', 'os', 'channel', 'click_time'', attributed_time', 'is_attributed'], 
            axis=1, inplace=True)
+
+valid.fillna(-1, inplace=True)
 
 yhat, imp, ret = ex.stacking(valid, y, param, 9999, nfold=5, esr=30)
 
