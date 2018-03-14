@@ -9,8 +9,23 @@ Created on Fri Mar  9 18:00:44 2018
 import pandas as pd
 import utils
 
-train = utils.read_pickles('../data/train')#.sort_values('click_time')
-test = utils.read_pickles('../data/test')#.sort_values('click_time')
+dtypes = {
+        'ip':'uint32',
+        'app': 'uint16',
+        'device': 'uint16',
+        'os': 'uint16',
+        'channel': 'uint16',
+        'is_attributed': 'uint8'
+        }
+
+
+print('loading train...')
+train = pd.read_csv('../input/train.csv.zip', dtype=dtypes, 
+                    usecols=['ip', 'app', 'device', 'os', 'channel']) # not date_parser
+print('loading test...')
+test = pd.read_csv('../input/test.csv.zip', dtype=dtypes,
+                   usecols=['ip', 'app', 'device', 'os', 'channel'])
+print('finish loading!')
 
 
 # =============================================================================
