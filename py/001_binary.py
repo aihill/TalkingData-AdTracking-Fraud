@@ -45,12 +45,12 @@ def main(c):
     df.columns = [c, 'cnt_train', 'cnt_test']
     df = df[[c]]
     
-    df['binary'] = df.index.map(bin)
-    length = df['binary'].map(len).max() -1
-    df.binary = df.binary.map(lambda x: x[2:].zfill(length))
+    binary = df.index.map(bin)
+    length = binary.map(len).max() -1
+    binary = binary.map(lambda x: x[2:].zfill(length))
     
     for i in range(length):
-        df['{}_binary_{}'.format(c, i)] = df.binary.map(lambda x: int(x[i]))
+        df['{}_binary_{}'.format(c, i)] = binary.map(lambda x: int(x[i]))
     
     
     df.to_pickle('../data/{}.p'.format(c))
