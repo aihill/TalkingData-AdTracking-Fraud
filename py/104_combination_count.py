@@ -27,10 +27,10 @@ valid = utils.read_pickles('../data/valid_feature')
 
 
 for keys in tqdm(comb):
-    keys_ = '-'.join(comb[0])
+    keys_ = '-'.join(keys)
     df = valid.groupby(keys).size()
     df.name = keys_+'_count'
-    df.reset_index(inplace=True)
+    df = df.reset_index()
     df.to_pickle('../data/104_{}_valid.p'.format(keys_))
 
 del valid; gc.collect()
@@ -42,10 +42,10 @@ del valid; gc.collect()
 test = utils.read_pickles('../data/test_feature')
 
 for keys in tqdm(comb):
-    keys_ = '-'.join(comb[0])
+    keys_ = '-'.join(keys)
     df = test.groupby(keys).size()
     df.name = keys_+'_count'
-    df.reset_index(inplace=True)
+    df = df.reset_index()
     df.to_pickle('../data/104_{}_test.p'.format(keys_))
 
 
