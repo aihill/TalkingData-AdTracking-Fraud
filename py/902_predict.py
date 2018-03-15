@@ -14,6 +14,9 @@ import xgboost as xgb
 import gc
 import utils
 
+# setting
+submit_file_path = '../output/315-1.csv.gz'
+
 # =============================================================================
 # load valid
 # =============================================================================
@@ -87,6 +90,9 @@ print('start xgb')
 model = xgb.train(param, dtrain, 1000)
 model.save_model('xgb.model')
 
+imp = ex.getImp(model)
+imp.to_csv('imp.csv', index=False)
+
 del dtrain; gc.collect()
 
 # =============================================================================
@@ -137,12 +143,12 @@ y_pred = model.predict(dtest)
 sub = test[['click_id']]
 sub['is_attributed'] = y_pred
 
-sub.to_csv('../output/315-1.csv.gz', index=False, compression='gzip')
+sub.to_csv(submit_file_path, index=False, compression='gzip')
 
 # =============================================================================
 # submission
 # =============================================================================
-utils.submit('../output/315-1.csv.gz')
+utils.submit(submit_file_path)
 
 
 
