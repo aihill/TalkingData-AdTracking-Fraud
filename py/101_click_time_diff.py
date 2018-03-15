@@ -36,7 +36,7 @@ for ip, app, device, os, channel, click_time in tqdm(valid[keys].values, miniter
     if ip_bk is None:
         li.append(-1)
     elif ip==ip_bk and app==app_bk and device==device_bk and os==os_bk and channel==channel_bk:
-        li.append(click_time - click_time_bk)
+        li.append((click_time - click_time_bk).seconds)
     else:
         li.append(-1)
     
@@ -61,7 +61,7 @@ for ip, app, device, os, channel, click_time in tqdm(test[keys].values, miniters
     if ip_bk is None:
         li.append(-1)
     elif ip==ip_bk and app==app_bk and device==device_bk and os==os_bk and channel==channel_bk:
-        li.append(click_time - click_time_bk)
+        li.append((click_time - click_time_bk).seconds)
     else:
         li.append(-1)
     
