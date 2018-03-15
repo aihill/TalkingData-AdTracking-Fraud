@@ -7,6 +7,8 @@ Created on Thu Mar 15 04:04:05 2018
 
 sudo sh -c "echo 1 > /proc/sys/vm/drop_caches"
 
+nohup python -u 901_cv.py > log.txt &
+
 """
 
 import pandas as pd
