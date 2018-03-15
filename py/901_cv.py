@@ -78,3 +78,5 @@ valid.fillna(-1, inplace=True)
 
 yhat, imp, ret = ex.stacking(valid, y, param, 9999, nfold=5, esr=30)
 
+imp.to_csv('imp.csv', index=False)
+
