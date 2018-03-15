@@ -9,7 +9,6 @@ Created on Thu Mar 15 15:46:18 2018
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
-from collections import defaultdict
 from itertools import combinations
 import gc
 import utils
