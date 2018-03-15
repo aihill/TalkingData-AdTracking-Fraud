@@ -67,6 +67,7 @@ param = {'colsample_bylebel': 0.8,
          'objective': 'binary:logistic',
          'silent': 1,
          'tree_method': 'hist',
+         'nthread': 64,
          'seed':71}
 
 y = valid.is_attributed
