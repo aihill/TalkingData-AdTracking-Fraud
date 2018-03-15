@@ -142,9 +142,7 @@ sub.to_csv('../output/315-1.csv.gz', index=False, compression='gzip')
 # =============================================================================
 # submission
 # =============================================================================
-import os
-os.system('kaggle competitions submit -c talkingdata-adtracking-fraud-detection -f ../output/315-1.csv.gz -m "from API"')
-
+utils.submit('../output/315-1.csv.gz')
 
 
 

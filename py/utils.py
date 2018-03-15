@@ -82,3 +82,9 @@ def read_pickles(path, col=None):
     else:
         df = pd.concat([pd.read_pickle(f)[col] for f in tqdm(sorted(glob(path+'/*')))])
     return df
+
+def submit(file_path):
+    os.system('kaggle competitions submit -c talkingdata-adtracking-fraud-detection -f {} -m "from API"'.format(file_path))
+
+
+

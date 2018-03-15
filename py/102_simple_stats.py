@@ -24,6 +24,7 @@ valid = utils.read_pickles('../data/valid_feature')
 for c in ['ip', 'app', 'device', 'os', 'channel']:
     freq = pd.crosstab(valid[c], valid.is_attributed)
     freq.columns = [c+'_freq0', c+'_freq1']
+    freq[c+'_freq'] = freq[c+'_freq0'] + freq[c+'_freq1']
     
     per  = pd.crosstab(valid[c], valid.is_attributed, normalize='index')
     per.columns = [c+'_per0', c+'_per1']
@@ -43,6 +44,7 @@ test = utils.read_pickles('../data/test_feature')
 for c in ['ip', 'app', 'device', 'os', 'channel']:
     freq = pd.crosstab(test[c], test.is_attributed)
     freq.columns = [c+'_freq0', c+'_freq1']
+    freq[c+'_freq'] = freq[c+'_freq0'] + freq[c+'_freq1']
     
     per  = pd.crosstab(test[c], test.is_attributed, normalize='index')
     per.columns = [c+'_per0', c+'_per1']
