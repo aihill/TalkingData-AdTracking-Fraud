@@ -71,7 +71,7 @@ param = {'colsample_bylebel': 0.8,
 
 y = valid.is_attributed
 print(valid.columns.tolist())
-valid.drop(['ip', 'app', 'device', 'os', 'channel', 'click_time'', attributed_time', 'is_attributed'], 
+valid.drop(['ip', 'app', 'device', 'os', 'channel', 'click_time', 'attributed_time', 'is_attributed'], 
            axis=1, inplace=True)
 
 valid.fillna(-1, inplace=True)
