@@ -30,7 +30,6 @@ train = pd.concat([utils.read_pickles('../data/train'),
 
 gc.collect()
 
-# 104
 comb = list(combinations(['ip', 'app', 'device', 'os', 'channel'], 4))
 comb += list(combinations(['ip', 'app', 'device', 'os', 'channel'], 3))
 comb += list(combinations(['ip', 'app', 'device', 'os', 'channel'], 2))

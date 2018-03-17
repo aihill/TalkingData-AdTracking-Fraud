@@ -49,21 +49,18 @@ del train; gc.collect()
 # =============================================================================
 
 print('loading test_old...')
-test = pd.read_csv('../input/test_old.csv.gz', dtype=dtypes,
+test_old = pd.read_csv('../input/test_old.csv.gz', dtype=dtypes,
                    parse_dates=['click_time']).sort_values(utils.sort_keys) # be sure to sort by this keys
-print('finish loading!')
-
-utils.to_pickles(test,  '../data/test_old',  10)
-
-del test; gc.collect()
-
-
 print('loading test...')
 test = pd.read_csv('../input/test.csv.zip', dtype=dtypes,
                    parse_dates=['click_time']).sort_values(utils.sort_keys)
 print('finish loading!')
 
+test_old.drop('click_id', axis=1, inplace=True)
+test_old = pd.merge(test_old, test[utils.sort_keys+['click_id']], on=utils.sort_keys, how='left')
+
+utils.to_pickles(test_old,  '../data/test_old',  10)
 utils.to_pickles(test,  '../data/test',  10)
 
-
+del test_old; gc.collect()
 

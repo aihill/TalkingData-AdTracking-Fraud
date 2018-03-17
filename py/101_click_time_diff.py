@@ -20,7 +20,7 @@ df = utils.read_pickles('../data/train')
 
 ip_bk = app_bk = device_bk = os_bk = channel_bk = click_time_bk = None
 li = []
-for ip, app, device, os, channel, click_time in tqdm(df[utils.sort_keys].values, miniters=99999):
+for ip, app, device, os, channel, click_time in tqdm(df[utils.sort_keys].values, miniters=999999):
     
     if ip_bk is None:
         li.append(-1)
@@ -41,11 +41,11 @@ del df; gc.collect()
 # =============================================================================
 # for test
 # =============================================================================
-df = utils.read_pickles('../data/test')
+df = utils.read_pickles('../data/test_old')
 
 ip_bk = app_bk = device_bk = os_bk = channel_bk = click_time_bk = None
 li = []
-for ip, app, device, os, channel, click_time in tqdm(df[utils.sort_keys].values, miniters=99999):
+for ip, app, device, os, channel, click_time in tqdm(df[utils.sort_keys].values, miniters=999999):
     
     if ip_bk is None:
         li.append(-1)

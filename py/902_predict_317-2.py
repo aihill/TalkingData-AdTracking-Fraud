@@ -13,10 +13,11 @@ sys.path.append('/home/kazuki_onodera/Python')
 import xgbextension as ex
 import xgboost as xgb
 import gc
+from itertools import combinations
 import utils
 
 # setting
-submit_file_path = '../output/317-1.csv.gz'
+submit_file_path = '../output/317-2.csv.gz'
 SEED = 11
 LOOP = 3
 
@@ -25,12 +26,11 @@ np.random.seed(SEED)
 # load train
 # =============================================================================
 
-train = utils.read_pickles('../data/train').sample(frac=0.1)
+train = pd.concat([utils.read_pickles('../data/train'),
+                   pd.read_pickle('../data/101_train.p')], axis=1).sample(frac=0.1)
 
 gc.collect()
 
-# 104
-from itertools import combinations
 comb = list(combinations(['ip', 'app', 'device', 'os', 'channel'], 4))
 comb += list(combinations(['ip', 'app', 'device', 'os', 'channel'], 3))
 comb += list(combinations(['ip', 'app', 'device', 'os', 'channel'], 2))
@@ -90,7 +90,11 @@ del dtrain; gc.collect()
 # =============================================================================
 # test
 # =============================================================================
-test = utils.read_pickles('../data/test')
+# feature
+test = pd.concat([utils.read_pickles('../data/test_old'),
+                   pd.read_pickle('../data/101_test.p')], axis=1)
+test = test[~test.click_id.isnull()]
+test.drop_duplicates('click_id', keep='last', inplace=True)
 
 gc.collect()
 
@@ -99,6 +103,8 @@ for keys in tqdm(comb):
     keys_ = '-'.join(keys)
     df = pd.read_pickle('../data/{}_count.p'.format(keys_))
     test = pd.merge(test, df, on=keys, how='left')
+
+
 
 sub = test[['click_id']]
 
