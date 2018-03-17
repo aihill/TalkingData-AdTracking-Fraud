@@ -48,11 +48,19 @@ del train; gc.collect()
 # test
 # =============================================================================
 
-print('loading test...')
+print('loading test_old...')
 test = pd.read_csv('../input/test_old.csv.gz', dtype=dtypes,
                    parse_dates=['click_time'])
 print('finish loading!')
 
+utils.to_pickles(test,  '../data/test_old',  10)
+
+
+
+print('loading test...')
+test = pd.read_csv('../input/test.csv.zip', dtype=dtypes,
+                   parse_dates=['click_time'])
+print('finish loading!')
 
 utils.to_pickles(test,  '../data/test',  10)
 

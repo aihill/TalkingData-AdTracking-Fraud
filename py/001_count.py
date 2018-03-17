@@ -21,11 +21,8 @@ comb += list(combinations(['ip', 'app', 'device', 'os', 'channel'], 2))
 comb += list(combinations(['ip', 'app', 'device', 'os', 'channel'], 1))
 
 
-# =============================================================================
-# for valid
-# =============================================================================
 trte = pd.concat([utils.read_pickles('../data/train'),
-                utils.read_pickles('../data/test')])
+                utils.read_pickles('../data/test_old')])
 
 
 for keys in tqdm(comb):
