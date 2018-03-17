@@ -119,7 +119,8 @@ sub['is_attributed'] = 0
 for model in models:
     y_pred = model.predict(dtest)
     sub['is_attributed'] += pd.Series(y_pred).rank()
-sub['is_attributed'] /=LOOP
+sub['is_attributed'] /= LOOP
+sub['is_attributed'] /= sub['is_attributed'].max()
 
 sub.to_csv(submit_file_path, index=False, compression='gzip')
 
