@@ -17,10 +17,10 @@ import utils
 
 # setting
 submit_file_path = '../output/315-1.csv.gz'
-seed = 11
+SEED = 11
+LOOP = 3
 
-
-np.random.seed(seed)
+np.random.seed(SEED)
 # =============================================================================
 # load train
 # =============================================================================
@@ -74,10 +74,13 @@ dtrain = xgb.DMatrix(train, y)
 del train, y; gc.collect()
 
 print('start xgb')
-for i in range(3):
+models = []
+for i in range(LOOP):
+    print(i)
     param.update({'seed':np.random.randint(9999)})
     model = xgb.train(param, dtrain, 300)
     model.save_model('xgb{}.model'.format(i))
+    models.append(model)
 
 imp = ex.getImp(model)
 imp.to_csv('imp.csv', index=False)
@@ -111,9 +114,12 @@ print(test.columns.tolist())
 test.fillna(-1, inplace=True)
 
 dtest = xgb.DMatrix(test[train_head.columns])
-y_pred = model.predict(dtest)
 
-sub['is_attributed'] = y_pred
+sub['is_attributed'] = 0
+for model in models:
+    y_pred = model.predict(dtest)
+    sub['is_attributed'] += pd.Series(y_pred).rank()
+sub['is_attributed'] /=LOOP
 
 sub.to_csv(submit_file_path, index=False, compression='gzip')
 
