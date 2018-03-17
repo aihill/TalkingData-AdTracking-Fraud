@@ -16,7 +16,7 @@ import gc
 import utils
 
 # setting
-submit_file_path = '../output/315-1.csv.gz'
+submit_file_path = '../output/317-1.csv.gz'
 SEED = 11
 LOOP = 3
 
