@@ -55,11 +55,12 @@ print('finish loading!')
 
 utils.to_pickles(test,  '../data/test_old',  10)
 
+del test; gc.collect()
 
 
 print('loading test...')
 test = pd.read_csv('../input/test.csv.zip', dtype=dtypes,
-                   parse_dates=['click_time'])
+                   parse_dates=['click_time']).sort_values(utils.sort_keys)
 print('finish loading!')
 
 utils.to_pickles(test,  '../data/test',  10)
