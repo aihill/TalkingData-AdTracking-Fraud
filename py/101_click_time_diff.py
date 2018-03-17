@@ -33,7 +33,7 @@ for ip, app, device, os, channel, click_time in tqdm(df[utils.sort_keys].values,
 
 df['same_ip-app-device-os-channel_diff'] = li
 df['hour'] = df.click_time.dt.hour + (df.click_time.dt.minute/60)
-df[['same_ip-app-device-os-channel_diff']].to_pickle('../data/101_train.p')
+df[['same_ip-app-device-os-channel_diff', 'hour']].to_pickle('../data/101_train.p')
 
 del df; gc.collect()
 
@@ -58,6 +58,6 @@ for ip, app, device, os, channel, click_time in tqdm(df[utils.sort_keys].values,
 
 df['same_ip-app-device-os-channel_diff'] = li
 df['hour'] = df.click_time.dt.hour + (df.click_time.dt.minute/60)
-df[['same_ip-app-device-os-channel_diff']].to_pickle('../data/101_test.p')
+df[['same_ip-app-device-os-channel_diff', 'hour']].to_pickle('../data/101_test.p')
 
 
