@@ -20,6 +20,7 @@ import utils
 submit_file_path = '../output/317-2.csv.gz'
 SEED = 11
 LOOP = 3
+nround = 400
 
 np.random.seed(SEED)
 # =============================================================================
@@ -78,7 +79,7 @@ models = []
 for i in range(LOOP):
     print(i)
     param.update({'seed':np.random.randint(9999)})
-    model = xgb.train(param, dtrain, 300)
+    model = xgb.train(param, dtrain, nround)
     model.save_model('xgb{}.model'.format(i))
     models.append(model)
 
@@ -94,7 +95,9 @@ del dtrain; gc.collect()
 test = pd.concat([utils.read_pickles('../data/test_old'),
                    pd.read_pickle('../data/101_test.p')], axis=1)
 test = test[~test.click_id.isnull()]
-test.drop_duplicates('click_id', keep='last', inplace=True)
+test.drop_duplicates('click_id', keep='last', inplace=True) # last?
+
+print('test.shape:', test.shape) # 18790469
 
 gc.collect()
 
