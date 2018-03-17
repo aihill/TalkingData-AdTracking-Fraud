@@ -32,7 +32,7 @@ dtypes = {
 
 
 # =============================================================================
-# validation( train -> valid_feature, valid)
+# train
 # =============================================================================
 
 print('loading train...')
@@ -40,26 +40,20 @@ train = pd.read_csv('../input/train.csv.zip', dtype=dtypes,
                     parse_dates=['click_time', 'attributed_time']) # not date_parser
 print('finish loading!')
 
-valid_feature = train[train.click_time<=pd.to_datetime('2017-11-08 17:00:00')] # TODO: consider datetime
-valid = train[train.click_time>=pd.to_datetime('2017-11-09 05:00:00')]
+utils.to_pickles(train, '../data/train', 10)
 
-utils.to_pickles(valid_feature, '../data/valid_feature', 10)
-utils.to_pickles(valid, '../data/valid', 10)
-
-del valid_feature, valid; gc.collect()
+del train; gc.collect()
 
 # =============================================================================
 # test
 # =============================================================================
 
 print('loading test...')
-test = pd.read_csv('../input/test.csv.zip', dtype=dtypes,
+test = pd.read_csv('../input/test_old.csv.gz', dtype=dtypes,
                    parse_dates=['click_time'])
 print('finish loading!')
 
-test_feature = train[train.click_time>=pd.to_datetime('2017-11-07 13:30:00')]
 
-utils.to_pickles(test_feature, '../data/test_feature', 10)
 utils.to_pickles(test,  '../data/test',  10)
 
 
