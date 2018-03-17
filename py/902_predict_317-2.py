@@ -83,7 +83,7 @@ for i in range(LOOP):
     model.save_model('xgb{}.model'.format(i))
     models.append(model)
 
-imp = ex.getImp(model)
+imp = ex.getImp(models)
 imp.to_csv('imp.csv', index=False)
 
 del dtrain; gc.collect()
