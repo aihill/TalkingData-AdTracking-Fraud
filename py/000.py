@@ -37,7 +37,7 @@ dtypes = {
 
 print('loading train...')
 train = pd.read_csv('../input/train.csv.zip', dtype=dtypes, 
-                    parse_dates=['click_time', 'attributed_time']) # not date_parser
+                    parse_dates=['click_time', 'attributed_time']).sort_values(utils.sort_keys) # be sure to sort by this keys
 print('finish loading!')
 
 utils.to_pickles(train, '../data/train', 10)
@@ -50,7 +50,7 @@ del train; gc.collect()
 
 print('loading test_old...')
 test = pd.read_csv('../input/test_old.csv.gz', dtype=dtypes,
-                   parse_dates=['click_time'])
+                   parse_dates=['click_time']).sort_values(utils.sort_keys) # be sure to sort by this keys
 print('finish loading!')
 
 utils.to_pickles(test,  '../data/test_old',  10)

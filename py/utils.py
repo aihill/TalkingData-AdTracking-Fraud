@@ -14,10 +14,9 @@ import numpy as np
 from glob import glob
 import os
 from tqdm import tqdm
-#import pickle
+from sklearn.model_selection import KFold
 import time
 import gc
-#from itertools import chain
 
 # =============================================================================
 # global variables
@@ -56,7 +55,7 @@ def mkdir_p(path):
     except:
         os.mkdir(path)
     
-def to_pickles(df, path, split_size=3, inplace=False):
+def to_pickles(df, path, split_size=3, inplace=True):
     """
     path = '../output/mydf'
     
@@ -69,11 +68,15 @@ def to_pickles(df, path, split_size=3, inplace=False):
         df.reset_index(drop=True, inplace=True)
     else:
         df = df.reset_index(drop=True)
+    gc.collect()
     mkdir_p(path)
     
-    for i in tqdm(range(split_size)):
-        df.ix[df.index%split_size==i].to_pickle(path+'/{}.p'.format(i))
+#    for i in tqdm(range(split_size)):
+#        df.ix[df.index%split_size==i].to_pickle(path+'/{}.p'.format(i))
     
+    kf = KFold(n_splits=split_size)
+    for i, (train_index, val_index) in enumerate(tqdm(kf.split(df))):
+        df.iloc[val_index].to_pickle(path+'/{}.p'.format(i))
     return
 
 def read_pickles(path, col=None):

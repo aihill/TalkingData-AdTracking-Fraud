@@ -16,7 +16,7 @@ import utils
 # =============================================================================
 # for train
 # =============================================================================
-df = utils.read_pickles('../data/train').sort_values(utils.sort_keys) # be sure to sort by this keys
+df = utils.read_pickles('../data/train')
 
 ip_bk = app_bk = device_bk = os_bk = channel_bk = click_time_bk = None
 li = []
@@ -41,7 +41,7 @@ del df; gc.collect()
 # =============================================================================
 # for test
 # =============================================================================
-df = utils.read_pickles('../data/test').sort_values(utils.sort_keys) # be sure to sort by this keys
+df = utils.read_pickles('../data/test')
 
 ip_bk = app_bk = device_bk = os_bk = channel_bk = click_time_bk = None
 li = []

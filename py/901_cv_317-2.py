@@ -25,7 +25,7 @@ import utils
 # load train
 # =============================================================================
 
-train = pd.concat([utils.read_pickles('../data/train').sort_values(utils.sort_keys),
+train = pd.concat([utils.read_pickles('../data/train'),
                    pd.read_pickle('../data/101_train.p')], axis=1).sample(frac=0.1)
 
 gc.collect()
