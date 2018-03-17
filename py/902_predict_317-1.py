@@ -66,7 +66,7 @@ param = {'colsample_bylebel': 0.8,
          'tree_method': 'hist',
          'nthread': 64}
 
-print('valid.shape:', train.shape)
+print('train.shape:', train.shape)
 train_head = train.head()
 train_head.to_pickle('train_head.p')
 
