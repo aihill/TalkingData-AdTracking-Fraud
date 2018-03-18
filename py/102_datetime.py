@@ -23,7 +23,7 @@ max_time = test.click_time.max()
 
 
 train['hour'] = train.click_time.dt.hour + (train.click_time.dt.minute/60)
-train['timestamp'] = (max_time - train.click_time).seconds
+train['timestamp'] = (max_time - train.click_time).dt.seconds
 
 
 col = ['hour', 'timestamp']
@@ -37,7 +37,7 @@ del train; gc.collect()
 # =============================================================================
 
 test['hour'] = test.click_time.dt.hour + (test.click_time.dt.minute/60)
-test['timestamp'] = (max_time - test.click_time).seconds
+test['timestamp'] = (max_time - test.click_time).dt.seconds
 
 
 col = ['hour', 'timestamp']
