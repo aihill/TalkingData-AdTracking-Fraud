@@ -17,7 +17,7 @@ from itertools import combinations
 import utils
 
 # setting
-submit_file_path = '../output/317-2.csv.gz'
+submit_file_path = '../output/318-1.csv.gz'
 SEED = 11
 LOOP = 3
 nround = 400
@@ -92,7 +92,7 @@ del dtrain; gc.collect()
 # test
 # =============================================================================
 # feature
-test = pd.concat([utils.read_pickles('../data/test_old'),
+test = pd.concat([utils.read_pickles('../data/test'),
                    pd.read_pickle('../data/101_test.p')], axis=1)
 test = test[~test.click_id.isnull()]
 test.drop_duplicates('click_id', keep='last', inplace=True) # last?
