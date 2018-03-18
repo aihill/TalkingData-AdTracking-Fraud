@@ -83,7 +83,7 @@ for i in range(LOOP):
     models.append(model)
 
 imp = ex.getImp(models)
-imp.to_csv('imp.csv', index=False)
+imp.to_csv('imp_{}.csv'.format(__file__), index=False)
 
 del dtrain; gc.collect()
 
