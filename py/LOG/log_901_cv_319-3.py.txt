@@ -1,0 +1,61 @@
+
+#==============================================================================
+# START !!! 901_cv_319-3.py PID: 31902
+#==============================================================================
+
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:05<00:53,  5.95s/it] 20%|██        | 2/10 [00:12<00:48,  6.05s/it] 30%|███       | 3/10 [00:18<00:42,  6.07s/it] 40%|████      | 4/10 [00:24<00:36,  6.16s/it] 50%|█████     | 5/10 [00:31<00:31,  6.22s/it] 60%|██████    | 6/10 [00:37<00:24,  6.19s/it] 70%|███████   | 7/10 [00:43<00:18,  6.16s/it] 80%|████████  | 8/10 [00:49<00:12,  6.17s/it] 90%|█████████ | 9/10 [00:55<00:06,  6.15s/it]100%|██████████| 10/10 [01:01<00:00,  6.11s/it]
+  0%|          | 0/31 [00:00<?, ?it/s]  3%|▎         | 1/31 [00:23<11:49, 23.67s/it]  6%|▋         | 2/31 [00:36<08:53, 18.38s/it] 10%|▉         | 3/31 [00:51<07:59, 17.12s/it] 13%|█▎        | 4/31 [01:08<07:40, 17.06s/it] 16%|█▌        | 5/31 [01:27<07:34, 17.48s/it] 19%|█▉        | 6/31 [02:10<09:03, 21.75s/it] 23%|██▎       | 7/31 [02:45<09:27, 23.65s/it] 26%|██▌       | 8/31 [03:34<10:17, 26.84s/it] 29%|██▉       | 9/31 [04:28<10:55, 29.80s/it] 32%|███▏      | 10/31 [04:54<10:18, 29.46s/it] 35%|███▌      | 11/31 [05:24<09:50, 29.54s/it] 39%|███▊      | 12/31 [05:56<09:24, 29.69s/it] 42%|████▏     | 13/31 [06:28<08:57, 29.87s/it] 45%|████▌     | 14/31 [07:02<08:32, 30.17s/it] 48%|████▊     | 15/31 [07:40<08:11, 30.70s/it] 52%|█████▏    | 16/31 [08:42<08:10, 32.68s/it] 55%|█████▍    | 17/31 [10:17<08:28, 36.33s/it] 58%|█████▊    | 18/31 [11:33<08:20, 38.51s/it] 61%|██████▏   | 19/31 [12:38<07:58, 39.90s/it] 65%|██████▍   | 20/31 [13:54<07:38, 41.71s/it] 68%|██████▊   | 21/31 [16:02<07:38, 45.85s/it] 71%|███████   | 22/31 [16:51<06:53, 45.99s/it] 74%|███████▍  | 23/31 [17:40<06:08, 46.09s/it] 77%|███████▋  | 24/31 [18:36<05:25, 46.53s/it] 81%|████████  | 25/31 [19:32<04:41, 46.88s/it] 84%|████████▍ | 26/31 [21:30<04:08, 49.63s/it] 87%|████████▋ | 27/31 [23:04<03:25, 51.29s/it] 90%|█████████ | 28/31 [26:07<02:47, 55.98s/it] 94%|█████████▎| 29/31 [28:34<01:58, 59.13s/it] 97%|█████████▋| 30/31 [29:41<00:59, 59.40s/it]100%|██████████| 31/31 [33:01<00:00, 63.92s/it]
+['hour', 'timestamp', 'ip_count', 'ip_timestd', 'app_count', 'app_timestd', 'device_count', 'device_timestd', 'os_count', 'os_timestd', 'channel_count', 'channel_timestd', 'ip-app_count', 'ip-app_timestd', 'ip-device_count', 'ip-device_timestd', 'ip-os_count', 'ip-os_timestd', 'ip-channel_count', 'ip-channel_timestd', 'app-device_count', 'app-device_timestd', 'app-os_count', 'app-os_timestd', 'app-channel_count', 'app-channel_timestd', 'device-os_count', 'device-os_timestd', 'device-channel_count', 'device-channel_timestd', 'os-channel_count', 'os-channel_timestd', 'ip-app-device_count', 'ip-app-device_timestd', 'ip-app-os_count', 'ip-app-os_timestd', 'ip-app-channel_count', 'ip-app-channel_timestd', 'ip-device-os_count', 'ip-device-os_timestd', 'ip-device-channel_count', 'ip-device-channel_timestd', 'ip-os-channel_count', 'ip-os-channel_timestd', 'app-device-os_count', 'app-device-os_timestd', 'app-device-channel_count', 'app-device-channel_timestd', 'app-os-channel_count', 'app-os-channel_timestd', 'device-os-channel_count', 'device-os-channel_timestd', 'ip-app-device-os_count', 'ip-app-device-os_timestd', 'ip-app-device-channel_count', 'ip-app-device-channel_timestd', 'ip-app-os-channel_count', 'ip-app-os-channel_timestd', 'ip-device-os-channel_count', 'ip-device-os-channel_timestd', 'app-device-os-channel_count', 'app-device-os-channel_timestd', 'ip-app-device-os-channel_count', 'ip-app-device-os-channel_timestd']
+[19:18:14] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:18:48] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:19:23] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:20:00] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:20:35] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[0]	train-auc:0.886159+0.0162133	test-auc:0.885995+0.0169355
+[5]	train-auc:0.934514+0.00741366	test-auc:0.934567+0.00428634
+[10]	train-auc:0.935774+0.00687834	test-auc:0.935763+0.00394344
+[15]	train-auc:0.935931+0.00689644	test-auc:0.935928+0.00394494
+[20]	train-auc:0.936836+0.00729431	test-auc:0.93693+0.00446145
+[25]	train-auc:0.945994+0.000643617	test-auc:0.945927+0.00253341
+[30]	train-auc:0.946548+0.000633656	test-auc:0.946526+0.00238818
+[35]	train-auc:0.950512+0.00348524	test-auc:0.950341+0.00574649
+[40]	train-auc:0.954387+0.00276912	test-auc:0.954119+0.0050662
+[45]	train-auc:0.95626+0.000661728	test-auc:0.956189+0.00193816
+[50]	train-auc:0.956495+0.000608506	test-auc:0.956431+0.00195015
+[55]	train-auc:0.957187+0.000574029	test-auc:0.957047+0.00189477
+[60]	train-auc:0.958142+0.000590701	test-auc:0.95795+0.00178195
+[65]	train-auc:0.960722+0.000797335	test-auc:0.960458+0.00216439
+[70]	train-auc:0.963176+0.000415932	test-auc:0.962582+0.00216566
+[75]	train-auc:0.965193+0.000352356	test-auc:0.964654+0.00169179
+[80]	train-auc:0.966395+0.000299332	test-auc:0.965865+0.00130806
+[85]	train-auc:0.967283+0.000248904	test-auc:0.966607+0.00143437
+[90]	train-auc:0.968177+0.000321922	test-auc:0.967514+0.00131217
+[95]	train-auc:0.96887+0.00028501	test-auc:0.968232+0.00120271
+[100]	train-auc:0.96948+0.000313659	test-auc:0.968756+0.00115982
+[105]	train-auc:0.969897+0.000332294	test-auc:0.969084+0.00112548
+[110]	train-auc:0.970406+0.000376874	test-auc:0.969499+0.00109037
+[115]	train-auc:0.970786+0.000349154	test-auc:0.969887+0.00109972
+[120]	train-auc:0.971217+0.000414711	test-auc:0.970282+0.000998112
+[125]	train-auc:0.971545+0.000421276	test-auc:0.970539+0.00103406
+[130]	train-auc:0.971831+0.000389627	test-auc:0.970762+0.00106044
+[135]	train-auc:0.972116+0.000369968	test-auc:0.971008+0.00106551
+[140]	train-auc:0.972418+0.000379348	test-auc:0.971242+0.00104624
+[145]	train-auc:0.972686+0.000315318	test-auc:0.971459+0.00109623
+[150]	train-auc:0.972945+0.000366714	test-auc:0.971671+0.00105451
+[155]	train-auc:0.973098+0.000370762	test-auc:0.97178+0.00104797
+[160]	train-auc:0.973311+0.00039781	test-auc:0.971928+0.00100964
+[165]	train-auc:0.973524+0.000377252	test-auc:0.972056+0.00102602
+[170]	train-auc:0.973693+0.000338683	test-auc:0.972183+0.00104335
+[175]	train-auc:0.973859+0.000336917	test-auc:0.972311+0.00104609
+[180]	train-auc:0.974061+0.000333343	test-auc:0.97245+0.00101362
+[185]	train-auc:0.974212+0.00033998	test-auc:0.97256+0.000992956
+[190]	train-auc:0.974405+0.000322903	test-auc:0.972703+0.00102621
+[195]	train-auc:0.974567+0.00032063	test-auc:0.972818+0.00103655
+[200]	train-auc:0.974721+0.000300661	test-auc:0.972907+0.00105361
+[205]	train-auc:0.974863+0.000264363	test-auc:0.972979+0.00106581
+[210]	train-auc:0.974998+0.000274607	test-auc:0.973068+0.0010561
+[215]	train-auc:0.975138+0.00023679	test-auc:0.973154+0.00108853
+[220]	train-auc:0.975245+0.000239954	test-auc:0.973187+0.00108184
+[225]	train-auc:0.975348+0.000241033	test-auc:0.973242+0.00108271
+[230]	train-auc:0.975463+0.000225737	test-auc:0.973335+0.00106854
+[235]	train-auc:0.975578+0.000239104	test-auc:0.973433+0.0010595
