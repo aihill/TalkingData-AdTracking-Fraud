@@ -15,6 +15,7 @@ import xgboost as xgb
 import gc
 from itertools import combinations
 import utils
+utils.start(__file__)
 
 # setting
 submit_file_path = '../output/319-2.csv.gz'
@@ -145,7 +146,8 @@ if exe_submit:
     utils.submit(submit_file_path)
 
 
-
+#==============================================================================
+utils.end(__file__)
 
 
 
