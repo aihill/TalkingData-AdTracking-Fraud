@@ -12,6 +12,7 @@ nohup python -u 901_cv.py > log.txt &
 """
 
 import pandas as pd
+import numpy as np
 from tqdm import tqdm
 import sys
 sys.path.append('/home/kazuki_onodera/Python')
@@ -20,6 +21,9 @@ import xgboost as xgb
 import gc
 from itertools import combinations
 import utils
+
+seed = 71
+np.random.seed(seed)
 
 # =============================================================================
 # load train
@@ -59,7 +63,7 @@ param = {'colsample_bylebel': 0.8,
          'subsample': 0.5,
          'eta': 0.1,
          'eval_metric': 'auc',
-         'max_depth': 6,
+         'max_depth': 4,
          'objective': 'binary:logistic',
          'silent': 1,
          'tree_method': 'hist',
@@ -70,7 +74,18 @@ param = {'colsample_bylebel': 0.8,
 gc.collect()
 
 
-yhat, imp, ret = ex.stacking(train, y, param, 9999, nfold=5, esr=30)
+#yhat, imp, ret = ex.stacking(train, y, param, 9999, nfold=5, esr=30)
+#
+#imp.to_csv('imp.csv', index=False)
 
-imp.to_csv('imp.csv', index=False)
+# =============================================================================
+# cv
+# =============================================================================
+
+dtrain = xgb.DMatrix(train, y)
+
+cv = xgb.cv(param, dtrain, 9999, 
+            nfold=5, early_stopping_rounds=50, verbose_eval=5)
+
+
 
