@@ -19,5 +19,5 @@ else:
     minutes = 0
 
 sleep(minutes)
-os.system('nohup python -u {0} > log_{0}.txt &'.format(file))
+os.system('nohup python -u {0} > LOG/log_{0}.txt &'.format(file))
 
