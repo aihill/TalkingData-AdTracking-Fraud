@@ -93,7 +93,7 @@ del dtrain; gc.collect()
 # =============================================================================
 # feature
 test = pd.concat([utils.read_pickles('../data/test_old'),
-                   pd.read_pickle('../data/101_test.p')], axis=1)
+                   pd.read_pickle('../data/101_test_old.p')], axis=1)
 test = test[~test.click_id.isnull()]
 test.drop_duplicates('click_id', keep='last', inplace=True) # last?
 
