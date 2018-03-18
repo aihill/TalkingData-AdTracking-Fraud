@@ -12,6 +12,7 @@ import pandas as pd
 from tqdm import tqdm
 import gc
 import utils
+utils.start(__file__)
 
 
 trte = pd.concat([utils.read_pickles('../data/train'),
@@ -24,4 +25,7 @@ for keys in tqdm(utils.comb):
     df.name = keys_+'_count'
     df = df.reset_index()
     df.to_pickle('../data/{}_count_old.p'.format(keys_))
+
+#==============================================================================
+utils.end(__file__)
 
