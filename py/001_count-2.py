@@ -22,7 +22,7 @@ comb += list(combinations(['ip', 'app', 'device', 'os', 'channel'], 1))
 
 
 trte = pd.concat([utils.read_pickles('../data/train'),
-                utils.read_pickles('../data/test_old')])
+                utils.read_pickles('../data/test')])
 
 
 for keys in tqdm(comb):
@@ -30,5 +30,5 @@ for keys in tqdm(comb):
     df = trte.groupby(keys).size()
     df.name = keys_+'_count'
     df = df.reset_index()
-    df.to_pickle('../data/{}_count_old.p'.format(keys_))
+    df.to_pickle('../data/{}_count.p'.format(keys_))
 
