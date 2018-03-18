@@ -130,6 +130,7 @@ for model in models:
     sub['is_attributed'] += pd.Series(y_pred).rank()
 sub['is_attributed'] /= LOOP
 sub['is_attributed'] /= sub['is_attributed'].max()
+sub['click_id'] = sub.click_id.map(int)
 
 sub.to_csv(submit_file_path, index=False, compression='gzip')
 
