@@ -21,6 +21,7 @@ import xgboost as xgb
 import gc
 from itertools import combinations
 import utils
+utils.start(__file__)
 
 seed = 71
 np.random.seed(seed)
@@ -88,4 +89,6 @@ dtrain = xgb.DMatrix(train, y)
 cv = xgb.cv(param, dtrain, 9999, 
             nfold=5, early_stopping_rounds=50, verbose_eval=5)
 
+#==============================================================================
+utils.end(__file__)
 
