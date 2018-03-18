@@ -15,7 +15,7 @@ import utils
 train = utils.read_pickles('../data/train')
 test  = utils.read_pickles('../data/test_old')
 
-max_time = test.click_time.max()
+min_time = train.click_time.min()
 
 # =============================================================================
 # for train
@@ -23,7 +23,7 @@ max_time = test.click_time.max()
 
 
 train['hour'] = train.click_time.dt.hour + (train.click_time.dt.minute/60)
-train['timestamp'] = (max_time - train.click_time).dt.seconds
+train['timestamp'] = (train.click_time - min_time).dt.seconds
 
 
 col = ['hour', 'timestamp']
@@ -37,7 +37,7 @@ del train; gc.collect()
 # =============================================================================
 
 test['hour'] = test.click_time.dt.hour + (test.click_time.dt.minute/60)
-test['timestamp'] = (max_time - test.click_time).dt.seconds
+test['timestamp'] = (test.click_time - min_time).dt.seconds
 
 
 col = ['hour', 'timestamp']
