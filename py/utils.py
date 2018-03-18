@@ -14,6 +14,7 @@ import numpy as np
 from glob import glob
 import os
 from tqdm import tqdm
+from itertools import combinations
 from sklearn.model_selection import KFold
 import time
 import gc
@@ -21,9 +22,9 @@ import gc
 # =============================================================================
 # global variables
 # =============================================================================
-sort_keys = ['ip', 'app', 'device', 'os', 'channel', 'click_time']
-
-
+comb = []
+for i in range(1, 6):
+    comb += list(combinations(['ip', 'app', 'device', 'os', 'channel'], i))
 
 # =============================================================================
 # def
