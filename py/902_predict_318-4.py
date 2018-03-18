@@ -17,7 +17,7 @@ from itertools import combinations
 import utils
 
 # setting
-submit_file_path = '../output/318-４.csv.gz'
+submit_file_path = '../output/318-4.csv.gz'
 SEED = 48
 LOOP = 3
 nround = 300
