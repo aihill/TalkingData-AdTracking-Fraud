@@ -97,7 +97,8 @@ def reduce_memory(df, ix_start=0):
     col_int8 = []
     col_int16 = []
     col_int32 = []
-    for c in tqdm(df.columns[ix_start:], miniters=20):
+#    for c in tqdm(df.columns[ix_start:], miniters=20):
+    for c in df.columns[ix_start:]:
         if df[c].dtype=='O':
             continue
         if (df_[c] == df_[c].astype(np.int8)).all():

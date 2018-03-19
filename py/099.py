@@ -26,9 +26,9 @@ for keys in tqdm(utils.comb):
     
     col = [c for c in df.columns if c not in keys]
     train_ = pd.merge(train, df, on=keys, how='left')
-    train_[col].drop(keys, axis=1).to_pickle('../data/{}_train.p'.format(keys_))
+    train_[col].to_pickle('../data/{}_train.p'.format(keys_))
     test_ = pd.merge(test, df, on=keys, how='left')
-    test_[col].drop(keys, axis=1).to_pickle('../data/{}_test.p'.format(keys_))
+    test_[col].to_pickle('../data/{}_test.p'.format(keys_))
     
 #==============================================================================
 utils.end(__file__)
