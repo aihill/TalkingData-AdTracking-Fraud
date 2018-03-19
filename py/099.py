@@ -23,11 +23,12 @@ for keys in tqdm(utils.comb):
                   pd.read_pickle('../data/{}_timestd_old.p'.format(keys_)),
                   on=keys, how='outer')
     utils.reduce_memory(df)
-    col = df.columns
+    
+    col = [c for c in df.columns if c not in keys]
     train_ = pd.merge(train, df, on=keys, how='left')
-    train_[col].to_pickle('../data/{}_train.p'.format(keys_))
+    train_[col].drop(keys, axis=1).to_pickle('../data/{}_train.p'.format(keys_))
     test_ = pd.merge(test, df, on=keys, how='left')
-    test_[col].to_pickle('../data/{}_test.p'.format(keys_))
+    test_[col].drop(keys, axis=1).to_pickle('../data/{}_test.p'.format(keys_))
     
 #==============================================================================
 utils.end(__file__)
