@@ -89,7 +89,10 @@ def read_pickles(path, col=None):
 
 def reduce_memory(df, ix_start=0):
     df.fillna(-1, inplace=True)
-    df_ = df.sample(9999, random_state=71)
+    if df.shape[0]>9999:
+        df_ = df.sample(9999, random_state=71)
+    else:
+        df_ = df
     ## int
     col_int8 = []
     col_int16 = []
