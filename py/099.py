@@ -13,6 +13,8 @@ from tqdm import tqdm
 import utils
 utils.start(__file__)
 
+train = utils.read_pickles('../data/train')
+test  = utils.read_pickles('../data/test_old')
 
 for keys in tqdm(utils.comb):
     gc.collect()
@@ -21,7 +23,11 @@ for keys in tqdm(utils.comb):
                   pd.read_pickle('../data/{}_timestd_old.p'.format(keys_)),
                   on=keys, how='outer')
     utils.reduce_memory(df)
-    df.to_pickle('../data/{}_feature.p'.format(keys_))
+    col = df.columns
+    train_ = pd.merge(train, df, on=keys, how='left')
+    train_[col].to_pickle('../data/{}_train.p'.format(keys_))
+    test_ = pd.merge(test, df, on=keys, how='left')
+    test_[col].to_pickle('../data/{}_test.p'.format(keys_))
     
 #==============================================================================
 utils.end(__file__)
