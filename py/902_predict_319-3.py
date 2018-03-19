@@ -21,7 +21,7 @@ submit_file_path = '../output/319-3.csv.gz'
 SEED = 48
 LOOP = 3
 nround = 850
-exe_submit = False
+exe_submit = True
 
 
 

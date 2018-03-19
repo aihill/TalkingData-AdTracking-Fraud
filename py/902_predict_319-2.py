@@ -21,8 +21,8 @@ utils.start(__file__)
 submit_file_path = '../output/319-2.csv.gz'
 SEED = 48
 LOOP = 3
-nround = 700
-exe_submit = False
+nround = 1300
+exe_submit = True
 
 
 
