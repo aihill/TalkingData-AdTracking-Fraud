@@ -9,6 +9,7 @@ Created on Mon Mar 19 15:21:44 2018
 import numpy as np
 import pandas as pd
 import gc
+from tqdm import tqdm
 import utils
 utils.start(__file__)
 
