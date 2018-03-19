@@ -22,3 +22,5 @@ for keys in tqdm(utils.comb):
                   on=keys, how='outer')
     df.to_pickle('../data/{}_feature.p'.format(keys_))
     
+#==============================================================================
+utils.end(__file__)
