@@ -87,6 +87,34 @@ def read_pickles(path, col=None):
         df = pd.concat([pd.read_pickle(f)[col] for f in tqdm(sorted(glob(path+'/*')))])
     return df
 
+def reduce_memory(df, ix_start=0):
+    df.fillna(-1, inplace=True)
+    df_ = df.sample(9999, random_state=71)
+    ## int
+    col_int8 = []
+    col_int16 = []
+    col_int32 = []
+    for c in tqdm(df.columns[ix_start:], miniters=20):
+        if df[c].dtype=='O':
+            continue
+        if (df_[c] == df_[c].astype(np.int8)).all():
+            col_int8.append(c)
+        elif (df_[c] == df_[c].astype(np.int16)).all():
+            col_int16.append(c)
+        elif (df_[c] == df_[c].astype(np.int32)).all():
+            col_int32.append(c)
+    
+    df[col_int8]  = df[col_int8].astype(np.int8)
+    df[col_int16] = df[col_int16].astype(np.int16)
+    df[col_int32] = df[col_int32].astype(np.int32)
+    
+    ## float
+    col = [c for c in df.dtypes[df.dtypes==np.float64].index if '_id' not in c]
+    df[col] = df[col].astype(np.float32)
+
+    gc.collect()
+
+
 def submit(file_path):
     os.system('kaggle competitions submit -c talkingdata-adtracking-fraud-detection -f {} -m "from API"'.format(file_path))
 
