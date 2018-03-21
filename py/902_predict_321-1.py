@@ -51,9 +51,9 @@ def multi(arg):
     if arg==0:
         "load data"
         sleep(10) # delay for train
-        global dtrain
+        global dtrain_new
         load_file = '../data/dtrain{}.mt'.format(np.random.randint(10))
-        dtrain = xgb.DMatrix(load_file)
+        dtrain_new = xgb.DMatrix(load_file)
         return 
     
     elif arg==1:
@@ -93,6 +93,7 @@ while True:
     pool = Pool(2)
     callback = pool.map(multi, [0, 1])
     pool.close()
+    dtrain = dtrain_new
 #    dtrain = callback[0]
 #    model = callback[1]
     
