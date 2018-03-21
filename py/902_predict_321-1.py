@@ -131,7 +131,7 @@ imp.to_csv('LOG/imp_{}.csv'.format(__file__), index=False)
 # =============================================================================
 # test
 # =============================================================================
-sub = pd.read_pickle('../data/sub.p').reset_index()
+sub = pd.read_pickle('../data/sub.p').reset_index(drop=True)
 
 dtest = xgb.DMatrix('../data/dtest.mt')
 
