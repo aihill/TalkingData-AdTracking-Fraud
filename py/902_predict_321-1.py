@@ -17,7 +17,7 @@ from sklearn.metrics import roc_auc_score
 from multiprocessing import Pool
 from time import sleep
 import utils
-utils.start(__file__)
+#utils.start(__file__)
 
 # setting
 SUBMIT_FILE_PATH = '../output/321-1.csv.gz'
@@ -53,13 +53,14 @@ def multi(arg):
         sleep(10) # delay for train
         global dtrain_new
         load_file = '../data/dtrain{}.mt'.format(np.random.randint(10))
+        print(load_file)
         dtrain_new = xgb.DMatrix(load_file)
         return 
     
     elif arg==1:
         "train"
-        global model
-        model = xgb.train(param, dtrain, EACH_NROUND, xgb_model=model)
+        global model_new
+        model_new = xgb.train(param, dtrain, EACH_NROUND, xgb_model=model)
         return
     
     else:
@@ -85,7 +86,9 @@ dvalid = xgb.DMatrix('../data/dvalid.mt')
 print('start xgb')
 model = None
 current_nround = 0
-dtrain = multi(0)
+multi(0)
+dtrain = dtrain_new
+
 while True:
     gc.collect()
     param.update({'seed':np.random.randint(9999)})
@@ -94,8 +97,7 @@ while True:
     callback = pool.map(multi, [0, 1])
     pool.close()
     dtrain = dtrain_new
-#    dtrain = callback[0]
-#    model = callback[1]
+    model = model_new
     
     auc = roc_auc_score(dvalid.get_label(), model.predict(dvalid))
     current_nround += EACH_NROUND
