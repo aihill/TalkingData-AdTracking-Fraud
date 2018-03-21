@@ -17,42 +17,15 @@ import utils
 utils.start(__file__)
 
 # setting
-submit_file_path = '../output/319-4.csv.gz'
+SUBMIT_FILE_PATH = '../output/321-1.csv.gz'
 SEED = 48
-LOOP = 3
-nround = 800
-exe_submit = True
+TOTAL_NROUND = 800
+EACH_NROUND = 5
+EXE_SUBMIT = True
 
 
 
 np.random.seed(SEED)
-# =============================================================================
-# load train
-# =============================================================================
-
-train = pd.concat([utils.read_pickles('../data/train'),
-                   pd.read_pickle('../data/101_train.p'),
-                   pd.read_pickle('../data/102_train.p')], axis=1).sample(frac=0.1)
-
-gc.collect()
-
-for keys in tqdm(utils.comb):
-    gc.collect()
-    keys_ = '-'.join(keys)
-    train = pd.merge(train, pd.read_pickle('../data/{}_feature.p'.format(keys_)), 
-                     on=keys, how='left')
-
-train.drop(['click_time', 'attributed_time'], axis=1, inplace=True)
-
-y = train.is_attributed
-train.drop(['ip', 'app', 'device', 'os', 'channel', 'is_attributed'], 
-           axis=1, inplace=True)
-train.fillna(-1, inplace=True)
-
-gc.collect()
-
-print(train.columns.tolist())
-
 
 # =============================================================================
 # XGBoost
@@ -68,26 +41,24 @@ param = {'colsample_bylebel': 0.8,
          'nthread': 64,
          'seed':71}
 
-print('train.shape:', train.shape)
-train_head = train.head()
-train_head.to_pickle('train_head.p')
-
-dtrain = xgb.DMatrix(train, y)
-del train, y; gc.collect()
+valid = xgb.DMatrix('../data/dval.mt')
 
 print('start xgb')
-models = []
-for i in range(LOOP):
-    print(i)
+model = None
+current_nround = 0
+while True:
+    gc.collect()
     param.update({'seed':np.random.randint(9999)})
-    model = xgb.train(param, dtrain, nround)
-    model.save_model('xgb{}.model'.format(i))
-    models.append(model)
+    load_file = '../data/dtrain{}.mt'.format(np.random.randint(10))
+    model = xgb.train(param, xgb.DMatrix(load_file), EACH_NROUND, xgb_model=model)
+    current_nround += EACH_NROUND
+    print('NROUND {} Done. {} min'.format(current_nround, utils.elapsed_minute()))
+    if current_nround >= TOTAL_NROUND:
+        break
 
-imp = ex.getImp(models)
+imp = ex.getImp(model)
 imp.to_csv('LOG/imp_{}.csv'.format(__file__), index=False)
 
-del dtrain; gc.collect()
 
 # =============================================================================
 # test
@@ -95,19 +66,17 @@ del dtrain; gc.collect()
 # feature
 test = pd.concat([utils.read_pickles('../data/test_old'),
                    pd.read_pickle('../data/101_test_old.p'),
-                   pd.read_pickle('../data/102_test_old.p')], axis=1)
+                   pd.read_pickle('../data/102_test_old.p')]+[pd.read_pickle('../data/{}_test.p'.format('-'.join(keys))) for keys in utils.comb], 
+                  axis=1)#.sample(frac=0.4)
+
+gc.collect()
+
 test = test[~test.click_id.isnull()]
 test.drop_duplicates('click_id', keep='last', inplace=True) # last?
 
 print('test.shape should be 18790469:', test.shape)
 
 gc.collect()
-
-for keys in tqdm(utils.comb):
-    gc.collect()
-    keys_ = '-'.join(keys)
-    test = pd.merge(test, pd.read_pickle('../data/{}_feature.p'.format(keys_)), 
-                     on=keys, how='left')
 
 sub = test[['click_id']]
 
@@ -121,23 +90,23 @@ print(test.columns.tolist())
 
 test.fillna(-1, inplace=True)
 
+train_head = pd.read_pickle('train_head.p')
 dtest = xgb.DMatrix(test[train_head.columns])
 
 sub['is_attributed'] = 0
-for model in models:
-    y_pred = model.predict(dtest)
-    sub['is_attributed'] += pd.Series(y_pred).rank()
-sub['is_attributed'] /= LOOP
+y_pred = model.predict(dtest)
+sub['is_attributed'] += pd.Series(y_pred).rank()
+#sub['is_attributed'] /= LOOP
 sub['is_attributed'] /= sub['is_attributed'].max()
 sub['click_id'] = sub.click_id.map(int)
 
-sub.to_csv(submit_file_path, index=False, compression='gzip')
+sub.to_csv(SUBMIT_FILE_PATH, index=False, compression='gzip')
 
 # =============================================================================
 # submission
 # =============================================================================
-if exe_submit:
-    utils.submit(submit_file_path)
+if EXE_SUBMIT:
+    utils.submit(SUBMIT_FILE_PATH)
 
 
 #==============================================================================

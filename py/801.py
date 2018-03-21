@@ -38,6 +38,7 @@ train.fillna(-1, inplace=True)
 
 gc.collect()
 
+train.head().to_pickle('train_head.p')
 
 # =============================================================================
 # save

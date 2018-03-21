@@ -16,7 +16,7 @@ import os
 from tqdm import tqdm
 from itertools import combinations
 from sklearn.model_selection import KFold
-import time
+from time import time
 import gc
 
 # =============================================================================
@@ -31,7 +31,7 @@ for i in range(1, 6):
 # =============================================================================
 def start(fname):
     global st_time
-    st_time = time.time()
+    st_time = time()
     print("""
 #==============================================================================
 # START !!! {} PID: {}
@@ -41,14 +41,17 @@ def start(fname):
     return
 
 def end(fname):
-    
     print("""
 #==============================================================================
 # SUCCESS !!! {}
 #==============================================================================
 """.format(fname))
-    print('time: {:.2f}min'.format( (time.time() - st_time)/60 ))
+    print('time: {:.2f}min'.format( elapsed_minute() ))
     return
+
+def elapsed_minute():
+    return (time() - st_time)/60
+
 
 def mkdir_p(path):
     try:

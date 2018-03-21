@@ -28,7 +28,7 @@ for keys in tqdm(utils.comb):
     train_ = pd.merge(train, df, on=keys, how='left')
     train_[col].to_pickle('../data/{}_train.p'.format(keys_))
     test_ = pd.merge(test, df, on=keys, how='left')
-    test_[col].to_pickle('../data/{}_test.p'.format(keys_))
+    test_[col].to_pickle('../data/{}_test.p'.format(keys_)) # suffix should be 'old'?
     
 #==============================================================================
 utils.end(__file__)
