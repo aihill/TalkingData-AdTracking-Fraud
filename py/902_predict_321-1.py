@@ -120,7 +120,7 @@ while True:
     
     auc = roc_auc_score(dvalid.get_label(), model.predict(dvalid))
     current_nround += EACH_NROUND
-    print('[NROUND]: {}    [valid-auc]: {:.7f}    {:.2f} min'.format(auc, current_nround, utils.elapsed_minute()))
+    print('[NROUND]: {}    [valid-auc]: {:.7f}    {:.2f} min'.format(current_nround, auc, utils.elapsed_minute()))
     if current_nround >= TOTAL_NROUND:
         break
 
