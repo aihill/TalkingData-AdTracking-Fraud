@@ -17,7 +17,7 @@ from sklearn.metrics import roc_auc_score
 from multiprocessing import Pool
 from time import sleep
 import utils
-#utils.start(__file__)
+utils.start(__file__)
 
 # setting
 SUBMIT_FILE_PATH = '../output/321-1.csv.gz'
