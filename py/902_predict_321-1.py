@@ -14,6 +14,7 @@ import xgbextension as ex
 import xgboost as xgb
 import gc
 from sklearn.metrics import roc_auc_score
+from multiprocessing import Pool
 import utils
 utils.start(__file__)
 
@@ -27,6 +28,22 @@ EXE_SUBMIT = True
 
 
 np.random.seed(SEED)
+
+# =============================================================================
+# def
+# =============================================================================
+def multi(arg):
+    if arg is None:
+        "load data"
+        load_file = '../data/dtrain{}.mt'.format(np.random.randint(10))
+        return xgb.DMatrix(load_file)
+    
+    elif isinstance(arg, list):
+        "train"
+        return xgb.train(param, arg[0], EACH_NROUND, xgb_model=[1])
+    
+    else:
+        raise Exception(arg)
 
 # =============================================================================
 # XGBoost
@@ -47,14 +64,18 @@ dvalid = xgb.DMatrix('../data/dvalid.mt')
 print('start xgb')
 model = None
 current_nround = 0
+dtrain = multi(None)
 while True:
     gc.collect()
     param.update({'seed':np.random.randint(9999)})
-    load_file = '../data/dtrain{}.mt'.format(np.random.randint(10))
-    model = xgb.train(param, xgb.DMatrix(load_file), EACH_NROUND, xgb_model=model)
+    
+    pool = Pool(2)
+    pool.map(multi, [None, [dtrain, model]])
+    pool.close()
+    
     auc = roc_auc_score(dvalid.get_label(), model.predict(dvalid))
     current_nround += EACH_NROUND
-    print('valid-auc: {} NROUND {} Done. {} min'.format(auc, current_nround, utils.elapsed_minute()))
+    print('[NROUND]: {}    [valid-auc]: {:.7f}    {:.2f} min'.format(auc, current_nround, utils.elapsed_minute()))
     if current_nround >= TOTAL_NROUND:
         break
 
@@ -89,8 +110,6 @@ test.fillna(-1, inplace=True)
 gc.collect()
 
 print(test.columns.tolist())
-
-test.fillna(-1, inplace=True)
 
 train_head = pd.read_pickle('train_head.p')
 dtest = xgb.DMatrix(test[train_head.columns])
