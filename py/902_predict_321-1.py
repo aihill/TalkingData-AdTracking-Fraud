@@ -22,7 +22,7 @@ import utils
 # setting
 SUBMIT_FILE_PATH = '../output/321-1.csv.gz'
 SEED = 48
-TOTAL_NROUND = 800
+TOTAL_NROUND = 50
 EACH_NROUND = 5
 EXE_SUBMIT = True
 
@@ -47,24 +47,42 @@ def multi(arg):
 #    else:
 #        raise Exception(arg)
     
-    'plan2'
-    if arg==0:
-        "load data"
-        sleep(10) # delay for train
-        global dtrain_new
-        load_file = '../data/dtrain{}.mt'.format(np.random.randint(10))
-        print(load_file)
-        dtrain_new = xgb.DMatrix(load_file)
-        return 
-    
-    elif arg==1:
-        "train"
-        global model_new
-        model_new = xgb.train(param, dtrain, EACH_NROUND, xgb_model=model)
-        return
-    
-    else:
-        raise Exception(arg)
+    'plan2: NameError: name "model_new" is not defined'
+#    if arg==0:
+#        "load data"
+#        sleep(10) # delay for train
+#        global dtrain_new
+#        load_file = '../data/dtrain{}.mt'.format(np.random.randint(10))
+#        print(load_file)
+#        dtrain_new = xgb.DMatrix(load_file)
+#        return 
+#    
+#    elif arg==1:
+#        "train"
+#        global model_new
+#        model_new = xgb.train(param, dtrain, EACH_NROUND, xgb_model=model)
+#        return
+#    
+#    else:
+#        raise Exception(arg)
+
+    'plan3: "Reason: error(i format requires -2147483648 <= number <= 2147483647,)"'
+#    if arg==0:
+#        "load data"
+#        n = np.random.randint(10)
+#        load_file = '../data/X_train{}.p'.format(n)
+#        print(load_file)
+#        X_train = pd.read_pickle(load_file)
+#        load_file = '../data/y_train{}.p'.format(n)
+#        y_train = pd.read_pickle(load_file)
+#        return X_train, y_train
+#    
+#    elif arg==1:
+#        "train"
+#        return xgb.train(param, dtrain, EACH_NROUND, xgb_model=model)
+#    
+#    else:
+#        raise Exception(arg)
 
 
 # =============================================================================
@@ -86,18 +104,19 @@ dvalid = xgb.DMatrix('../data/dvalid.mt')
 print('start xgb')
 model = None
 current_nround = 0
-multi(0)
-dtrain = dtrain_new
 
 while True:
     gc.collect()
     param.update({'seed':np.random.randint(9999)})
     
-    pool = Pool(2)
-    callback = pool.map(multi, [0, 1])
-    pool.close()
-    dtrain = dtrain_new
-    model = model_new
+    # for multi
+#    pool = Pool(2)
+#    callback = pool.map(multi, [0, 1])
+#    pool.close()
+#    callback
+    
+    load_file = '../data/dtrain{}.mt'.format(np.random.randint(10))
+    model = xgb.train(param, xgb.DMatrix(load_file), EACH_NROUND, xgb_model=model)
     
     auc = roc_auc_score(dvalid.get_label(), model.predict(dvalid))
     current_nround += EACH_NROUND
@@ -112,7 +131,7 @@ imp.to_csv('LOG/imp_{}.csv'.format(__file__), index=False)
 # =============================================================================
 # test
 # =============================================================================
-sub = pd.read_pickle('../data/sub.p')
+sub = pd.read_pickle('../data/sub.p').reset_index()
 
 dtest = xgb.DMatrix('../data/dtest.mt')
 
