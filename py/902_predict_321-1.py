@@ -22,7 +22,7 @@ utils.start(__file__)
 # setting
 SUBMIT_FILE_PATH = '../output/321-1.csv.gz'
 SEED = 48
-TOTAL_NROUND = 50
+TOTAL_NROUND = 800
 EACH_NROUND = 5
 EXE_SUBMIT = True
 
