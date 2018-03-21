@@ -14,7 +14,7 @@ import xgbextension as ex
 import xgboost as xgb
 import gc
 from sklearn.metrics import roc_auc_score
-#from multiprocessing import Pool
+from multiprocessing import Pool
 from time import sleep
 import utils
 utils.start(__file__)
@@ -90,9 +90,9 @@ while True:
     gc.collect()
     param.update({'seed':np.random.randint(9999)})
     
-#    pool = Pool(2)
-#    callback = pool.map(multi, [0, 1])
-#    pool.close()
+    pool = Pool(2)
+    callback = pool.map(multi, [0, 1])
+    pool.close()
 #    dtrain = callback[0]
 #    model = callback[1]
     
