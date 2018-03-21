@@ -14,7 +14,8 @@ import xgbextension as ex
 import xgboost as xgb
 import gc
 from sklearn.metrics import roc_auc_score
-from multiprocessing import Pool
+#from multiprocessing import Pool
+from time import sleep
 import utils
 utils.start(__file__)
 
@@ -33,7 +34,7 @@ np.random.seed(SEED)
 # def
 # =============================================================================
 def multi(arg):
-    
+    'plan1: ValueError: ctypes objects containing pointers cannot be pickled'
 #    if arg is None:
 #        "load data"
 #        load_file = '../data/dtrain{}.mt'.format(np.random.randint(10))
@@ -41,19 +42,29 @@ def multi(arg):
 #    
 #    elif isinstance(arg, list):
 #        "train"
-#        return xgb.train(param, arg[0], EACH_NROUND, xgb_model=[1])
+#        return xgb.train(param, arg[0], EACH_NROUND, xgb_model=arg[1])
+#    
+#    else:
+#        raise Exception(arg)
     
+    'plan2'
     if arg==0:
         "load data"
+        sleep(10) # delay for train
+        global dtrain
         load_file = '../data/dtrain{}.mt'.format(np.random.randint(10))
-        return xgb.DMatrix(load_file)
+        dtrain = xgb.DMatrix(load_file)
+        return 
     
     elif arg==1:
         "train"
-        return xgb.train(param, dtrain, EACH_NROUND, xgb_model=model)
+        global model
+        model = xgb.train(param, dtrain, EACH_NROUND, xgb_model=model)
+        return
     
     else:
         raise Exception(arg)
+
 
 # =============================================================================
 # XGBoost
@@ -79,11 +90,11 @@ while True:
     gc.collect()
     param.update({'seed':np.random.randint(9999)})
     
-    pool = Pool(2)
-    callback = pool.map(multi, [0, 1])
-    pool.close()
-    dtrain = callback[0]
-    model = callback[1]
+#    pool = Pool(2)
+#    callback = pool.map(multi, [0, 1])
+#    pool.close()
+#    dtrain = callback[0]
+#    model = callback[1]
     
     auc = roc_auc_score(dvalid.get_label(), model.predict(dvalid))
     current_nround += EACH_NROUND
