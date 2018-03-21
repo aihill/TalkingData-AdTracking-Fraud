@@ -74,13 +74,13 @@ dvalid = xgb.DMatrix('../data/dvalid.mt')
 print('start xgb')
 model = None
 current_nround = 0
-dtrain = multi(None)
+dtrain = multi(0)
 while True:
     gc.collect()
     param.update({'seed':np.random.randint(9999)})
     
     pool = Pool(2)
-    callback = pool.map(multi, [None, [dtrain, model]])
+    callback = pool.map(multi, [0, 1])
     pool.close()
     dtrain = callback[0]
     model = callback[1]
