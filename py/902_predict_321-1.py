@@ -33,14 +33,24 @@ np.random.seed(SEED)
 # def
 # =============================================================================
 def multi(arg):
-    if arg is None:
+    
+#    if arg is None:
+#        "load data"
+#        load_file = '../data/dtrain{}.mt'.format(np.random.randint(10))
+#        return xgb.DMatrix(load_file)
+#    
+#    elif isinstance(arg, list):
+#        "train"
+#        return xgb.train(param, arg[0], EACH_NROUND, xgb_model=[1])
+    
+    if arg==0:
         "load data"
         load_file = '../data/dtrain{}.mt'.format(np.random.randint(10))
         return xgb.DMatrix(load_file)
     
-    elif isinstance(arg, list):
+    elif arg==1:
         "train"
-        return xgb.train(param, arg[0], EACH_NROUND, xgb_model=[1])
+        return xgb.train(param, dtrain, EACH_NROUND, xgb_model=model)
     
     else:
         raise Exception(arg)
@@ -70,8 +80,10 @@ while True:
     param.update({'seed':np.random.randint(9999)})
     
     pool = Pool(2)
-    pool.map(multi, [None, [dtrain, model]])
+    callback = pool.map(multi, [None, [dtrain, model]])
     pool.close()
+    dtrain = callback[0]
+    model = callback[1]
     
     auc = roc_auc_score(dvalid.get_label(), model.predict(dvalid))
     current_nround += EACH_NROUND
@@ -86,33 +98,9 @@ imp.to_csv('LOG/imp_{}.csv'.format(__file__), index=False)
 # =============================================================================
 # test
 # =============================================================================
-# feature
-test = pd.concat([utils.read_pickles('../data/test_old'),
-                   pd.read_pickle('../data/101_test_old.p'),
-                   pd.read_pickle('../data/102_test_old.p')]+[pd.read_pickle('../data/{}_test.p'.format('-'.join(keys))) for keys in utils.comb], 
-                  axis=1)#.sample(frac=0.4)
+sub = pd.read_pickle('../data/sub.p')
 
-gc.collect()
-
-test = test[~test.click_id.isnull()]
-test.drop_duplicates('click_id', keep='last', inplace=True) # last?
-
-print('test.shape should be 18790469:', test.shape)
-
-gc.collect()
-
-sub = test[['click_id']]
-
-test.drop(['click_id', 'ip', 'app', 'device', 'os', 'channel', 'click_time'], 
-           axis=1, inplace=True)
-test.fillna(-1, inplace=True)
-
-gc.collect()
-
-print(test.columns.tolist())
-
-train_head = pd.read_pickle('train_head.p')
-dtest = xgb.DMatrix(test[train_head.columns])
+dtest = xgb.DMatrix('../data/dtest.mt')
 
 sub['is_attributed'] = 0
 y_pred = model.predict(dtest)
