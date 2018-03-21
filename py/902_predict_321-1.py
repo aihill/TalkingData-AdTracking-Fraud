@@ -13,6 +13,7 @@ sys.path.append('/home/kazuki_onodera/Python')
 import xgbextension as ex
 import xgboost as xgb
 import gc
+from sklearn.metrics import roc_auc_score
 import utils
 utils.start(__file__)
 
@@ -41,7 +42,7 @@ param = {'colsample_bylebel': 0.8,
          'nthread': 64,
          'seed':71}
 
-valid = xgb.DMatrix('../data/dval.mt')
+dvalid = xgb.DMatrix('../data/dvalid.mt')
 
 print('start xgb')
 model = None
@@ -51,8 +52,9 @@ while True:
     param.update({'seed':np.random.randint(9999)})
     load_file = '../data/dtrain{}.mt'.format(np.random.randint(10))
     model = xgb.train(param, xgb.DMatrix(load_file), EACH_NROUND, xgb_model=model)
+    auc = roc_auc_score(dvalid.get_label(), model.predict(dvalid))
     current_nround += EACH_NROUND
-    print('NROUND {} Done. {} min'.format(current_nround, utils.elapsed_minute()))
+    print('valid-auc: {} NROUND {} Done. {} min'.format(auc, current_nround, utils.elapsed_minute()))
     if current_nround >= TOTAL_NROUND:
         break
 

@@ -48,8 +48,8 @@ valid_seed = np.random.randint(99999)
 X_valid = train.sample(frac=0.05, random_state=valid_seed)
 y_valid = y.sample(frac=0.05, random_state=valid_seed)
 
-dval = xgb.DMatrix(X_valid, y_valid)
-dval.save_binary('../data/dval.mt')
+dvalid = xgb.DMatrix(X_valid, y_valid)
+dvalid.save_binary('../data/dvalid.mt')
 
 train.drop(X_valid.index, inplace=True)
 y = y.drop(X_valid.index)
