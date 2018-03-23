@@ -11,6 +11,7 @@ import pandas as pd
 from tqdm import tqdm
 import gc
 import xgboost as xgb
+from multiprocessing import Pool
 import utils
 utils.start(__file__)
 
@@ -57,13 +58,35 @@ y = y.drop(X_valid.index)
 
 del dvalid, X_valid, y_valid; gc.collect()
 
-for i in range(10):
-    train_seed = np.random.randint(99999)
-    X_train = train.sample(frac=0.1, random_state=train_seed)
-    y_train = y.sample(frac=0.1, random_state=train_seed)
-    xgb.DMatrix(X_train, y_train).save_binary('../data/dtrain{}.mt'.format(i))
+
+
+def multi(argv):
+    i, seed = argv
+    print('saving {}...'.format(i))
+    dtrain = xgb.DMatrix(train.sample(frac=0.1, random_state=seed),
+                         y.sample(frac=0.1, random_state=seed))
+    dtrain.save_binary('../data/dtrain{}.mt'.format(i))
     
-    gc.collect()
+
+cnt = 0
+proc = 3
+for i in range(5):
+    train_seeds = np.random.randint(99999, size=proc)
+    pool = Pool(proc)
+    argv = list(zip([cnt+j for j in range(proc)], train_seeds))
+    pool.map(multi, argv)
+    pool.close()
+    cnt += proc
+
+
+
+#for i in range(10):
+#    train_seed = np.random.randint(99999)
+#    X_train = train.sample(frac=0.1, random_state=train_seed)
+#    y_train = y.sample(frac=0.1, random_state=train_seed)
+#    xgb.DMatrix(X_train, y_train).save_binary('../data/dtrain{}.mt'.format(i))
+#    
+#    gc.collect()
 
 # =============================================================================
 # test

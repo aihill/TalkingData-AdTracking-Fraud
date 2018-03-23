@@ -29,23 +29,13 @@ np.random.seed(seed)
 
 train = pd.concat([utils.read_pickles('../data/train'),
                    pd.read_pickle('../data/101_train.p'),
-                   pd.read_pickle('../data/102_train.p')], axis=1).sample(frac=0.1)
+                   pd.read_pickle('../data/102_train.p')]+[pd.read_pickle('../data/{}_train.p'.format('-'.join(keys))) for keys in utils.comb], 
+                  axis=1).sample(frac=0.1)
 
 gc.collect()
 
-
-for keys in tqdm(utils.comb):
-    gc.collect()
-    keys_ = '-'.join(keys)
-    train = pd.merge(train, pd.read_pickle('../data/{}_count_old.p'.format(keys_)), 
-                     on=keys, how='left')
-    train = pd.merge(train, pd.read_pickle('../data/{}_timestd_old.p'.format(keys_)), 
-                     on=keys, how='left')
-
-train.drop(['click_time', 'attributed_time'], axis=1, inplace=True)
-
 y = train.is_attributed
-train.drop(['ip', 'app', 'device', 'os', 'channel', 'is_attributed'], 
+train.drop(['ip', 'app', 'device', 'os', 'channel', 'is_attributed', 'click_time', 'attributed_time'], 
            axis=1, inplace=True)
 train.fillna(-1, inplace=True)
 

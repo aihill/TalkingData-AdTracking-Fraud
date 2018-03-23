@@ -14,6 +14,7 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm
 import gc
+from multiprocessing import Pool
 import utils
 utils.start(__file__)
 
@@ -38,7 +39,7 @@ del train, test; gc.collect()
 # =============================================================================
 
 # std
-for keys in tqdm(utils.comb):
+def multi(keys):
     keys_ = '-'.join(keys)
     print(keys)
     
@@ -60,6 +61,9 @@ for keys in tqdm(utils.comb):
 
 
 
+pool = Pool(32)
+callback = pool.map(multi, utils.comb)
+pool.close()
 
 
 #==============================================================================
