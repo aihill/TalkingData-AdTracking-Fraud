@@ -17,7 +17,7 @@ import utils
 utils.start(__file__)
 
 # setting
-submit_file_path = '../output/319-4.csv.gz'
+submit_file_path = '../output/323-1.csv.gz'
 SEED = 48
 LOOP = 3
 nround = 800
