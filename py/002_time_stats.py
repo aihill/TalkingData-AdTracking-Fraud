@@ -4,6 +4,9 @@
 Created on Mon Mar 19 02:23:57 2018
 
 @author: Kazuki
+
+takes 90 minutes
+
 """
 
 

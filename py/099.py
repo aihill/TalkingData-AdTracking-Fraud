@@ -20,7 +20,7 @@ for keys in tqdm(utils.comb):
     gc.collect()
     keys_ = '-'.join(keys)
     df = pd.merge(pd.read_pickle('../data/{}_count_old.p'.format(keys_)),
-                  pd.read_pickle('../data/{}_timestd_old.p'.format(keys_)),
+                  pd.read_pickle('../data/{}_timestats_old.p'.format(keys_)),
                   on=keys, how='outer')
     utils.reduce_memory(df)
     
