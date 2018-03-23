@@ -95,7 +95,7 @@ for i in range(5):
 test = pd.concat([utils.read_pickles('../data/test_old'),
                    pd.read_pickle('../data/101_test_old.p'),
                    pd.read_pickle('../data/102_test_old.p')]+[pd.read_pickle('../data/{}_test.p'.format('-'.join(keys))) for keys in utils.comb], 
-                  axis=1)#.sample(frac=0.4)
+                  axis=1)
 
 gc.collect()
 
