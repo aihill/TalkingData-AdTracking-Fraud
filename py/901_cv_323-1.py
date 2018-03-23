@@ -29,8 +29,15 @@ np.random.seed(seed)
 
 train = pd.concat([utils.read_pickles('../data/train'),
                    pd.read_pickle('../data/101_train.p'),
-                   pd.read_pickle('../data/102_train.p')]+[pd.read_pickle('../data/{}_train.p'.format('-'.join(keys))) for keys in utils.comb], 
+                   pd.read_pickle('../data/102_train.p')], 
                   axis=1).sample(frac=0.1)
+
+gc.collect()
+np.random.seed(seed)
+
+train = pd.concat([train]+[pd.read_pickle('../data/{}_train.p'.format('-'.join(keys))) for keys in utils.comb], 
+                  axis=1).sample(frac=0.1)
+
 
 gc.collect()
 
