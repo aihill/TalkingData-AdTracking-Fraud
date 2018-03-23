@@ -16,7 +16,7 @@ import utils
 utils.start(__file__)
 
 # setting
-SEED = 48
+SEED = 71
 
 np.random.seed(SEED)
 
@@ -46,17 +46,17 @@ train_head.to_pickle('train_head.p')
 # train
 # =============================================================================
 
-valid_seed = np.random.randint(99999)
-X_valid = train.sample(frac=0.05, random_state=valid_seed)
-y_valid = y.sample(frac=0.05, random_state=valid_seed)
-
-dvalid = xgb.DMatrix(X_valid, y_valid)
-dvalid.save_binary('../data/dvalid.mt')
-
-train.drop(X_valid.index, inplace=True)
-y = y.drop(X_valid.index)
-
-del dvalid, X_valid, y_valid; gc.collect()
+#valid_seed = np.random.randint(99999)
+#X_valid = train.sample(frac=0.05, random_state=valid_seed)
+#y_valid = y.sample(frac=0.05, random_state=valid_seed)
+#
+#dvalid = xgb.DMatrix(X_valid, y_valid)
+#dvalid.save_binary('../data/dvalid.mt')
+#
+#train.drop(X_valid.index, inplace=True)
+#y = y.drop(X_valid.index)
+#
+#del dvalid, X_valid, y_valid; gc.collect()
 
 
 
