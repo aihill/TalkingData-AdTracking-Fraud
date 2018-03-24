@@ -90,8 +90,9 @@ test = pd.concat([utils.read_pickles('../data/test_old'),
                    pd.read_pickle('../data/101_test_old.p'),
                    pd.read_pickle('../data/102_test_old.p')]+[pd.read_pickle('../data/{}_test.p'.format('-'.join(keys))) for keys in utils.comb], 
                   axis=1)
-test = test[~test.click_id.isnull()].reset_index(drop=True)
+test = test[~test.click_id.isnull()]
 test.drop_duplicates('click_id', keep='last', inplace=True) # last?
+test.reset_index(drop=True, inplace=True)
 
 print('test.shape should be 18790469:', test.shape)
 
