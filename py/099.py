@@ -23,6 +23,8 @@ def multi(keys):
     df = pd.merge(pd.read_pickle('../data/{}_count_old.p'.format(keys_)),
                   pd.read_pickle('../data/{}_timestats_old.p'.format(keys_)),
                   on=keys, how='outer')
+    df = pd.merge(df, pd.read_pickle('../data/{}_sametimestats_old.p'.format(keys_)),
+                  on=keys, how='outer')
     utils.reduce_memory(df)
     
     col = [c for c in df.columns if c not in keys]
