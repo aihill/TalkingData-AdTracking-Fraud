@@ -21,15 +21,20 @@ import utils
 utils.start(__file__)
 
 seed = 71
+frac = 0.01
 np.random.seed(seed)
 
 # =============================================================================
 # load train
 # =============================================================================
 
-train = pd.concat([utils.read_pickles('../data/train').sample(frac=0.1, random_state=seed),
-                   pd.read_pickle('../data/101_train.p').sample(frac=0.1, random_state=seed),
-                   pd.read_pickle('../data/102_train.p').sample(frac=0.1, random_state=seed)]+[pd.read_pickle('../data/{}_train.p'.format('-'.join(keys))).sample(frac=0.1, random_state=seed) for keys in utils.comb], 
+train = pd.concat([utils.read_pickles('../data/train').sample(frac=frac, random_state=seed),
+                   pd.read_pickle('../data/101_train.p').sample(frac=frac, random_state=seed),
+                   pd.read_pickle('../data/102_train.p').sample(frac=frac, random_state=seed)], 
+                  axis=1)
+gc.collect()
+
+train = pd.concat([train]+[pd.read_pickle('../data/{}_train.p'.format('-'.join(keys))).sample(frac=frac, random_state=seed) for keys in tqdm(utils.comb)],
                   axis=1)
 
 gc.collect()
