@@ -24,7 +24,7 @@ utils.start(__file__)
 # setting
 SUBMIT_FILE_PATH = '../output/327-1.csv.gz'
 SEED = 48
-TOTAL_NROUND = 800
+TOTAL_NROUND = 8000
 EACH_NROUND = 5
 EXE_SUBMIT = True
 
@@ -41,13 +41,14 @@ np.random.seed(SEED)
 #    pipe.close()
 
 def sender(load_file):
+    print('loading {} ...'.format(load_file))
     dmatrix_queue.put(xgb.DMatrix(load_file))
     
 # =============================================================================
 # XGBoost
 # =============================================================================
 param = {'colsample_bylebel': 0.8,
-         'subsample': 0.5,
+         'subsample': 0.8,
          'eta': 0.1,
          'eval_metric': 'auc',
          'max_depth': 4,
@@ -62,6 +63,8 @@ dvalid = xgb.DMatrix('../data/dvalid.mt')
 print('start xgb')
 model = None
 current_nround = 0
+auc_best = 0
+auc_decrease = 0
 
 load_file = '../data/dtrain{}.mt'.format(np.random.randint(10))
 Thread(target=sender, args=(load_file, )).start()
@@ -78,9 +81,15 @@ while True:
     dtrain = dmatrix_queue.get()
     
     auc = roc_auc_score(dvalid.get_label(), model.predict(dvalid))
+    if auc_best < auc:
+        auc_best = auc
+        auc_decrease = 0
+    else:
+        auc_decrease +=1
+    
     current_nround += EACH_NROUND
     print('[NROUND]: {}    [valid-auc]: {:.7f}    {:.2f} min'.format(current_nround, auc, utils.elapsed_minute()))
-    if current_nround >= TOTAL_NROUND:
+    if current_nround >= TOTAL_NROUND or auc_decrease>10:
         break
 
 imp = ex.getImp(model)

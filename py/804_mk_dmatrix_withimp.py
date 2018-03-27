@@ -9,13 +9,13 @@ Created on Tue Mar 27 18:14:55 2018
 from glob import glob
 import pandas as pd
 import numpy as np
+from os import system
 from tqdm import tqdm
 import gc
 import xgboost as xgb
 from multiprocessing import Pool
 import threading
 from queue import Queue
-
 import utils
 utils.start(__file__)
 
@@ -61,7 +61,7 @@ def sender(load_file):
     print('loaded {}'.format(load_file))
 
 # =============================================================================
-# colsample
+# train colsample
 # =============================================================================
 
 train = pd.concat([utils.read_pickles('../data/train'),
@@ -102,7 +102,7 @@ train = pd.concat([df_queue.get() for i in glob('../data/tmp*.p')], axis=1)
 
 
 y = train.is_attributed
-train.drop( 'attributed_time', 
+train.drop( 'is_attributed', 
            axis=1, inplace=True)
 train.fillna(-1, inplace=True)
 
@@ -149,26 +149,47 @@ for i in range(5):
     pool.close()
     cnt += proc
 
+system('rm ../data/tmp*.p')
 
-
-#for i in range(10):
-#    train_seed = np.random.randint(99999)
-#    X_train = train.sample(frac=0.1, random_state=train_seed)
-#    y_train = y.sample(frac=0.1, random_state=train_seed)
-#    xgb.DMatrix(X_train, y_train).save_binary('../data/dtrain{}.mt'.format(i))
-#    
-#    gc.collect()
+del train, y; gc.collect()
 
 # =============================================================================
-# test
+# test colsample
 # =============================================================================
 
 test = pd.concat([utils.read_pickles('../data/test_old'),
                    pd.read_pickle('../data/101_test_old.p'),
-                   pd.read_pickle('../data/102_test_old.p')]+[pd.read_pickle('../data/{}_test.p'.format('-'.join(keys))) for keys in utils.comb], 
-                  axis=1)
+                   pd.read_pickle('../data/102_test_old.p')], 
+                  axis=1)#.sample(frac=0.4)
+
+#target = ~test.click_id.isnull()
+test[list(set(test.columns) & usecols)+['click_id']].to_pickle('../data/tmp{}.p'.format(0))
 
 gc.collect()
+
+load_files = ['../data/{}_test.p'.format('-'.join(k)) for k in utils.comb]
+args = list(zip(load_files, range(1, len(load_files)+1 )))
+
+pool = Pool(10)
+pool.map(multi1, args)
+pool.close()
+
+gc.collect()
+
+# read
+# threading
+threads = [None] * len(glob('../data/tmp*.p'))
+for i, load_file in enumerate(glob('../data/tmp*.p')):
+    threads[i] = threading.Thread(target=sender, args=(load_file, ))
+    threads[i].start()
+
+#df_queue.join()
+
+for t in threads:
+    t.join()
+
+
+test = pd.concat([df_queue.get() for i in glob('../data/tmp*.p')], axis=1)
 
 test = test[~test.click_id.isnull()]
 test.drop_duplicates('click_id', keep='last', inplace=True) # last?
@@ -177,10 +198,10 @@ print('test.shape should be 18790469:', test.shape)
 
 gc.collect()
 
-sub = test[['click_id']]
+sub = test[['click_id']].reset_index(drop=True)
+sub.click_id = sub.click_id.map(int)
 
-test.drop(['click_id', 'ip', 'app', 'device', 'os', 'channel', 'click_time'], 
-           axis=1, inplace=True)
+test.drop('click_id', axis=1, inplace=True)
 test.fillna(-1, inplace=True)
 
 
