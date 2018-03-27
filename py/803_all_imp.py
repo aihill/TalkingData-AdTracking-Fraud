@@ -12,16 +12,16 @@ from tqdm import tqdm
 import sys
 sys.path.append('/home/kazuki_onodera/Python')
 import xgbextension as ex
-import xgboost as xgb
-from multiprocessing import Process, Pipe
+#import xgboost as xgb
+#from multiprocessing import Process, Pipe
+import threading
 import gc
-from time import sleep
+#from time import sleep
 import utils
 utils.start(__file__)
 
 SEED = np.random.randint(9999) #int(sys.argv[1])
 FRAC = 0.01
-in_pipe, out_pipe = Pipe()
 
 
 np.random.seed(SEED)
@@ -30,10 +30,10 @@ print('seed :', SEED)
 # =============================================================================
 # def
 # =============================================================================
-def sender(pipe, load_file):
+df_list = []
+def sender(load_file):
     print('loading {} ...'.format(load_file))
-    pipe.send(pd.read_pickle(load_file).sample(frac=FRAC, random_state=SEED))
-    pipe.close()
+    df_list.append(pd.read_pickle(load_file).sample(frac=FRAC, random_state=SEED))
 
 # =============================================================================
 # load train
@@ -45,17 +45,23 @@ X = pd.concat([utils.read_pickles('../data/train').sample(frac=FRAC, random_stat
                   axis=1)
 gc.collect()
 
-# use pipe
-#for keys in utils.comb:
-#    load_file = '../data/{}_train.p'.format('-'.join(keys))
-#    Process(target=sender, args=(in_pipe, load_file)).start()
-#
-#X = pd.concat([X]+[out_pipe.recv() for keys in tqdm(utils.comb)],
+# threading
+threads = [None] * len(utils.comb)
+for i, keys in enumerate(utils.comb):
+    load_file = '../data/{}_train.p'.format('-'.join(keys))
+    threads[i] = threading.Thread(target=sender, args=(load_file, ))
+    threads[i].start()
+     
+for t in threads:
+    t.join()
+
+
+X = pd.concat([X]+[df_list], axis=1)
+
+
+# straight
+#X = pd.concat([X]+[pd.read_pickle('../data/{}_train.p'.format('-'.join(keys))).sample(frac=FRAC, random_state=SEED) for keys in tqdm(utils.comb)],
 #              axis=1)
-
-
-X = pd.concat([X]+[pd.read_pickle('../data/{}_train.p'.format('-'.join(keys))).sample(frac=FRAC, random_state=SEED) for keys in tqdm(utils.comb)],
-              axis=1)
 
 
 
