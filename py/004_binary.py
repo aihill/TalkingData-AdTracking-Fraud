@@ -9,6 +9,7 @@ Created on Fri Mar  9 18:00:44 2018
 import pandas as pd
 from multiprocessing import Pool
 import utils
+utils.start(__file__)
 
 print('loading train...')
 train = utils.read_pickles('../data/train', col=['ip', 'app', 'device', 'os', 'channel'])
@@ -58,8 +59,8 @@ pool.close()
 
 
 
-
-
+#==============================================================================
+utils.end(__file__)
 
 
 
