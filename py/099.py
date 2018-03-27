@@ -30,8 +30,11 @@ def multi(keys):
     col = [c for c in df.columns if c not in keys]
     train_ = pd.merge(train, df, on=keys, how='left')
     train_[col].to_pickle('../data/{}_train.p'.format(keys_))
+    train_[col].tail(999999).to_pickle('../data/{}_train_tail.p'.format(keys_))
+    
     test_ = pd.merge(test, df, on=keys, how='left')
     test_[col].to_pickle('../data/{}_test.p'.format(keys_)) # suffix should be 'old'?
+    test_[col].tail(999999).to_pickle('../data/{}_test_tail.p'.format(keys_)) # suffix should be 'old'?
     
 pool = Pool(6)
 callback = pool.map(multi, utils.comb)
