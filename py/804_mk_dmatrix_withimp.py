@@ -49,7 +49,7 @@ def multi1(args):
     gc.collect()
     print('loading {} ...'.format(load_file))
     df = pd.read_pickle(load_file)
-    col = set(df.columns) & usecols
+    col = list(set(df.columns) & usecols)
     if len(col)>0:
         df[col].to_pickle('../data/tmp{}.p'.format(i))
 
@@ -69,7 +69,7 @@ train = pd.concat([utils.read_pickles('../data/train'),
                    pd.read_pickle('../data/102_train.p')], 
                   axis=1)#.sample(frac=0.4)
 
-train[set(train.columns) & usecols].to_pickle('../data/tmp{}.p'.format(0))
+train[list(set(train.columns) & usecols)].to_pickle('../data/tmp{}.p'.format(0))
 
 gc.collect()
 
