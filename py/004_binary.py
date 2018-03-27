@@ -7,31 +7,22 @@ Created on Fri Mar  9 18:00:44 2018
 """
 
 import pandas as pd
+from multiprocessing import Pool
 import utils
 
-dtypes = {
-        'ip':'uint32',
-        'app': 'uint16',
-        'device': 'uint16',
-        'os': 'uint16',
-        'channel': 'uint16',
-        'is_attributed': 'uint8'
-        }
-
-
 print('loading train...')
-train = pd.read_csv('../input/train.csv.zip', dtype=dtypes, 
-                    usecols=['ip', 'app', 'device', 'os', 'channel']) # not date_parser
+train = utils.read_pickles('../data/train', col=['ip', 'app', 'device', 'os', 'channel'])
+
 print('loading test...')
-test = pd.read_csv('../input/test.csv.zip', dtype=dtypes,
-                   usecols=['ip', 'app', 'device', 'os', 'channel'])
+test = utils.read_pickles('../data/test_old', col=['ip', 'app', 'device', 'os', 'channel'])
+
 print('finish loading!')
 
 
 # =============================================================================
 # def
 # =============================================================================
-def main(c):
+def multi(c):
     
     print(c)
     
@@ -53,19 +44,16 @@ def main(c):
         df['{}_binary_{}'.format(c, i)] = binary.map(lambda x: int(x[i]))
     
     
-    df.to_pickle('../data/{}.p'.format(c))
+    df.to_pickle('../data/{}_binary.p'.format(c))
 
 # =============================================================================
-# 
+# main
 # =============================================================================
 
-main('ip')
-main('app')
-main('device')
-main('os')
-main('channel')
-
-
+li = ['ip', 'app', 'device', 'os', 'channel']
+pool = Pool(len(li))
+callback = pool.map(multi, li)
+pool.close()
 
 
 
