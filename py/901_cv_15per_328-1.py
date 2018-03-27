@@ -7,6 +7,11 @@ Created on Thu Mar 15 04:04:05 2018
 
 sudo sh -c "echo 1 > /proc/sys/vm/drop_caches"
 
+%time X = xgb.DMatrix('../data/dvalid_15per.mt')
+[22:10:13] 27735584x100 matrix with 2773558400 entries loaded from ../data/dvalid_15per.mt
+CPU times: user 105 ms, sys: 28.7 s, total: 28.8 s
+Wall time: 2min 36s
+
 """
 
 import pandas as pd
