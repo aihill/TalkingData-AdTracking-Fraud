@@ -21,8 +21,15 @@ utils.start(__file__)
 
 # setting
 SEED = 71
+useimp = 100
+FRAC = 0.15
+LOOP = 7
+proc = 3
 
 np.random.seed(SEED)
+
+system('rm ../data/tmp*.p')
+system('rm ../data/*.mt')
 
 # =============================================================================
 # imp
@@ -37,7 +44,7 @@ imp['total'] = imp.sum(1)
 
 imp.sort_values('total', ascending=False, inplace=True)
 
-imp = imp.head(100).T
+imp = imp.head(useimp).T
 
 usecols = set(imp.columns.tolist() + ['is_attributed'])
 
@@ -118,30 +125,37 @@ print('finish colsample')
 # =============================================================================
 
 valid_seed = np.random.randint(99999)
-X_valid = train.sample(frac=0.05, random_state=valid_seed)
-y_valid = y.sample(frac=0.05, random_state=valid_seed)
+X_valid = train.sample(frac=0.1, random_state=valid_seed)
+y_valid = y.sample(frac=0.1, random_state=valid_seed)
 
 dvalid = xgb.DMatrix(X_valid, y_valid)
-dvalid.save_binary('../data/dvalid.mt')
-
-train.drop(X_valid.index, inplace=True)
-y = y.drop(X_valid.index)
-
+dvalid.save_binary('../data/dvalid_10per.mt')
 del dvalid, X_valid, y_valid; gc.collect()
+
+valid_seed = np.random.randint(99999)
+X_valid = train.sample(frac=0.15, random_state=valid_seed)
+y_valid = y.sample(frac=0.15, random_state=valid_seed)
+
+dvalid = xgb.DMatrix(X_valid, y_valid)
+dvalid.save_binary('../data/dvalid_15per.mt')
+del dvalid, X_valid, y_valid; gc.collect()
+
+
+#train.drop(X_valid.index, inplace=True)
+#y = y.drop(X_valid.index)
 
 
 
 def multi2(argv):
     i, seed = argv
     print('saving {}...'.format(i))
-    dtrain = xgb.DMatrix(train.sample(frac=0.05, random_state=seed),
-                         y.sample(frac=0.05, random_state=seed))
+    dtrain = xgb.DMatrix(train.sample(frac=FRAC, random_state=seed),
+                         y.sample(frac=FRAC, random_state=seed))
     dtrain.save_binary('../data/dtrain{}.mt'.format(i))
     
 
 cnt = 0
-proc = 3
-for i in range(5):
+for i in range(LOOP):
     train_seeds = np.random.randint(99999, size=proc)
     pool = Pool(proc)
     argv = list(zip([cnt+j for j in range(proc)], train_seeds))
@@ -208,3 +222,4 @@ test.fillna(-1, inplace=True)
 xgb.DMatrix(test[train_head.columns]).save_binary('../data/dtest.mt')
 sub.to_pickle('../data/sub.p')
 
+system('rm ../data/tmp*.p')
