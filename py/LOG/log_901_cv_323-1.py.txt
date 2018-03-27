@@ -1,0 +1,169 @@
+
+#==============================================================================
+# START !!! 901_cv_323-1.py PID: 2752
+#==============================================================================
+
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:05<00:52,  5.88s/it] 20%|██        | 2/10 [00:11<00:46,  5.76s/it] 30%|███       | 3/10 [00:17<00:40,  5.74s/it] 40%|████      | 4/10 [00:22<00:34,  5.74s/it] 50%|█████     | 5/10 [00:28<00:28,  5.75s/it] 60%|██████    | 6/10 [00:34<00:23,  5.76s/it] 70%|███████   | 7/10 [00:40<00:17,  5.79s/it] 80%|████████  | 8/10 [00:46<00:11,  5.81s/it] 90%|█████████ | 9/10 [00:52<00:05,  5.83s/it]100%|██████████| 10/10 [00:58<00:00,  5.82s/it]
+['same_ip-app-device-os-channel_diff', 'hour', 'timestamp', 'ip_count', 'ip_timemin', 'ip_timemax', 'ip_timemean', 'ip_timestd', 'app_count', 'app_timemin', 'app_timemax', 'app_timemean', 'app_timestd', 'device_count', 'device_timemin', 'device_timemax', 'device_timemean', 'device_timestd', 'os_count', 'os_timemin', 'os_timemax', 'os_timemean', 'os_timestd', 'channel_count', 'channel_timemin', 'channel_timemax', 'channel_timemean', 'channel_timestd', 'ip-app_count', 'ip-app_timemin', 'ip-app_timemax', 'ip-app_timemean', 'ip-app_timestd', 'ip-device_count', 'ip-device_timemin', 'ip-device_timemax', 'ip-device_timemean', 'ip-device_timestd', 'ip-os_count', 'ip-os_timemin', 'ip-os_timemax', 'ip-os_timemean', 'ip-os_timestd', 'ip-channel_count', 'ip-channel_timemin', 'ip-channel_timemax', 'ip-channel_timemean', 'ip-channel_timestd', 'app-device_count', 'app-device_timemin', 'app-device_timemax', 'app-device_timemean', 'app-device_timestd', 'app-os_count', 'app-os_timemin', 'app-os_timemax', 'app-os_timemean', 'app-os_timestd', 'app-channel_count', 'app-channel_timemin', 'app-channel_timemax', 'app-channel_timemean', 'app-channel_timestd', 'device-os_count', 'device-os_timemin', 'device-os_timemax', 'device-os_timemean', 'device-os_timestd', 'device-channel_count', 'device-channel_timemin', 'device-channel_timemax', 'device-channel_timemean', 'device-channel_timestd', 'os-channel_count', 'os-channel_timemin', 'os-channel_timemax', 'os-channel_timemean', 'os-channel_timestd', 'ip-app-device_count', 'ip-app-device_timemin', 'ip-app-device_timemax', 'ip-app-device_timemean', 'ip-app-device_timestd', 'ip-app-os_count', 'ip-app-os_timemin', 'ip-app-os_timemax', 'ip-app-os_timemean', 'ip-app-os_timestd', 'ip-app-channel_count', 'ip-app-channel_timemin', 'ip-app-channel_timemax', 'ip-app-channel_timemean', 'ip-app-channel_timestd', 'ip-device-os_count', 'ip-device-os_timemin', 'ip-device-os_timemax', 'ip-device-os_timemean', 'ip-device-os_timestd', 'ip-device-channel_count', 'ip-device-channel_timemin', 'ip-device-channel_timemax', 'ip-device-channel_timemean', 'ip-device-channel_timestd', 'ip-os-channel_count', 'ip-os-channel_timemin', 'ip-os-channel_timemax', 'ip-os-channel_timemean', 'ip-os-channel_timestd', 'app-device-os_count', 'app-device-os_timemin', 'app-device-os_timemax', 'app-device-os_timemean', 'app-device-os_timestd', 'app-device-channel_count', 'app-device-channel_timemin', 'app-device-channel_timemax', 'app-device-channel_timemean', 'app-device-channel_timestd', 'app-os-channel_count', 'app-os-channel_timemin', 'app-os-channel_timemax', 'app-os-channel_timemean', 'app-os-channel_timestd', 'device-os-channel_count', 'device-os-channel_timemin', 'device-os-channel_timemax', 'device-os-channel_timemean', 'device-os-channel_timestd', 'ip-app-device-os_count', 'ip-app-device-os_timemin', 'ip-app-device-os_timemax', 'ip-app-device-os_timemean', 'ip-app-device-os_timestd', 'ip-app-device-channel_count', 'ip-app-device-channel_timemin', 'ip-app-device-channel_timemax', 'ip-app-device-channel_timemean', 'ip-app-device-channel_timestd', 'ip-app-os-channel_count', 'ip-app-os-channel_timemin', 'ip-app-os-channel_timemax', 'ip-app-os-channel_timemean', 'ip-app-os-channel_timestd', 'ip-device-os-channel_count', 'ip-device-os-channel_timemin', 'ip-device-os-channel_timemax', 'ip-device-os-channel_timemean', 'ip-device-os-channel_timestd', 'app-device-os-channel_count', 'app-device-os-channel_timemin', 'app-device-os-channel_timemax', 'app-device-os-channel_timemean', 'app-device-os-channel_timestd', 'ip-app-device-os-channel_count', 'ip-app-device-os-channel_timemin', 'ip-app-device-os-channel_timemax', 'ip-app-device-os-channel_timemean', 'ip-app-device-os-channel_timestd']
+[11:15:14] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[11:16:18] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[11:17:23] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[11:18:29] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[11:19:34] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[0]	train-auc:0.916926+0.00171651	test-auc:0.916801+0.00296592
+[5]	train-auc:0.924273+0.0012218	test-auc:0.924226+0.00324119
+[10]	train-auc:0.925828+0.00074699	test-auc:0.925599+0.00347547
+[15]	train-auc:0.925923+0.000765046	test-auc:0.925697+0.00350596
+[20]	train-auc:0.932794+0.00328227	test-auc:0.932718+0.00359871
+[25]	train-auc:0.944007+0.00524696	test-auc:0.943505+0.00370969
+[30]	train-auc:0.948214+0.00631746	test-auc:0.948072+0.00501945
+[35]	train-auc:0.953535+0.00066274	test-auc:0.953395+0.00162296
+[40]	train-auc:0.95393+0.000633468	test-auc:0.953811+0.00160592
+[45]	train-auc:0.954437+0.000730129	test-auc:0.954316+0.0014934
+[50]	train-auc:0.954784+0.000559259	test-auc:0.954697+0.0017258
+[55]	train-auc:0.955527+0.000436212	test-auc:0.955386+0.00158779
+[60]	train-auc:0.956254+0.000501115	test-auc:0.956022+0.00154868
+[65]	train-auc:0.959208+0.000438105	test-auc:0.958959+0.00143252
+[70]	train-auc:0.962349+0.00198191	test-auc:0.961875+0.00262435
+[75]	train-auc:0.966231+0.000579623	test-auc:0.965885+0.0010947
+[80]	train-auc:0.967194+0.000371201	test-auc:0.966623+0.0014297
+[85]	train-auc:0.968259+0.000351277	test-auc:0.967603+0.00119139
+[90]	train-auc:0.968985+0.000285377	test-auc:0.968373+0.00119969
+[95]	train-auc:0.969671+0.00030573	test-auc:0.969013+0.00108616
+[100]	train-auc:0.970127+0.000280195	test-auc:0.969347+0.00107289
+[105]	train-auc:0.970519+0.000281272	test-auc:0.969701+0.0010832
+[110]	train-auc:0.970985+0.000311567	test-auc:0.970136+0.00111054
+[115]	train-auc:0.971335+0.000308222	test-auc:0.97043+0.00113977
+[120]	train-auc:0.9717+0.000312377	test-auc:0.97071+0.00121222
+[125]	train-auc:0.972112+0.000409215	test-auc:0.971043+0.00105992
+[130]	train-auc:0.972474+0.000314548	test-auc:0.971345+0.00111004
+[135]	train-auc:0.97273+0.000331104	test-auc:0.971523+0.00109735
+[140]	train-auc:0.972992+0.000374984	test-auc:0.971728+0.00107555
+[145]	train-auc:0.973288+0.000329587	test-auc:0.971996+0.00107896
+[150]	train-auc:0.973588+0.000261739	test-auc:0.972289+0.00112175
+[155]	train-auc:0.973767+0.000247125	test-auc:0.972439+0.00114178
+[160]	train-auc:0.973962+0.000279675	test-auc:0.972563+0.00110131
+[165]	train-auc:0.974137+0.000279597	test-auc:0.972729+0.00109998
+[170]	train-auc:0.974326+0.000262333	test-auc:0.972866+0.00109995
+[175]	train-auc:0.974468+0.000236896	test-auc:0.972979+0.00112918
+[180]	train-auc:0.97463+0.000242261	test-auc:0.973113+0.00114837
+[185]	train-auc:0.974828+0.000234857	test-auc:0.973232+0.00115692
+[190]	train-auc:0.97501+0.000277352	test-auc:0.973349+0.00112365
+[195]	train-auc:0.975147+0.000284674	test-auc:0.973443+0.00112348
+[200]	train-auc:0.975258+0.000264893	test-auc:0.973519+0.00113937
+[205]	train-auc:0.975371+0.00025378	test-auc:0.973573+0.00114113
+[210]	train-auc:0.975501+0.000275499	test-auc:0.973657+0.00113051
+[215]	train-auc:0.975658+0.000225092	test-auc:0.973773+0.00117155
+[220]	train-auc:0.97577+0.000222901	test-auc:0.973848+0.00117682
+[225]	train-auc:0.975913+0.000204262	test-auc:0.973963+0.00121271
+[230]	train-auc:0.976021+0.000212092	test-auc:0.974041+0.00117549
+[235]	train-auc:0.976096+0.000222446	test-auc:0.97408+0.00117473
+[240]	train-auc:0.976197+0.00023709	test-auc:0.974149+0.00118722
+[245]	train-auc:0.976317+0.000225376	test-auc:0.974187+0.00117647
+[250]	train-auc:0.97643+0.000241222	test-auc:0.97424+0.00116179
+[255]	train-auc:0.976531+0.000242541	test-auc:0.974314+0.00115635
+[260]	train-auc:0.976639+0.000246884	test-auc:0.97437+0.00113491
+[265]	train-auc:0.976728+0.000241017	test-auc:0.97441+0.00115263
+[270]	train-auc:0.976824+0.000219269	test-auc:0.974453+0.00115035
+[275]	train-auc:0.976894+0.000234288	test-auc:0.974467+0.00115189
+[280]	train-auc:0.976967+0.000238151	test-auc:0.974494+0.00113438
+[285]	train-auc:0.977044+0.000214712	test-auc:0.97454+0.00115642
+[290]	train-auc:0.977146+0.000202959	test-auc:0.974574+0.00114232
+[295]	train-auc:0.977248+0.000193113	test-auc:0.974617+0.0011378
+[300]	train-auc:0.97732+0.00018482	test-auc:0.974655+0.00114955
+[305]	train-auc:0.977389+0.000181117	test-auc:0.974688+0.00114283
+[310]	train-auc:0.977482+0.000173477	test-auc:0.974734+0.00115329
+[315]	train-auc:0.977571+0.000171412	test-auc:0.974784+0.00116939
+[320]	train-auc:0.977658+0.000187104	test-auc:0.974805+0.00117987
+[325]	train-auc:0.977731+0.000206753	test-auc:0.97482+0.00116885
+[330]	train-auc:0.977816+0.000217913	test-auc:0.974865+0.00116858
+[335]	train-auc:0.977908+0.000226248	test-auc:0.9749+0.001152
+[340]	train-auc:0.977983+0.000236605	test-auc:0.974936+0.00114202
+[345]	train-auc:0.978055+0.000216558	test-auc:0.974943+0.00114349
+[350]	train-auc:0.978138+0.000213143	test-auc:0.974971+0.00112746
+[355]	train-auc:0.978212+0.000212501	test-auc:0.974983+0.00112571
+[360]	train-auc:0.978289+0.000208282	test-auc:0.974995+0.00112898
+[365]	train-auc:0.978358+0.000230511	test-auc:0.975014+0.00112379
+[370]	train-auc:0.978402+0.000232499	test-auc:0.975022+0.00112269
+[375]	train-auc:0.97847+0.000222792	test-auc:0.975036+0.00112447
+[380]	train-auc:0.978552+0.000224683	test-auc:0.975066+0.00114093
+[385]	train-auc:0.97865+0.000235579	test-auc:0.975099+0.00113914
+[390]	train-auc:0.978728+0.000227886	test-auc:0.97513+0.00113802
+[395]	train-auc:0.978783+0.000227774	test-auc:0.975155+0.00114085
+[400]	train-auc:0.978846+0.000223869	test-auc:0.975181+0.00115579
+[405]	train-auc:0.978907+0.000207788	test-auc:0.975202+0.00115909
+[410]	train-auc:0.978967+0.000210264	test-auc:0.975215+0.00115705
+[415]	train-auc:0.979026+0.000211494	test-auc:0.975254+0.00114116
+[420]	train-auc:0.979093+0.00021805	test-auc:0.975252+0.00114287
+[425]	train-auc:0.979163+0.000217299	test-auc:0.975269+0.00116903
+[430]	train-auc:0.979233+0.000228871	test-auc:0.975289+0.00118345
+[435]	train-auc:0.979295+0.000231572	test-auc:0.975304+0.00119187
+[440]	train-auc:0.979363+0.000225006	test-auc:0.975296+0.00118526
+[445]	train-auc:0.979418+0.000238682	test-auc:0.975315+0.00116868
+[450]	train-auc:0.979474+0.000254225	test-auc:0.975329+0.00117271
+[455]	train-auc:0.979531+0.000247961	test-auc:0.975342+0.00118189
+[460]	train-auc:0.9796+0.000246718	test-auc:0.975361+0.00118609
+[465]	train-auc:0.979663+0.000249914	test-auc:0.975364+0.00118647
+[470]	train-auc:0.979735+0.000225373	test-auc:0.975384+0.00118875
+[475]	train-auc:0.979812+0.000225644	test-auc:0.975391+0.00118657
+[480]	train-auc:0.979864+0.000218536	test-auc:0.975384+0.00119403
+[485]	train-auc:0.979917+0.000203572	test-auc:0.975392+0.00117035
+[490]	train-auc:0.979988+0.000202489	test-auc:0.975407+0.00117589
+[495]	train-auc:0.980038+0.000195636	test-auc:0.975417+0.00119376
+[500]	train-auc:0.98009+0.00020023	test-auc:0.975424+0.00119118
+[505]	train-auc:0.980135+0.000199912	test-auc:0.975432+0.00118678
+[510]	train-auc:0.980176+0.000194997	test-auc:0.975442+0.00118458
+[515]	train-auc:0.980244+0.000201289	test-auc:0.97545+0.00119093
+[520]	train-auc:0.980294+0.000210375	test-auc:0.975454+0.00118084
+[525]	train-auc:0.980348+0.000197966	test-auc:0.97547+0.00117802
+[530]	train-auc:0.980414+0.000199565	test-auc:0.9755+0.00118216
+[535]	train-auc:0.980462+0.000199791	test-auc:0.975512+0.00118864
+[540]	train-auc:0.980506+0.00018611	test-auc:0.975528+0.00117579
+[545]	train-auc:0.980547+0.000184703	test-auc:0.975512+0.00118434
+[550]	train-auc:0.980595+0.000172206	test-auc:0.975517+0.00120217
+[555]	train-auc:0.980643+0.000188294	test-auc:0.975513+0.00118992
+[560]	train-auc:0.980707+0.000181974	test-auc:0.975522+0.00120377
+[565]	train-auc:0.980778+0.000182792	test-auc:0.975541+0.00120366
+[570]	train-auc:0.980832+0.000165699	test-auc:0.975546+0.00119519
+[575]	train-auc:0.980894+0.000165921	test-auc:0.975531+0.00119704
+[580]	train-auc:0.980951+0.000163987	test-auc:0.975536+0.00119974
+[585]	train-auc:0.980999+0.000177889	test-auc:0.975536+0.00120733
+[590]	train-auc:0.981063+0.000171441	test-auc:0.975556+0.00120844
+[595]	train-auc:0.981117+0.000153664	test-auc:0.97558+0.00120183
+[600]	train-auc:0.981177+0.000160497	test-auc:0.975589+0.0011778
+[605]	train-auc:0.981241+0.000165744	test-auc:0.975605+0.00115692
+[610]	train-auc:0.981281+0.000161268	test-auc:0.975589+0.00116
+[615]	train-auc:0.981341+0.000152784	test-auc:0.975602+0.00115033
+[620]	train-auc:0.981389+0.000149856	test-auc:0.97561+0.00115045
+[625]	train-auc:0.981431+0.000156578	test-auc:0.975611+0.00113709
+[630]	train-auc:0.981484+0.000157449	test-auc:0.975606+0.00113623
+[635]	train-auc:0.981537+0.000162071	test-auc:0.975619+0.00113354
+[640]	train-auc:0.981574+0.000165886	test-auc:0.975625+0.00112386
+[645]	train-auc:0.981626+0.000173013	test-auc:0.975645+0.00111373
+[650]	train-auc:0.981679+0.000178068	test-auc:0.975633+0.00110215
+[655]	train-auc:0.981743+0.000189624	test-auc:0.975639+0.00109849
+[660]	train-auc:0.981784+0.00018713	test-auc:0.975643+0.0011055
+[665]	train-auc:0.981829+0.000185964	test-auc:0.975621+0.00112334
+[670]	train-auc:0.981882+0.000171031	test-auc:0.975632+0.00113119
+[675]	train-auc:0.981932+0.000173472	test-auc:0.975643+0.00112058
+[680]	train-auc:0.98198+0.000159181	test-auc:0.975642+0.00111929
+[685]	train-auc:0.982031+0.000161067	test-auc:0.975672+0.00111706
+[690]	train-auc:0.982066+0.000170339	test-auc:0.975678+0.00110209
+[695]	train-auc:0.982113+0.000155749	test-auc:0.975697+0.00111931
+[700]	train-auc:0.982148+0.000148758	test-auc:0.975696+0.00111403
+[705]	train-auc:0.982181+0.000146356	test-auc:0.975691+0.00110831
+[710]	train-auc:0.982226+0.000140216	test-auc:0.975663+0.00110637
+[715]	train-auc:0.982261+0.000144583	test-auc:0.975669+0.00110632
+[720]	train-auc:0.982302+0.000135097	test-auc:0.975665+0.00110372
+[725]	train-auc:0.98235+0.000128582	test-auc:0.975672+0.00111371
+[730]	train-auc:0.982395+0.000136986	test-auc:0.975681+0.00109226
+[735]	train-auc:0.982438+0.000129463	test-auc:0.975685+0.00108955
+[740]	train-auc:0.982474+0.000140725	test-auc:0.975675+0.00110574
+[745]	train-auc:0.982508+0.00013667	test-auc:0.975671+0.00111027
+[750]	train-auc:0.982557+0.0001415	test-auc:0.975673+0.00111529
+
+#==============================================================================
+# SUCCESS !!! 901_cv_323-1.py
+#==============================================================================
+
+time: 176.47min

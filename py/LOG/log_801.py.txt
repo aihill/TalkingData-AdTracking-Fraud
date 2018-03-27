@@ -1,6 +1,44 @@
 
 #==============================================================================
-# START !!! 801.py PID: 13230
+# START !!! 801.py PID: 20495
 #==============================================================================
 
-  0%|          | 0/31 [00:00<?, ?it/s]  3%|▎         | 1/31 [00:00<00:07,  3.85it/s] 16%|█▌        | 5/31 [00:00<00:02, 12.92it/s] 23%|██▎       | 7/31 [00:05<00:19,  1.22it/s] 26%|██▌       | 8/31 [00:08<00:25,  1.09s/it] 29%|██▉       | 9/31 [00:17<00:42,  1.94s/it] 39%|███▊      | 12/31 [00:17<00:27,  1.46s/it] 48%|████▊     | 15/31 [00:17<00:18,  1.18s/it] 48%|████▊     | 15/31 [00:30<00:32,  2.00s/it] 55%|█████▍    | 17/31 [00:56<00:46,  3.35s/it] 58%|█████▊    | 18/31 [01:13<00:53,  4.09s/it] 61%|██████▏   | 19/31 [01:17<00:48,  4.07s/it] 65%|██████▍   | 20/31 [01:28<00:48,  4.42s/it] 68%|██████▊   | 21/31 [02:30<01:11,  7.16s/it] 71%|███████   | 22/31 [02:30<01:01,  6.84s/it] 77%|███████▋  | 24/31 [02:30<00:43,  6.27s/it] 84%|████████▍ | 26/31 [03:08<00:36,  7.24s/it] 87%|████████▋ | 27/31 [03:28<00:30,  7.73s/it] 90%|█████████ | 28/31 [05:04<00:32, 10.89s/it] 94%|█████████▎| 29/31 [06:18<00:26, 13.05s/it] 97%|█████████▋| 30/31 [06:18<00:12, 12.62s/it]100%|██████████| 31/31 [08:16<00:00, 16.01s/it]
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:05<00:52,  5.85s/it] 20%|██        | 2/10 [00:11<00:46,  5.76s/it] 30%|███       | 3/10 [00:17<00:41,  5.89s/it] 40%|████      | 4/10 [00:23<00:35,  5.97s/it] 50%|█████     | 5/10 [00:29<00:29,  5.97s/it] 60%|██████    | 6/10 [00:35<00:23,  5.96s/it] 70%|███████   | 7/10 [00:41<00:17,  5.94s/it] 80%|████████  | 8/10 [00:47<00:11,  5.99s/it] 90%|█████████ | 9/10 [00:53<00:05,  5.99s/it]100%|██████████| 10/10 [00:59<00:00,  5.98s/it]
+saving 0...
+saving 1...
+saving 2...
+saving 3...
+saving 4...
+saving 5...
+[[15:29:26] include/dmlc/logging.h:300: [15:29:26] src/io/local_filesys.cc:39: Check failed: std::fwrite(ptr, 1, size, fp_) == size FileStream.Write incomplete
+
+Stack trace returned 10 entries:
+[bt] (0) /home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/xgboost/./lib/libxgboost.so(_ZN4dmlc2io10FileStream5WriteEPKvm+0x31a) [0x7fb13edc5ffa]
+[bt] (1) /home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/xgboost/./lib/libxgboost.so(_ZNK7xgboost4data15SimpleCSRSource10SaveBinaryEPN4dmlc6StreamE+0xe1) [0x7fb13ecdaee1]
+[bt] (2) /home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/xgboost/./lib/libxgboost.so(_ZN7xgboost7DMatrix15SaveToLocalFileERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE+0x10d) [0x7fb13ecde40d]
+[bt] (3) /home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/xgboost/./lib/libxgboost.so(XGDMatrixSaveBinary+0x61) [0x7fb13eda2481]
+[bt] (4) /home/kazuki_onodera/anaconda3/lib/python3.6/lib-dynload/../../libffi.so.6(ffi_call_unix64+0x4c) [0x7fb0efaa7ec0]
+[bt] (5) /home/kazuki_onodera/anaconda3/lib/python3.6/lib-dynload/../../libffi.so.6(ffi_call+0x22d) [0x7fb0efaa787d]
+[bt] (6) /home/kazuki_onodera/anaconda3/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so(_ctypes_callproc+0x2ce) [0x7fb0efcbc82e]
+[bt] (7) /home/kazuki_onodera/anaconda3/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so(+0x12265) [0x7fb0efcbd265]
+[bt] (8) python(_PyObject_FastCallDict+0x8b) [0x5611e48bc54b]
+[bt] (9) python(+0x19f00e) [0x5611e494f00e]
+
+[15:29:26] include/dmlc/logging.h:30015:29:26: ] [15:29:26] src/io/local_filesys.cc:39: Check failed: std::fwrite(ptr, 1, size, fp_) == size FileStream.Write incomplete
+
+Stack trace returned 10 entries:
+[bt] (0) /home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/xgboost/./lib/libxgboost.so(_ZN4dmlc2io10FileStream5WriteEPKvm+0x31a) [0x7fb13edc5ffa]
+[bt] (1) /home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/xgboost/./lib/libxgboost.so(_ZNK7xgboost4data15SimpleCSRSource10SaveBinaryEPN4dmlc6StreamE+0xe1) [0x7fb13ecdaee1]
+[bt] (2) /home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/xgboost/./lib/libxgboost.so(_ZN7xgboost7DMatrix15SaveToLocalFileERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE+0x10d) [0x7fb13ecde40d]
+[bt] (3) /home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/xgboost/./lib/libxgboost.so(XGDMatrixSaveBinary+0x61) [0x7fb13eda2481]
+[bt] (4) /home/kazuki_onodera/anaconda3/lib/python3.6/lib-dynload/../../libffi.so.6(ffi_call_unix64+0x4c) [0x7fb0efaa7ec0]
+[bt] (5) /home/kazuki_onodera/anaconda3/lib/python3.6/lib-dynload/../../libffi.so.6(ffi_call+0x22d) [0x7fb0efaa787d]
+[bt] (6) /home/kazuki_onodera/anaconda3/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so(_ctypes_callproc+0x2ce) [0x7fb0efcbc82e]
+[bt] (7) /home/kazuki_onodera/anaconda3/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so(+0x12265) [0x7fb0efcbd265]
+[bt] (8) python(_PyObject_FastCallDict+0x8b) [0x5611e48bc54b]
+[bt] (9) python(+0x19f00e) [0x5611e494f00e]
+include/dmlc/logging.h
+:300: [15:29:26] src/io/local_filesys.cc:39: Check failed: std::fwrite(ptr, 1, size, fp_) == size FileStream.Write incomplete
+
+Stack trace returned 10 entries:
+[b
