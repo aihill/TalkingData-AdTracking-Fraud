@@ -15,6 +15,7 @@ import xgbextension as ex
 import xgboost as xgb
 from multiprocessing import Process, Pipe
 import gc
+from time import sleep
 import utils
 utils.start(__file__)
 
@@ -44,14 +45,19 @@ X = pd.concat([utils.read_pickles('../data/train').sample(frac=FRAC, random_stat
                   axis=1)
 gc.collect()
 
-for keys in utils.comb:
-    load_file = '../data/{}_train.p'.format('-'.join(keys))
-    Process(target=sender, args=(in_pipe, load_file)).start()
+# use pipe
+#for keys in utils.comb:
+#    load_file = '../data/{}_train.p'.format('-'.join(keys))
+#    Process(target=sender, args=(in_pipe, load_file)).start()
+#
+#X = pd.concat([X]+[out_pipe.recv() for keys in tqdm(utils.comb)],
+#              axis=1)
 
 
-
-X = pd.concat([X]+[out_pipe.recv() for keys in tqdm(utils.comb)],
+X = pd.concat([X]+[pd.read_pickle('../data/{}_train.p'.format('-'.join(keys))).sample(frac=FRAC, random_state=SEED) for keys in tqdm(utils.comb)],
               axis=1)
+
+
 
 gc.collect()
 
