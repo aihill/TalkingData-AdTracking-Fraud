@@ -14,7 +14,9 @@ import xgbextension as ex
 import xgboost as xgb
 import gc
 from sklearn.metrics import roc_auc_score
-from multiprocessing import Process, Pipe
+#from multiprocessing import Process, Pipe
+from threading import Thread
+from queue import Queue
 from time import sleep
 import utils
 utils.start(__file__)
@@ -27,17 +29,20 @@ EACH_NROUND = 5
 EXE_SUBMIT = True
 
 
-
+dmatrix_queue = Queue()
 np.random.seed(SEED)
 
 # =============================================================================
 # def
 # =============================================================================
-def sender(pipe, load_file):
-    print('loading {} ...'.format(load_file))
-    pipe.send(xgb.DMatrix(load_file))
-    pipe.close()
+#def sender(pipe, load_file):
+#    print('loading {} ...'.format(load_file))
+#    pipe.send(xgb.DMatrix(load_file))
+#    pipe.close()
 
+def sender(load_file):
+    dmatrix_queue.put(xgb.DMatrix(load_file))
+    
 # =============================================================================
 # XGBoost
 # =============================================================================
@@ -57,11 +62,10 @@ dvalid = xgb.DMatrix('../data/dvalid.mt')
 print('start xgb')
 model = None
 current_nround = 0
-in_pipe, out_pipe = Pipe()
 
 load_file = '../data/dtrain{}.mt'.format(np.random.randint(10))
-Process(target=sender, args=(in_pipe, load_file)).start()
-dtrain = out_pipe.recv()
+Thread(target=sender, args=(load_file, )).start()
+dtrain = dmatrix_queue.get()
 
 
 while True:
@@ -69,9 +73,9 @@ while True:
     param.update({'seed':np.random.randint(9999)})
     
     load_file = '../data/dtrain{}.mt'.format(np.random.randint(10))
-    Process(target=sender, args=(in_pipe, load_file)).start()
-    model = xgb.train(param, xgb.DMatrix(load_file), EACH_NROUND, xgb_model=model)
-    dtrain = out_pipe.recv()
+    Thread(target=sender, args=(load_file, )).start()
+    model = xgb.train(param, dtrain, EACH_NROUND, xgb_model=model)
+    dtrain = dmatrix_queue.get()
     
     auc = roc_auc_score(dvalid.get_label(), model.predict(dvalid))
     current_nround += EACH_NROUND

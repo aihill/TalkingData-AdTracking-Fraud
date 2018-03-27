@@ -32,9 +32,11 @@ print('seed :', SEED)
 # def
 # =============================================================================
 df_queue = Queue()
+#df_list = []
 def sender(load_file):
     print('loading {} ...'.format(load_file))
-    df_queue.put(pd.read_pickle(load_file).sample(frac=FRAC, random_state=SEED))
+    df_queue.put( pd.read_pickle(load_file).sample(frac=FRAC, random_state=SEED) )
+#    df_list.append( pd.read_pickle(load_file).sample(frac=FRAC, random_state=SEED) )
     print('loaded {}'.format(load_file))
 
 # =============================================================================
@@ -54,14 +56,14 @@ for i, keys in enumerate(utils.comb):
     threads[i] = threading.Thread(target=sender, args=(load_file, ))
     threads[i].start()
 
-df_queue.join()
+#df_queue.join()
 
 for t in threads:
     t.join()
 
 
-X = pd.concat([X] + [df_queue.get() for i in utils.comb], 
-              axis=1)
+X = pd.concat([X] + [df_queue.get() for i in utils.comb], axis=1)
+#X = pd.concat([X] + df_list, axis=1)
 
 
 # straight
