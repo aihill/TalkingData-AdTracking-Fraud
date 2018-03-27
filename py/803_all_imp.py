@@ -15,6 +15,7 @@ import xgbextension as ex
 #import xgboost as xgb
 #from multiprocessing import Process, Pipe
 import threading
+from queue import Queue
 import gc
 #from time import sleep
 import utils
@@ -30,10 +31,11 @@ print('seed :', SEED)
 # =============================================================================
 # def
 # =============================================================================
-df_list = []
+df_queue = Queue()
 def sender(load_file):
     print('loading {} ...'.format(load_file))
-    df_list.append(pd.read_pickle(load_file).sample(frac=FRAC, random_state=SEED))
+    df_queue.put(pd.read_pickle(load_file).sample(frac=FRAC, random_state=SEED))
+    print('loaded {}'.format(load_file))
 
 # =============================================================================
 # load train
@@ -51,12 +53,15 @@ for i, keys in enumerate(utils.comb):
     load_file = '../data/{}_train.p'.format('-'.join(keys))
     threads[i] = threading.Thread(target=sender, args=(load_file, ))
     threads[i].start()
-     
+
+df_queue.join()
+
 for t in threads:
     t.join()
 
 
-X = pd.concat([X]+[df_list], axis=1)
+X = pd.concat([X] + [df_queue.get() for i in utils.comb], 
+              axis=1)
 
 
 # straight
