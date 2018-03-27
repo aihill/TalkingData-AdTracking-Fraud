@@ -5,6 +5,7 @@ Created on Thu Mar 15 11:02:42 2018
 
 @author: kazuki.onodera
 """
+from glob import glob
 from tqdm import tqdm
 import pandas as pd
 import numpy as np
@@ -66,7 +67,8 @@ current_nround = 0
 auc_best = 0
 auc_decrease = 0
 
-load_file = '../data/dtrain{}.mt'.format(np.random.randint(10))
+load_files = glob('../data/dtrain*.mt')
+load_file = np.random.choice(load_files)
 Thread(target=sender, args=(load_file, )).start()
 dtrain = dmatrix_queue.get()
 
@@ -75,7 +77,7 @@ while True:
     gc.collect()
     param.update({'seed':np.random.randint(9999)})
     
-    load_file = '../data/dtrain{}.mt'.format(np.random.randint(10))
+    load_file = np.random.choice(load_files)
     Thread(target=sender, args=(load_file, )).start()
     model = xgb.train(param, dtrain, EACH_NROUND, xgb_model=model)
     dtrain = dmatrix_queue.get()
