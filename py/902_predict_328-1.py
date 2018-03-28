@@ -26,7 +26,7 @@ utils.start(__file__)
 SUBMIT_FILE_PATH = '../output/328-1.csv.gz'
 SEED = np.random.randint(9999)
 TOTAL_NROUND = 3000
-EACH_NROUND = 5
+EACH_NROUND = 30
 EXE_SUBMIT = True
 
 
