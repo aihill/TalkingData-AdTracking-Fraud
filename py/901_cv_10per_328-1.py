@@ -12,9 +12,6 @@ sudo sh -c "echo 1 > /proc/sys/vm/drop_caches"
 import pandas as pd
 import numpy as np
 from tqdm import tqdm
-import sys
-sys.path.append('/home/kazuki_onodera/Python')
-import xgbextension as ex
 import xgboost as xgb
 import gc
 import utils
@@ -27,8 +24,10 @@ np.random.seed(seed)
 # load train
 # =============================================================================
 
-X = xgb.DMatrix('../data/dvalid_10per.mt')
+dbuild = xgb.DMatrix('../data/dbuild_10per.mt')
+dvalid = xgb.DMatrix('../data/dvalid_10per.mt')
 
+watchlist = [(dbuild, 'build'),(dvalid, 'valid')]
 # =============================================================================
 # xgboost
 # =============================================================================
@@ -49,16 +48,15 @@ param = {'colsample_bylebel': 0.8,
 gc.collect()
 
 
-#yhat, imp, ret = ex.stacking(train, y, param, 9999, nfold=5, esr=30)
-#
-#imp.to_csv('imp.csv', index=False)
+model = xgb.train(param, dbuild, 9999, watchlist,
+                  early_stopping_rounds=50, verbose_eval=5)
 
 # =============================================================================
 # cv
 # =============================================================================
 
-cv = xgb.cv(param, X, 9999, 
-            nfold=5, early_stopping_rounds=50, verbose_eval=5)
+#cv = xgb.cv(param, X, 9999, 
+#            nfold=5, early_stopping_rounds=50, verbose_eval=5)
 
 #==============================================================================
 utils.end(__file__)

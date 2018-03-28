@@ -32,8 +32,10 @@ np.random.seed(seed)
 # load train
 # =============================================================================
 
-X = xgb.DMatrix('../data/dvalid_15per.mt')
+dbuild = xgb.DMatrix('../data/dbuild_15per.mt')
+dvalid = xgb.DMatrix('../data/dvalid_10per.mt')
 
+watchlist = [(dbuild, 'build'),(dvalid, 'valid')]
 # =============================================================================
 # xgboost
 # =============================================================================
@@ -54,16 +56,9 @@ param = {'colsample_bylebel': 0.8,
 gc.collect()
 
 
-#yhat, imp, ret = ex.stacking(train, y, param, 9999, nfold=5, esr=30)
-#
-#imp.to_csv('imp.csv', index=False)
+model = xgb.train(param, dbuild, 9999, watchlist,
+                  early_stopping_rounds=50, verbose_eval=5)
 
-# =============================================================================
-# cv
-# =============================================================================
-
-cv = xgb.cv(param, X, 9999, 
-            nfold=5, early_stopping_rounds=50, verbose_eval=5)
 
 #==============================================================================
 utils.end(__file__)

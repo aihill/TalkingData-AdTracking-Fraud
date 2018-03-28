@@ -106,8 +106,6 @@ train = pd.concat([df_queue.get() for i in glob('../data/tmp*.p')], axis=1)
 #train = pd.concat([pd.read_pickle(f) for f in glob('../data/tmp*.p')], axis=1)
 
 
-
-
 y = train.is_attributed
 train.drop( 'is_attributed', 
            axis=1, inplace=True)
@@ -124,21 +122,34 @@ print('finish colsample')
 # train
 # =============================================================================
 
+# valid
 valid_seed = np.random.randint(99999)
 X_valid = train.sample(frac=0.1, random_state=valid_seed)
 y_valid = y.sample(frac=0.1, random_state=valid_seed)
 
 dvalid = xgb.DMatrix(X_valid, y_valid)
 dvalid.save_binary('../data/dvalid_10per.mt')
+
+valid_index = X_valid.index
 del dvalid, X_valid, y_valid; gc.collect()
 
-valid_seed = np.random.randint(99999)
-X_valid = train.sample(frac=0.15, random_state=valid_seed)
-y_valid = y.sample(frac=0.15, random_state=valid_seed)
+# build 15per
+build_seed = np.random.randint(99999)
+X_build = train.drop(valid_index).sample(frac=0.15, random_state=build_seed)
+y_build = y.drop(valid_index).sample(frac=0.15, random_state=build_seed)
 
-dvalid = xgb.DMatrix(X_valid, y_valid)
-dvalid.save_binary('../data/dvalid_15per.mt')
-del dvalid, X_valid, y_valid; gc.collect()
+xgb.DMatrix(X_build, y_build).save_binary('../data/dbuild_15per.mt')
+gc.collect()
+
+# build 10per
+build_seed = np.random.randint(99999)
+X_build = X_build.sample(frac=2/3, random_state=build_seed)
+y_build = y_build.sample(frac=2/3, random_state=build_seed)
+
+xgb.DMatrix(X_build, y_build).save_binary('../data/dbuild_10per.mt')
+build_index = X_build.index
+del X_build, y_build; gc.collect()
+
 
 
 #train.drop(X_valid.index, inplace=True)
