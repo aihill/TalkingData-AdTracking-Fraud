@@ -24,21 +24,21 @@ utils.start(__file__)
 
 # setting
 SUBMIT_FILE_PATH = '../output/328-1.csv.gz'
-SEED = 48
-TOTAL_NROUND = 8000
+SEED = np.random.randint(9999)
+TOTAL_NROUND = 3000
 EACH_NROUND = 5
 EXE_SUBMIT = True
 
 
 dmatrix_queue = Queue()
 np.random.seed(SEED)
-
+print('seed:', SEED)
 # =============================================================================
 # def
 # =============================================================================
 
 def sender(load_file):
-    print('loading {} ...'.format(load_file))
+#    print('loading {} ...'.format(load_file))
     dmatrix_queue.put(xgb.DMatrix(load_file))
     
 # =============================================================================
@@ -64,7 +64,11 @@ auc_best = 0
 auc_decrease = 0
 
 load_files = glob('../data/dtrain*.mt')
-load_file = np.random.choice(load_files)
+np.random.shuffle(load_files)
+load_file_len = len(load_files)
+load_file_index = 0
+load_file = load_files[load_file_index]
+load_file_index +=1
 Thread(target=sender, args=(load_file, )).start()
 dtrain = dmatrix_queue.get()
 
@@ -73,7 +77,10 @@ while True:
     gc.collect()
     param.update({'seed':np.random.randint(9999)})
     
-    load_file = np.random.choice(load_files)
+    load_file = load_files[load_file_index]
+    load_file_index +=1
+    if load_file_index >= load_file_len:
+        load_file_index = 0
     Thread(target=sender, args=(load_file, )).start()
     model = xgb.train(param, dtrain, EACH_NROUND, xgb_model=model)
     dtrain = dmatrix_queue.get()
