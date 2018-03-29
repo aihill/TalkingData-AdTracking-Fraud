@@ -16,7 +16,7 @@ from tqdm import tqdm
 import gc
 from multiprocessing import Pool
 import utils
-#utils.start(__file__)
+utils.start(__file__)
 
 
 train = utils.read_pickles('../data/train')
@@ -58,5 +58,9 @@ pd.concat([pd.read_pickle(f) for f in tqdm(sorted(glob('../data/103_train_*_labe
 print('concat test')
 pd.concat([pd.read_pickle(f) for f in tqdm(sorted(glob('../data/103_test_*_label_enc.p')))], axis=1).to_pickle('../data/103_test.p')
 
+
+
+#==============================================================================
+utils.end(__file__)
 
 
