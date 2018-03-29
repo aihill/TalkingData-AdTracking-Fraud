@@ -38,12 +38,12 @@ def multi(keys):
     train_['label_enc_count'] -=1
     train_['label_enc_sum'] -= train_['is_attributed']
     train_['label_enc_ratio'] = train_['label_enc_sum'] / train_['label_enc_count']
-    train_[['label_enc_sum', 'label_enc_ratio']].to_pickle('../data/103_train_{}_label_enc.p'.format(keys_))
+    train_[['label_enc_sum', 'label_enc_ratio']].add_prefix(keys_).to_pickle('../data/103_train_{}_label_enc.p'.format(keys_))
     gc.collect()
     
     test_ = pd.merge(test, df, on=keys, how='left')
     test_['label_enc_ratio'] = test_['label_enc_sum'] / test_['label_enc_count']
-    test_[['label_enc_sum', 'label_enc_ratio']].to_pickle('../data/103_test_{}_label_enc.p'.format(keys_))
+    test_[['label_enc_sum', 'label_enc_ratio']].add_prefix(keys_).to_pickle('../data/103_test_{}_label_enc.p'.format(keys_))
     gc.collect()
 
 
