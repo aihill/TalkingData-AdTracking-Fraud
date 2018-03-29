@@ -27,7 +27,7 @@ def multi_train(keys):
     gc.collect()
     keys_ = '-'.join(keys)
     print(keys)
-    df_ = train.sort_values(keys + ['click_time'])
+    df_ = train.sort_values(list(keys) + ['click_time'])
     
     key_values_bk = click_time_bk = None
     time_deltas = []
@@ -83,7 +83,7 @@ def multi_test(keys):
     gc.collect()
     keys_ = '-'.join(keys)
     print(keys)
-    df_ = test.sort_values(keys + ['click_time'])
+    df_ = test.sort_values(list(keys) + ['click_time'])
     
     key_values_bk = click_time_bk = None
     time_deltas = []
