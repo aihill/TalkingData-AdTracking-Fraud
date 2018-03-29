@@ -47,7 +47,8 @@ def sender(load_file):
 X = pd.concat([utils.read_pickles('../data/train').sample(frac=FRAC, random_state=SEED),
                    pd.read_pickle('../data/101_train.p').sample(frac=FRAC, random_state=SEED),
                    pd.read_pickle('../data/102_train.p').sample(frac=FRAC, random_state=SEED),
-                   pd.read_pickle('../data/103_train.p').sample(frac=FRAC, random_state=SEED)], 
+#                   pd.read_pickle('../data/103_train.p').sample(frac=FRAC, random_state=SEED),
+                   ], 
                   axis=1)
 gc.collect()
 
