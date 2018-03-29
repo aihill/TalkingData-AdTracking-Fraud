@@ -24,9 +24,10 @@ def multi_train(keys):
     """
     keys = ['ip', 'device', 'os']
     """
+    gc.collect()
     keys_ = '-'.join(keys)
     print(keys)
-    df_ = train.sort_values(keys + ['click_time'], inplace=True)
+    df_ = train.sort_values(keys + ['click_time'])
     
     key_values_bk = click_time_bk = None
     time_deltas = []
@@ -78,12 +79,11 @@ test  = utils.read_pickles('../data/test_old')
 
 
 def multi_test(keys):
-    """
-    keys = ['ip', 'device', 'os']
-    """
+    
+    gc.collect()
     keys_ = '-'.join(keys)
     print(keys)
-    df_ = test.sort_values(keys + ['click_time'], inplace=True)
+    df_ = test.sort_values(keys + ['click_time'])
     
     key_values_bk = click_time_bk = None
     time_deltas = []
