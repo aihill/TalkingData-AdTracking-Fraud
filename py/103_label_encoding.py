@@ -50,7 +50,7 @@ def multi(keys):
     print('finish {}'.format(keys_))
 
 
-pool = Pool(20)
+pool = Pool(6)
 callback = pool.map(multi, utils.comb)
 pool.close()
 
