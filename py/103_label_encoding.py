@@ -14,6 +14,7 @@ from glob import glob
 import pandas as pd
 from tqdm import tqdm
 import gc
+from os import system
 from multiprocessing import Pool
 import utils
 utils.start(__file__)
@@ -25,10 +26,10 @@ test  = utils.read_pickles('../data/test_old')
 
 def multi(keys):
     keys_ = '-'.join(keys)
-    df1 = train.groupby('ip').is_attributed.sum()
+    df1 = train.groupby(keys).is_attributed.sum()
     df1.name = 'label_enc_sum'
     
-    df2 = train.groupby('ip').size()
+    df2 = train.groupby(keys).size()
     df2.name = 'label_enc_count'
     
     df = pd.concat([df1, df2], axis=1)
@@ -54,9 +55,11 @@ pool.close()
 
 print('concat train')
 pd.concat([pd.read_pickle(f) for f in tqdm(sorted(glob('../data/103_train_*_label_enc.p')))], axis=1).to_pickle('../data/103_train.p')
+system('rm ../data/103_train_*')
 
 print('concat test')
 pd.concat([pd.read_pickle(f) for f in tqdm(sorted(glob('../data/103_test_*_label_enc.p')))], axis=1).to_pickle('../data/103_test.p')
+system('rm ../data/103_test_*')
 
 
 
