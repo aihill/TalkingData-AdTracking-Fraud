@@ -49,16 +49,16 @@ def multi(keys):
     df = df.reset_index()
     
     df_min = df.groupby(keys)[c].min()
-    df_min.name = keys_+'_min'
+    df_min.name = keys_+'_sametime_count_min'
     
     df_max = df.groupby(keys)[c].max()
-    df_max.name = keys_+'_max'
+    df_max.name = keys_+'_sametime_count_max'
     
     df_mean = df.groupby(keys)[c].mean()
-    df_mean.name = keys_+'_mean'
+    df_mean.name = keys_+'_sametime_count_mean'
     
     df_std = df.groupby(keys)[c].std()
-    df_std.name = keys_+'_std'
+    df_std.name = keys_+'_sametime_count_std'
     
     df = pd.concat([df_min, df_max, df_mean, df_std], axis=1).reset_index()
     df.to_pickle('../data/{}_sametimestats_old.p'.format(keys_))

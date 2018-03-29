@@ -23,7 +23,7 @@ import utils
 utils.start(__file__)
 
 SEED = np.random.randint(9999) #int(sys.argv[1])
-FRAC = 0.01
+FRAC = 0.1
 
 
 np.random.seed(SEED)
