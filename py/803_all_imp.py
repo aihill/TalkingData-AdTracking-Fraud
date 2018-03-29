@@ -9,6 +9,7 @@ Created on Tue Mar 27 15:04:09 2018
 import pandas as pd
 import numpy as np
 from tqdm import tqdm
+from datetime import datetime
 import sys
 sys.path.append('/home/kazuki_onodera/Python')
 import xgbextension as ex
@@ -45,7 +46,8 @@ def sender(load_file):
 
 X = pd.concat([utils.read_pickles('../data/train').sample(frac=FRAC, random_state=SEED),
                    pd.read_pickle('../data/101_train.p').sample(frac=FRAC, random_state=SEED),
-                   pd.read_pickle('../data/102_train.p').sample(frac=FRAC, random_state=SEED)], 
+                   pd.read_pickle('../data/102_train.p').sample(frac=FRAC, random_state=SEED),
+                   pd.read_pickle('../data/103_train.p').sample(frac=FRAC, random_state=SEED)], 
                   axis=1)
 gc.collect()
 
@@ -105,7 +107,7 @@ gc.collect()
 
 yhat, imp, ret = ex.stacking(X, y, param, 9999, nfold=5, esr=30)
 
-imp.to_csv('imp_s{}.csv'.format(SEED), index=False)
+imp.to_csv('imp_{}.csv'.format(datetime.today().date()), index=False)
 
 # =============================================================================
 # cv
