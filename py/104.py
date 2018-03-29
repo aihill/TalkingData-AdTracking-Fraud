@@ -33,7 +33,7 @@ def multi_train(keys):
     time_deltas = []
     cnts = []
     cnt = 0
-    for values in df_[keys + ['click_time']].values:
+    for values in df_[list(keys) + ['click_time']].values:
         
         key_values = values[:-1]
         click_time = values[-1]
@@ -89,7 +89,7 @@ def multi_test(keys):
     time_deltas = []
     cnts = []
     cnt = 0
-    for values in df_[keys + ['click_time']].values:
+    for values in df_[list(keys) + ['click_time']].values:
         
         key_values = values[:-1]
         click_time = values[-1]
