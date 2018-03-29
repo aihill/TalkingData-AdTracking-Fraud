@@ -1,0 +1,268 @@
+
+#==============================================================================
+# START !!! 902_predict_328-2.py PID: 6761
+#==============================================================================
+
+seed: 2418
+[18:16:26] 18490389x100 matrix with 1849038900 entries loaded from ../data/dvalid_10per.mt
+start xgb
+[18:19:19] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain3.mt
+[18:19:19] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[18:22:11] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain19.mt
+[NROUND]: 30    [valid-auc]: 0.9410092    7.68 min
+[18:22:17] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[18:25:17] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain9.mt
+[NROUND]: 60    [valid-auc]: 0.9547992    10.78 min
+[18:25:23] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[18:28:19] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain14.mt
+[NROUND]: 90    [valid-auc]: 0.9679566    13.86 min
+[18:28:28] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[18:31:23] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain11.mt
+[NROUND]: 120    [valid-auc]: 0.9708180    16.96 min
+[18:31:34] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[18:34:29] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain20.mt
+[NROUND]: 150    [valid-auc]: 0.9725312    20.08 min
+[18:34:41] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[18:37:36] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain12.mt
+[NROUND]: 180    [valid-auc]: 0.9734051    23.20 min
+[18:37:48] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[18:41:01] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain0.mt
+[NROUND]: 210    [valid-auc]: 0.9741381    26.63 min
+[18:41:14] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[18:44:21] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain8.mt
+[NROUND]: 240    [valid-auc]: 0.9746920    29.98 min
+[18:44:35] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[18:47:41] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain10.mt
+[NROUND]: 270    [valid-auc]: 0.9751346    33.31 min
+[18:47:55] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[18:50:52] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain7.mt
+[NROUND]: 300    [valid-auc]: 0.9754730    36.50 min
+[18:51:06] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[18:54:00] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain6.mt
+[NROUND]: 330    [valid-auc]: 0.9757866    39.64 min
+[18:54:15] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[18:57:17] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain15.mt
+[NROUND]: 360    [valid-auc]: 0.9760822    42.94 min
+[18:57:33] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:00:41] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain4.mt
+[NROUND]: 390    [valid-auc]: 0.9763167    46.34 min
+[19:00:57] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:04:05] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain16.mt
+[NROUND]: 420    [valid-auc]: 0.9764988    49.76 min
+[19:04:22] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:07:25] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain18.mt
+[NROUND]: 450    [valid-auc]: 0.9766444    53.10 min
+[19:07:43] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:10:48] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain1.mt
+[NROUND]: 480    [valid-auc]: 0.9768492    56.51 min
+[19:11:07] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:14:05] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain17.mt
+[NROUND]: 510    [valid-auc]: 0.9769459    59.80 min
+[19:14:24] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:17:25] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain13.mt
+[NROUND]: 540    [valid-auc]: 0.9771146    63.13 min
+[19:17:44] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:20:54] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain2.mt
+[NROUND]: 570    [valid-auc]: 0.9772050    66.63 min
+[19:21:14] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:24:20] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain5.mt
+[NROUND]: 600    [valid-auc]: 0.9772764    70.09 min
+[19:24:42] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:27:38] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain3.mt
+[NROUND]: 630    [valid-auc]: 0.9773664    73.37 min
+[19:27:59] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:31:34] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain19.mt
+[NROUND]: 660    [valid-auc]: 0.9775619    77.32 min
+[19:31:55] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:34:54] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain9.mt
+[NROUND]: 690    [valid-auc]: 0.9776429    80.67 min
+[19:35:16] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:38:08] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain14.mt
+[NROUND]: 720    [valid-auc]: 0.9777559    83.97 min
+[19:38:35] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:41:54] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain11.mt
+[NROUND]: 750    [valid-auc]: 0.9778435    87.73 min
+[19:42:20] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:45:13] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain20.mt
+[NROUND]: 780    [valid-auc]: 0.9779031    91.09 min
+[19:45:42] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:48:38] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain12.mt
+[NROUND]: 810    [valid-auc]: 0.9779592    94.54 min
+[19:49:09] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:52:03] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain0.mt
+[NROUND]: 840    [valid-auc]: 0.9780256    98.03 min
+[19:52:38] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:55:32] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain8.mt
+[NROUND]: 870    [valid-auc]: 0.9781135    101.55 min
+[19:56:09] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:59:13] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain10.mt
+[NROUND]: 900    [valid-auc]: 0.9781651    105.07 min
+[19:59:40] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[20:02:58] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain7.mt
+[NROUND]: 930    [valid-auc]: 0.9782088    108.80 min
+[20:03:24] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[20:06:24] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain6.mt
+[NROUND]: 960    [valid-auc]: 0.9782367    112.68 min
+[20:07:17] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[20:10:25] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain15.mt
+[NROUND]: 990    [valid-auc]: 0.9782804    116.51 min
+[20:11:07] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[20:13:57] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain4.mt
+[NROUND]: 1020    [valid-auc]: 0.9783106    120.18 min
+[20:14:47] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[20:17:39] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain16.mt
+[NROUND]: 1050    [valid-auc]: 0.9783725    123.89 min
+[20:18:30] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[20:21:57] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain18.mt
+[NROUND]: 1080    [valid-auc]: 0.9784104    127.86 min
+[20:22:28] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[20:25:41] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain1.mt
+[NROUND]: 1110    [valid-auc]: 0.9784766    131.58 min
+[20:26:11] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[20:29:07] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain17.mt
+[NROUND]: 1140    [valid-auc]: 0.9785044    135.37 min
+[20:29:59] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[20:33:10] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain13.mt
+[NROUND]: 1170    [valid-auc]: 0.9785401    139.34 min
+[20:33:57] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[20:37:05] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain2.mt
+[NROUND]: 1200    [valid-auc]: 0.9785809    143.33 min
+[20:37:56] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[20:40:58] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain5.mt
+[NROUND]: 1230    [valid-auc]: 0.9785747    147.29 min
+[20:41:54] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[20:44:54] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain3.mt
+[NROUND]: 1260    [valid-auc]: 0.9785889    151.32 min
+[20:45:55] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[20:48:45] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain19.mt
+[NROUND]: 1290    [valid-auc]: 0.9786541    155.43 min
+[20:50:02] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[20:53:01] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain9.mt
+[NROUND]: 1320    [valid-auc]: 0.9786935    159.67 min
+[20:54:16] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[20:57:08] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain14.mt
+[NROUND]: 1350    [valid-auc]: 0.9787171    163.93 min
+[20:58:32] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[21:01:33] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain11.mt
+[NROUND]: 1380    [valid-auc]: 0.9787650    168.27 min
+[21:02:53] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[21:06:05] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain20.mt
+[NROUND]: 1410    [valid-auc]: 0.9787700    172.80 min
+[21:07:24] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[21:10:42] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain12.mt
+[NROUND]: 1440    [valid-auc]: 0.9788118    177.37 min
+[21:11:58] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[21:15:00] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain0.mt
+[NROUND]: 1470    [valid-auc]: 0.9788414    182.01 min
+[21:16:37] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[21:19:39] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain8.mt
+[NROUND]: 1500    [valid-auc]: 0.9788823    186.69 min
+[21:21:18] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[21:24:23] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain10.mt
+[NROUND]: 1530    [valid-auc]: 0.9789128    191.56 min
+[21:26:10] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[21:29:20] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain7.mt
+[NROUND]: 1560    [valid-auc]: 0.9789502    196.39 min
+[21:31:00] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[21:34:10] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain6.mt
+[NROUND]: 1590    [valid-auc]: 0.9789649    201.31 min
+[21:35:55] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[21:38:53] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain15.mt
+[NROUND]: 1620    [valid-auc]: 0.9789901    206.37 min
+[21:40:59] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[21:43:59] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain4.mt
+[NROUND]: 1650    [valid-auc]: 0.9790088    211.42 min
+[21:46:02] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[21:49:05] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain16.mt
+[NROUND]: 1680    [valid-auc]: 0.9790449    216.67 min
+[21:51:17] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[21:54:20] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain18.mt
+[NROUND]: 1710    [valid-auc]: 0.9790633    222.02 min
+[21:56:38] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[21:59:55] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain1.mt
+[NROUND]: 1740    [valid-auc]: 0.9791217    227.41 min
+[22:02:01] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[22:05:15] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain17.mt
+[NROUND]: 1770    [valid-auc]: 0.9791299    232.85 min
+[22:07:28] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[22:10:23] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain13.mt
+[NROUND]: 1800    [valid-auc]: 0.9791275    238.48 min
+[22:13:05] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[22:16:17] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain2.mt
+[NROUND]: 1830    [valid-auc]: 0.9791422    244.12 min
+[22:18:44] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[22:22:04] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain5.mt
+[NROUND]: 1860    [valid-auc]: 0.9791468    249.87 min
+[22:24:28] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[22:27:45] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain3.mt
+[NROUND]: 1890    [valid-auc]: 0.9791746    255.60 min
+[22:30:12] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[22:33:18] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain19.mt
+[NROUND]: 1920    [valid-auc]: 0.9791959    261.44 min
+[22:36:03] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[22:39:25] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain9.mt
+[NROUND]: 1950    [valid-auc]: 0.9792304    267.37 min
+[22:41:59] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[22:45:07] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain14.mt
+[NROUND]: 1980    [valid-auc]: 0.9792501    273.39 min
+[22:48:00] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[22:51:11] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain11.mt
+[NROUND]: 2010    [valid-auc]: 0.9792566    279.53 min
+[22:54:08] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[22:57:43] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain20.mt
+[NROUND]: 2040    [valid-auc]: 0.9792688    285.61 min
+[23:00:13] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[23:03:12] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain12.mt
+[NROUND]: 2070    [valid-auc]: 0.9792873    291.73 min
+[23:06:20] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[23:09:29] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain0.mt
+[NROUND]: 2100    [valid-auc]: 0.9793205    297.98 min
+[23:12:35] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[23:15:23] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain8.mt
+[NROUND]: 2130    [valid-auc]: 0.9793484    304.39 min
+[23:19:00] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[23:22:09] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain10.mt
+[NROUND]: 2160    [valid-auc]: 0.9793706    310.74 min
+[23:25:21] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[23:28:29] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain7.mt
+[NROUND]: 2190    [valid-auc]: 0.9793853    317.32 min
+[23:31:56] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[23:34:57] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain6.mt
+[NROUND]: 2220    [valid-auc]: 0.9794023    323.86 min
+[23:38:28] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[23:41:20] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain15.mt
+[NROUND]: 2250    [valid-auc]: 0.9794169    330.72 min
+[23:45:19] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[23:48:10] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain4.mt
+[NROUND]: 2280    [valid-auc]: 0.9794270    337.36 min
+[23:51:58] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[23:55:08] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain16.mt
+[NROUND]: 2310    [valid-auc]: 0.9794541    344.14 min
+[23:58:45] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[00:01:46] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain18.mt
+[NROUND]: 2340    [valid-auc]: 0.9794597    350.88 min
+[00:05:29] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[00:08:21] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain1.mt
+[NROUND]: 2370    [valid-auc]: 0.9794704    357.82 min
+[00:12:25] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[00:15:19] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain17.mt
+[NROUND]: 2400    [valid-auc]: 0.9794850    364.78 min
+[00:19:23] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[00:22:06] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain13.mt
+[NROUND]: 2430    [valid-auc]: 0.9795010    371.88 min
+[00:26:29] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[00:29:21] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain2.mt
+[NROUND]: 2460    [valid-auc]: 0.9795375    379.01 min
+[00:33:37] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[00:36:25] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain5.mt
+[NROUND]: 2490    [valid-auc]: 0.9795329    386.32 min
+[00:40:55] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[00:43:46] 27735584x100 matrix with 2773558400 entries loaded from ../data/dtrain3.mt
+[NROUND]: 2520    [valid-auc]: 0.9795534    393.53 min
+[00:49:54] 18790469x100 matrix with 1879046900 entries loaded from ../data/dtest.mt
+Successfully submitted to TalkingData AdTracking Fraud Detection Challenge
+#==============================================================================
+# SUCCESS !!! 902_predict_328-2.py
+#==============================================================================
+
+time: 401.15min

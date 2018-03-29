@@ -1,13 +1,70 @@
 
 #==============================================================================
-# START !!! 099.py PID: 3918
+# START !!! 099.py PID: 4040
 #==============================================================================
 
-  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:05<00:52,  5.86s/it] 20%|██        | 2/10 [00:19<01:19,  9.96s/it] 30%|███       | 3/10 [00:25<00:59,  8.55s/it] 40%|████      | 4/10 [00:31<00:47,  7.90s/it] 50%|█████     | 5/10 [00:37<00:37,  7.50s/it] 60%|██████    | 6/10 [00:43<00:28,  7.21s/it] 70%|███████   | 7/10 [00:49<00:21,  7.01s/it] 80%|████████  | 8/10 [00:55<00:13,  6.88s/it] 90%|█████████ | 9/10 [01:00<00:06,  6.75s/it]100%|██████████| 10/10 [01:21<00:00,  8.11s/it]
-  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:19,  2.14s/it] 20%|██        | 2/10 [00:03<00:15,  1.89s/it] 30%|███       | 3/10 [00:05<00:13,  1.92s/it] 40%|████      | 4/10 [00:07<00:11,  1.87s/it] 50%|█████     | 5/10 [00:09<00:09,  1.85s/it] 60%|██████    | 6/10 [00:10<00:07,  1.82s/it] 70%|███████   | 7/10 [00:12<00:05,  1.81s/it] 80%|████████  | 8/10 [00:14<00:03,  1.82s/it] 90%|█████████ | 9/10 [00:16<00:01,  1.80s/it]100%|██████████| 10/10 [00:18<00:00,  1.82s/it]
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:05<00:50,  5.58s/it] 20%|██        | 2/10 [00:10<00:42,  5.36s/it] 30%|███       | 3/10 [00:16<00:37,  5.34s/it] 40%|████      | 4/10 [00:21<00:32,  5.39s/it] 50%|█████     | 5/10 [00:27<00:27,  5.41s/it] 60%|██████    | 6/10 [00:32<00:21,  5.46s/it] 70%|███████   | 7/10 [00:38<00:16,  5.44s/it] 80%|████████  | 8/10 [00:43<00:10,  5.45s/it] 90%|█████████ | 9/10 [00:48<00:05,  5.43s/it]100%|██████████| 10/10 [00:53<00:00,  5.37s/it]
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:20,  2.29s/it] 20%|██        | 2/10 [00:04<00:16,  2.05s/it] 30%|███       | 3/10 [00:05<00:13,  1.98s/it] 40%|████      | 4/10 [00:07<00:11,  1.96s/it] 50%|█████     | 5/10 [00:09<00:09,  1.90s/it] 60%|██████    | 6/10 [00:11<00:07,  1.91s/it] 70%|███████   | 7/10 [00:13<00:05,  1.88s/it] 80%|████████  | 8/10 [00:14<00:03,  1.85s/it] 90%|█████████ | 9/10 [00:16<00:01,  1.83s/it]100%|██████████| 10/10 [00:18<00:00,  1.81s/it]
+('ip',)
+('device',)
+('channel',)
+('ip', 'device')
+('ip', 'channel')
+('app', 'os')
+couldnt find ../data/app-os_binary.p
+couldnt find ../data/ip-device_binary.p
+couldnt find ../data/ip-channel_binary.p
+('app', 'device')
+couldnt find ../data/app-device_binary.p
+('app', 'channel')
+couldnt find ../data/app-channel_binary.p
+('ip', 'os')
+couldnt find ../data/ip-os_binary.p
+('ip', 'app')
+('os',)
+couldnt find ../data/ip-app_binary.p
+('app',)
+('device', 'os')
+couldnt find ../data/device-os_binary.p
+('os', 'channel')
+couldnt find ../data/os-channel_binary.p
+('ip', 'app', 'os')
+('ip', 'device', 'os')
+couldnt find ../data/ip-device-os_binary.p
+('ip', 'os', 'channel')
+('app', 'device', 'channel')
+couldnt find ../data/app-device-channel_binary.p
+couldnt find ../data/ip-app-os_binary.p
+('device', 'channel')
+couldnt find ../data/device-channel_binary.p
+('ip', 'app', 'device')
+couldnt find ../data/ip-app-device_binary.p
+('ip', 'device', 'channel')
+('app', 'os', 'channel')
+couldnt find ../data/app-os-channel_binary.p
+('ip', 'app', 'channel')
+couldnt find ../data/ip-device-channel_binary.p
+('device', 'os', 'channel')
+couldnt find ../data/device-os-channel_binary.p
+couldnt find ../data/ip-app-channel_binary.p
+couldnt find ../data/ip-os-channel_binary.p
+('ip', 'app', 'device', 'channel')
+('ip', 'device', 'os', 'channel')
+couldnt find ../data/ip-app-device-channel_binary.p
+('ip', 'app', 'device', 'os', 'channel')
+('ip', 'app', 'device', 'os')
+('app', 'device', 'os')
+couldnt find ../data/app-device-os_binary.p
+('ip', 'app', 'os', 'channel')
+couldnt find ../data/ip-app-device-os_binary.p
+couldnt find ../data/ip-device-os-channel_binary.p
+couldnt find ../data/ip-app-device-os-channel_binary.p
+couldnt find ../data/ip-app-os-channel_binary.p
+('app', 'device', 'os', 'channel')
+couldnt find ../data/app-device-os-channel_binary.p
 
 #==============================================================================
 # SUCCESS !!! 099.py
 #==============================================================================
 
-time: 67.38min
+time: 53.63min

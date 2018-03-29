@@ -1,0 +1,244 @@
+
+#==============================================================================
+# START !!! 803_all_imp.py PID: 9279
+#==============================================================================
+
+seed : 8770
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:04<00:43,  4.85s/it] 20%|██        | 2/10 [00:09<00:38,  4.78s/it] 30%|███       | 3/10 [00:14<00:34,  4.89s/it] 40%|████      | 4/10 [00:20<00:30,  5.11s/it] 50%|█████     | 5/10 [00:26<00:26,  5.21s/it] 60%|██████    | 6/10 [00:31<00:21,  5.31s/it] 70%|███████   | 7/10 [00:37<00:15,  5.33s/it] 80%|████████  | 8/10 [00:43<00:10,  5.41s/it] 90%|█████████ | 9/10 [00:48<00:05,  5.40s/it]100%|██████████| 10/10 [00:53<00:00,  5.37s/it]
+loading ../data/ip_train.p ...
+loading ../data/app_train.p ...
+loading ../data/device_train.p ...
+loading ../data/os_train.p ...
+loading ../data/channel_train.p ...
+loading ../data/ip-app_train.p ...
+loading ../data/ip-device_train.p ...
+loading ../data/ip-os_train.p ...
+loading ../data/ip-channel_train.p ...
+loading ../data/app-device_train.p ...
+loading ../data/app-os_train.p ...
+loading ../data/app-channel_train.p ...
+loading ../data/device-os_train.p ...
+loading ../data/device-channel_train.p ...
+loading ../data/os-channel_train.p ...
+loading ../data/ip-app-device_train.p ...
+loading ../data/ip-app-os_train.p ...
+loading ../data/ip-app-channel_train.p ...
+loading ../data/ip-device-os_train.p ...
+loading ../data/ip-device-channel_train.p ...
+loading ../data/ip-os-channel_train.p ...
+loading ../data/app-device-os_train.p ...
+loading ../data/app-device-channel_train.p ...
+loading ../data/app-os-channel_train.p ...
+loading ../data/device-os-channel_train.p ...
+loading ../data/ip-app-device-os_train.p ...
+loading ../data/ip-app-device-channel_train.p ...
+loading ../data/ip-app-os-channel_train.p ...
+loading ../data/ip-device-os-channel_train.p ...
+loading ../data/app-device-os-channel_train.p ...
+loading ../data/ip-app-device-os-channel_train.p ...
+loaded ../data/ip-app-os_train.p
+loaded ../data/ip-app-device-os_train.p
+loaded ../data/ip_train.p
+loaded ../data/ip-app-device_train.p
+loaded ../data/ip-app-os-channel_train.p
+loaded ../data/ip-device-os-channel_train.p
+loaded ../data/app-device-os_train.p
+loaded ../data/device-os_train.p
+loaded ../data/ip-app-device-os-channel_train.p
+loaded ../data/ip-os-channel_train.p
+loaded ../data/ip-channel_train.p
+loaded ../data/ip-device_train.p
+loaded ../data/app-device-channel_train.p
+loaded ../data/ip-device-os_train.p
+loaded ../data/app-device_train.p
+loaded ../data/ip-device-channel_train.p
+loaded ../data/app-os-channel_train.p
+loaded ../data/ip-app-channel_train.p
+loaded ../data/ip-app-device-channel_train.p
+loaded ../data/ip-app_train.p
+loaded ../data/device_train.p
+loaded ../data/os-channel_train.p
+loaded ../data/channel_train.p
+loaded ../data/ip-os_train.p
+loaded ../data/device-os-channel_train.p
+loaded ../data/app-channel_train.p
+loaded ../data/app-os_train.p
+loaded ../data/app-device-os-channel_train.p
+loaded ../data/app_train.p
+loaded ../data/device-channel_train.p
+loaded ../data/os_train.p
+['same_ip-app-device-os-channel_diff', 'hour', 'timestamp', 'ip-app-os_count', 'ip-app-os_timemin', 'ip-app-os_timemax', 'ip-app-os_timemean', 'ip-app-os_timestd', 'ip-app-os_min', 'ip-app-os_max', 'ip-app-os_mean', 'ip-app-os_std', 'ip-app-device-os_count', 'ip-app-device-os_timemin', 'ip-app-device-os_timemax', 'ip-app-device-os_timemean', 'ip-app-device-os_timestd', 'ip-app-device-os_min', 'ip-app-device-os_max', 'ip-app-device-os_mean', 'ip-app-device-os_std', 'ip_count', 'ip_timemin', 'ip_timemax', 'ip_timemean', 'ip_timestd', 'ip_min', 'ip_max', 'ip_mean', 'ip_std', 'ip_binary_0', 'ip_binary_1', 'ip_binary_2', 'ip_binary_3', 'ip_binary_4', 'ip_binary_5', 'ip_binary_6', 'ip_binary_7', 'ip_binary_8', 'ip_binary_9', 'ip_binary_10', 'ip_binary_11', 'ip_binary_12', 'ip_binary_13', 'ip_binary_14', 'ip_binary_15', 'ip_binary_16', 'ip_binary_17', 'ip_binary_18', 'ip_binary_19', 'ip-app-device_count', 'ip-app-device_timemin', 'ip-app-device_timemax', 'ip-app-device_timemean', 'ip-app-device_timestd', 'ip-app-device_min', 'ip-app-device_max', 'ip-app-device_mean', 'ip-app-device_std', 'ip-app-os-channel_count', 'ip-app-os-channel_timemin', 'ip-app-os-channel_timemax', 'ip-app-os-channel_timemean', 'ip-app-os-channel_timestd', 'ip-app-os-channel_min', 'ip-app-os-channel_max', 'ip-app-os-channel_mean', 'ip-app-os-channel_std', 'ip-device-os-channel_count', 'ip-device-os-channel_timemin', 'ip-device-os-channel_timemax', 'ip-device-os-channel_timemean', 'ip-device-os-channel_timestd', 'ip-device-os-channel_min', 'ip-device-os-channel_max', 'ip-device-os-channel_mean', 'ip-device-os-channel_std', 'app-device-os_count', 'app-device-os_timemin', 'app-device-os_timemax', 'app-device-os_timemean', 'app-device-os_timestd', 'app-device-os_min', 'app-device-os_max', 'app-device-os_mean', 'app-device-os_std', 'device-os_count', 'device-os_timemin', 'device-os_timemax', 'device-os_timemean', 'device-os_timestd', 'device-os_min', 'device-os_max', 'device-os_mean', 'device-os_std', 'ip-app-device-os-channel_count', 'ip-app-device-os-channel_timemin', 'ip-app-device-os-channel_timemax', 'ip-app-device-os-channel_timemean', 'ip-app-device-os-channel_timestd', 'ip-app-device-os-channel_min', 'ip-app-device-os-channel_max', 'ip-app-device-os-channel_mean', 'ip-app-device-os-channel_std', 'ip-os-channel_count', 'ip-os-channel_timemin', 'ip-os-channel_timemax', 'ip-os-channel_timemean', 'ip-os-channel_timestd', 'ip-os-channel_min', 'ip-os-channel_max', 'ip-os-channel_mean', 'ip-os-channel_std', 'ip-channel_count', 'ip-channel_timemin', 'ip-channel_timemax', 'ip-channel_timemean', 'ip-channel_timestd', 'ip-channel_min', 'ip-channel_max', 'ip-channel_mean', 'ip-channel_std', 'ip-device_count', 'ip-device_timemin', 'ip-device_timemax', 'ip-device_timemean', 'ip-device_timestd', 'ip-device_min', 'ip-device_max', 'ip-device_mean', 'ip-device_std', 'app-device-channel_count', 'app-device-channel_timemin', 'app-device-channel_timemax', 'app-device-channel_timemean', 'app-device-channel_timestd', 'app-device-channel_min', 'app-device-channel_max', 'app-device-channel_mean', 'app-device-channel_std', 'ip-device-os_count', 'ip-device-os_timemin', 'ip-device-os_timemax', 'ip-device-os_timemean', 'ip-device-os_timestd', 'ip-device-os_min', 'ip-device-os_max', 'ip-device-os_mean', 'ip-device-os_std', 'app-device_count', 'app-device_timemin', 'app-device_timemax', 'app-device_timemean', 'app-device_timestd', 'app-device_min', 'app-device_max', 'app-device_mean', 'app-device_std', 'ip-device-channel_count', 'ip-device-channel_timemin', 'ip-device-channel_timemax', 'ip-device-channel_timemean', 'ip-device-channel_timestd', 'ip-device-channel_min', 'ip-device-channel_max', 'ip-device-channel_mean', 'ip-device-channel_std', 'app-os-channel_count', 'app-os-channel_timemin', 'app-os-channel_timemax', 'app-os-channel_timemean', 'app-os-channel_timestd', 'app-os-channel_min', 'app-os-channel_max', 'app-os-channel_mean', 'app-os-channel_std', 'ip-app-channel_count', 'ip-app-channel_timemin', 'ip-app-channel_timemax', 'ip-app-channel_timemean', 'ip-app-channel_timestd', 'ip-app-channel_min', 'ip-app-channel_max', 'ip-app-channel_mean', 'ip-app-channel_std', 'ip-app-device-channel_count', 'ip-app-device-channel_timemin', 'ip-app-device-channel_timemax', 'ip-app-device-channel_timemean', 'ip-app-device-channel_timestd', 'ip-app-device-channel_min', 'ip-app-device-channel_max', 'ip-app-device-channel_mean', 'ip-app-device-channel_std', 'ip-app_count', 'ip-app_timemin', 'ip-app_timemax', 'ip-app_timemean', 'ip-app_timestd', 'ip-app_min', 'ip-app_max', 'ip-app_mean', 'ip-app_std', 'device_count', 'device_timemin', 'device_timemax', 'device_timemean', 'device_timestd', 'device_min', 'device_max', 'device_mean', 'device_std', 'device_binary_0', 'device_binary_1', 'device_binary_2', 'device_binary_3', 'device_binary_4', 'device_binary_5', 'device_binary_6', 'device_binary_7', 'device_binary_8', 'device_binary_9', 'device_binary_10', 'device_binary_11', 'device_binary_12', 'device_binary_13', 'os-channel_count', 'os-channel_timemin', 'os-channel_timemax', 'os-channel_timemean', 'os-channel_timestd', 'os-channel_min', 'os-channel_max', 'os-channel_mean', 'os-channel_std', 'channel_count', 'channel_timemin', 'channel_timemax', 'channel_timemean', 'channel_timestd', 'channel_min', 'channel_max', 'channel_mean', 'channel_std', 'channel_binary_0', 'channel_binary_1', 'channel_binary_2', 'channel_binary_3', 'channel_binary_4', 'channel_binary_5', 'channel_binary_6', 'channel_binary_7', 'channel_binary_8', 'ip-os_count', 'ip-os_timemin', 'ip-os_timemax', 'ip-os_timemean', 'ip-os_timestd', 'ip-os_min', 'ip-os_max', 'ip-os_mean', 'ip-os_std', 'device-os-channel_count', 'device-os-channel_timemin', 'device-os-channel_timemax', 'device-os-channel_timemean', 'device-os-channel_timestd', 'device-os-channel_min', 'device-os-channel_max', 'device-os-channel_mean', 'device-os-channel_std', 'app-channel_count', 'app-channel_timemin', 'app-channel_timemax', 'app-channel_timemean', 'app-channel_timestd', 'app-channel_min', 'app-channel_max', 'app-channel_mean', 'app-channel_std', 'app-os_count', 'app-os_timemin', 'app-os_timemax', 'app-os_timemean', 'app-os_timestd', 'app-os_min', 'app-os_max', 'app-os_mean', 'app-os_std', 'app-device-os-channel_count', 'app-device-os-channel_timemin', 'app-device-os-channel_timemax', 'app-device-os-channel_timemean', 'app-device-os-channel_timestd', 'app-device-os-channel_min', 'app-device-os-channel_max', 'app-device-os-channel_mean', 'app-device-os-channel_std', 'app_count', 'app_timemin', 'app_timemax', 'app_timemean', 'app_timestd', 'app_min', 'app_max', 'app_mean', 'app_std', 'app_binary_0', 'app_binary_1', 'app_binary_2', 'app_binary_3', 'app_binary_4', 'app_binary_5', 'app_binary_6', 'app_binary_7', 'app_binary_8', 'app_binary_9', 'app_binary_10', 'device-channel_count', 'device-channel_timemin', 'device-channel_timemax', 'device-channel_timemean', 'device-channel_timestd', 'device-channel_min', 'device-channel_max', 'device-channel_mean', 'device-channel_std', 'os_count', 'os_timemin', 'os_timemax', 'os_timemean', 'os_timestd', 'os_min', 'os_max', 'os_mean', 'os_std', 'os_binary_0', 'os_binary_1', 'os_binary_2', 'os_binary_3', 'os_binary_4', 'os_binary_5', 'os_binary_6', 'os_binary_7', 'os_binary_8', 'os_binary_9', 'os_binary_10']
+param:
+y/all: 4579/1849039(0.25%)
+dbuild row: 1479231 dvalid row: 369808
+building... 1/5 of 1/1
+[10:35:10] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[0]	build-auc:0.921007	valid-auc:0.923473
+Multiple eval metrics have been passed: 'valid-auc' will be used for early stopping.
+
+Will train until valid-auc hasn't improved in 30 rounds.
+[10]	build-auc:0.925576	valid-auc:0.926694
+[20]	build-auc:0.934027	valid-auc:0.93543
+[30]	build-auc:0.950939	valid-auc:0.953012
+[40]	build-auc:0.956593	valid-auc:0.959438
+[50]	build-auc:0.957476	valid-auc:0.960155
+[60]	build-auc:0.963609	valid-auc:0.965959
+[70]	build-auc:0.967126	valid-auc:0.967977
+[80]	build-auc:0.972011	valid-auc:0.969655
+[90]	build-auc:0.974201	valid-auc:0.971232
+[100]	build-auc:0.976508	valid-auc:0.97203
+[110]	build-auc:0.97822	valid-auc:0.972216
+[120]	build-auc:0.979689	valid-auc:0.972639
+[130]	build-auc:0.981148	valid-auc:0.973124
+[140]	build-auc:0.982233	valid-auc:0.973016
+[150]	build-auc:0.983752	valid-auc:0.97351
+[160]	build-auc:0.984557	valid-auc:0.973537
+[170]	build-auc:0.985258	valid-auc:0.973661
+[180]	build-auc:0.986178	valid-auc:0.973786
+[190]	build-auc:0.987186	valid-auc:0.973808
+[200]	build-auc:0.987957	valid-auc:0.973878
+[210]	build-auc:0.988293	valid-auc:0.973763
+[220]	build-auc:0.988749	valid-auc:0.974187
+[230]	build-auc:0.989425	valid-auc:0.974183
+[240]	build-auc:0.990174	valid-auc:0.974306
+[250]	build-auc:0.990667	valid-auc:0.974309
+[260]	build-auc:0.991259	valid-auc:0.974578
+[270]	build-auc:0.9917	valid-auc:0.974511
+[280]	build-auc:0.99231	valid-auc:0.974158
+[290]	build-auc:0.992565	valid-auc:0.974281
+Stopping. Best iteration:
+[264]	build-auc:0.991459	valid-auc:0.974603
+
+dbuild row: 1479231 dvalid row: 369808
+building... 2/5 of 1/1
+[10:37:46] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[0]	build-auc:0.920878	valid-auc:0.924324
+Multiple eval metrics have been passed: 'valid-auc' will be used for early stopping.
+
+Will train until valid-auc hasn't improved in 30 rounds.
+[10]	build-auc:0.923863	valid-auc:0.930055
+[20]	build-auc:0.948603	valid-auc:0.954642
+[30]	build-auc:0.950275	valid-auc:0.955712
+[40]	build-auc:0.955849	valid-auc:0.959798
+[50]	build-auc:0.958092	valid-auc:0.960894
+[60]	build-auc:0.965432	valid-auc:0.966032
+[70]	build-auc:0.970766	valid-auc:0.966896
+[80]	build-auc:0.973484	valid-auc:0.966791
+[90]	build-auc:0.975805	valid-auc:0.96829
+[100]	build-auc:0.977706	valid-auc:0.96958
+[110]	build-auc:0.979341	valid-auc:0.970124
+[120]	build-auc:0.980362	valid-auc:0.97044
+[130]	build-auc:0.981313	valid-auc:0.970516
+[140]	build-auc:0.982398	valid-auc:0.970662
+[150]	build-auc:0.983507	valid-auc:0.97035
+[160]	build-auc:0.984293	valid-auc:0.970904
+[170]	build-auc:0.985294	valid-auc:0.9709
+[180]	build-auc:0.98597	valid-auc:0.971305
+[190]	build-auc:0.986718	valid-auc:0.971191
+[200]	build-auc:0.987256	valid-auc:0.97153
+[210]	build-auc:0.987978	valid-auc:0.971913
+[220]	build-auc:0.988662	valid-auc:0.971775
+[230]	build-auc:0.989373	valid-auc:0.971784
+Stopping. Best iteration:
+[208]	build-auc:0.987839	valid-auc:0.972161
+
+dbuild row: 1479231 dvalid row: 369808
+building... 3/5 of 1/1
+[10:40:01] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[0]	build-auc:0.921817	valid-auc:0.92184
+Multiple eval metrics have been passed: 'valid-auc' will be used for early stopping.
+
+Will train until valid-auc hasn't improved in 30 rounds.
+[10]	build-auc:0.925146	valid-auc:0.925048
+[20]	build-auc:0.933967	valid-auc:0.93086
+[30]	build-auc:0.951757	valid-auc:0.948322
+[40]	build-auc:0.957373	valid-auc:0.953131
+[50]	build-auc:0.95832	valid-auc:0.95422
+[60]	build-auc:0.959694	valid-auc:0.954669
+[70]	build-auc:0.969308	valid-auc:0.962394
+[80]	build-auc:0.972866	valid-auc:0.965199
+[90]	build-auc:0.975357	valid-auc:0.966177
+[100]	build-auc:0.977398	valid-auc:0.966889
+[110]	build-auc:0.979349	valid-auc:0.967688
+[120]	build-auc:0.980803	valid-auc:0.968071
+[130]	build-auc:0.981796	valid-auc:0.968585
+[140]	build-auc:0.982733	valid-auc:0.968909
+[150]	build-auc:0.983341	valid-auc:0.969424
+[160]	build-auc:0.984291	valid-auc:0.96979
+[170]	build-auc:0.984864	valid-auc:0.969974
+[180]	build-auc:0.985777	valid-auc:0.970747
+[190]	build-auc:0.986578	valid-auc:0.9709
+[200]	build-auc:0.98735	valid-auc:0.971293
+[210]	build-auc:0.98799	valid-auc:0.971335
+[220]	build-auc:0.988587	valid-auc:0.971061
+[230]	build-auc:0.988877	valid-auc:0.971072
+Stopping. Best iteration:
+[207]	build-auc:0.987665	valid-auc:0.97152
+
+dbuild row: 1479231 dvalid row: 369808
+building... 4/5 of 1/1
+[10:42:11] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[0]	build-auc:0.923734	valid-auc:0.912385
+Multiple eval metrics have been passed: 'valid-auc' will be used for early stopping.
+
+Will train until valid-auc hasn't improved in 30 rounds.
+[10]	build-auc:0.927876	valid-auc:0.917202
+[20]	build-auc:0.934634	valid-auc:0.921878
+[30]	build-auc:0.952929	valid-auc:0.942869
+[40]	build-auc:0.958278	valid-auc:0.948267
+[50]	build-auc:0.959428	valid-auc:0.950263
+[60]	build-auc:0.960916	valid-auc:0.951192
+[70]	build-auc:0.969644	valid-auc:0.962463
+[80]	build-auc:0.97237	valid-auc:0.965496
+[90]	build-auc:0.974909	valid-auc:0.966928
+[100]	build-auc:0.976408	valid-auc:0.968029
+[110]	build-auc:0.978121	valid-auc:0.968389
+[120]	build-auc:0.979916	valid-auc:0.969579
+[130]	build-auc:0.981167	valid-auc:0.969887
+[140]	build-auc:0.982052	valid-auc:0.969683
+[150]	build-auc:0.98269	valid-auc:0.970461
+[160]	build-auc:0.983924	valid-auc:0.970491
+[170]	build-auc:0.98503	valid-auc:0.970697
+[180]	build-auc:0.986293	valid-auc:0.97037
+[190]	build-auc:0.986816	valid-auc:0.970633
+[200]	build-auc:0.987561	valid-auc:0.97086
+[210]	build-auc:0.988129	valid-auc:0.97105
+[220]	build-auc:0.98872	valid-auc:0.970997
+[230]	build-auc:0.989274	valid-auc:0.971031
+[240]	build-auc:0.989951	valid-auc:0.971
+[250]	build-auc:0.990446	valid-auc:0.970647
+Stopping. Best iteration:
+[228]	build-auc:0.98923	valid-auc:0.97117
+
+dbuild row: 1479232 dvalid row: 369807
+building... 5/5 of 1/1
+[10:44:31] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[0]	build-auc:0.841414	valid-auc:0.8422
+Multiple eval metrics have been passed: 'valid-auc' will be used for early stopping.
+
+Will train until valid-auc hasn't improved in 30 rounds.
+[10]	build-auc:0.925269	valid-auc:0.927944
+[20]	build-auc:0.933039	valid-auc:0.936685
+[30]	build-auc:0.950522	valid-auc:0.954927
+[40]	build-auc:0.951758	valid-auc:0.956067
+[50]	build-auc:0.957546	valid-auc:0.960786
+[60]	build-auc:0.961557	valid-auc:0.963656
+[70]	build-auc:0.969999	valid-auc:0.969996
+[80]	build-auc:0.97186	valid-auc:0.970309
+[90]	build-auc:0.97451	valid-auc:0.971297
+[100]	build-auc:0.977233	valid-auc:0.97182
+[110]	build-auc:0.978457	valid-auc:0.971705
+[120]	build-auc:0.97959	valid-auc:0.971641
+Stopping. Best iteration:
+[95]	build-auc:0.976143	valid-auc:0.971991
+
+finish all fold
+AUC: 0.972289
+finish all loop
+mk ret
+
+#==============================================================================
+# SUCCESS !!! 803_all_imp.py
+#==============================================================================
+
+time: 45.75min

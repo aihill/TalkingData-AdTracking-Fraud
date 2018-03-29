@@ -1,0 +1,173 @@
+
+#==============================================================================
+# START !!! 901_cv_10per_328-1.py PID: 46428
+#==============================================================================
+
+[06:12:59] 16641350x100 matrix with 1664135000 entries loaded from ../data/dbuild_10per.mt
+[06:31:36] 18490389x100 matrix with 1849038900 entries loaded from ../data/dvalid_10per.mt
+[06:31:36] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[0]	build-auc:0.877596	valid-auc:0.87775
+Multiple eval metrics have been passed: 'valid-auc' will be used for early stopping.
+
+Will train until valid-auc hasn't improved in 50 rounds.
+[5]	build-auc:0.926407	valid-auc:0.925763
+[10]	build-auc:0.926592	valid-auc:0.925951
+[15]	build-auc:0.927302	valid-auc:0.926565
+[20]	build-auc:0.931847	valid-auc:0.93156
+[25]	build-auc:0.940719	valid-auc:0.94011
+[30]	build-auc:0.941259	valid-auc:0.940666
+[35]	build-auc:0.952861	valid-auc:0.951845
+[40]	build-auc:0.953906	valid-auc:0.952839
+[45]	build-auc:0.954117	valid-auc:0.953046
+[50]	build-auc:0.954449	valid-auc:0.953295
+[55]	build-auc:0.95577	valid-auc:0.954625
+[60]	build-auc:0.961	valid-auc:0.960275
+[65]	build-auc:0.9635	valid-auc:0.962778
+[70]	build-auc:0.965162	valid-auc:0.96449
+[75]	build-auc:0.966428	valid-auc:0.965636
+[80]	build-auc:0.967332	valid-auc:0.966333
+[85]	build-auc:0.968133	valid-auc:0.967351
+[90]	build-auc:0.968861	valid-auc:0.968155
+[95]	build-auc:0.9695	valid-auc:0.968787
+[100]	build-auc:0.970313	valid-auc:0.969489
+[105]	build-auc:0.970825	valid-auc:0.970008
+[110]	build-auc:0.971251	valid-auc:0.970463
+[115]	build-auc:0.97154	valid-auc:0.970698
+[120]	build-auc:0.971867	valid-auc:0.971012
+[125]	build-auc:0.972275	valid-auc:0.971339
+[130]	build-auc:0.972564	valid-auc:0.971566
+[135]	build-auc:0.972904	valid-auc:0.971913
+[140]	build-auc:0.973226	valid-auc:0.972174
+[145]	build-auc:0.973475	valid-auc:0.972391
+[150]	build-auc:0.973673	valid-auc:0.972489
+[155]	build-auc:0.973848	valid-auc:0.972645
+[160]	build-auc:0.97408	valid-auc:0.972845
+[165]	build-auc:0.9742	valid-auc:0.972922
+[170]	build-auc:0.974276	valid-auc:0.972967
+[175]	build-auc:0.974564	valid-auc:0.973197
+[180]	build-auc:0.974795	valid-auc:0.973388
+[185]	build-auc:0.974876	valid-auc:0.973464
+[190]	build-auc:0.975022	valid-auc:0.973576
+[195]	build-auc:0.9752	valid-auc:0.973712
+[200]	build-auc:0.975343	valid-auc:0.9738
+[205]	build-auc:0.975497	valid-auc:0.973899
+[210]	build-auc:0.97563	valid-auc:0.973946
+[215]	build-auc:0.975712	valid-auc:0.973996
+[220]	build-auc:0.975815	valid-auc:0.974058
+[225]	build-auc:0.975945	valid-auc:0.974156
+[230]	build-auc:0.976109	valid-auc:0.97423
+[235]	build-auc:0.976236	valid-auc:0.97429
+[240]	build-auc:0.976312	valid-auc:0.974365
+[245]	build-auc:0.9765	valid-auc:0.974501
+[250]	build-auc:0.976578	valid-auc:0.974545
+[255]	build-auc:0.976688	valid-auc:0.974605
+[260]	build-auc:0.976741	valid-auc:0.974647
+[265]	build-auc:0.976818	valid-auc:0.974662
+[270]	build-auc:0.976883	valid-auc:0.974708
+[275]	build-auc:0.976978	valid-auc:0.974751
+[280]	build-auc:0.977065	valid-auc:0.974789
+[285]	build-auc:0.97711	valid-auc:0.974826
+[290]	build-auc:0.977259	valid-auc:0.9749
+[295]	build-auc:0.977327	valid-auc:0.974947
+[300]	build-auc:0.977401	valid-auc:0.974968
+[305]	build-auc:0.97749	valid-auc:0.975018
+[310]	build-auc:0.977589	valid-auc:0.975069
+[315]	build-auc:0.977684	valid-auc:0.975122
+[320]	build-auc:0.977736	valid-auc:0.975144
+[325]	build-auc:0.977819	valid-auc:0.975168
+[330]	build-auc:0.977862	valid-auc:0.975173
+[335]	build-auc:0.977925	valid-auc:0.975213
+[340]	build-auc:0.97804	valid-auc:0.9753
+[345]	build-auc:0.978096	valid-auc:0.975335
+[350]	build-auc:0.978161	valid-auc:0.97538
+[355]	build-auc:0.978212	valid-auc:0.9754
+[360]	build-auc:0.978312	valid-auc:0.975461
+[365]	build-auc:0.978382	valid-auc:0.975442
+[370]	build-auc:0.978461	valid-auc:0.975461
+[375]	build-auc:0.978528	valid-auc:0.975482
+[380]	build-auc:0.978598	valid-auc:0.975495
+[385]	build-auc:0.978674	valid-auc:0.97552
+[390]	build-auc:0.978746	valid-auc:0.975553
+[395]	build-auc:0.978795	valid-auc:0.975568
+[400]	build-auc:0.978906	valid-auc:0.975631
+[405]	build-auc:0.978968	valid-auc:0.97564
+[410]	build-auc:0.979037	valid-auc:0.975677
+[415]	build-auc:0.97909	valid-auc:0.975686
+[420]	build-auc:0.979157	valid-auc:0.975707
+[425]	build-auc:0.979247	valid-auc:0.975724
+[430]	build-auc:0.979301	valid-auc:0.975737
+[435]	build-auc:0.979368	valid-auc:0.975754
+[440]	build-auc:0.979407	valid-auc:0.975788
+[445]	build-auc:0.979456	valid-auc:0.975802
+[450]	build-auc:0.979512	valid-auc:0.975826
+[455]	build-auc:0.979565	valid-auc:0.975845
+[460]	build-auc:0.979641	valid-auc:0.975852
+[465]	build-auc:0.979709	valid-auc:0.975859
+[470]	build-auc:0.979783	valid-auc:0.975919
+[475]	build-auc:0.979835	valid-auc:0.975933
+[480]	build-auc:0.97988	valid-auc:0.975935
+[485]	build-auc:0.979978	valid-auc:0.975967
+[490]	build-auc:0.980056	valid-auc:0.975969
+[495]	build-auc:0.980107	valid-auc:0.975991
+[500]	build-auc:0.980164	valid-auc:0.976038
+[505]	build-auc:0.980248	valid-auc:0.97605
+[510]	build-auc:0.980262	valid-auc:0.97606
+[515]	build-auc:0.980319	valid-auc:0.976067
+[520]	build-auc:0.980365	valid-auc:0.976076
+[525]	build-auc:0.980412	valid-auc:0.976066
+[530]	build-auc:0.980454	valid-auc:0.976069
+[535]	build-auc:0.980499	valid-auc:0.976079
+[540]	build-auc:0.98054	valid-auc:0.976085
+[545]	build-auc:0.980599	valid-auc:0.976092
+[550]	build-auc:0.980632	valid-auc:0.976102
+[555]	build-auc:0.980677	valid-auc:0.976084
+[560]	build-auc:0.980716	valid-auc:0.9761
+[565]	build-auc:0.980763	valid-auc:0.976123
+[570]	build-auc:0.98082	valid-auc:0.976145
+[575]	build-auc:0.98088	valid-auc:0.976138
+[580]	build-auc:0.980955	valid-auc:0.976141
+[585]	build-auc:0.980992	valid-auc:0.976147
+[590]	build-auc:0.981076	valid-auc:0.976155
+[595]	build-auc:0.981146	valid-auc:0.976155
+[600]	build-auc:0.981199	valid-auc:0.976153
+[605]	build-auc:0.981212	valid-auc:0.976155
+[610]	build-auc:0.981247	valid-auc:0.97615
+[615]	build-auc:0.981309	valid-auc:0.976154
+[620]	build-auc:0.981339	valid-auc:0.976147
+[625]	build-auc:0.98138	valid-auc:0.976166
+[630]	build-auc:0.981438	valid-auc:0.976161
+[635]	build-auc:0.981482	valid-auc:0.976144
+[640]	build-auc:0.981522	valid-auc:0.976133
+[645]	build-auc:0.981557	valid-auc:0.976149
+[650]	build-auc:0.981619	valid-auc:0.976188
+[655]	build-auc:0.981645	valid-auc:0.976197
+[660]	build-auc:0.981666	valid-auc:0.976201
+[665]	build-auc:0.981706	valid-auc:0.976196
+[670]	build-auc:0.981792	valid-auc:0.976204
+[675]	build-auc:0.981823	valid-auc:0.976206
+[680]	build-auc:0.981863	valid-auc:0.976221
+[685]	build-auc:0.981901	valid-auc:0.976229
+[690]	build-auc:0.98195	valid-auc:0.976231
+[695]	build-auc:0.982	valid-auc:0.976233
+[700]	build-auc:0.982048	valid-auc:0.976244
+[705]	build-auc:0.982091	valid-auc:0.976258
+[710]	build-auc:0.982117	valid-auc:0.976256
+[715]	build-auc:0.982149	valid-auc:0.976258
+[720]	build-auc:0.982191	valid-auc:0.976247
+[725]	build-auc:0.982217	valid-auc:0.976251
+[730]	build-auc:0.982245	valid-auc:0.976237
+[735]	build-auc:0.982276	valid-auc:0.976229
+[740]	build-auc:0.982318	valid-auc:0.976238
+[745]	build-auc:0.982367	valid-auc:0.976236
+[750]	build-auc:0.982406	valid-auc:0.976244
+[755]	build-auc:0.982427	valid-auc:0.976233
+[760]	build-auc:0.982469	valid-auc:0.976241
+Stopping. Best iteration:
+[714]	build-auc:0.982141	valid-auc:0.976262
+
+
+#==============================================================================
+# SUCCESS !!! 901_cv_10per_328-1.py
+#==============================================================================
+
+time: 76.43min
