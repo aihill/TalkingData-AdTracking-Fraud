@@ -46,9 +46,11 @@ def multi(keys):
     test_['label_enc_ratio'] = test_['label_enc_sum'] / test_['label_enc_count']
     test_[['label_enc_sum', 'label_enc_ratio']].add_prefix(keys_).to_pickle('../data/103_test_{}_label_enc.p'.format(keys_))
     gc.collect()
+    
+    print('finish {}'.format(keys_))
 
 
-pool = Pool(16)
+pool = Pool(20)
 callback = pool.map(multi, utils.comb)
 pool.close()
 
