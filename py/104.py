@@ -33,9 +33,9 @@ def multi_train(keys):
     time_deltas = []
     cnts = []
     cnt = 0
-    for values in df_[list(keys) + ['click_time']].values:
+    for values in df_.head(999)[list(keys) + ['click_time']].values:
         
-        key_values = values[:-1]
+        key_values = list(values[:-1])
         click_time = values[-1]
         
         if key_values_bk is None:
@@ -64,7 +64,7 @@ def multi_train(keys):
 
 
 
-pool = Pool(6)
+pool = Pool(10)
 callback = pool.map(multi_train, utils.comb)
 pool.close()
 
@@ -119,7 +119,7 @@ def multi_test(keys):
     df_.sort_values(utils.sort_keys)[[c1, c2]].to_pickle('../data/104_test_{}.p'.format(keys_))
 
 
-pool = Pool(6)
+pool = Pool(10)
 callback = pool.map(multi_test, utils.comb)
 pool.close()
 
