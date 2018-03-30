@@ -15,6 +15,8 @@ from multiprocessing import Pool
 import utils
 utils.start(__file__)
 
+proc = 6
+
 # =============================================================================
 # train
 # =============================================================================
@@ -64,7 +66,7 @@ def multi_train(keys):
 
 
 
-pool = Pool(10)
+pool = Pool(proc)
 callback = pool.map(multi_train, utils.comb)
 pool.close()
 
@@ -119,7 +121,7 @@ def multi_test(keys):
     df_.sort_values(utils.sort_keys)[[c1, c2]].to_pickle('../data/104_test_{}.p'.format(keys_))
 
 
-pool = Pool(10)
+pool = Pool(proc)
 callback = pool.map(multi_test, utils.comb)
 pool.close()
 
