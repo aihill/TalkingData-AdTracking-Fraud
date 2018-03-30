@@ -91,7 +91,7 @@ def multi_test(keys):
     cnt = 0
     for values in df_[list(keys) + ['click_time']].values:
         
-        key_values = values[:-1]
+        key_values = list(values[:-1])
         click_time = values[-1]
         
         if key_values_bk is None:
