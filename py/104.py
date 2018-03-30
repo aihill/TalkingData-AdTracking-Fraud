@@ -15,6 +15,8 @@ from multiprocessing import Pool
 import utils
 utils.start(__file__)
 
+proc = 6
+
 # =============================================================================
 # train
 # =============================================================================
@@ -35,7 +37,7 @@ def multi_train(keys):
     cnt = 0
     for values in df_[list(keys) + ['click_time']].values:
         
-        key_values = values[:-1]
+        key_values = list(values[:-1])
         click_time = values[-1]
         
         if key_values_bk is None:
@@ -64,7 +66,7 @@ def multi_train(keys):
 
 
 
-pool = Pool(6)
+pool = Pool(proc)
 callback = pool.map(multi_train, utils.comb)
 pool.close()
 
@@ -91,7 +93,7 @@ def multi_test(keys):
     cnt = 0
     for values in df_[list(keys) + ['click_time']].values:
         
-        key_values = values[:-1]
+        key_values = list(values[:-1])
         click_time = values[-1]
         
         if key_values_bk is None:
@@ -119,7 +121,7 @@ def multi_test(keys):
     df_.sort_values(utils.sort_keys)[[c1, c2]].to_pickle('../data/104_test_{}.p'.format(keys_))
 
 
-pool = Pool(6)
+pool = Pool(proc)
 callback = pool.map(multi_test, utils.comb)
 pool.close()
 
@@ -140,8 +142,3 @@ print('concat test')
 pd.concat([pd.read_pickle(f) for f in tqdm(sorted(glob('../data/104_test_*.p')))], axis=1).to_pickle('../data/104_test.p')
 system('rm ../data/104_test_*')
 
-
-
-
-#==============================================================================
-utils.end(__file__)
