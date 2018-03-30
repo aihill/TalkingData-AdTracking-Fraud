@@ -142,3 +142,7 @@ print('concat test')
 pd.concat([pd.read_pickle(f) for f in tqdm(sorted(glob('../data/104_test_*.p')))], axis=1).to_pickle('../data/104_test.p')
 system('rm ../data/104_test_*')
 
+
+#==============================================================================
+utils.end(__file__)
+
