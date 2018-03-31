@@ -73,7 +73,8 @@ def sender(load_file):
 
 train = pd.concat([utils.read_pickles('../data/train'),
                    pd.read_pickle('../data/101_train.p'),
-                   pd.read_pickle('../data/102_train.p')], 
+                   pd.read_pickle('../data/102_train.p'),
+                   pd.read_pickle('../data/104_train.p')], 
                   axis=1)#.sample(frac=0.4)
 
 train[list(set(train.columns) & usecols)].to_pickle('../data/tmp{}.p'.format(0))
