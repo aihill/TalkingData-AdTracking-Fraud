@@ -185,7 +185,8 @@ del train, y; gc.collect()
 
 test = pd.concat([utils.read_pickles('../data/test_old'),
                    pd.read_pickle('../data/101_test_old.p'),
-                   pd.read_pickle('../data/102_test_old.p')], 
+                   pd.read_pickle('../data/102_test_old.p'),
+                   pd.read_pickle('../data/104_test.p')], 
                   axis=1)#.sample(frac=0.4)
 
 #target = ~test.click_id.isnull()
