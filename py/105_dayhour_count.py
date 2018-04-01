@@ -65,7 +65,7 @@ def multi(keys):
 
 
 pool = Pool(3)
-comb = [c for c in utils.comb if len(c)>2]
+comb = [c for c in utils.comb if len(c)<=2]
 callback = pool.map(multi, comb)
 pool.close()
 
