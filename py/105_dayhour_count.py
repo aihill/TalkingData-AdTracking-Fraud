@@ -40,6 +40,7 @@ gc.collect()
 
 # std
 def multi(keys):
+    gc.collect()
     keys_ = '-'.join(keys)
     print(keys)
     
@@ -50,6 +51,7 @@ def multi(keys):
     
     train_ = pd.merge(train, df, on=keys, how='left')
     train_[[keys_+'_dayhour_count']].to_pickle('../data/105_train_{}_dayhour_count.p'.format(keys_))
+    del train_; gc.collect()
     
     # for test
     df = test.groupby(list(keys) + ['day', 'hour']).size()
@@ -61,7 +63,7 @@ def multi(keys):
 
 
 
-pool = Pool(10)
+pool = Pool(6)
 callback = pool.map(multi, utils.comb)
 pool.close()
 
