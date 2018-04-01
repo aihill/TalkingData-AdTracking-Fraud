@@ -73,13 +73,13 @@ pool.close()
 
 print('concat train')
 pd.concat([pd.read_pickle(f) for f in tqdm(sorted(glob('../data/105_train_*.p')))], axis=1).to_pickle('../data/105_train.p')
-system('rm ../data/104_train_*')
+system('rm ../data/105_train_*')
 
 gc.collect()
 
 print('concat test')
 pd.concat([pd.read_pickle(f) for f in tqdm(sorted(glob('../data/105_test_*.p')))], axis=1).to_pickle('../data/105_test.p')
-system('rm ../data/104_test_*')
+system('rm ../data/105_test_*')
 
 
 #==============================================================================
