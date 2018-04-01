@@ -63,7 +63,7 @@ def multi(keys):
 
 
 
-pool = Pool(6)
+pool = Pool(3)
 callback = pool.map(multi, utils.comb)
 pool.close()
 
