@@ -41,9 +41,6 @@ gc.collect()
 # std
 def multi(keys):
     
-    if len(keys)>2:
-        return
-    
     gc.collect()
     keys_ = '-'.join(keys)
     print(keys)
@@ -68,7 +65,8 @@ def multi(keys):
 
 
 pool = Pool(3)
-callback = pool.map(multi, utils.comb)
+comb = [c for c in utils.comb if len(c)>2]
+callback = pool.map(multi, comb)
 pool.close()
 
 
