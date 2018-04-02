@@ -69,6 +69,8 @@ comb = [c for c in utils.comb if len(c)<=2]
 callback = pool.map(multi, comb)
 pool.close()
 
+# straight
+[multi(keys) for keys in utils.comb if len(keys)<=2]
 
 # =============================================================================
 # concat
