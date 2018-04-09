@@ -2,8 +2,7 @@
 """
 
 base columns
-['ip', 'app', 'device', 'os', 'channel', 'click_time', 
-'attributed_time', 'is_attributed']
+['ip', 'app', 'device', 'os', 'channel', 'click_time', 'attributed_time', 'is_attributed']
 
 """
 
@@ -26,7 +25,8 @@ comb = []
 for i in range(1, 6):
     comb += list(combinations(['ip', 'app', 'device', 'os', 'channel'], i))
 
-sort_keys = ['ip', 'app', 'device', 'os', 'channel', 'click_time']
+#sort_keys = ['ip', 'app', 'device', 'os', 'channel', 'click_time']
+sort_keys = ['click_time']
 
 
 # =============================================================================
