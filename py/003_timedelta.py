@@ -14,7 +14,7 @@ import gc
 import os
 from glob import glob
 from multiprocessing import Pool
-nthread = 10
+nthread = 5
 from collections import defaultdict
 import utils
 utils.start(__file__)
@@ -38,7 +38,7 @@ def multi(count_keys):
     click_history = defaultdict(int)
     keys = ['ip', 'app', 'device', 'os', 'channel', 'click_time']
     result = []
-    for values in trte[keys].values:
+    for values in (trte[keys].values):
         di = dict(zip(keys, values))
         key = '-'.join(map(str, [di[k] for k in count_keys]))
         
