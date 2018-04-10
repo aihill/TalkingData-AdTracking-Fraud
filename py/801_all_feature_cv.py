@@ -18,7 +18,7 @@ import xgbextension as ex
 import gc
 #from time import sleep
 import utils
-#utils.start(__file__)
+utils.start(__file__)
 
 SEED = 4308 # np.random.randint(9999) #int(sys.argv[1])
 FRAC = 0.1
