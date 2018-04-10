@@ -31,7 +31,8 @@ print('seed :', SEED)
 # =============================================================================
 
 X = pd.concat([utils.read_pickles('../data/train').sample(frac=FRAC, random_state=SEED),
-                   pd.read_pickle('../data/001_train.p').sample(frac=FRAC, random_state=SEED)
+#                   pd.read_pickle('../data/001_train.p').sample(frac=FRAC, random_state=SEED),
+                   pd.read_pickle('../data/002_train.p').sample(frac=FRAC, random_state=SEED),
                    ], 
                   axis=1)
 gc.collect()

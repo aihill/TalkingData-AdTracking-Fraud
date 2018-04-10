@@ -16,6 +16,7 @@ from tqdm import tqdm
 from itertools import combinations
 from sklearn.model_selection import KFold
 from time import time
+from datetime import datetime
 import gc
 
 # =============================================================================
@@ -37,9 +38,9 @@ def start(fname):
     st_time = time()
     print("""
 #==============================================================================
-# START !!! {} PID: {}
+# START !!! {} PID: {} time:{}
 #==============================================================================
-""".format(fname, os.getpid()))
+""".format( fname, os.getpid(), datetime.today() ))
     
     return
 

@@ -18,7 +18,7 @@ from collections import defaultdict
 import utils
 utils.start(__file__)
 
-os.system('rm -rf ../data/002__*')
+os.system('rm -rf ../data/002*')
 
 trte = pd.concat([utils.read_pickles('../data/train', ['ip', 'app', 'device', 'os', 'channel', 'click_time']),
                 utils.read_pickles('../data/test_old', ['ip', 'app', 'device', 'os', 'channel', 'click_time'])])
@@ -44,7 +44,7 @@ def multi(count_keys):
         result.append(counter[key])
         counter[key] +=1
     
-    result = pd.DataFrame(result, columns=[count_keys_])
+    result = pd.DataFrame(result, columns=['count_'+count_keys_])
     
     result.iloc[0:184903890].to_pickle('../data/002__{}_train.p'.format(count_keys_))
     result.iloc[184903890:].to_pickle('../data/002__{}_test.p'.format(count_keys_))
