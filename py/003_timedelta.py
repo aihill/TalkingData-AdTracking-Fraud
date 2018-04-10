@@ -41,7 +41,7 @@ def multi(count_keys):
         di = dict(zip(keys, values))
         key = '-'.join(map(str, [di[k] for k in count_keys]))
         
-        if key in counter:
+        if key in click_history:
             result.append( (di['click_time'] - click_history[key]).seconds )
         else:
             result.append(-1)
