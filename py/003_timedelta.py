@@ -14,7 +14,7 @@ import gc
 import os
 from glob import glob
 from multiprocessing import Pool
-nthread = 15
+nthread = 10
 from collections import defaultdict
 import utils
 utils.start(__file__)
@@ -30,6 +30,7 @@ def multi(count_keys):
     count_keys = ('app', 'device')
     
     """
+    
     gc.collect()
     print(count_keys)
     
