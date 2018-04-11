@@ -22,7 +22,7 @@ import utils
 utils.start(__file__)
 
 SEED = 4308 # np.random.randint(9999) #int(sys.argv[1])
-NROUND = 100
+NROUND = 9999
 
 
 np.random.seed(SEED)
@@ -90,8 +90,8 @@ print(col)
 
 
 param = {'colsample_bylebel': 0.8,
-         'subsample': 0.6,
-         'eta': 0.1,
+         'subsample': 0.1,
+         'eta': 0.01,
          'eval_metric': 'auc',
          'max_depth': 4,
          'objective': 'binary:logistic',
