@@ -40,7 +40,7 @@ def multi(count_keys):
     click_time_bk = key_bk = None
     cnt = 0
     result = []
-    for values in (trte.head(999)[keys].values):
+    for values in (trte[keys].values):
         di = dict(zip(keys, values))
         key = '-'.join(map(str, [di[k] for k in count_keys]))
         
