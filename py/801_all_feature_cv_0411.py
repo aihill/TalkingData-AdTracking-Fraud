@@ -43,12 +43,18 @@ print('seed :', SEED)
 
 
 # by datetime dbuild
-X = pd.concat([pd.read_pickle('../data/train/8.p'),
+X = pd.concat([pd.concat([pd.read_pickle('../data/train/7.p'),
+                   pd.read_pickle('../data/002_train/7.p'),
+                   pd.read_pickle('../data/003_train/7.p'),
+                   pd.read_pickle('../data/004_train/7.p'),
+                   pd.read_pickle('../data/005_train/7.p'),
+                   ], axis=1),
+               pd.concat([pd.read_pickle('../data/train/8.p'),
                    pd.read_pickle('../data/002_train/8.p'),
                    pd.read_pickle('../data/003_train/8.p'),
                    pd.read_pickle('../data/004_train/8.p'),
                    pd.read_pickle('../data/005_train/8.p'),
-                   ], axis=1)
+                   ], axis=1)])
 gc.collect()
 
 
