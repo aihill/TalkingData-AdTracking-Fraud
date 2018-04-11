@@ -23,6 +23,7 @@ utils.start(__file__)
 
 SEED = 4308 # np.random.randint(9999) #int(sys.argv[1])
 NROUND = 300
+FRAC = 0.3
 SUBMIT_FILE_PATH = '../output/412-1.csv.gz'
 EXE_SUBMIT = True
 
@@ -33,11 +34,11 @@ print('seed :', SEED)
 # load train
 # =============================================================================
 
-X = pd.concat([utils.read_pickles('../data/train'),
-               utils.read_pickles('../data/002_train'),
-               utils.read_pickles('../data/003_train'),
-               utils.read_pickles('../data/004_train'),
-               utils.read_pickles('../data/005_train'),
+X = pd.concat([utils.read_pickles('../data/train').sample(frac=FRAC, random_state=SEED),
+               utils.read_pickles('../data/002_train').sample(frac=FRAC, random_state=SEED),
+               utils.read_pickles('../data/003_train').sample(frac=FRAC, random_state=SEED),
+               utils.read_pickles('../data/004_train').sample(frac=FRAC, random_state=SEED),
+               utils.read_pickles('../data/005_train').sample(frac=FRAC, random_state=SEED),
                ], axis=1)
 gc.collect()
 
