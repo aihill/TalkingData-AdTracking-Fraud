@@ -46,6 +46,8 @@ print('seed :', SEED)
 X = pd.concat([pd.read_pickle('../data/train/8.p'),
                    pd.read_pickle('../data/002_train/8.p'),
                    pd.read_pickle('../data/003_train/8.p'),
+                   pd.read_pickle('../data/004_train/8.p'),
+                   pd.read_pickle('../data/005_train/8.p'),
                    ], axis=1)
 gc.collect()
 
@@ -66,6 +68,8 @@ del X, y; gc.collect()
 X = pd.concat([pd.read_pickle('../data/train/9.p'),
                pd.read_pickle('../data/002_train/9.p'),
                pd.read_pickle('../data/003_train/9.p'),
+               pd.read_pickle('../data/004_train/9.p'),
+               pd.read_pickle('../data/005_train/9.p'),
                ], axis=1)
 gc.collect()
 
