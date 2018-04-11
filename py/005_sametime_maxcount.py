@@ -13,7 +13,7 @@ import gc
 import os
 from glob import glob
 from multiprocessing import Pool
-nthread = 15
+nthread = 5
 from collections import defaultdict
 import utils
 utils.start(__file__)
