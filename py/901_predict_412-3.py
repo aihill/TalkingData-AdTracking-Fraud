@@ -76,6 +76,7 @@ gc.collect()
 
 
 model = xgb.train(param, dtrain, NROUND)
+del dtrain; gc.collect()
 
 imp = ex.getImp(model)
 imp.to_csv('imp.csv', index=False)
