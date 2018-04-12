@@ -44,7 +44,7 @@ comb = [
         
         ]
 pool = Pool(10)
-callback = pool.map(multi, utils.comb)
+callback = pool.map(multi, comb)
 pool.close()
 
 # =============================================================================
