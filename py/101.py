@@ -25,11 +25,12 @@ def multi(keys):
     
     keys_ = '-'.join(keys)
     df = trte.groupby(keys).size()
-    df.name = keys_+'_totalcount'
+    df.name = 'totalcount_' + keys_
     df = df.reset_index()
     result = pd.merge(trte, df, on=keys, how='left')
-    result.iloc[0:184903890][keys_+'_totalcount'].to_pickle('../data/101__{}_train.p'.format(keys_))
-    result.iloc[184903890:][keys_+'_totalcount'].to_pickle('../data/101__{}_test.p'.format(keys_))
+    
+    result.iloc[0:184903890]['totalcount_' + keys_].to_pickle('../data/101__{}_train.p'.format(keys_))
+    result.iloc[184903890:]['totalcount_' + keys_].to_pickle('../data/101__{}_test.p'.format(keys_))
     gc.collect()
     
 pool = Pool(10)
