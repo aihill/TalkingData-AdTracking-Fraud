@@ -31,6 +31,8 @@ def multi(keys):
     df = df.reset_index().groupby(keys2).size()
     c = 'totalcount2_' + keys2_ + '_' + keys1_
     df.name = c
+    df = df.reset_index()
+    
     result = pd.merge(trte, df, on=keys2, how='left')
     
     result.iloc[0:184903890][c].to_pickle('../data/102__{}_train.p'.format(c))
