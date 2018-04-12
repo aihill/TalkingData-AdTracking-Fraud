@@ -6,7 +6,7 @@ Created on Thu Apr 12 14:08:23 2018
 @author: kazuki.onodera
 """
 
-import numpy as np
+import os
 import pandas as pd
 from tqdm import tqdm
 import gc
@@ -20,13 +20,16 @@ trte = pd.concat([utils.read_pickles('../data/train'),
                 utils.read_pickles('../data/test_old')])
 
 def multi(keys):
+    gc.collect()
+    print(keys)
+    
     keys_ = '-'.join(keys)
     df = trte.groupby(keys).size()
     df.name = keys_+'_totalcount'
     df = df.reset_index()
     result = pd.merge(trte, df, on=keys, how='left')
-    result.iloc[0:184903890].to_pickle('../data/101__{}_train.p'.format(keys_))
-    result.iloc[184903890:].to_pickle('../data/101__{}_test.p'.format(keys_))
+    result.iloc[0:184903890][keys_+'_totalcount'].to_pickle('../data/101__{}_train.p'.format(keys_))
+    result.iloc[184903890:][keys_+'_totalcount'].to_pickle('../data/101__{}_test.p'.format(keys_))
     gc.collect()
     
 pool = Pool(10)
@@ -40,6 +43,8 @@ pool.close()
 # train
 df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/101__*_train.p'))], axis=1)
 utils.to_pickles(df, '../data/101_train', 10)
+
+gc.collect()
 
 # test
 df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/101__*_test.p'))], axis=1)
