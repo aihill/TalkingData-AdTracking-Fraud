@@ -41,6 +41,8 @@ train = pd.read_csv('../input/train.csv.zip', dtype=dtypes,
 print('finish loading!')
 
 utils.to_pickles(train, '../data/train', 10)
+utils.to_pickles(train.sort_values(utils.sort_keys, ascending=False), 
+                 '../data/train_rev', 10)
 
 del train; gc.collect()
 
@@ -62,6 +64,8 @@ test_old.drop('click_id', axis=1, inplace=True)
 test_old = pd.merge(test_old, test[merge_key+['click_id']], on=merge_key, how='left')
 
 utils.to_pickles(test_old,  '../data/test_old',  10)
+utils.to_pickles(test_old.sort_values(utils.sort_keys, ascending=False),
+                 '../data/test_old_rev',  10)
 utils.to_pickles(test,  '../data/test',  10)
 
 del test_old; gc.collect()

@@ -73,8 +73,7 @@ param = {'colsample_bylebel': 0.8,
 gc.collect()
 
 
-model = xgb.train(param, dtrain, NROUND, verbose_eval=10, 
-                  early_stopping_rounds=50)
+model = xgb.train(param, dtrain, NROUND)
 
 imp = ex.getImp(model)
 imp.to_csv('imp.csv', index=False)
