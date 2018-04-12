@@ -1,0 +1,57 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Apr 12 14:08:23 2018
+
+@author: kazuki.onodera
+"""
+
+import numpy as np
+import pandas as pd
+from tqdm import tqdm
+import gc
+from glob import glob
+from multiprocessing import Pool
+import utils
+utils.start(__file__)
+
+
+trte = pd.concat([utils.read_pickles('../data/train'),
+                utils.read_pickles('../data/test_old')])
+
+def multi(keys):
+    keys_ = '-'.join(keys)
+    df = trte.groupby(keys).size()
+    df.name = keys_+'_totalcount'
+    df = df.reset_index()
+    result = pd.merge(trte, df, on=keys, how='left')
+    result.iloc[0:184903890].to_pickle('../data/101__{}_train.p'.format(keys_))
+    result.iloc[184903890:].to_pickle('../data/101__{}_test.p'.format(keys_))
+    gc.collect()
+    
+pool = Pool(10)
+callback = pool.map(multi, utils.comb)
+pool.close()
+
+# =============================================================================
+# concat
+# =============================================================================
+
+# train
+df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/101__*_train.p'))], axis=1)
+utils.to_pickles(df, '../data/101_train', 10)
+
+# test
+df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/101__*_test.p'))], axis=1)
+utils.to_pickles(df, '../data/101_test', 10)
+
+os.system('rm -rf ../data/101__*.p')
+
+
+
+
+
+#==============================================================================
+utils.end(__file__)
+
+
