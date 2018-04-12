@@ -8,7 +8,7 @@ Created on Thu Apr 12 23:03:51 2018
 
 import os
 import pandas as pd
-#from tqdm import tqdm
+from tqdm import tqdm
 import gc
 from glob import glob
 from multiprocessing import Pool
@@ -63,22 +63,24 @@ def multi(keys):
     gc.collect()
 
 
-pool = Pool(10)
+pool = Pool(6)
 callback = pool.map(multi, utils.comb)
 pool.close()
+
+del trte; gc.collect()
 
 # =============================================================================
 # concat
 # =============================================================================
 
 # train
-df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/103__*_train.p'))], axis=1)
+df = pd.concat([pd.read_pickle(f) for f in tqdm(sorted(glob('../data/103__*_train.p')))], axis=1)
 utils.to_pickles(df, '../data/103_train', 10)
 
 gc.collect()
 
 # test
-df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/103__*_test.p'))], axis=1)
+df = pd.concat([pd.read_pickle(f) for f in tqdm(sorted(glob('../data/103__*_test.p')))], axis=1)
 utils.to_pickles(df, '../data/103_test', 10)
 
 os.system('rm -rf ../data/103__*.p')
