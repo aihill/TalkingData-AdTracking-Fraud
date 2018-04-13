@@ -62,7 +62,7 @@ print(col)
 
 param = {'colsample_bylebel': 0.8,
          'subsample': 0.1,
-         'eta': 0.01,
+         'eta': 0.1,
          'eval_metric': 'auc',
          'max_depth': 4,
          'objective': 'binary:logistic',

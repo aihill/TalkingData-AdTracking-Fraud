@@ -74,14 +74,20 @@ del trte; gc.collect()
 # =============================================================================
 
 # train
-df = pd.concat([pd.read_pickle(f) for f in tqdm(sorted(glob('../data/103__*_train.p')))], axis=1)
-utils.to_pickles(df, '../data/103_train', 10)
+files = sorted(glob('../data/103__*_train.p'))
+df = pd.concat([pd.read_pickle(f) for f in tqdm(files[:15])], axis=1)
+utils.to_pickles(df, '../data/103-1_train', 10)
+df = pd.concat([pd.read_pickle(f) for f in tqdm(files[15:])], axis=1)
+utils.to_pickles(df, '../data/103-2_train', 10)
 
 gc.collect()
 
 # test
-df = pd.concat([pd.read_pickle(f) for f in tqdm(sorted(glob('../data/103__*_test.p')))], axis=1)
-utils.to_pickles(df, '../data/103_test', 10)
+files = sorted(glob('../data/103__*_test.p'))
+df = pd.concat([pd.read_pickle(f) for f in tqdm(files[:15])], axis=1)
+utils.to_pickles(df, '../data/103-1_test', 10)
+df = pd.concat([pd.read_pickle(f) for f in tqdm(files[15:])], axis=1)
+utils.to_pickles(df, '../data/103-2_test', 10)
 
 os.system('rm -rf ../data/103__*.p')
 
