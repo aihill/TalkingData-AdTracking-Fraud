@@ -41,7 +41,8 @@ X = pd.concat([pd.read_pickle('../data/train/9.p'),
                pd.read_pickle('../data/006_train/9.p'),
                pd.read_pickle('../data/101_train/9.p'),
                pd.read_pickle('../data/102_train/9.p'),
-               pd.read_pickle('../data/103_train/9.p'),
+               pd.read_pickle('../data/103-1_train/9.p'),
+               pd.read_pickle('../data/103-2_train/9.p'),
                ], axis=1)
 gc.collect()
 
