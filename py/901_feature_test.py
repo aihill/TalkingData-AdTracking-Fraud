@@ -27,7 +27,7 @@ SEED = 4308 # np.random.randint(9999) #int(sys.argv[1])
 NROUND = 300
 FRAC = 0.3
 SUBMIT_FILE_PATH = '../output/feature-test2.csv.gz'
-COMMENT = '101,102,103'
+COMMENT = '101,102,103-1'
 EXE_SUBMIT = True
 
 
@@ -45,7 +45,7 @@ X = pd.concat([utils.read_pickles('../data/train').sample(frac=FRAC, random_stat
                utils.read_pickles('../data/101_train').sample(frac=FRAC, random_state=SEED),
                utils.read_pickles('../data/102_train').sample(frac=FRAC, random_state=SEED),
                utils.read_pickles('../data/103-1_train').sample(frac=FRAC, random_state=SEED),
-               utils.read_pickles('../data/103-2_train').sample(frac=FRAC, random_state=SEED),
+#               utils.read_pickles('../data/103-2_train').sample(frac=FRAC, random_state=SEED),
                ], axis=1)
 gc.collect()
 
@@ -97,7 +97,7 @@ X = pd.concat([utils.read_pickles('../data/test_old'),
                utils.read_pickles('../data/101_test'),
                utils.read_pickles('../data/102_test'),
                utils.read_pickles('../data/103-1_test'),
-               utils.read_pickles('../data/103-2_test'),
+#               utils.read_pickles('../data/103-2_test'),
                ], axis=1)
 gc.collect()
 
