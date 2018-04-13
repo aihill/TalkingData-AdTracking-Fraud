@@ -25,7 +25,7 @@ utils.start(__file__)
 
 SEED = 4308 # np.random.randint(9999) #int(sys.argv[1])
 NROUND = 300
-FRAC = 0.3
+FRAC = 0.1
 SUBMIT_FILE_PATH = '../output/feature-test2.csv.gz'
 COMMENT = '101,102,103-1'
 EXE_SUBMIT = True
@@ -81,6 +81,7 @@ gc.collect()
 
 
 model = xgb.train(param, dtrain, NROUND)
+del dtrain; gc.collect()
 
 imp = ex.getImp(model)
 imp.to_csv('imp.csv', index=False)
