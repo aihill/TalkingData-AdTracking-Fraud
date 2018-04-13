@@ -26,7 +26,8 @@ utils.start(__file__)
 SEED = 4308 # np.random.randint(9999) #int(sys.argv[1])
 NROUND = 300
 FRAC = 0.3
-SUBMIT_FILE_PATH = '../output/feature-test101.csv.gz'
+SUBMIT_FILE_PATH = '../output/feature-test101-102.csv.gz'
+COMMENT = '101,102'
 EXE_SUBMIT = True
 
 
@@ -124,7 +125,7 @@ sub.to_csv(SUBMIT_FILE_PATH, index=False, compression='gzip')
 # submission
 # =============================================================================
 if EXE_SUBMIT:
-    utils.submit(SUBMIT_FILE_PATH)
+    utils.submit(SUBMIT_FILE_PATH, COMMENT)
 
 
 #==============================================================================

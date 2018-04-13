@@ -126,8 +126,8 @@ def reduce_memory(df, ix_start=0):
     gc.collect()
 
 
-def submit(file_path):
-    os.system('kaggle competitions submit -c talkingdata-adtracking-fraud-detection -f {} -m "from API"'.format(file_path))
+def submit(file_path, comment='from API'):
+    os.system('kaggle competitions submit -c talkingdata-adtracking-fraud-detection -f {} -m "{}"'.format(file_path, comment))
 
 
 
