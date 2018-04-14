@@ -37,12 +37,23 @@ print('seed :', SEED)
 # load train
 # =============================================================================
 
-X = pd.concat([utils.read_pickles('../data/train').sample(frac=FRAC, random_state=SEED),
-               utils.read_pickles('../data/002_train').sample(frac=FRAC, random_state=SEED),
-               utils.read_pickles('../data/003_train').sample(frac=FRAC, random_state=SEED),
-               utils.read_pickles('../data/004_train').sample(frac=FRAC, random_state=SEED),
-               utils.read_pickles('../data/005_train').sample(frac=FRAC, random_state=SEED),
-               utils.read_pickles('../data/101_train').sample(frac=FRAC, random_state=SEED),
+#X = pd.concat([utils.read_pickles('../data/train').sample(frac=FRAC, random_state=SEED),
+#               utils.read_pickles('../data/002_train').sample(frac=FRAC, random_state=SEED),
+#               utils.read_pickles('../data/003_train').sample(frac=FRAC, random_state=SEED),
+#               utils.read_pickles('../data/004_train').sample(frac=FRAC, random_state=SEED),
+#               utils.read_pickles('../data/005_train').sample(frac=FRAC, random_state=SEED),
+#               utils.read_pickles('../data/101_train').sample(frac=FRAC, random_state=SEED),
+##               utils.read_pickles('../data/102_train').sample(frac=FRAC, random_state=SEED),
+##               utils.read_pickles('../data/103-1_train').sample(frac=FRAC, random_state=SEED),
+##               utils.read_pickles('../data/103-2_train').sample(frac=FRAC, random_state=SEED),
+#               ], axis=1)
+
+X = pd.concat([pd.read_pickle('../data/train/9.p'),
+               pd.read_pickle('../data/002_train/9.p'),
+               pd.read_pickle('../data/003_train/9.p'),
+               pd.read_pickle('../data/004_train/9.p'),
+               pd.read_pickle('../data/005_train/9.p'),
+               pd.read_pickle('../data/101_train/9.p'),
 #               utils.read_pickles('../data/102_train').sample(frac=FRAC, random_state=SEED),
 #               utils.read_pickles('../data/103-1_train').sample(frac=FRAC, random_state=SEED),
 #               utils.read_pickles('../data/103-2_train').sample(frac=FRAC, random_state=SEED),

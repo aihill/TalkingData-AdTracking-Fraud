@@ -76,6 +76,7 @@ def multi_test(args):
 # # train
 # =============================================================================
 load_files = sorted(glob('../data/*train/9.p'))
+
 args = list(zip(load_files, range(len(load_files))))
 
 pool = Pool(10)
@@ -103,6 +104,7 @@ X_head = pd.read_pickle('X_head.p')
 # # test
 # =============================================================================
 sub = utils.read_pickles('../data/test_old', ['click_id'])
+
 load_folders = sorted(glob('../data/*_test/'))
 args = list(zip(load_folders, range(len(load_folders))))
 
