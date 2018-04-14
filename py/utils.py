@@ -79,12 +79,9 @@ def to_pickles(df, path, split_size=3, inplace=True):
     gc.collect()
     mkdir_p(path)
     
-#    for i in tqdm(range(split_size)):
-#        df.ix[df.index%split_size==i].to_pickle(path+'/{}.p'.format(i))
-    
     kf = KFold(n_splits=split_size)
     for i, (train_index, val_index) in enumerate(tqdm(kf.split(df))):
-        df.iloc[val_index].to_pickle(path+'/{}.p.gz'.format(i), compression='gzip')
+        df.iloc[val_index].to_pickle(path+'/{}.p'.format(i))
     return
 
 def read_pickles(path, col=None):
