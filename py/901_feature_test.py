@@ -26,8 +26,8 @@ utils.start(__file__)
 SEED = 4308 # np.random.randint(9999) #int(sys.argv[1])
 NROUND = 300
 FRAC = 0.1
-SUBMIT_FILE_PATH = '../output/feature-test4.csv.gz'
-COMMENT = '002~5,101'
+SUBMIT_FILE_PATH = '../output/feature-test4-9p.csv.gz'
+COMMENT = '002~5,101_9p'
 EXE_SUBMIT = True
 
 
