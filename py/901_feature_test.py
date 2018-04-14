@@ -92,12 +92,12 @@ imp.to_csv('imp.csv', index=False)
 
 X = pd.concat([utils.read_pickles('../data/test_old'),
 #               utils.read_pickles('../data/002_test'),
-#               utils.read_pickles('../data/003_test'),
-#               utils.read_pickles('../data/004_test'),
-#               utils.read_pickles('../data/005_test'),
+               utils.read_pickles('../data/003_test'),
+               utils.read_pickles('../data/004_test'),
+               utils.read_pickles('../data/005_test'),
                utils.read_pickles('../data/101_test'),
-               utils.read_pickles('../data/102_test'),
-               utils.read_pickles('../data/103-1_test'),
+#               utils.read_pickles('../data/102_test'),
+#               utils.read_pickles('../data/103-1_test'),
 #               utils.read_pickles('../data/103-2_test'),
                ], axis=1)
 gc.collect()
