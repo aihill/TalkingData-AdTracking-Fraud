@@ -26,8 +26,8 @@ utils.start(__file__)
 SEED = 4308 # np.random.randint(9999) #int(sys.argv[1])
 NROUND = 300
 FRAC = 0.1
-SUBMIT_FILE_PATH = '../output/feature-test3.csv.gz'
-COMMENT = '003~5,101'
+SUBMIT_FILE_PATH = '../output/feature-test4.csv.gz'
+COMMENT = '002~5,101'
 EXE_SUBMIT = True
 
 
@@ -38,7 +38,7 @@ print('seed :', SEED)
 # =============================================================================
 
 X = pd.concat([utils.read_pickles('../data/train').sample(frac=FRAC, random_state=SEED),
-#               utils.read_pickles('../data/002_train').sample(frac=FRAC, random_state=SEED),
+               utils.read_pickles('../data/002_train').sample(frac=FRAC, random_state=SEED),
                utils.read_pickles('../data/003_train').sample(frac=FRAC, random_state=SEED),
                utils.read_pickles('../data/004_train').sample(frac=FRAC, random_state=SEED),
                utils.read_pickles('../data/005_train').sample(frac=FRAC, random_state=SEED),
@@ -91,7 +91,7 @@ imp.to_csv('imp.csv', index=False)
 # =============================================================================
 
 X = pd.concat([utils.read_pickles('../data/test_old'),
-#               utils.read_pickles('../data/002_test'),
+               utils.read_pickles('../data/002_test'),
                utils.read_pickles('../data/003_test'),
                utils.read_pickles('../data/004_test'),
                utils.read_pickles('../data/005_test'),
