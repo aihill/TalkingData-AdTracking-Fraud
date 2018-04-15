@@ -14,7 +14,7 @@ import gc
 import os
 from glob import glob
 from multiprocessing import Pool
-nthread = 10
+nthread = 16
 #from collections import defaultdict
 import utils
 utils.start(__file__)
@@ -40,15 +40,21 @@ def multi(count_keys):
     keys = count_keys+['click_time']
     df = trte[keys].sort_values(keys)
     
-    c = 'timedelta_'+count_keys_
-    df[c] = df.click_time.diff().dt.seconds
+    c1 = 'timedelta_'+count_keys_
+    df[c1] = df.click_time.diff().dt.seconds
     df['key_match'] = ( df[count_keys]==df[count_keys].shift() ).all(1)*1
-    df.loc[df.key_match==0, c] = -1
+    df.loc[df.key_match==0, c1] = -1
     
+    c2 = 'timedelta_rev_'+count_keys_
+    df[c2] = df.click_time.diff(-1).dt.seconds.abs()
+    df['key_match'] = ( df[count_keys]==df[count_keys].shift(-1) ).all(1)*1
+    df.loc[df.key_match==0, c2] = -1
+    
+    df.drop(count_keys, axis=1, inplace=True)
     df.sort_index(inplace=True)
     
-    df.iloc[0:184903890][c].to_pickle('../data/004__{}_train.p'.format(count_keys_))
-    df.iloc[184903890:][c].to_pickle('../data/004__{}_test.p'.format(count_keys_))
+    df.iloc[0:184903890][[c1, c2]].to_pickle('../data/004__{}_train.p'.format(count_keys_))
+    df.iloc[184903890:][[c1, c2]].to_pickle('../data/004__{}_test.p'.format(count_keys_))
 
 
 pool = Pool(nthread)
