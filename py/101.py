@@ -42,13 +42,13 @@ pool.close()
 # =============================================================================
 
 # train
-df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/101__*_train.p'))], axis=1)
+df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/101__*_train.p'))], axis=1).reset_index(drop=True)
 utils.to_pickles(df, '../data/101_train', 10)
 
 gc.collect()
 
 # test
-df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/101__*_test.p'))], axis=1)
+df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/101__*_test.p'))], axis=1).reset_index(drop=True)
 utils.to_pickles(df, '../data/101_test', 10)
 
 os.system('rm -rf ../data/101__*.p')
