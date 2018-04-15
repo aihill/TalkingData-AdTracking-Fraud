@@ -14,7 +14,7 @@ import gc
 import os
 from glob import glob
 from multiprocessing import Pool
-nthread = 5
+nthread = 10
 #from collections import defaultdict
 import utils
 utils.start(__file__)
@@ -38,26 +38,12 @@ def multi(count_keys):
     count_keys_ = '-'.join(count_keys)
     keys = count_keys+['click_time']
     df = trte[keys].sort_values(keys)
-    result = []
-    click_bk = key_bk = None
-    for values in (df.values):
-        
-        key = values[:-1]
-        click = values[-1]
-        
-        if key_bk is None:
-            result.append(-1)
-        elif key == key_bk:
-            result.append( (click - click_bk).seconds )
-        else:
-            result.append(-1)
-        
-        key_bk = key
-        click_bk = click
-        
-    gc.collect()
+    
     c = 'timedelta_'+count_keys_
-    df[c] = result
+    df[c] = df.click_time.diff().dt.seconds
+    df['key_match'] = ( df[count_keys]==df[count_keys].shift() ).all(1)*1
+    df.loc[df.key_match==0, c] = -1
+    
     df.sort_values('click_time', inplace=True)
     df.reset_index(drop=True, inplace=True)
     
