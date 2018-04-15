@@ -46,10 +46,10 @@ usecols = set(imp.columns.tolist() + ['is_attributed'])
 # =============================================================================
 
 def multi_train(args):
-    load_file, i = args
+    load_folder, i = args
     gc.collect()
-    print('loading {} ...'.format(load_file))
-    df = pd.read_pickle(load_file)
+    print('loading {} ...'.format(load_folder))
+    df = pd.concat([pd.read_pickle(load_folder + '/{}.p'.format(j)) for j in [8,9]])
     col = list(set(df.columns) & usecols)
     if len(col)>0:
         df[col].to_pickle('../data/tmp{}.p'.format(i))
@@ -75,9 +75,9 @@ def multi_test(args):
 # =============================================================================
 # # train
 # =============================================================================
-load_files = sorted(glob('../data/*train/9.p'))
+load_folders = sorted(glob('../data/*train/'))
 
-args = list(zip(load_files, range(len(load_files))))
+args = list(zip(load_folders, range(len(load_folders))))
 
 pool = Pool(10)
 pool.map(multi_train, args)
