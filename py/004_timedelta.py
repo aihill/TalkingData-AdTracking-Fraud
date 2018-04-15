@@ -40,11 +40,13 @@ def multi(count_keys):
     keys = count_keys+['click_time']
     df = trte[keys].sort_values(keys)
     
+    gc.collect()
     c1 = 'timedelta_'+count_keys_
     df[c1] = df.click_time.diff().dt.seconds
     df['key_match'] = ( df[count_keys]==df[count_keys].shift() ).all(1)*1
     df.loc[df.key_match==0, c1] = -1
     
+    gc.collect()
     c2 = 'timedelta_rev_'+count_keys_
     df[c2] = df.click_time.diff(-1).dt.seconds.abs()
     df['key_match'] = ( df[count_keys]==df[count_keys].shift(-1) ).all(1)*1
@@ -53,6 +55,7 @@ def multi(count_keys):
     df.drop(count_keys, axis=1, inplace=True)
     df.sort_index(inplace=True)
     
+    gc.collect()
     df.iloc[0:utils.TRAIN_SHAPE][[c1, c2]].to_pickle('../data/004__{}_train.p'.format(count_keys_))
     df.iloc[utils.TRAIN_SHAPE:][[c1, c2]].to_pickle('../data/004__{}_test.p'.format(count_keys_))
 
