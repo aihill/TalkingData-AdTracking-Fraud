@@ -33,6 +33,7 @@ def multi(count_keys):
     
     gc.collect()
     print(count_keys)
+    count_keys = list(count_keys)
     
     count_keys_ = '-'.join(count_keys)
     keys = count_keys+['click_time']
