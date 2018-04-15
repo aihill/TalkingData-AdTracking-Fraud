@@ -47,12 +47,16 @@ def start(fname):
     return
 
 def end(fname):
+    
     print("""
 #==============================================================================
 # SUCCESS !!! {}
 #==============================================================================
 """.format(fname))
     print('time: {:.2f}min'.format( elapsed_minute() ))
+    
+    send_line('{}  time: {:.2f}min'.format( fname, elapsed_minute() ))
+    
     return
 
 def elapsed_minute():
@@ -124,9 +128,22 @@ def reduce_memory(df, ix_start=0):
 
     gc.collect()
 
-
+# =============================================================================
+# other API
+# =============================================================================
 def submit(file_path, comment='from API'):
     os.system('kaggle competitions submit -c talkingdata-adtracking-fraud-detection -f {} -m "{}"'.format(file_path, comment))
+
+import requests
+def send_line(message):
+    
+    line_notify_token = 'yII9fbfGF13HBMtV6EcHNfRhFGniqDfiqMbpZm89lTd'
+    line_notify_api = 'https://notify-api.line.me/api/notify'
+    
+    payload = {'message': message}
+    headers = {'Authorization': 'Bearer ' + line_notify_token}  # 発行したトークン
+    requests.post(line_notify_api, data=payload, headers=headers)
+
 
 
 
