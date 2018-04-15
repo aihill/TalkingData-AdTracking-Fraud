@@ -47,8 +47,8 @@ def multi(count_keys):
     
     result = pd.DataFrame(result[::-1], columns=['count_rev_'+count_keys_])
     
-    result.iloc[0:184903890].to_pickle('../data/003__{}_train.p'.format(count_keys_))
-    result.iloc[184903890:].to_pickle('../data/003__{}_test.p'.format(count_keys_))
+    result.iloc[0:utils.TRAIN_SHAPE].to_pickle('../data/003__{}_train.p'.format(count_keys_))
+    result.iloc[utils.TRAIN_SHAPE:].to_pickle('../data/003__{}_test.p'.format(count_keys_))
 
 
 pool = Pool(nthread)

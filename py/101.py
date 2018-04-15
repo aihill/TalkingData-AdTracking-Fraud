@@ -29,8 +29,8 @@ def multi(keys):
     df = df.reset_index()
     result = pd.merge(trte, df, on=keys, how='left')
     
-    result.iloc[0:184903890]['totalcount_' + keys_].to_pickle('../data/101__{}_train.p'.format(keys_))
-    result.iloc[184903890:]['totalcount_' + keys_].to_pickle('../data/101__{}_test.p'.format(keys_))
+    result.iloc[0:utils.TRAIN_SHAPE]['totalcount_' + keys_].to_pickle('../data/101__{}_train.p'.format(keys_))
+    result.iloc[utils.TRAIN_SHAPE:]['totalcount_' + keys_].to_pickle('../data/101__{}_test.p'.format(keys_))
     gc.collect()
     
 pool = Pool(10)

@@ -53,8 +53,8 @@ def multi(count_keys):
     df.drop(count_keys, axis=1, inplace=True)
     df.sort_index(inplace=True)
     
-    df.iloc[0:184903890][[c1, c2]].to_pickle('../data/004__{}_train.p'.format(count_keys_))
-    df.iloc[184903890:][[c1, c2]].to_pickle('../data/004__{}_test.p'.format(count_keys_))
+    df.iloc[0:utils.TRAIN_SHAPE][[c1, c2]].to_pickle('../data/004__{}_train.p'.format(count_keys_))
+    df.iloc[utils.TRAIN_SHAPE:][[c1, c2]].to_pickle('../data/004__{}_test.p'.format(count_keys_))
 
 
 pool = Pool(nthread)

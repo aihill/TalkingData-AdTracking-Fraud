@@ -72,6 +72,7 @@ def multi(p):
         
         print('drop os; 607, 748, 866')
         train = train[~train.os.isin([607, 748, 866])].reset_index(drop=True)
+        print('train.shape', train.shape)
         utils.to_pickles(train, '../data/train', 10)
 #        utils.to_pickles(train.sort_values(utils.sort_keys, ascending=False), 
 #                         '../data/train_rev', 10)

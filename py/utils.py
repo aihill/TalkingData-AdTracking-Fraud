@@ -29,6 +29,8 @@ for i in range(1, 6):
 #sort_keys = ['ip', 'app', 'device', 'os', 'channel', 'click_time']
 sort_keys = ['click_time']
 
+TRAIN_SHAPE = 183698397
+
 
 # =============================================================================
 # def
