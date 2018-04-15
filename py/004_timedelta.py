@@ -15,7 +15,7 @@ import os
 from glob import glob
 from multiprocessing import Pool
 nthread = 5
-from collections import defaultdict
+#from collections import defaultdict
 import utils
 utils.start(__file__)
 
@@ -35,24 +35,31 @@ def multi(count_keys):
     print(count_keys)
     
     count_keys_ = '-'.join(count_keys)
-    click_history = defaultdict(int)
-    keys = ['ip', 'app', 'device', 'os', 'channel', 'click_time']
+    keys = count_keys+['click_time']
+    df = trte[keys].sort_values(keys)
     result = []
-    for values in (trte[keys].values):
+    click_bk = key_bk = None
+    for values in (df.values):
         di = dict(zip(keys, values))
         key = '-'.join(map(str, [di[k] for k in count_keys]))
         
-        if key in click_history:
-            result.append( (di['click_time'] - click_history[key]).seconds )
+        if key_bk is None:
+            result.append(-1)
+        elif key == key_bk:
+            result.append( (di['click_time'] - click_bk).seconds )
         else:
             result.append(-1)
         
-        click_history[key] = di['click_time']
+        key_bk = key
+        click_bk = di['click_time']
     
-    result = pd.DataFrame(result, columns=['timedelta_'+count_keys_])
+    c = 'timedelta_'+count_keys_
+    df[c] = result
+    df.sort_values('click_time', inplace=True)
+    df.reset_index(drop=True, inplace=True)
     
-    result.iloc[0:184903890].to_pickle('../data/004__{}_train.p'.format(count_keys_))
-    result.iloc[184903890:].to_pickle('../data/004__{}_test.p'.format(count_keys_))
+    df.iloc[0:184903890][c].to_pickle('../data/004__{}_train.p'.format(count_keys_))
+    df.iloc[184903890:][c].to_pickle('../data/004__{}_test.p'.format(count_keys_))
 
 
 pool = Pool(nthread)
