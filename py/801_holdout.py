@@ -15,12 +15,10 @@ import sys
 sys.path.append('/home/kazuki_onodera/Python')
 import xgbextension as ex
 #import xgboost as xgb
-#from multiprocessing import Process, Pipe
 import gc
-import xgboost as xgb
 #from time import sleep
 import utils
-#utils.start(__file__)
+utils.start(__file__)
 
 SEED = 4308 # np.random.randint(9999) #int(sys.argv[1])
 NROUND = 9999
