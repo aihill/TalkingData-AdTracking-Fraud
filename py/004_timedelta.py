@@ -22,7 +22,8 @@ utils.start(__file__)
 os.system('rm -rf ../data/004*')
 
 trte = pd.concat([utils.read_pickles('../data/train', ['ip', 'app', 'device', 'os', 'channel', 'click_time']),
-                utils.read_pickles('../data/test_old', ['ip', 'app', 'device', 'os', 'channel', 'click_time'])])
+                utils.read_pickles('../data/test_old', ['ip', 'app', 'device', 'os', 'channel', 'click_time'])],
+                ignore_index=True)
 
 def multi(count_keys):
     """
@@ -44,8 +45,7 @@ def multi(count_keys):
     df['key_match'] = ( df[count_keys]==df[count_keys].shift() ).all(1)*1
     df.loc[df.key_match==0, c] = -1
     
-    df.sort_values('click_time', inplace=True)
-    df.reset_index(drop=True, inplace=True)
+    df.sort_index(inplace=True)
     
     df.iloc[0:184903890][c].to_pickle('../data/004__{}_train.p'.format(count_keys_))
     df.iloc[184903890:][c].to_pickle('../data/004__{}_test.p'.format(count_keys_))
