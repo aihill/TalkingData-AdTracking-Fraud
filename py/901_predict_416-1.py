@@ -13,22 +13,33 @@ from datetime import datetime
 import sys
 sys.path.append('/home/kazuki_onodera/Python')
 import xgbextension as ex
-#import xgboost as xgb
+import os
 #from multiprocessing import Process, Pipe
 import gc
 import xgboost as xgb
-#from time import sleep
+from time import sleep
 import utils
 utils.start(__file__)
 
 SEED = 4308 # np.random.randint(9999) #int(sys.argv[1])
-NROUND = 300
+NROUND = 600
 SUBMIT_FILE_PATH = '../output/416-1.csv.gz'
 EXE_SUBMIT = True
 LOOP = 5
 
 np.random.seed(SEED)
 print('seed :', SEED)
+
+# =============================================================================
+# wait
+# =============================================================================
+while True:
+    if os.path.isfile('../data/sub.p'):
+        break
+    else:
+        sleep(60*1)
+
+utils.send_line('{} start'.format(__file__))
 # =============================================================================
 # load train
 # =============================================================================
@@ -63,7 +74,7 @@ for i in range(LOOP):
 del dtrain; gc.collect()
 
 imp = ex.getImp(models)
-imp.to_csv('imp.csv', index=False)
+imp.to_csv('901_imp.csv', index=False)
 
 # =============================================================================
 # test
