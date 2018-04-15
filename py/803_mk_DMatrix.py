@@ -15,7 +15,7 @@ import gc
 import xgboost as xgb
 from multiprocessing import Pool
 import utils
-#utils.start(__file__)
+utils.start(__file__)
 
 # setting
 useimp = 100
@@ -126,6 +126,10 @@ sub['click_id'] = sub['click_id'].map(int)
 sub.reset_index(drop=True, inplace=True)
 
 sub.to_pickle('../data/sub.p')
+
+
+#==============================================================================
+utils.end(__file__)
 
 
 
