@@ -41,19 +41,21 @@ def multi(count_keys):
     result = []
     click_bk = key_bk = None
     for values in (df.values):
-        di = dict(zip(keys, values))
-        key = '-'.join(map(str, [di[k] for k in count_keys]))
+        
+        key = values[:-1]
+        click = values[-1]
         
         if key_bk is None:
             result.append(-1)
         elif key == key_bk:
-            result.append( (di['click_time'] - click_bk).seconds )
+            result.append( (click - click_bk).seconds )
         else:
             result.append(-1)
         
         key_bk = key
-        click_bk = di['click_time']
-    
+        click_bk = click
+        
+    gc.collect()
     c = 'timedelta_'+count_keys_
     df[c] = result
     df.sort_values('click_time', inplace=True)
