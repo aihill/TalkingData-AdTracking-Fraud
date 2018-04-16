@@ -8,7 +8,6 @@ Created on Fri Apr 13 13:00:49 2018
 
 from glob import glob
 import pandas as pd
-import numpy as np
 from os import system
 from tqdm import tqdm
 import gc
@@ -18,7 +17,7 @@ import utils
 utils.start(__file__)
 
 # setting
-useimp = 100
+useimp = 10
 
 system('rm ../data/tmp*.p')
 #system('rm ../data/*.mt')
@@ -127,6 +126,7 @@ sub.reset_index(drop=True, inplace=True)
 
 sub.to_pickle('../data/sub.p')
 
+system('touch SUCCESS')
 
 #==============================================================================
 utils.end(__file__)
