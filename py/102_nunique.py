@@ -4,6 +4,11 @@
 Created on Thu Apr 12 18:10:18 2018
 
 @author: kazuki.onodera
+
+category:
+    ['ip', 'app', 'device', 'os', 'channel', 'day', 'hour']
+
+
 """
 
 import os
@@ -24,23 +29,26 @@ def multi(keys):
     print(keys)
     keys1, keys2 = keys
     
-    keys1_ = '-'.join(keys1)
-    df = trte.groupby(keys1).size()
-    
-    keys2_ = '-'.join(keys2)
-    df = df.reset_index().groupby(keys2).size()
-    c = 'totalcount2_' + keys2_ + '_' + keys1_
+    df = trte.groupby(keys1).size().reset_index().groupby(keys2).size().reset_index()
+    c = 'totalcount2_' + '-'.join(keys1) + '_' + '-'.join(keys2)
     df.name = c
     df = df.reset_index()
     
     result = pd.merge(trte, df, on=keys2, how='left')
     
-    result.iloc[0:184903890][c].to_pickle('../data/102__{}_train.p'.format(c))
-    result.iloc[184903890:][c].to_pickle('../data/102__{}_test.p'.format(c))
+    result.iloc[0:utils.TRAIN_SHAPE][c].to_pickle('../data/102__{}_train.p'.format(c))
+    result.iloc[utils.TRAIN_SHAPE:][c].to_pickle('../data/102__{}_test.p'.format(c))
     gc.collect()
 
 
 comb = [
+        [['ip', 'channel'], ['ip']],
+        [['ip', 'channel'], ['ip']],
+        [['ip', 'channel'], ['ip']],
+        [['ip', 'channel'], ['ip']],
+        [['ip', 'day', 'hour'], []],
+        [],
+        [],
         [['ip', 'os', 'device'], ['ip']],
         [['ip', 'os', 'device'], ['ip', 'os']],
         

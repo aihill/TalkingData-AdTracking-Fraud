@@ -25,14 +25,15 @@ min_time = train.click_time.min()
 # =============================================================================
 def multi(p):
     if p==0:
+        train['day'] = train.click_time.dt.day
         train['hour'] = train.click_time.dt.hour + (train.click_time.dt.minute/60)
         train['timestamp'] = (train.click_time - min_time).dt.seconds
-        
         
         col = ['hour', 'timestamp']
         utils.to_pickles(train[col], '../data/001_train', 10)
                 
     elif p==1:
+        test['day'] = test.click_time.dt.day
         test['hour'] = test.click_time.dt.hour + (test.click_time.dt.minute/60)
         test['timestamp'] = (test.click_time - min_time).dt.seconds
         
