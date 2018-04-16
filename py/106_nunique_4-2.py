@@ -22,7 +22,7 @@ from itertools import combinations
 import utils
 utils.start(__file__)
 
-os.system('rm -rf ../data/105__*.p')
+os.system('rm -rf ../data/106__*.p')
 
 trte = pd.concat([utils.read_pickles('../data/train'), 
                   utils.read_pickles('../data/test_old')])
@@ -46,15 +46,15 @@ def multi(keys):
     
     result = pd.merge(trte, df, on=keys2, how='left')
     
-    result.iloc[0:utils.TRAIN_SHAPE][c].to_pickle('../data/105__{}_train.p'.format(c))
-    result.iloc[utils.TRAIN_SHAPE:][c].to_pickle('../data/105__{}_test.p'.format(c))
+    result.iloc[0:utils.TRAIN_SHAPE][c].to_pickle('../data/106__{}_train.p'.format(c))
+    result.iloc[utils.TRAIN_SHAPE:][c].to_pickle('../data/106__{}_test.p'.format(c))
     gc.collect()
 
 
 comb = []
 tmp1 = list(combinations(['ip', 'app', 'device', 'os', 'channel'], 4))
 for c1 in tmp1:
-    tmp2 = list(combinations(c1, 1))
+    tmp2 = list(combinations(c1, 2))
     for c2 in tmp2:
         comb.append( [list(c1), list(c2)] )
 
@@ -68,16 +68,16 @@ callback = pool.map(multi, comb[:10])
 pool.close()
 
 # train
-df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/105__*_train.p'))], axis=1).reset_index(drop=True)
-utils.to_pickles(df, '../data/105-1_train', 10)
+df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/106__*_train.p'))], axis=1).reset_index(drop=True)
+utils.to_pickles(df, '../data/106-1_train', 10)
 
 gc.collect()
 
 # test
-df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/105__*_test.p'))], axis=1).reset_index(drop=True)
-utils.to_pickles(df, '../data/105-1_test', 10)
+df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/106__*_test.p'))], axis=1).reset_index(drop=True)
+utils.to_pickles(df, '../data/106-1_test', 10)
 
-os.system('rm -rf ../data/105__*.p')
+os.system('rm -rf ../data/106__*.p')
 
 
 
@@ -86,20 +86,42 @@ os.system('rm -rf ../data/105__*.p')
 # =============================================================================
 gc.collect()
 pool = Pool(proc)
-callback = pool.map(multi, comb[10:])
+callback = pool.map(multi, comb[10:20])
 pool.close()
 
 # train
-df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/105__*_train.p'))], axis=1).reset_index(drop=True)
-utils.to_pickles(df, '../data/105-2_train', 10)
+df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/106__*_train.p'))], axis=1).reset_index(drop=True)
+utils.to_pickles(df, '../data/106-2_train', 10)
 
 gc.collect()
 
 # test
-df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/105__*_test.p'))], axis=1).reset_index(drop=True)
-utils.to_pickles(df, '../data/105-2_test', 10)
+df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/106__*_test.p'))], axis=1).reset_index(drop=True)
+utils.to_pickles(df, '../data/106-2_test', 10)
 
-os.system('rm -rf ../data/105__*.p')
+os.system('rm -rf ../data/106__*.p')
+
+
+
+# =============================================================================
+# concat pt3
+# =============================================================================
+gc.collect()
+pool = Pool(proc)
+callback = pool.map(multi, comb[20:])
+pool.close()
+
+# train
+df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/106__*_train.p'))], axis=1).reset_index(drop=True)
+utils.to_pickles(df, '../data/106-3_train', 10)
+
+gc.collect()
+
+# test
+df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/106__*_test.p'))], axis=1).reset_index(drop=True)
+utils.to_pickles(df, '../data/106-3_test', 10)
+
+os.system('rm -rf ../data/106__*.p')
 
 
 
