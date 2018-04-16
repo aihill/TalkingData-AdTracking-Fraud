@@ -17,16 +17,17 @@ from tqdm import tqdm
 import gc
 from glob import glob
 from multiprocessing import Pool
+from itertools import combinations
 import utils
 utils.start(__file__)
 
 
+trte = pd.concat([utils.read_pickles('../data/train'), 
+                  utils.read_pickles('../data/test_old')])
 
-trte = pd.concat([pd.concat([utils.read_pickles('../data/001_train'),
-                             utils.read_pickles('../data/001_test')]), 
-                  pd.concat([utils.read_pickles('../data/train'), 
-                             utils.read_pickles('../data/test_old')])], 
-                 axis=1)
+#trte['day']  = trte.click_time.dt.day
+#trte['hour'] = trte.click_time.dt.hour
+
 gc.collect()
 
 
@@ -36,7 +37,7 @@ def multi(keys):
     print(keys)
     keys1, keys2 = keys
     
-    df = trte.groupby(keys1).size().reset_index().groupby(keys2).size().reset_index()
+    df = trte.groupby(keys1).size().groupby(keys2).size()
     c = 'nunique_' + '-'.join(keys1) + '_' + '-'.join(keys2)
     df.name = c
     df = df.reset_index()
@@ -48,32 +49,13 @@ def multi(keys):
     gc.collect()
 
 
-comb = [
-        [['ip', 'app'],     ['ip']],
-        [['ip', 'device'],  ['ip']],
-        [['ip', 'os'],      ['ip']],
-        [['ip', 'channel'], ['ip']],
-        [['ip', 'day'],     ['ip']],
-        [['ip', 'hour'],    ['ip']],
-        
-        [['ip', 'app'],     ['app']],
-        [['ip', 'device'],  ['device']],
-        [['ip', 'os'],      ['os']],
-        [['ip', 'channel'], ['channel']],
-        [['ip', 'day'],     ['day']],
-        [['ip', 'hour'],    ['hour']],
-        
-        [['ip', 'os', 'device'], ['ip']],
-        [['ip', 'os', 'device'], ['ip', 'os']],
-        [['ip', 'os', 'device'], ['ip', 'device']],
-        [['ip', 'os', 'device'], ['os']],
-        [['ip', 'os', 'device'], ['device']],
-        
-        [['ip', 'app', 'device', 'os'],['']],
-        
-        [['ip', 'day', 'hour'], ['ip', 'day']],
-        
-        ]
+comb = []
+tmp1 = list(combinations(['ip', 'app', 'device', 'os', 'channel'], 2))
+for c1 in tmp1:
+    tmp2 = list(combinations(c1, 1))
+    for c2 in tmp2:
+        comb.append( [list(c1), list(c2)] )
+
 pool = Pool(10)
 callback = pool.map(multi, comb)
 pool.close()
