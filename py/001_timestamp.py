@@ -30,7 +30,7 @@ def multi(p):
         train['hour_min'] = train['hour'] + (train.click_time.dt.minute/60)
         train['timestamp'] = (train.click_time - min_time).dt.seconds
         
-        col = ['hour', 'timestamp']
+        col = ['day', 'hour', 'hour_min', 'timestamp']
         utils.to_pickles(train[col], '../data/001_train', 10)
                 
     elif p==1:
@@ -39,7 +39,7 @@ def multi(p):
         test['hour_min'] = test['hour'] + (test.click_time.dt.minute/60)
         test['timestamp'] = (test.click_time - min_time).dt.seconds
         
-        col = ['hour', 'timestamp']
+        col = ['day', 'hour', 'hour_min', 'timestamp']
         utils.to_pickles(test[col], '../data/001_test', 10)
 
 

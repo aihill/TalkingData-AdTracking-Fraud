@@ -21,8 +21,15 @@ import utils
 utils.start(__file__)
 
 
-trte = pd.concat([utils.read_pickles('../data/train'),
-                utils.read_pickles('../data/test_old')])
+
+trte = pd.concat([pd.concat([utils.read_pickles('../data/001_train'),
+                             utils.read_pickles('../data/001_test')]), 
+                  pd.concat([utils.read_pickles('../data/train'), 
+                             utils.read_pickles('../data/test_old')])], 
+                 axis=1)
+gc.collect()
+
+
 
 def multi(keys):
     gc.collect()
@@ -30,7 +37,7 @@ def multi(keys):
     keys1, keys2 = keys
     
     df = trte.groupby(keys1).size().reset_index().groupby(keys2).size().reset_index()
-    c = 'totalcount2_' + '-'.join(keys1) + '_' + '-'.join(keys2)
+    c = 'nunique_' + '-'.join(keys1) + '_' + '-'.join(keys2)
     df.name = c
     df = df.reset_index()
     
@@ -42,15 +49,29 @@ def multi(keys):
 
 
 comb = [
+        [['ip', 'app'],     ['ip']],
+        [['ip', 'device'],  ['ip']],
+        [['ip', 'os'],      ['ip']],
         [['ip', 'channel'], ['ip']],
-        [['ip', 'channel'], ['ip']],
-        [['ip', 'channel'], ['ip']],
-        [['ip', 'channel'], ['ip']],
-        [['ip', 'day', 'hour'], []],
-        [],
-        [],
+        [['ip', 'day'],     ['ip']],
+        [['ip', 'hour'],    ['ip']],
+        
+        [['ip', 'app'],     ['app']],
+        [['ip', 'device'],  ['device']],
+        [['ip', 'os'],      ['os']],
+        [['ip', 'channel'], ['channel']],
+        [['ip', 'day'],     ['day']],
+        [['ip', 'hour'],    ['hour']],
+        
         [['ip', 'os', 'device'], ['ip']],
         [['ip', 'os', 'device'], ['ip', 'os']],
+        [['ip', 'os', 'device'], ['ip', 'device']],
+        [['ip', 'os', 'device'], ['os']],
+        [['ip', 'os', 'device'], ['device']],
+        
+        [['ip', 'app', 'device', 'os'],['']],
+        
+        [['ip', 'day', 'hour'], ['ip', 'day']],
         
         ]
 pool = Pool(10)
