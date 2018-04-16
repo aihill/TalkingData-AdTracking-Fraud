@@ -39,6 +39,7 @@ imp.sort_values('total', ascending=False, inplace=True)
 imp = imp.head(useimp).T
 
 usecols = set(imp.columns.tolist() + ['is_attributed'])
+print(usecols)
 
 # =============================================================================
 # def
