@@ -90,7 +90,10 @@ param = {'colsample_bylebel': 0.8,
 gc.collect()
 yhat, imp, ret = ex.stacking(X, y, param, 9999, nfold=5, esr=30)
 
-imp.to_csv('imp_{}.csv'.format(datetime.today().date()), index=False)
+t = datetime.today()
+date = t.date()
+hour = t.hour
+imp.to_csv('imp_{}-{}h.csv'.format(date, hour), index=False)
 
 # =============================================================================
 # cv
