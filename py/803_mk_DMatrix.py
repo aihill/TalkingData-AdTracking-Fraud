@@ -17,7 +17,7 @@ import utils
 utils.start(__file__)
 
 # setting
-useimp = 100
+useimp = 50
 
 system('rm ../data/tmp*.p')
 #system('rm ../data/*.mt')
