@@ -25,7 +25,7 @@ SEED = 4308 # np.random.randint(9999) #int(sys.argv[1])
 NROUND = 600
 SUBMIT_FILE_PATH = '../output/417-3.csv.gz'
 EXE_SUBMIT = True
-LOOP = 5
+LOOP = 2
 
 np.random.seed(SEED)
 print('seed :', SEED)
