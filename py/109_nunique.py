@@ -72,7 +72,7 @@ for i in range(2, 8):
 st = 0
 end = 0
 limit = 10
-for pt in range(1,4):
+for pt in range(1, 10):
     end +=limit
     print(st, end)
     gc.collect()

@@ -55,7 +55,7 @@ def end(fname):
 """.format(fname))
     print('time: {:.2f}min'.format( elapsed_minute() ))
     
-    send_line('{}  time: {:.2f}min'.format( fname, elapsed_minute() ))
+    send_line('FINISH {}  time: {:.2f}min'.format( fname, elapsed_minute() ))
     
     return
 
