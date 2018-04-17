@@ -39,7 +39,7 @@ def multi(keys):
     print(keys)
     keys1, keys2 = keys
     
-    df = trte.groupby(keys1).size().groupby(keys2).size().rank('min')
+    df = trte.groupby(keys1).size().groupby(keys2).size().rank(method='min')
     c = 'nunique_' + '-'.join(keys1) + '_' + '-'.join(keys2)
     df.name = c
     df = df.reset_index()
