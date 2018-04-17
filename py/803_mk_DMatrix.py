@@ -51,9 +51,11 @@ def multi_train(args):
     load_folder, i = args
     gc.collect()
     print('loading {} ...'.format(load_folder))
-    df = pd.concat([pd.read_pickle(load_folder + '/{}.p'.format(j)) for j in [6,7,8,9]])
+    df = pd.read_pickle(load_folder + '/0.p')
     col = list(set(df.columns) & usecols)
+    df = pd.concat([pd.read_pickle(load_folder + '/{}.p'.format(j))[col] for j in range(0, 10)])
     if len(col)>0:
+        gc.collect()
         df[col].to_pickle('../data/tmp{}.p'.format(i))
 
 def multi_test(args):
