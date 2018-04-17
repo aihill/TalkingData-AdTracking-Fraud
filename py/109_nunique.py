@@ -39,10 +39,11 @@ def multi(keys):
     print(keys)
     keys1, keys2 = keys
     
-    df = trte.groupby(keys1).size().groupby(keys2).size().rank(method='min')
+    df = trte.groupby(keys1).size().groupby(keys2).size().rank(method='dense')
     c = 'nunique_' + '-'.join(keys1) + '_' + '-'.join(keys2)
     df.name = c
     df = df.reset_index()
+    utils.reduce_memory(df, ix_start=-1)
     
     result = pd.merge(trte, df, on=keys2, how='left')
     
