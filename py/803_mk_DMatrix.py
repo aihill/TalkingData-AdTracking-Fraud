@@ -25,7 +25,9 @@ system('rm ../data/tmp*.p')
 # =============================================================================
 # imp
 # =============================================================================
-imp = pd.read_csv(glob('imp*.csv')[0])
+filepath = sorted(glob('imp*.csv'))[-1]
+print(filepath)
+imp = pd.read_csv(filepath)
 
 imp.set_index('col', inplace=True)
 
@@ -49,7 +51,7 @@ def multi_train(args):
     load_folder, i = args
     gc.collect()
     print('loading {} ...'.format(load_folder))
-    df = pd.concat([pd.read_pickle(load_folder + '/{}.p'.format(j)) for j in [8,9]])
+    df = pd.concat([pd.read_pickle(load_folder + '/{}.p'.format(j)) for j in [6,7,8,9]])
     col = list(set(df.columns) & usecols)
     if len(col)>0:
         df[col].to_pickle('../data/tmp{}.p'.format(i))
@@ -127,7 +129,7 @@ sub.reset_index(drop=True, inplace=True)
 
 sub.to_pickle('../data/sub.p')
 
-system('touch SUCCESS')
+system('touch SUCCESS_803')
 
 #==============================================================================
 utils.end(__file__)
