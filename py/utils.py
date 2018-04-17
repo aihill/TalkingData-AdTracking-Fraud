@@ -68,7 +68,7 @@ def mkdir_p(path):
         os.stat(path)
     except:
         os.mkdir(path)
-    
+
 def to_pickles(df, path, split_size=3, inplace=True):
     """
     path = '../output/mydf'
