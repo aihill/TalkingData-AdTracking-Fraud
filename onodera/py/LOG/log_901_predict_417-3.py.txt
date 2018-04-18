@@ -1,0 +1,8 @@
+
+#==============================================================================
+# START!!! 901_predict_417-3.py    PID: 27751    time: 2018-04-17 21:21:15.170553
+#==============================================================================
+
+seed : 4308
+[21:29:05] 183698397x50 matrix with 9184919850 entries loaded from ../data/dtrain.mt
+[21:29:05] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.

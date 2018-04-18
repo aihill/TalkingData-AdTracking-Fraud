@@ -1,0 +1,194 @@
+
+#==============================================================================
+# START!!! 801_holdout_418-1.py    PID: 47330    time: 2018-04-18 04:06:50.367449
+#==============================================================================
+
+seed : 4308
+Index(['day', 'hour', 'hour_min', 'timestamp', 'count_app-channel',
+       'count_app-device-channel', 'count_app-device-os-channel',
+       'count_app-device-os', 'count_app-device', 'count_app-os-channel',
+       ...
+       'nunique_device-channel-day_channel-day',
+       'nunique_device-channel-day_channel',
+       'nunique_device-channel-day_device-channel',
+       'nunique_device-channel-day_device-day',
+       'nunique_device-channel-hour_channel-hour',
+       'nunique_device-channel-hour_channel',
+       'nunique_device-channel-hour_device-channel',
+       'nunique_device-channel-hour_device-hour',
+       'nunique_device-day-hour_device-day',
+       'nunique_device-day-hour_device-hour'],
+      dtype='object', length=429)
+param:
+y/all: 19600/9184919(0.21%)
+dbuild row: 7347935 dvalid row: 1836984
+building... 1/5 of 1/1
+[04:17:59] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[0]	build-auc:0.897855	valid-auc:0.897822
+Multiple eval metrics have been passed: 'valid-auc' will be used for early stopping.
+
+Will train until valid-auc hasn't improved in 30 rounds.
+[10]	build-auc:0.946377	valid-auc:0.946155
+[20]	build-auc:0.946947	valid-auc:0.947195
+[30]	build-auc:0.949153	valid-auc:0.949475
+[40]	build-auc:0.960475	valid-auc:0.96253
+[50]	build-auc:0.968291	valid-auc:0.968284
+[60]	build-auc:0.973199	valid-auc:0.973904
+[70]	build-auc:0.975574	valid-auc:0.976703
+[80]	build-auc:0.980559	valid-auc:0.981188
+[90]	build-auc:0.983181	valid-auc:0.983154
+[100]	build-auc:0.984311	valid-auc:0.984101
+[110]	build-auc:0.985496	valid-auc:0.984763
+[120]	build-auc:0.985818	valid-auc:0.984704
+[130]	build-auc:0.986102	valid-auc:0.984947
+[140]	build-auc:0.986244	valid-auc:0.985001
+[150]	build-auc:0.986515	valid-auc:0.985053
+[160]	build-auc:0.986772	valid-auc:0.985156
+[170]	build-auc:0.987073	valid-auc:0.985191
+[180]	build-auc:0.987239	valid-auc:0.985355
+[190]	build-auc:0.987549	valid-auc:0.98548
+[200]	build-auc:0.987901	valid-auc:0.98579
+[210]	build-auc:0.988064	valid-auc:0.985832
+[220]	build-auc:0.988302	valid-auc:0.985843
+[230]	build-auc:0.988433	valid-auc:0.985822
+[240]	build-auc:0.988541	valid-auc:0.985911
+Stopping. Best iteration:
+[212]	build-auc:0.988154	valid-auc:0.985966
+
+dbuild row: 7347935 dvalid row: 1836984
+building... 2/5 of 1/1
+[04:26:48] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[0]	build-auc:0.897613	valid-auc:0.897868
+Multiple eval metrics have been passed: 'valid-auc' will be used for early stopping.
+
+Will train until valid-auc hasn't improved in 30 rounds.
+[10]	build-auc:0.948143	valid-auc:0.944742
+[20]	build-auc:0.949585	valid-auc:0.947037
+[30]	build-auc:0.950341	valid-auc:0.947786
+[40]	build-auc:0.961217	valid-auc:0.958353
+[50]	build-auc:0.967184	valid-auc:0.964814
+[60]	build-auc:0.972518	valid-auc:0.969835
+[70]	build-auc:0.97622	valid-auc:0.973596
+[80]	build-auc:0.979341	valid-auc:0.977256
+[90]	build-auc:0.982376	valid-auc:0.979433
+[100]	build-auc:0.983963	valid-auc:0.980861
+[110]	build-auc:0.98498	valid-auc:0.981933
+[120]	build-auc:0.985501	valid-auc:0.982323
+[130]	build-auc:0.9858	valid-auc:0.982712
+[140]	build-auc:0.986219	valid-auc:0.982723
+[150]	build-auc:0.987099	valid-auc:0.983101
+[160]	build-auc:0.9876	valid-auc:0.983602
+[170]	build-auc:0.987971	valid-auc:0.983682
+[180]	build-auc:0.988168	valid-auc:0.983903
+[190]	build-auc:0.988466	valid-auc:0.984216
+[200]	build-auc:0.988624	valid-auc:0.984215
+[210]	build-auc:0.988771	valid-auc:0.984301
+[220]	build-auc:0.989023	valid-auc:0.984155
+[230]	build-auc:0.989157	valid-auc:0.984136
+Stopping. Best iteration:
+[207]	build-auc:0.988729	valid-auc:0.98435
+
+dbuild row: 7347935 dvalid row: 1836984
+building... 3/5 of 1/1
+[04:35:18] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[0]	build-auc:0.897125	valid-auc:0.900737
+Multiple eval metrics have been passed: 'valid-auc' will be used for early stopping.
+
+Will train until valid-auc hasn't improved in 30 rounds.
+[10]	build-auc:0.945716	valid-auc:0.948848
+[20]	build-auc:0.948011	valid-auc:0.951746
+[30]	build-auc:0.949126	valid-auc:0.952644
+[40]	build-auc:0.96182	valid-auc:0.963529
+[50]	build-auc:0.967224	valid-auc:0.968921
+[60]	build-auc:0.969264	valid-auc:0.971827
+[70]	build-auc:0.977188	valid-auc:0.978794
+[80]	build-auc:0.981163	valid-auc:0.981629
+[90]	build-auc:0.982681	valid-auc:0.982344
+[100]	build-auc:0.98343	valid-auc:0.982923
+[110]	build-auc:0.984503	valid-auc:0.983656
+[120]	build-auc:0.985173	valid-auc:0.984199
+[130]	build-auc:0.985697	valid-auc:0.98417
+[140]	build-auc:0.986264	valid-auc:0.98434
+[150]	build-auc:0.986597	valid-auc:0.984467
+[160]	build-auc:0.987152	valid-auc:0.984705
+[170]	build-auc:0.987166	valid-auc:0.984542
+[180]	build-auc:0.987522	valid-auc:0.984558
+[190]	build-auc:0.98783	valid-auc:0.984688
+Stopping. Best iteration:
+[160]	build-auc:0.987152	valid-auc:0.984705
+
+dbuild row: 7347935 dvalid row: 1836984
+building... 4/5 of 1/1
+[04:43:25] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[0]	build-auc:0.89731	valid-auc:0.887595
+Multiple eval metrics have been passed: 'valid-auc' will be used for early stopping.
+
+Will train until valid-auc hasn't improved in 30 rounds.
+[10]	build-auc:0.947599	valid-auc:0.941492
+[20]	build-auc:0.949415	valid-auc:0.942972
+[30]	build-auc:0.950403	valid-auc:0.94443
+[40]	build-auc:0.962551	valid-auc:0.956973
+[50]	build-auc:0.964726	valid-auc:0.959397
+[60]	build-auc:0.974903	valid-auc:0.968914
+[70]	build-auc:0.978627	valid-auc:0.973743
+[80]	build-auc:0.982144	valid-auc:0.977521
+[90]	build-auc:0.984285	valid-auc:0.979386
+[100]	build-auc:0.985306	valid-auc:0.980797
+[110]	build-auc:0.985993	valid-auc:0.981195
+[120]	build-auc:0.986541	valid-auc:0.981383
+[130]	build-auc:0.986836	valid-auc:0.982001
+[140]	build-auc:0.987482	valid-auc:0.982326
+[150]	build-auc:0.987778	valid-auc:0.982735
+[160]	build-auc:0.987884	valid-auc:0.982612
+[170]	build-auc:0.988146	valid-auc:0.982467
+[180]	build-auc:0.988428	valid-auc:0.98244
+Stopping. Best iteration:
+[156]	build-auc:0.987849	valid-auc:0.982743
+
+dbuild row: 7347936 dvalid row: 1836983
+building... 5/5 of 1/1
+[04:50:55] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[0]	build-auc:0.92336	valid-auc:0.92777
+Multiple eval metrics have been passed: 'valid-auc' will be used for early stopping.
+
+Will train until valid-auc hasn't improved in 30 rounds.
+[10]	build-auc:0.944943	valid-auc:0.950784
+[20]	build-auc:0.947087	valid-auc:0.952154
+[30]	build-auc:0.948477	valid-auc:0.952931
+[40]	build-auc:0.95978	valid-auc:0.963169
+[50]	build-auc:0.961921	valid-auc:0.964459
+[60]	build-auc:0.972927	valid-auc:0.973622
+[70]	build-auc:0.978334	valid-auc:0.979267
+[80]	build-auc:0.980236	valid-auc:0.980087
+[90]	build-auc:0.982202	valid-auc:0.982047
+[100]	build-auc:0.983429	valid-auc:0.983536
+[110]	build-auc:0.984561	valid-auc:0.984318
+[120]	build-auc:0.985057	valid-auc:0.98474
+[130]	build-auc:0.985657	valid-auc:0.985018
+[140]	build-auc:0.986193	valid-auc:0.985443
+[150]	build-auc:0.986498	valid-auc:0.98543
+[160]	build-auc:0.986895	valid-auc:0.985628
+[170]	build-auc:0.987243	valid-auc:0.985829
+[180]	build-auc:0.987574	valid-auc:0.986101
+[190]	build-auc:0.987709	valid-auc:0.986088
+[200]	build-auc:0.987912	valid-auc:0.986147
+[210]	build-auc:0.988122	valid-auc:0.986247
+[220]	build-auc:0.988347	valid-auc:0.986494
+[230]	build-auc:0.988509	valid-auc:0.986656
+[240]	build-auc:0.988692	valid-auc:0.986666
+[250]	build-auc:0.988851	valid-auc:0.986792
+[260]	build-auc:0.988932	valid-auc:0.986642
+[270]	build-auc:0.989078	valid-auc:0.986653
+Stopping. Best iteration:
+[244]	build-auc:0.988745	valid-auc:0.986823
+
+finish all fold
+AUC: 0.9849173999999999
+finish all loop
+mk ret
+
+#==============================================================================
+# SUCCESS !!! 801_holdout_418-1.py
+#==============================================================================
+
+time: 50.16min

@@ -1,0 +1,121 @@
+
+#==============================================================================
+# START!!! kernel_0977-2.py    PID: 50749    time: 2018-04-17 00:10:50.113608
+#==============================================================================
+
+loading train data... 109903890 184903890
+loading test data...
+Extracting new features...
+selcols ['ip', 'channel'] QQ 4
+selcols ['ip', 'device', 'os', 'app'] QQ 5
+selcols ['ip', 'day', 'hour'] QQ 4
+selcols ['ip', 'app'] QQ 4
+selcols ['ip', 'app', 'os'] QQ 4
+selcols ['ip', 'device'] QQ 4
+selcols ['app', 'channel'] QQ 4
+selcols ['ip', 'os'] QQ 5
+selcols ['ip', 'device', 'os', 'app'] QQ 4
+doing nextClick
+saving
+grouping by ip-day-hour combination...
+grouping by ip-app combination...
+grouping by ip-app-os combination...
+grouping by : ip_day_chl_var_hour
+grouping by : ip_app_os_var_hour
+grouping by : ip_app_channel_var_day
+grouping by : ip_app_chl_mean_hour
+merging...
+vars and data type: 
+<class 'pandas.core.frame.DataFrame'>
+Int64Index: 93790469 entries, 0 to 93790468
+Data columns (total 30 columns):
+app                         uint16
+channel                     uint16
+click_id                    float64
+click_time                  datetime64[ns]
+device                      uint16
+ip                          uint32
+is_attributed               float64
+os                          uint16
+hour                        uint8
+day                         uint8
+X0                          int64
+X1                          int64
+X2                          int64
+X3                          int64
+X4                          int64
+X5                          int64
+X6                          int64
+X7                          int64
+X8                          int64
+category                    int64
+epochtime                   int64
+nextClick                   int64
+nextClick_shift             float64
+ip_tcount                   int64
+ip_app_count                int64
+ip_app_os_count             int64
+ip_tchan_count              float64
+ip_app_os_var               float64
+ip_app_channel_var_day      float64
+ip_app_channel_mean_hour    float64
+dtypes: datetime64[ns](1), float64(7), int64(15), uint16(4), uint32(1), uint8(2)
+memory usage: 18.0 GB
+predictors ['nextClick', 'nextClick_shift', 'app', 'device', 'os', 'channel', 'hour', 'day', 'ip_tcount', 'ip_tchan_count', 'ip_app_count', 'ip_app_os_count', 'ip_app_os_var', 'ip_app_channel_var_day', 'ip_app_channel_mean_hour', 'X0', 'X1', 'X2', 'X3', 'X4', 'X5', 'X6', 'X7', 'X8']
+train size:  72500000
+valid size:  2500000
+test size :  18790469
+Training...
+preparing validation datasets
+Training until validation scores don't improve for 30 rounds.
+[10]	train's auc: 0.970208	valid's auc: 0.978503
+[20]	train's auc: 0.976001	valid's auc: 0.982154
+[30]	train's auc: 0.978686	valid's auc: 0.985332
+[40]	train's auc: 0.980283	valid's auc: 0.987655
+[50]	train's auc: 0.981148	valid's auc: 0.988216
+[60]	train's auc: 0.98171	valid's auc: 0.988769
+[70]	train's auc: 0.982161	valid's auc: 0.989054
+[80]	train's auc: 0.982466	valid's auc: 0.989243
+[90]	train's auc: 0.982754	valid's auc: 0.989577
+[100]	train's auc: 0.983069	valid's auc: 0.989634
+[110]	train's auc: 0.983298	valid's auc: 0.989728
+[120]	train's auc: 0.983463	valid's auc: 0.989822
+[130]	train's auc: 0.983645	valid's auc: 0.989871
+[140]	train's auc: 0.983814	valid's auc: 0.989905
+[150]	train's auc: 0.983932	valid's auc: 0.989898
+[160]	train's auc: 0.984055	valid's auc: 0.990003
+[170]	train's auc: 0.984156	valid's auc: 0.990061
+[180]	train's auc: 0.984282	valid's auc: 0.990071
+[190]	train's auc: 0.98438	valid's auc: 0.990042
+[200]	train's auc: 0.984458	valid's auc: 0.990125
+[210]	train's auc: 0.984544	valid's auc: 0.990168
+[220]	train's auc: 0.984621	valid's auc: 0.990146
+[230]	train's auc: 0.984697	valid's auc: 0.990175
+[240]	train's auc: 0.984767	valid's auc: 0.99019
+[250]	train's auc: 0.984838	valid's auc: 0.990154
+[260]	train's auc: 0.984915	valid's auc: 0.990189
+[270]	train's auc: 0.984989	valid's auc: 0.990217
+[280]	train's auc: 0.985039	valid's auc: 0.990229
+[290]	train's auc: 0.985089	valid's auc: 0.990292
+[300]	train's auc: 0.985146	valid's auc: 0.990335
+[310]	train's auc: 0.985205	valid's auc: 0.990345
+[320]	train's auc: 0.985256	valid's auc: 0.990351
+[330]	train's auc: 0.985305	valid's auc: 0.990352
+[340]	train's auc: 0.985348	valid's auc: 0.990343
+[350]	train's auc: 0.985386	valid's auc: 0.990316
+Early stopping, best iteration is:
+[326]	train's auc: 0.98528	valid's auc: 0.99036
+
+Model Report
+bst1.best_iteration:  326
+auc: 0.990359953188609
+[6786.972064733505]: model training time
+Predicting...
+writing...
+Successfully submitted to TalkingData AdTracking Fraud Detection Challengedone...
+
+#==============================================================================
+# SUCCESS !!! kernel_0977-2.py
+#==============================================================================
+
+time: 200.91min

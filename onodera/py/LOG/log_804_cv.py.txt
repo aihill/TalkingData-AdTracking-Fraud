@@ -1,0 +1,9 @@
+
+#==============================================================================
+# START!!! 804_cv.py    PID: 47847    time: 2018-04-18 07:17:22.429000
+#==============================================================================
+
+seed : 4308
+[07:24:46] 183698397x50 matrix with 9184919850 entries loaded from ../data/dtrain.mt
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc

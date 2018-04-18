@@ -1,0 +1,118 @@
+
+#==============================================================================
+# START!!! 901_predict_416-2.py    PID: 7920    time: 2018-04-16 01:07:54.535039
+#==============================================================================
+
+seed : 4308
+[01:27:20] 36739678x10 matrix with 367396780 entries loaded from ../data/dtrain.mt
+[01:32:47] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[01:32:59] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[01:33:11] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[01:33:22] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[01:33:34] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[0]	train-auc:0.910274+0.0151276	test-auc:0.91016+0.016516
+[10]	train-auc:0.927237+0.000164839	test-auc:0.927254+0.00180597
+[20]	train-auc:0.94971+0.000306395	test-auc:0.949646+0.00143299
+[30]	train-auc:0.951242+0.00065855	test-auc:0.951199+0.00227751
+[40]	train-auc:0.954764+0.00104382	test-auc:0.954661+0.00241167
+[50]	train-auc:0.959433+0.000499333	test-auc:0.959166+0.00157369
+[60]	train-auc:0.961661+0.000487856	test-auc:0.961455+0.00121195
+[70]	train-auc:0.966077+0.000756449	test-auc:0.965828+0.00127353
+[80]	train-auc:0.969989+0.000557129	test-auc:0.96972+0.000767858
+[90]	train-auc:0.971895+0.000396543	test-auc:0.971582+0.000937646
+[100]	train-auc:0.973373+0.000284778	test-auc:0.973057+0.000947686
+[110]	train-auc:0.974501+0.000322582	test-auc:0.974157+0.000979263
+[120]	train-auc:0.975403+0.000304566	test-auc:0.975075+0.00101666
+[130]	train-auc:0.976101+0.000221926	test-auc:0.975753+0.000907865
+[140]	train-auc:0.976714+0.000221766	test-auc:0.976339+0.000877471
+[150]	train-auc:0.977095+0.000199302	test-auc:0.976701+0.000853476
+[160]	train-auc:0.977508+0.000204263	test-auc:0.977082+0.000849337
+[170]	train-auc:0.977907+0.000235844	test-auc:0.977459+0.000864831
+[180]	train-auc:0.978152+0.000224537	test-auc:0.977668+0.000844106
+[190]	train-auc:0.978373+0.000159313	test-auc:0.97786+0.00089453
+[200]	train-auc:0.978629+0.000156009	test-auc:0.978095+0.000826186
+[210]	train-auc:0.978749+0.000157006	test-auc:0.97818+0.000841226
+[220]	train-auc:0.978902+0.000136994	test-auc:0.978308+0.000850454
+[230]	train-auc:0.979072+0.000153252	test-auc:0.978457+0.000806272
+[240]	train-auc:0.979271+0.000178761	test-auc:0.978643+0.000766328
+[250]	train-auc:0.979405+0.00018543	test-auc:0.978746+0.000771501
+[260]	train-auc:0.979518+0.000158066	test-auc:0.978837+0.000757016
+[270]	train-auc:0.979632+0.000181239	test-auc:0.97892+0.000716573
+[280]	train-auc:0.979708+0.000178957	test-auc:0.978981+0.000747342
+[290]	train-auc:0.979814+0.000180146	test-auc:0.979055+0.000737354
+[300]	train-auc:0.979921+0.000183619	test-auc:0.979139+0.000719996
+[310]	train-auc:0.980038+0.000178779	test-auc:0.979217+0.000749352
+[320]	train-auc:0.98012+0.000165859	test-auc:0.979302+0.000751437
+[330]	train-auc:0.980219+0.000160375	test-auc:0.979391+0.000745519
+[340]	train-auc:0.98027+0.000167275	test-auc:0.979432+0.000739831
+[350]	train-auc:0.980359+0.000165706	test-auc:0.979493+0.000734674
+[360]	train-auc:0.980425+0.00016053	test-auc:0.979553+0.000736613
+[370]	train-auc:0.980476+0.000164136	test-auc:0.979585+0.000735922
+[380]	train-auc:0.980547+0.000158277	test-auc:0.979655+0.000718673
+[390]	train-auc:0.980581+0.00016682	test-auc:0.979694+0.000703552
+[400]	train-auc:0.980627+0.00015598	test-auc:0.979722+0.000691902
+[410]	train-auc:0.980675+0.000181448	test-auc:0.97975+0.000674445
+[420]	train-auc:0.980722+0.00018939	test-auc:0.97978+0.000655208
+[430]	train-auc:0.980772+0.000175745	test-auc:0.979806+0.000661186
+[440]	train-auc:0.980826+0.000182201	test-auc:0.979855+0.000651984
+[450]	train-auc:0.980868+0.0001734	test-auc:0.979876+0.000664627
+[460]	train-auc:0.9809+0.000195203	test-auc:0.979895+0.000662868
+[470]	train-auc:0.980932+0.00019351	test-auc:0.979929+0.000666212
+[480]	train-auc:0.980971+0.000199043	test-auc:0.979945+0.000662258
+[490]	train-auc:0.981009+0.000211889	test-auc:0.979985+0.000645193
+[500]	train-auc:0.981035+0.000209715	test-auc:0.979997+0.000661553
+[510]	train-auc:0.981078+0.000201139	test-auc:0.980027+0.000665939
+[520]	train-auc:0.981118+0.000200731	test-auc:0.980057+0.000660619
+[530]	train-auc:0.981155+0.000195876	test-auc:0.980074+0.000671704
+[540]	train-auc:0.981191+0.000204525	test-auc:0.980079+0.00066873
+[550]	train-auc:0.981235+0.000213721	test-auc:0.980106+0.000656764
+[560]	train-auc:0.981271+0.000215243	test-auc:0.980139+0.000670802
+[570]	train-auc:0.98129+0.00021653	test-auc:0.980143+0.000675691
+[580]	train-auc:0.981326+0.000206714	test-auc:0.980154+0.00068284
+[590]	train-auc:0.981356+0.000201908	test-auc:0.980163+0.000679913
+[600]	train-auc:0.981383+0.00018745	test-auc:0.980184+0.000687079
+[610]	train-auc:0.981418+0.000200065	test-auc:0.980201+0.000677308
+[620]	train-auc:0.981446+0.000187422	test-auc:0.980223+0.000669664
+[630]	train-auc:0.981475+0.000192084	test-auc:0.980238+0.000665952
+[640]	train-auc:0.981494+0.000197917	test-auc:0.980236+0.000652074
+[650]	train-auc:0.981524+0.000201653	test-auc:0.980264+0.000669362
+[660]	train-auc:0.981558+0.000201988	test-auc:0.980276+0.000678059
+[670]	train-auc:0.981587+0.000204855	test-auc:0.980309+0.000688572
+[680]	train-auc:0.981607+0.00020934	test-auc:0.98032+0.000694263
+[690]	train-auc:0.981651+0.000206922	test-auc:0.98033+0.000677413
+[700]	train-auc:0.981669+0.000200363	test-auc:0.98033+0.000668428
+[710]	train-auc:0.981686+0.000207851	test-auc:0.980323+0.000659964
+[720]	train-auc:0.981713+0.000217533	test-auc:0.980343+0.000659095
+[730]	train-auc:0.981733+0.000215235	test-auc:0.980355+0.000643943
+[740]	train-auc:0.981743+0.000199186	test-auc:0.98034+0.000655279
+[750]	train-auc:0.981774+0.000197272	test-auc:0.980358+0.000652251
+[760]	train-auc:0.981805+0.00019584	test-auc:0.980375+0.000646633
+[770]	train-auc:0.98184+0.000202183	test-auc:0.980386+0.000638648
+[780]	train-auc:0.981858+0.000206699	test-auc:0.980377+0.000638437
+[790]	train-auc:0.981901+0.000199681	test-auc:0.980407+0.000641023
+[800]	train-auc:0.981913+0.000192795	test-auc:0.980393+0.000636551
+[810]	train-auc:0.981933+0.000196696	test-auc:0.980402+0.000635333
+[820]	train-auc:0.981952+0.000202976	test-auc:0.980417+0.00062688
+[830]	train-auc:0.981968+0.000196324	test-auc:0.98042+0.000641393
+[840]	train-auc:0.981993+0.000196325	test-auc:0.980434+0.0006452
+[850]	train-auc:0.982012+0.000188551	test-auc:0.980441+0.000649977
+[860]	train-auc:0.982022+0.000188891	test-auc:0.980436+0.000647432
+[870]	train-auc:0.982046+0.000187876	test-auc:0.98044+0.000640545
+[880]	train-auc:0.982077+0.000180409	test-auc:0.980455+0.000649663
+[890]	train-auc:0.982098+0.000169372	test-auc:0.98046+0.000666201
+[900]	train-auc:0.982125+0.000173184	test-auc:0.980458+0.000660005
+[910]	train-auc:0.982137+0.000177887	test-auc:0.980434+0.000676613
+[920]	train-auc:0.982159+0.000176978	test-auc:0.980434+0.000687
+[930]	train-auc:0.982171+0.000174831	test-auc:0.980435+0.000684729
+[05:05:45] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[05:23:46] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[05:38:54] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[05:53:54] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[06:09:02] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[06:24:29] 18790469x10 matrix with 187904690 entries loaded from ../data/dtest.mt
+Successfully submitted to TalkingData AdTracking Fraud Detection Challenge
+#==============================================================================
+# SUCCESS !!! 901_predict_416-2.py
+#==============================================================================
+
+time: 324.62min

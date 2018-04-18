@@ -1,0 +1,19 @@
+
+#==============================================================================
+# START!!! 901_predict_417-1.py    PID: 9061    time: 2018-04-16 17:23:47.769670
+#==============================================================================
+
+seed : 4308
+[18:14:57] 36739678x100 matrix with 3673967800 entries loaded from ../data/dtrain.mt
+[18:14:57] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[18:29:45] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[18:46:08] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:02:34] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:20:00] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[19:36:17] 18790469x100 matrix with 1879046900 entries loaded from ../data/dtest.mt
+Successfully submitted to TalkingData AdTracking Fraud Detection Challenge
+#==============================================================================
+# SUCCESS !!! 901_predict_417-1.py
+#==============================================================================
+
+time: 139.47min

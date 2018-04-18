@@ -1,0 +1,19 @@
+
+#==============================================================================
+# START!!! 901_predict_417-2.py    PID: 44145    time: 2018-04-17 07:55:46.566451
+#==============================================================================
+
+seed : 4308
+[08:01:45] 73479357x100 matrix with 7347935700 entries loaded from ../data/dtrain.mt
+[08:01:45] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[08:26:40] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[08:54:21] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[09:22:27] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[09:51:36] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
+[10:23:41] 18790469x100 matrix with 1879046900 entries loaded from ../data/dtest.mt
+
+#==============================================================================
+# SUCCESS !!! 901_predict_417-2.py
+#==============================================================================
+
+time: 153.73min
