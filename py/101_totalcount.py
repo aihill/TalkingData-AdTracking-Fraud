@@ -15,6 +15,7 @@ from multiprocessing import Pool
 import utils
 utils.start(__file__)
 
+os.system('rm -rf ../data/101__*.p')
 
 trte = pd.concat([utils.read_pickles('../data/train'),
                 utils.read_pickles('../data/test_old')])
@@ -24,9 +25,11 @@ def multi(keys):
     print(keys)
     
     keys_ = '-'.join(keys)
-    df = trte.groupby(keys).size()
+    df = trte.groupby(keys).size().rank(method='dense')
     df.name = 'totalcount_' + keys_
     df = df.reset_index()
+    utils.reduce_memory(df, ix_start=-1)
+    
     result = pd.merge(trte, df, on=keys, how='left')
     
     result.iloc[0:utils.TRAIN_SHAPE]['totalcount_' + keys_].to_pickle('../data/101__{}_train.p'.format(keys_))
