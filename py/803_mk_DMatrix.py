@@ -20,7 +20,8 @@ utils.start(__file__)
 useimp = 50
 
 system('rm ../data/tmp*.p')
-#system('rm ../data/*.mt')
+system('rm SUCCESS_803')
+
 
 # =============================================================================
 # imp
