@@ -28,8 +28,8 @@ utils.start(__file__)
 train = pd.concat([utils.read_pickles('../data/train', ['ip', 'app', 'device', 'os', 'channel', 'click_time']),
                    utils.read_pickles('../data/001_train', ['timestamp'])], axis=1)
 
-test = pd.concat([utils.read_pickles('../data/test_old').drop(['click_id', 'click_time'], axis=1),
-                   utils.read_pickles('../data/001_test', ['timestamp'])], axis=1)
+test = pd.concat([utils.read_pickles('../data/test_old', ['ip', 'app', 'device', 'os', 'channel', 'click_time']),
+                  utils.read_pickles('../data/001_test', ['timestamp'])], axis=1)
 
 gc.collect()
 
