@@ -88,7 +88,7 @@ def multi(keys):
                     df_var, df_skew], axis=1)
     del df_min, df_max, df_diff1, df_diff2, df_mean, df_var, df_skew; gc.collect()
     
-    utils.reduce_memory(df, ix_start=-1)
+    utils.reduce_memory(df)
     col = df.columns.tolist()
     df.reset_index(inplace=True)
     
