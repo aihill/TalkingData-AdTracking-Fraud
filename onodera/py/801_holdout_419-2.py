@@ -112,7 +112,7 @@ yhat, imp, ret = ex.stacking(X, y, param, 9999, nfold=5, esr=30)
 t = datetime.today()
 date = t.date()
 hour = t.hour
-imp.to_csv('imp_{}-{}h.csv'.format(date, hour), index=False)
+imp.to_csv('imp_{}-{:02d}h.csv'.format(date, hour), index=False)
 
 # =============================================================================
 # cv
