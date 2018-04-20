@@ -117,8 +117,12 @@ print('concat test')
 load_files = sorted(glob('../data/tmp*.p'))
 X = pd.concat([pd.read_pickle(f) for f in load_files], axis=1)
 print('test.shape should be 18790469:', X[X_head.columns].shape)
-lgb.Dataset(X[X_head.columns], 
-            categorical_feature=categorical_feature).save_binary('../data/dtest.mt')
+
+#lgb.Dataset(X[X_head.columns], 
+#            categorical_feature=categorical_feature).save_binary('../data/dtest.mt')
+
+utils.to_pickles(X[X_head.columns], '../data/dtest', 10)
+
 del X; gc.collect()
 
 
