@@ -17,7 +17,7 @@ import lightgbm as lgb
 import gc
 #from time import sleep
 import utils
-#utils.start(__file__)
+utils.start(__file__)
 
 SEED = np.random.randint(9999) #int(sys.argv[1])
 NROUND = 9999
