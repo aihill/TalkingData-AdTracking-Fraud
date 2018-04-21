@@ -8,12 +8,12 @@ Created on Fri Apr 20 12:27:08 2018
 
 import pandas as pd
 import numpy as np
-from tqdm import tqdm
+from os import system
 from datetime import datetime
 import sys
 sys.path.append('/home/kazuki_onodera/Python')
 import lgbmextension as ex
-import lightgbm as lgb
+#import lightgbm as lgb
 import gc
 #from time import sleep
 import utils
@@ -25,6 +25,10 @@ NROUND = 9999
 
 np.random.seed(SEED)
 print('seed :', SEED)
+system('rm SUCCESS_801')
+
+utils.send_line('START {}'.format(__file__))
+
 # =============================================================================
 # load train
 # =============================================================================
@@ -111,15 +115,7 @@ imp.to_csv('imp_{}-{:02d}h.csv'.format(date, hour), index=False)
 
 
 
-# =============================================================================
-# cv
-# =============================================================================
-
-#model = xgb.train(param, dbuild, NROUND, watchlist, verbose_eval=10, 
-#                  early_stopping_rounds=50)
-#
-#imp = ex.getImp(model)
-#imp.to_csv('imp.csv', index=False)
+system('touch SUCCESS_801')
 
 
 

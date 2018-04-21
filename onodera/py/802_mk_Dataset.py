@@ -9,6 +9,8 @@ Created on Fri Apr 13 13:00:49 2018
 from glob import glob
 import pandas as pd
 from os import system
+import os
+from time import sleep
 from tqdm import tqdm
 import gc
 import lightgbm as lgb
@@ -21,9 +23,21 @@ useimp = 50
 
 system('rm ../data/tmp*.p')
 system('rm ../data/*.mt')
-system('rm SUCCESS_803')
+system('rm SUCCESS_802')
 
 categorical_feature = ['ip', 'app', 'device', 'os', 'channel']
+
+# =============================================================================
+# wait
+# =============================================================================
+while True:
+    if os.path.isfile('SUCCESS_801'):
+        break
+    else:
+        sleep(60*1)
+
+utils.send_line('START {}'.format(__file__))
+
 # =============================================================================
 # imp
 # =============================================================================
@@ -136,7 +150,7 @@ sub.reset_index(drop=True, inplace=True)
 
 sub.to_pickle('../data/sub.p')
 
-system('touch SUCCESS_803')
+system('touch SUCCESS_802')
 
 #==============================================================================
 utils.end(__file__)

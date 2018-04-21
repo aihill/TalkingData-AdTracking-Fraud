@@ -24,12 +24,13 @@ print('seed :', SEED)
 # wait
 # =============================================================================
 while True:
-    if os.path.isfile('SUCCESS_803'):
+    if os.path.isfile('SUCCESS_802'):
         break
     else:
         sleep(60*1)
 
-utils.send_line('{} start'.format(__file__))
+utils.send_line('START {}'.format(__file__))
+
 # =============================================================================
 # load train
 # =============================================================================
@@ -57,4 +58,7 @@ gc.collect()
 cv = lgb.cv(param, dtrain, NROUND, nfold=5, early_stopping_rounds=50, verbose_eval=10)
 
 
+
+#==============================================================================
+utils.end(__file__)
 
