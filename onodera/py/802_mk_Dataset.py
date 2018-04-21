@@ -25,7 +25,7 @@ system('rm ../data/tmp*.p')
 system('rm ../data/*.mt')
 system('rm SUCCESS_802')
 
-categorical_feature = ['ip', 'app', 'device', 'os', 'channel']
+categorical_feature = ['ip', 'app', 'device', 'os', 'channel', 'day', 'hour']
 
 # =============================================================================
 # wait
@@ -66,7 +66,7 @@ def multi_train(args):
     df = pd.concat([pd.read_pickle(load_folder + '/{}.p'.format(j))[col] for j in range(0, 10)])
     if len(col)>0:
         gc.collect()
-        df[col].to_pickle('../data/tmp{}.p'.format(i))
+        df[col].reset_index(drop=True).fillna(-1).to_pickle('../data/tmp{}.p'.format(i))
 
 def multi_test(args):
     load_folder, i = args
@@ -74,6 +74,7 @@ def multi_test(args):
     print('loading {} ...'.format(load_folder))
     if load_folder=='../data/test/':
         df = utils.read_pickles(load_folder)
+        
     else:
         df = pd.concat([sub, utils.read_pickles(load_folder)],
                         axis=1)
@@ -82,7 +83,7 @@ def multi_test(args):
         df = df[~df.click_id.isnull()]
         df.drop_duplicates('click_id', keep='last', inplace=True) # last?
         print(load_folder, df.shape)
-        df[col].reset_index(drop=True).to_pickle('../data/tmp{}.p'.format(i))
+        df[col].reset_index(drop=True).fillna(-1).to_pickle('../data/tmp{}.p'.format(i))
 
 
 # =============================================================================
@@ -103,6 +104,8 @@ pool.close()
 print('concat train')
 load_files = sorted(glob('../data/tmp*.p'))
 X = pd.concat([pd.read_pickle(f) for f in load_files], axis=1)
+print('X.isnull().sum().sum():', X.isnull().sum().sum())
+
 lgb.Dataset(X.drop('is_attributed', axis=1), label=X.is_attributed,
             categorical_feature=categorical_feature).save_binary('../data/dtrain.mt')
 
@@ -134,9 +137,7 @@ print('concat test')
 load_files = sorted(glob('../data/tmp*.p'))
 X = pd.concat([pd.read_pickle(f) for f in load_files], axis=1)
 print('test.shape should be 18790469:', X[X_head.columns].shape)
-
-#lgb.Dataset(X[X_head.columns], 
-#            categorical_feature=categorical_feature).save_binary('../data/dtest.mt')
+print('X.isnull().sum().sum():', X.isnull().sum().sum())
 
 utils.to_pickles(X[X_head.columns], '../data/dtest', 10)
 

@@ -48,9 +48,13 @@ param = {
          'learning_rate': 0.1,
          'max_depth': 4,
          'num_leaves': 2**4-1,
+         'max_bin': 100,
+         'min_child_samples': 300,
+         'min_child_weight': 0,
          'colsample_bytree': 0.8,
          'subsample': 0.1,
          'nthread': 64,
+         'scale_pos_weight': 500,
          'seed': SEED}
 
 gc.collect()

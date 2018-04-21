@@ -78,8 +78,8 @@ X = pd.concat([pd.read_pickle('../data/train/9.p').tail(9184919),
 gc.collect()
 
 y = X.is_attributed
-categorical_feature = ['app', 'device', 'os', 'channel', 'day', 'hour']
-drop_feature = ['ip', 'is_attributed', 'click_time', 'attributed_time']
+categorical_feature = ['ip', 'app', 'device', 'os', 'channel', 'day', 'hour']
+drop_feature = ['is_attributed', 'click_time', 'attributed_time']
 X.drop(drop_feature, axis=1, inplace=True)
 X.fillna(-1, inplace=True)
 
@@ -95,12 +95,17 @@ print(col)
 param = {
          'objective': 'binary',
          'metric': 'auc',
-         'learning_rate': 0.1,
+         'learning_rate': 0.2,
          'max_depth': 4,
          'num_leaves': 2**4-1,
+         'max_bin': 100,
+         'min_child_samples': 300,
+         'min_child_weight': 0,
          'colsample_bytree': 0.8,
          'subsample': 0.1,
          'nthread': 64,
+         'scale_pos_weight': 500,
+         
          'seed': SEED
          }
 
