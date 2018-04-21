@@ -44,7 +44,7 @@ utils.send_line('{} start'.format(__file__))
 # load train
 # =============================================================================
 
-dtrain = lgb.DMatrix('../data/dtrain.mt')
+dtrain = lgb.Dataset('../data/dtrain.mt')
 gc.collect()
 
 
