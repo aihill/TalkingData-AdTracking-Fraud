@@ -72,7 +72,7 @@ def multi_test(args):
     load_folder, i = args
     gc.collect()
     print('loading {} ...'.format(load_folder))
-    if load_folder=='../data/test/':
+    if load_folder=='../data/test_old/':
         df = utils.read_pickles(load_folder)
         
     else:
@@ -126,7 +126,7 @@ X_head = pd.read_pickle('X_head.p')
 # =============================================================================
 sub = utils.read_pickles('../data/test_old', ['click_id'])
 
-load_folders = sorted(glob('../data/*test/'))
+load_folders = sorted(glob('../data/*_test/')) + ['../data/test_old/']
 args = list(zip(load_folders, range(len(load_folders))))
 
 pool = Pool(5)
