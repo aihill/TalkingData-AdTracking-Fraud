@@ -78,8 +78,8 @@ X = pd.concat([pd.read_pickle('../data/train/9.p').tail(9184919),
 gc.collect()
 
 y = X.is_attributed
-categorical_feature = ['ip', 'app', 'device', 'os', 'channel', 'day', 'hour']
-drop_feature = ['is_attributed', 'click_time', 'attributed_time']
+categorical_feature = ['app', 'device', 'os', 'channel', 'day', 'hour']
+drop_feature = ['ip', 'is_attributed', 'click_time', 'attributed_time']
 X.drop(drop_feature, axis=1, inplace=True)
 X.fillna(-1, inplace=True)
 

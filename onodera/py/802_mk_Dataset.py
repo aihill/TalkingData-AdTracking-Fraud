@@ -25,7 +25,7 @@ system('rm ../data/tmp*.p')
 system('rm ../data/*.mt')
 system('rm SUCCESS_802')
 
-categorical_feature = ['ip', 'app', 'device', 'os', 'channel', 'day', 'hour']
+categorical_feature = ['app', 'device', 'os', 'channel', 'day', 'hour']
 
 # =============================================================================
 # wait
