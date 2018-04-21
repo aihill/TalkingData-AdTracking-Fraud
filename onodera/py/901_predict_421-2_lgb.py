@@ -21,9 +21,9 @@ import utils
 utils.start(__file__)
 
 SEED = np.random.randint(9999) #int(sys.argv[1])
-NROUND = 500
-SUBMIT_FILE_PATH = '../output/421-1.csv.gz'
-COMMENT = """r500 ['app',
+NROUND = 1000
+SUBMIT_FILE_PATH = '../output/421-2.csv.gz'
+COMMENT = """r1000 ['app',
  'channel',
  'count_device',
  'count_ip-app-device-os',
