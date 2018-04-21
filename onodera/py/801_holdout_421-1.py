@@ -79,8 +79,8 @@ gc.collect()
 
 y = X.is_attributed
 categorical_feature = ['app', 'device', 'os', 'channel', 'day', 'hour']
-X.drop(['is_attributed', 'click_time', 'attributed_time'], 
-           axis=1, inplace=True)
+drop_feature = ['ip', 'is_attributed', 'click_time', 'attributed_time']
+X.drop(drop_feature, axis=1, inplace=True)
 X.fillna(-1, inplace=True)
 
 gc.collect()
