@@ -30,8 +30,7 @@ np.random.seed(SEED)
 print('seed :', SEED)
 
 
-system('rm ../data/tmp*.p')
-system('rm ../data/*.mt')
+system('rm ../data/801_tmp*.p')
 system('rm SUCCESS_801')
 
 utils.send_line('START {}'.format(__file__))
@@ -45,7 +44,7 @@ def multi_train(args):
     gc.collect()
     print('loading {} ...'.format(load_folder))
     df = utils.read_pickles(load_folder).sample(frac=FRAC, random_state=SEED)
-    df.reset_index(drop=True).fillna(-1).to_pickle('../data/tmp{}.p'.format(i))
+    df.reset_index(drop=True).fillna(-1).to_pickle('../data/801_tmp{}.p'.format(i))
 
 # =============================================================================
 # load train
@@ -60,7 +59,7 @@ pool.close()
 
 
 print('concat train')
-load_files = sorted(glob('../data/tmp*.p'))
+load_files = sorted(glob('../data/801_tmp*.p'))
 X = pd.concat([pd.read_pickle(f) for f in load_files], axis=1)
 print('X.isnull().sum().sum():', X.isnull().sum().sum())
 print('X.shape:', X.shape )

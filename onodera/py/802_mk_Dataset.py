@@ -21,7 +21,7 @@ utils.start(__file__)
 # setting
 useimp = 60
 
-system('rm ../data/tmp*.p')
+system('rm ../data/802_tmp*.p')
 system('rm ../data/*.mt')
 system('rm SUCCESS_802')
 
@@ -68,7 +68,7 @@ def multi_train(args):
     df = pd.concat([pd.read_pickle(load_folder + '/{}.p'.format(j))[col] for j in range(0, 10)])
     if len(col)>0:
         gc.collect()
-        df[col].reset_index(drop=True).fillna(-1).to_pickle('../data/tmp{}.p'.format(i))
+        df[col].reset_index(drop=True).fillna(-1).to_pickle('../data/802_tmp{}.p'.format(i))
 
 def multi_test(args):
     load_folder, i = args
@@ -89,7 +89,7 @@ def multi_test(args):
         df = df[~df.click_id.isnull()]
         df.drop_duplicates('click_id', keep='last', inplace=True) # last?
         print(load_folder, df.shape)
-        df[col].reset_index(drop=True).fillna(-1).to_pickle('../data/tmp{}.p'.format(i))
+        df[col].reset_index(drop=True).fillna(-1).to_pickle('../data/802_tmp{}.p'.format(i))
 
 
 # =============================================================================
@@ -108,7 +108,7 @@ pool.map(multi_train, args)
 pool.close()
 
 print('concat train')
-load_files = sorted(glob('../data/tmp*.p'))
+load_files = sorted(glob('../data/802_tmp*.p'))
 X = pd.concat([pd.read_pickle(f) for f in load_files], axis=1)
 print('X.isnull().sum().sum():', X.isnull().sum().sum())
 
@@ -119,7 +119,7 @@ X_head = X.head().drop('is_attributed', axis=1)
 X_head.to_pickle('X_head.p')
 
 del X; gc.collect()
-system('rm ../data/tmp*.p')
+system('rm ../data/802_tmp*.p')
 
 """
 
@@ -140,7 +140,7 @@ pool.map(multi_test, args)
 pool.close()
 
 print('concat test')
-load_files = sorted(glob('../data/tmp*.p'))
+load_files = sorted(glob('../data/802_tmp*.p'))
 X = pd.concat([pd.read_pickle(f) for f in load_files], axis=1)
 print('test.shape should be 18790469:', X[X_head.columns].shape)
 print('X.isnull().sum().sum():', X.isnull().sum().sum())
@@ -156,6 +156,7 @@ sub['click_id'] = sub['click_id'].map(int)
 sub.reset_index(drop=True, inplace=True)
 
 sub.to_pickle('../data/sub.p')
+system('rm ../data/802_tmp*.p')
 
 system('touch SUCCESS_802')
 
