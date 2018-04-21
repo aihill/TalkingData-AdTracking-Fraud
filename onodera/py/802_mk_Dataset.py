@@ -51,7 +51,9 @@ imp.set_index('index', inplace=True)
 imp = imp.head(useimp).T
 
 usecols = set(imp.columns.tolist() + ['is_attributed'])
-print(usecols)
+categorical_feature = list(set(categorical_feature) & usecols)
+
+print(sorted(usecols))
 
 # =============================================================================
 # def

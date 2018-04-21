@@ -21,9 +21,58 @@ import utils
 utils.start(__file__)
 
 SEED = np.random.randint(9999) #int(sys.argv[1])
-NROUND = 400
-SUBMIT_FILE_PATH = '../output/419-3_lgb.csv.gz'
-COMMENT = 'r400 lgb'
+NROUND = 500
+SUBMIT_FILE_PATH = '../output/421-1.csv.gz'
+COMMENT = """r500 ['app',
+ 'channel',
+ 'count_device',
+ 'count_ip-app-device-os',
+ 'count_ip-device',
+ 'count_ip-device-os',
+ 'count_rev_ip-app-device-os',
+ 'dayvar_app-os-channel',
+ 'dayvar_ip-app-device-os',
+ 'hour_min',
+ 'nunique_app-device-os-channel_app-channel',
+ 'nunique_ip-app-day_ip-day',
+ 'nunique_ip-app-device-channel_ip-app',
+ 'nunique_ip-app-device-channel_ip-app-channel',
+ 'nunique_ip-app-device-os-channel_app-device-os',
+ 'nunique_ip-app-device-os-channel_ip-app-os',
+ 'nunique_ip-app-device-os_ip-device-os',
+ 'nunique_ip-app-device_ip-device',
+ 'nunique_ip-app-hour_ip-hour',
+ 'nunique_ip-app_ip',
+ 'nunique_ip-channel-day_ip-day',
+ 'nunique_ip-device-channel_ip-device',
+ 'nunique_ip-device-day_ip',
+ 'nunique_ip-device-os_ip',
+ 'nunique_ip-device-os_ip-device',
+ 'nunique_ip-device_ip',
+ 'nunique_ip-os-day_ip-day',
+ 'nunique_ip-os-hour_ip-hour',
+ 'nunique_ip-os-hour_os-hour',
+ 'os',
+ 'timedelta_rev_ip-app',
+ 'timedelta_rev_ip-app-device',
+ 'timedelta_rev_ip-app-device-os',
+ 'timedelta_rev_ip-app-device-os-channel',
+ 'timedelta_rev_ip-app-os',
+ 'timedelta_rev_ip-app-os-channel',
+ 'timedelta_rev_ip-device-os',
+ 'timedelta_rev_ip-os',
+ 'timediff-minmax_app-channel',
+ 'timemax_ip-app-device-os-channel',
+ 'timemedian_channel',
+ 'timevar_device-os',
+ 'timevar_ip-app-device',
+ 'totalcount_app-channel',
+ 'totalcount_app-device-os',
+ 'totalcount_ip-app',
+ 'totalcount_ip-app-device-os',
+ 'totalcount_ip-app-os',
+ 'totalcount_ip-device',
+ 'totalcount_ip-device-os']"""
 EXE_SUBMIT = True
 LOOP = 2
 
@@ -55,24 +104,17 @@ gc.collect()
 param = {
          'objective': 'binary',
          'metric': 'auc',
-         'boosting_type': 'gbdt',
-         'colsample_bytree': 0.9,
          'learning_rate': 0.1,
+         'max_depth': 4,
+         'num_leaves': 2**4-1,
          'max_bin': 100,
-         'max_depth': 3,
-         'min_child_samples': 100,
+         'min_child_samples': 300,
          'min_child_weight': 0,
-         'min_split_gain': 0,
+         'colsample_bytree': 0.8,
+         'subsample': 0.1,
          'nthread': 64,
-         'num_leaves': 7,
-         'reg_alpha': 0,
-         'reg_lambda': 0,
-         'scale_pos_weight': 200,
-         'subsample': 0.7,
-         'subsample_for_bin': 200000,
-         'subsample_freq': 1,
-         'verbose': 0}
-
+         'scale_pos_weight': 500,
+         'seed': SEED}
 
 gc.collect()
 
