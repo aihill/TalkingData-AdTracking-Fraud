@@ -9,6 +9,7 @@ Created on Fri Apr 20 12:27:08 2018
 import pandas as pd
 import numpy as np
 from os import system
+import os
 from datetime import datetime
 import sys
 sys.path.append('/home/kazuki_onodera/Python')
@@ -21,7 +22,7 @@ from glob import glob
 import utils
 utils.start(__file__)
 
-SEED = np.random.randint(9999) #int(sys.argv[1])
+SEED = 71 #np.random.randint(9999) #int(sys.argv[1])
 NROUND = 9999
 FRAC = 0.1
 
@@ -30,7 +31,7 @@ np.random.seed(SEED)
 print('seed :', SEED)
 
 
-system('rm ../data/801_tmp*.p')
+#system('rm ../data/801_tmp*.p')
 system('rm SUCCESS_801')
 
 utils.send_line('START {}'.format(__file__))
@@ -41,10 +42,15 @@ utils.send_line('START {}'.format(__file__))
 
 def multi_train(args):
     load_folder, i = args
+    out_file = f'{load_folders[0][:-1]}_sampled.p'
     gc.collect()
-    print('loading {} ...'.format(load_folder))
+    if os.path.isfile(out_file):
+        print(f'{out_file} exist')
+        return
+    print(f'loading {load_folder} ...')
     df = utils.read_pickles(load_folder).sample(frac=FRAC, random_state=SEED)
-    df.reset_index(drop=True).fillna(-1).to_pickle('../data/801_tmp{}.p'.format(i))
+    print(f'writing {out_file} ...')
+    df.reset_index(drop=True).fillna(-1).to_pickle(f'{load_folders[0][:-1]}_sampled.p')
 
 # =============================================================================
 # load train
@@ -59,7 +65,7 @@ pool.close()
 
 
 print('concat train')
-load_files = sorted(glob('../data/801_tmp*.p'))
+load_files = sorted(glob('../data/*_sampled.p'))
 X = pd.concat([pd.read_pickle(f) for f in load_files], axis=1)
 print('X.isnull().sum().sum():', X.isnull().sum().sum())
 print('X.shape:', X.shape )
