@@ -24,7 +24,7 @@ SEED = np.random.randint(9999) #int(sys.argv[1])
 NROUND = 500
 LOOP = 3
 SUBMIT_FILE_PATH = '../output/421-5.csv.gz'
-COMMENT = "r500"
+COMMENT = F"r{NROUND}"
 
 EXE_SUBMIT = True
 

@@ -19,10 +19,10 @@ import utils
 utils.start(__file__)
 
 # setting
-useimp = 60
+useimp = 100
 
 system('rm ../data/802_tmp*.p')
-system('rm ../data/*.mt')
+#system('rm ../data/*.mt')
 system('rm SUCCESS_802')
 
 categorical_feature = ['ip', 'app', 'device', 'os', 'channel', 'day', 'hour']
