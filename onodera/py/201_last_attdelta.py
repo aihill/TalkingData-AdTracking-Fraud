@@ -20,6 +20,7 @@ import utils
 utils.start(__file__)
 
 
+os.system('rm -rf ../data/201__*.p')
 
 trte = pd.concat([utils.read_pickles('../data/train'),
                 utils.read_pickles('../data/test_old')],
