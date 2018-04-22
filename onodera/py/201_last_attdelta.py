@@ -17,7 +17,7 @@ from multiprocessing import Pool
 nthread = 5
 #from collections import defaultdict
 import utils
-#utils.start(__file__)
+utils.start(__file__)
 
 
 
