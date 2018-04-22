@@ -42,7 +42,7 @@ utils.send_line('START {}'.format(__file__))
 
 def multi_train(args):
     load_folder, i = args
-    out_file = f'{load_folders[0][:-1]}_sampled.p'
+    out_file = f'{load_folder[:-1]}_sampled.p'
     gc.collect()
     if os.path.isfile(out_file):
         print(f'{out_file} exist')
@@ -50,7 +50,7 @@ def multi_train(args):
     print(f'loading {load_folder} ...')
     df = utils.read_pickles(load_folder).sample(frac=FRAC, random_state=SEED)
     print(f'writing {out_file} ...')
-    df.reset_index(drop=True).fillna(-1).to_pickle(f'{load_folder[:-1]}_sampled.p')
+    df.reset_index(drop=True).fillna(-1).to_pickle(out_file)
 
 # =============================================================================
 # load train
