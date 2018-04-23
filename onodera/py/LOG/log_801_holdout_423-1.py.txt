@@ -1,0 +1,277 @@
+
+#==============================================================================
+# START!!! 801_holdout_423-1.py    PID: 4808    time: 2018-04-23 01:02:13.940599
+#==============================================================================
+
+seed : 71
+rm: cannot remove 'SUCCESS_801': No such file or directory
+../data/103-3_train_sampled.p exist
+../data/003_train_sampled.p exist
+../data/103-2_train_sampled.p exist
+../data/002_train_sampled.p exist
+../data/101_train_sampled.p exist
+../data/001_train_sampled.p exist
+../data/102_train_sampled.p exist
+loading ../data/004_train/ ...
+../data/103-1_train_sampled.p exist
+../data/104-1_train_sampled.p exist
+  0%|          | 0/10 [00:00<?, ?it/s]../data/105-2_train_sampled.p exist
+../data/104-2_train_sampled.p exist
+../data/104-3_train_sampled.p exist
+../data/106-1_train_sampled.p exist
+../data/105-1_train_sampled.p exist
+../data/106-2_train_sampled.p exist
+../data/106-3_train_sampled.p exist
+../data/107-1_train_sampled.p exist
+../data/107-2_train_sampled.p exist
+../data/109-1_train_sampled.p exist
+../data/108-1_train_sampled.p exist
+../data/108-2_train_sampled.p exist
+../data/108-3_train_sampled.p exist
+../data/109-3_train_sampled.p exist
+../data/109-2_train_sampled.p exist
+../data/109-4_train_sampled.p exist
+../data/109-6_train_sampled.p exist
+../data/109-5_train_sampled.p exist
+../data/109-8_train_sampled.p exist
+../data/109-7_train_sampled.p exist
+../data/109-9_train_sampled.p exist
+../data/110-2_train_sampled.p exist
+../data/110-1_train_sampled.p exist
+../data/110-3_train_sampled.p exist
+../data/110-4_train_sampled.p exist
+../data/111-2_train_sampled.p exist
+../data/111-1_train_sampled.p exist
+../data/111-3_train_sampled.p exist
+../data/train_sampled.p exist
+../data/201_train_sampled.p exist
+ 10%|█         | 1/10 [01:13<11:02, 73.58s/it] 20%|██        | 2/10 [02:31<10:05, 75.72s/it] 30%|███       | 3/10 [03:47<08:51, 75.89s/it] 40%|████      | 4/10 [05:02<07:33, 75.63s/it] 50%|█████     | 5/10 [06:22<06:22, 76.60s/it] 60%|██████    | 6/10 [07:41<05:07, 76.84s/it] 70%|███████   | 7/10 [09:02<03:52, 77.50s/it] 80%|████████  | 8/10 [10:23<02:35, 77.92s/it] 90%|█████████ | 9/10 [11:41<01:17, 77.93s/it]100%|██████████| 10/10 [13:00<00:00, 78.02s/it]
+writing ../data/004_train_sampled.p ...
+concat train
+X.isnull().sum().sum(): 0
+X.shape: (18369840, 771)
+Index(['day', 'hour', 'hour_min', 'timestamp', 'count_app-channel',
+       'count_app-device-channel', 'count_app-device-os-channel',
+       'count_app-device-os', 'count_app-device', 'count_app-os-channel',
+       ...
+       'pre_att_time_ip-device', 'pre_att_time_ip-os', 'pre_att_time_ip',
+       'pre_att_time_os-channel', 'pre_att_time_os', 'ip', 'app', 'device',
+       'os', 'channel'],
+      dtype='object', length=768)
+y/all: 45359/18369840(0.25%)
+building... 1/5 of 1/1
+[LightGBM] [Info] Number of positive: 36318, number of negative: 14659554
+[LightGBM] [Info] Total Bins 82025
+[LightGBM] [Info] Number of data: 14695872, number of used features: 768
+Training until validation scores don't improve for 50 rounds.
+[10]	train's auc: 0.979471	valid's auc: 0.976729
+[20]	train's auc: 0.986121	valid's auc: 0.980005
+[30]	train's auc: 0.989551	valid's auc: 0.981815
+[40]	train's auc: 0.991021	valid's auc: 0.982754
+[50]	train's auc: 0.992005	valid's auc: 0.983302
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[60]	train's auc: 0.992422	valid's auc: 0.98355
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[70]	train's auc: 0.993044	valid's auc: 0.983839
+[80]	train's auc: 0.993287	valid's auc: 0.983934
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[90]	train's auc: 0.993564	valid's auc: 0.984063
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[100]	train's auc: 0.993729	valid's auc: 0.984084
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[110]	train's auc: 0.993942	valid's auc: 0.983974
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[120]	train's auc: 0.994165	valid's auc: 0.984041
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[130]	train's auc: 0.99433	valid's auc: 0.984202
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[140]	train's auc: 0.994496	valid's auc: 0.984089
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[150]	train's auc: 0.994681	valid's auc: 0.984151
+[160]	train's auc: 0.994798	valid's auc: 0.984148
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[170]	train's auc: 0.994923	valid's auc: 0.984097
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[180]	train's auc: 0.995074	valid's auc: 0.984046
+Early stopping, best iteration is:
+[130]	train's auc: 0.99433	valid's auc: 0.984202
+building... 2/5 of 1/1
+Training until validation scores don't improve for 50 rounds.
+[10]	train's auc: 0.980513	valid's auc: 0.97708
+[20]	train's auc: 0.985677	valid's auc: 0.97997
+[30]	train's auc: 0.989044	valid's auc: 0.981774
+[40]	train's auc: 0.990819	valid's auc: 0.982823
+[50]	train's auc: 0.991638	valid's auc: 0.983106
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[60]	train's auc: 0.992173	valid's auc: 0.983461
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[70]	train's auc: 0.992656	valid's auc: 0.983597
+[80]	train's auc: 0.992946	valid's auc: 0.9836
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[90]	train's auc: 0.993245	valid's auc: 0.983583
+[100]	train's auc: 0.993456	valid's auc: 0.983565
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[110]	train's auc: 0.993643	valid's auc: 0.983568
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[120]	train's auc: 0.993952	valid's auc: 0.983555
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[130]	train's auc: 0.994073	valid's auc: 0.983439
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+Early stopping, best iteration is:
+[84]	train's auc: 0.993045	valid's auc: 0.983654
+building... 3/5 of 1/1
+Training until validation scores don't improve for 50 rounds.
+[10]	train's auc: 0.980154	valid's auc: 0.97765
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[20]	train's auc: 0.985589	valid's auc: 0.980926
+[30]	train's auc: 0.989203	valid's auc: 0.982171
+[40]	train's auc: 0.990986	valid's auc: 0.983139
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[50]	train's auc: 0.991817	valid's auc: 0.983371
+[60]	train's auc: 0.992403	valid's auc: 0.98367
+[70]	train's auc: 0.992748	valid's auc: 0.98372
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[80]	train's auc: 0.993147	valid's auc: 0.983747
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[90]	train's auc: 0.993481	valid's auc: 0.983953
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[100]	train's auc: 0.993732	valid's auc: 0.983985
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[110]	train's auc: 0.993914	valid's auc: 0.98401
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[120]	train's auc: 0.994095	valid's auc: 0.983979
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[130]	train's auc: 0.994225	valid's auc: 0.983917
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[140]	train's auc: 0.994381	valid's auc: 0.983892
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[150]	train's auc: 0.994514	valid's auc: 0.983714
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[160]	train's auc: 0.994641	valid's auc: 0.98374
+Early stopping, best iteration is:
+[113]	train's auc: 0.993962	valid's auc: 0.984028
+building... 4/5 of 1/1
+Training until validation scores don't improve for 50 rounds.
+[10]	train's auc: 0.979506	valid's auc: 0.975898
+[20]	train's auc: 0.986197	valid's auc: 0.979979
+[30]	train's auc: 0.98947	valid's auc: 0.981364
+[40]	train's auc: 0.990884	valid's auc: 0.982013
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[50]	train's auc: 0.991837	valid's auc: 0.982266
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[60]	train's auc: 0.992325	valid's auc: 0.982484
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[70]	train's auc: 0.992854	valid's auc: 0.982624
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[80]	train's auc: 0.993227	valid's auc: 0.982747
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[90]	train's auc: 0.993577	valid's auc: 0.982918
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[100]	train's auc: 0.993785	valid's auc: 0.982892
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[110]	train's auc: 0.994042	valid's auc: 0.982867
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[120]	train's auc: 0.994245	valid's auc: 0.982823
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[130]	train's auc: 0.994355	valid's auc: 0.982738
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[140]	train's auc: 0.994538	valid's auc: 0.982617
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+Early stopping, best iteration is:
+[95]	train's auc: 0.993705	valid's auc: 0.98294
+building... 5/5 of 1/1
+Training until validation scores don't improve for 50 rounds.
+[10]	train's auc: 0.980171	valid's auc: 0.976954
+[20]	train's auc: 0.985798	valid's auc: 0.9793
+[30]	train's auc: 0.98916	valid's auc: 0.981106
+[40]	train's auc: 0.99092	valid's auc: 0.982012
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[50]	train's auc: 0.991811	valid's auc: 0.982552
+[60]	train's auc: 0.992255	valid's auc: 0.982873
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[70]	train's auc: 0.992688	valid's auc: 0.982977
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[80]	train's auc: 0.993242	valid's auc: 0.983125
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[90]	train's auc: 0.993523	valid's auc: 0.9833
+[100]	train's auc: 0.993764	valid's auc: 0.983363
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[110]	train's auc: 0.993933	valid's auc: 0.983339
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[120]	train's auc: 0.994143	valid's auc: 0.983384
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[130]	train's auc: 0.994334	valid's auc: 0.98329
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[140]	train's auc: 0.994475	valid's auc: 0.983334
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[150]	train's auc: 0.994701	valid's auc: 0.983376
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[160]	train's auc: 0.994917	valid's auc: 0.983359
+[170]	train's auc: 0.995007	valid's auc: 0.983295
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[180]	train's auc: 0.995198	valid's auc: 0.983305
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+Early stopping, best iteration is:
+[135]	train's auc: 0.994407	valid's auc: 0.983385
+finish all fold
+finish all loop
+mk ret
+
+#==============================================================================
+# SUCCESS !!! 801_holdout_423-1.py
+#==============================================================================
+
+time: 131.57min

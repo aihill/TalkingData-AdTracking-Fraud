@@ -1,0 +1,128 @@
+
+#==============================================================================
+# START!!! 005_pre_next.py    PID: 16189    time: 2018-04-23 17:13:15.192224
+#==============================================================================
+
+
+  0%|          | 0/10 [00:00<?, ?it/s]
+ 10%|█         | 1/10 [00:05<00:53,  5.97s/it]
+ 20%|██        | 2/10 [00:11<00:45,  5.73s/it]
+ 30%|███       | 3/10 [00:17<00:41,  5.90s/it]
+ 40%|████      | 4/10 [00:23<00:35,  5.99s/it]
+ 50%|█████     | 5/10 [00:30<00:30,  6.02s/it]
+ 60%|██████    | 6/10 [00:36<00:24,  6.01s/it]
+ 70%|███████   | 7/10 [00:42<00:18,  6.02s/it]
+ 80%|████████  | 8/10 [00:47<00:11,  5.99s/it]
+ 90%|█████████ | 9/10 [00:53<00:05,  5.99s/it]
+100%|██████████| 10/10 [00:59<00:00,  5.97s/it]
+
+  0%|          | 0/10 [00:00<?, ?it/s]
+ 10%|█         | 1/10 [00:02<00:20,  2.26s/it]
+ 20%|██        | 2/10 [00:04<00:16,  2.01s/it]
+ 30%|███       | 3/10 [00:06<00:14,  2.13s/it]
+ 40%|████      | 4/10 [00:08<00:12,  2.01s/it]
+ 50%|█████     | 5/10 [00:09<00:09,  1.98s/it]
+ 60%|██████    | 6/10 [00:11<00:07,  1.93s/it]
+ 70%|███████   | 7/10 [00:13<00:05,  1.90s/it]
+ 80%|████████  | 8/10 [00:15<00:03,  1.90s/it]
+ 90%|█████████ | 9/10 [00:17<00:01,  1.91s/it]
+100%|██████████| 10/10 [00:18<00:00,  1.89s/it]
+('ip', 'channel')
+('ip', 'device')
+('device',)
+('channel',)
+('ip',)
+Finished ['channel'] 4.402 min
+('ip', 'app')
+Finished ['device'] 4.445 min
+('os',)
+Finished ['os'] 5.260 min
+('app', 'os')
+Finished ['ip'] 10.672 min
+('app',)
+Finished ['ip', 'device'] 11.564 min
+('ip', 'os')
+Finished ['ip', 'channel'] 13.727 min
+('app', 'device')
+Finished ['app'] 3.903 min
+('device', 'os')
+Finished ['app', 'os'] 6.386 min
+('os', 'channel')
+Finished ['ip', 'app'] 13.703 min
+('ip', 'app', 'os')
+Finished ['app', 'device'] 4.716 min
+('ip', 'device', 'os')
+Finished ['device', 'os'] 6.016 min
+('device', 'channel')
+Finished ['os', 'channel'] 7.884 min
+('ip', 'app', 'device')
+Finished ['ip', 'os'] 12.816 min
+('ip', 'os', 'channel')
+Finished ['device', 'channel'] 5.305 min
+('device', 'os', 'channel')
+Finished ['ip', 'device', 'os'] 13.335 min
+('ip', 'device', 'channel')
+Finished ['ip', 'app', 'os'] 14.800 min
+('ip', 'device', 'os', 'channel')
+Finished ['device', 'os', 'channel'] 8.581 min
+('ip', 'app', 'device', 'os')
+Finished ['ip', 'app', 'device'] 14.328 min
+Finished ['ip', 'os', 'channel'] 14.258 min
+('app', 'device', 'os')
+Finished ['app', 'device', 'os'] 7.044 min
+Finished ['ip', 'device', 'channel'] 14.709 min
+Finished ['ip', 'device', 'os', 'channel'] 15.767 min
+Finished ['ip', 'app', 'device', 'os'] 16.149 min
+
+0it [00:00, ?it/s]
+1it [00:36, 36.28s/it]
+2it [01:09, 34.76s/it]
+3it [01:42, 34.30s/it]
+4it [02:16, 34.09s/it]
+5it [02:49, 33.93s/it]
+6it [03:23, 33.92s/it]
+7it [03:57, 33.86s/it]
+8it [04:30, 33.85s/it]
+9it [05:14, 34.97s/it]
+10it [06:34, 39.46s/it]
+['preChannel_app-device-os', 'nextChannel_app-device-os',
+       'preChannel_app-device', 'nextChannel_app-device', 'preChannel_app-os',
+       'nextChannel_app-os', 'preChannel_app', 'nextChannel_app',
+       'preApp_channel', 'nextApp_channel', 'preApp_device-channel',
+       'nextApp_device-channel', 'preApp_device-os-channel',
+       'nextApp_device-os-channel', 'preApp_device-os', 'nextApp_device-os',
+       'preChannel_device-os', 'nextChannel_device-os', 'preApp_device',
+       'nextApp_device', 'preChannel_device', 'nextChannel_device',
+       'preChannel_ip-app-device-os', 'nextChannel_ip-app-device-os',
+       'preChannel_ip-app-device', 'nextChannel_ip-app-device',
+       'preChannel_ip-app-os', 'nextChannel_ip-app-os', 'preChannel_ip-app',
+       'nextChannel_ip-app', 'preApp_ip-channel', 'nextApp_ip-channel',
+       'preApp_ip-device-channel', 'nextApp_ip-device-channel',
+       'preApp_ip-device-os-channel', 'nextApp_ip-device-os-channel',
+       'preApp_ip-device-os', 'nextApp_ip-device-os',
+       'preChannel_ip-device-os', 'nextChannel_ip-device-os',
+       'preApp_ip-device', 'nextApp_ip-device', 'preChannel_ip-device',
+       'nextChannel_ip-device', 'preApp_ip-os-channel',
+       'nextApp_ip-os-channel', 'preApp_ip-os', 'nextApp_ip-os',
+       'preChannel_ip-os', 'nextChannel_ip-os', 'preApp_ip', 'nextApp_ip',
+       'preChannel_ip', 'nextChannel_ip', 'preApp_os-channel',
+       'nextApp_os-channel', 'preApp_os', 'nextApp_os', 'preChannel_os',
+       'nextChannel_os']
+       
+0it [00:00, ?it/s]
+1it [00:11, 11.74s/it]
+2it [00:22, 11.21s/it]
+3it [00:33, 11.07s/it]
+4it [00:44, 11.01s/it]
+5it [00:54, 10.98s/it]
+6it [01:05, 10.95s/it]
+7it [01:16, 10.94s/it]
+8it [01:27, 10.92s/it]
+9it [01:38, 10.91s/it]
+10it [01:49, 10.91s/it]
+
+#==============================================================================
+# SUCCESS !!! 005_pre_next.py
+#==============================================================================
+
+time: 97.07min

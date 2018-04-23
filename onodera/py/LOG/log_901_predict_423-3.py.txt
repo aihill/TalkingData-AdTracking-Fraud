@@ -1,0 +1,23 @@
+
+#==============================================================================
+# START!!! 901_predict_423-3.py    PID: 13586    time: 2018-04-23 12:38:06.618001
+#==============================================================================
+
+seed : 319
+[LightGBM] [Info] Number of positive: 454359, number of negative: 183244038
+[LightGBM] [Info] Total Bins 29066
+[LightGBM] [Info] Number of data: 183698397, number of used features: 60
+[LightGBM] [Info] Number of positive: 454359, number of negative: 183244038
+[LightGBM] [Info] Total Bins 29066
+[LightGBM] [Info] Number of data: 183698397, number of used features: 60
+[LightGBM] [Info] Number of positive: 454359, number of negative: 183244038
+[LightGBM] [Info] Total Bins 29066
+[LightGBM] [Info] Number of data: 183698397, number of used features: 60
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:28,  3.21s/it] 20%|██        | 2/10 [00:06<00:25,  3.13s/it] 30%|███       | 3/10 [00:09<00:22,  3.22s/it] 40%|████      | 4/10 [00:13<00:19,  3.30s/it] 50%|█████     | 5/10 [00:16<00:16,  3.28s/it] 60%|██████    | 6/10 [00:19<00:12,  3.25s/it] 70%|███████   | 7/10 [00:22<00:09,  3.23s/it] 80%|████████  | 8/10 [00:25<00:06,  3.22s/it] 90%|█████████ | 9/10 [00:28<00:03,  3.21s/it]100%|██████████| 10/10 [00:31<00:00,  3.19s/it]
+submit
+Successfully submitted to TalkingData AdTracking Fraud Detection Challenge
+#==============================================================================
+# SUCCESS !!! 901_predict_423-3.py
+#==============================================================================
+
+time: 70.63min

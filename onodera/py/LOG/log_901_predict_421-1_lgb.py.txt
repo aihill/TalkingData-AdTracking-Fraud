@@ -1,0 +1,25 @@
+
+#==============================================================================
+# START!!! 901_predict_421-1_lgb.py    PID: 17494    time: 2018-04-21 10:04:25.493071
+#==============================================================================
+
+seed : 4210
+[LightGBM] [Info] Number of positive: 454359, number of negative: 183244038
+[LightGBM] [Info] Total Bins 9719
+[LightGBM] [Info] Number of data: 183698397, number of used features: 50
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Info] Number of positive: 454359, number of negative: 183244038
+[LightGBM] [Info] Total Bins 9719
+[LightGBM] [Info] Number of data: 183698397, number of used features: 50
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:33,  3.70s/it] 20%|██        | 2/10 [00:06<00:27,  3.41s/it] 30%|███       | 3/10 [00:10<00:24,  3.45s/it] 40%|████      | 4/10 [00:14<00:21,  3.60s/it] 50%|█████     | 5/10 [00:17<00:17,  3.50s/it] 60%|██████    | 6/10 [00:20<00:13,  3.42s/it] 70%|███████   | 7/10 [00:23<00:10,  3.40s/it] 80%|████████  | 8/10 [00:26<00:06,  3.34s/it] 90%|█████████ | 9/10 [00:29<00:03,  3.33s/it]100%|██████████| 10/10 [00:32<00:00,  3.30s/it]
+submit
+Successfully submitted to TalkingData AdTracking Fraud Detection Challenge
+#==============================================================================
+# SUCCESS !!! 901_predict_421-1_lgb.py
+#==============================================================================
+
+time: 69.17min

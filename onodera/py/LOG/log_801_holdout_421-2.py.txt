@@ -1,0 +1,326 @@
+
+#==============================================================================
+# START!!! 801_holdout_421-2.py    PID: 19142    time: 2018-04-21 13:05:37.368373
+#==============================================================================
+
+seed : 4144
+rm: cannot remove '../data/801_tmp*.p': No such file or directory
+rm: cannot remove 'SUCCESS_801': No such file or directory
+loading ../data/003_train/ ...
+loading ../data/004_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s]  0%|          | 0/10 [00:00<?, ?it/s]loading ../data/103-1_train/ ...
+loading ../data/002_train/ ...
+loading ../data/103-2_train/ ...
+loading ../data/102_train/ ...
+loading ../data/101_train/ ...
+loading ../data/104-1_train/ ...
+loading ../data/103-3_train/ ...
+loading ../data/001_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s]  0%|          | 0/10 [00:00<?, ?it/s]  0%|          | 0/10 [00:00<?, ?it/s]  0%|          | 0/10 [00:00<?, ?it/s]  0%|          | 0/10 [00:00<?, ?it/s]  0%|          | 0/10 [00:00<?, ?it/s]  0%|          | 0/10 [00:00<?, ?it/s]  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:22<03:22, 22.55s/it] 10%|█         | 1/10 [00:25<03:45, 25.07s/it] 10%|█         | 1/10 [00:29<04:28, 29.83s/it] 10%|█         | 1/10 [00:35<05:20, 35.59s/it] 10%|█         | 1/10 [00:40<06:00, 40.09s/it] 10%|█         | 1/10 [00:42<06:25, 42.79s/it] 20%|██        | 2/10 [00:45<03:00, 22.61s/it] 20%|██        | 2/10 [00:50<03:22, 25.28s/it] 20%|██        | 2/10 [00:58<03:53, 29.23s/it] 30%|███       | 3/10 [01:07<02:37, 22.44s/it] 20%|██        | 2/10 [01:08<04:33, 34.22s/it] 10%|█         | 1/10 [01:14<11:08, 74.29s/it] 30%|███       | 3/10 [01:15<02:57, 25.29s/it] 20%|██        | 2/10 [01:17<05:10, 38.84s/it] 20%|██        | 2/10 [01:25<05:41, 42.63s/it] 30%|███       | 3/10 [01:27<03:24, 29.21s/it] 40%|████      | 4/10 [01:29<02:13, 22.31s/it] 30%|███       | 3/10 [01:38<03:49, 32.86s/it] 40%|████      | 4/10 [01:40<02:30, 25.12s/it] 50%|█████     | 5/10 [01:51<01:51, 22.23s/it] 30%|███       | 3/10 [01:56<04:32, 38.90s/it] 40%|████      | 4/10 [01:56<02:55, 29.18s/it] 50%|█████     | 5/10 [02:04<02:04, 24.91s/it] 30%|███       | 3/10 [02:06<04:55, 42.26s/it] 40%|████      | 4/10 [02:10<03:15, 32.60s/it] 60%|██████    | 6/10 [02:18<01:32, 23.03s/it] 50%|█████     | 5/10 [02:25<02:25, 29.08s/it] 20%|██        | 2/10 [02:27<09:51, 73.94s/it] 60%|██████    | 6/10 [02:28<01:39, 24.80s/it] 40%|████      | 4/10 [02:34<03:51, 38.52s/it] 50%|█████     | 5/10 [02:40<02:40, 32.14s/it] 70%|███████   | 7/10 [02:43<01:09, 23.32s/it] 40%|████      | 4/10 [02:48<04:13, 42.24s/it] 60%|██████    | 6/10 [02:53<01:55, 28.95s/it] 70%|███████   | 7/10 [02:54<01:14, 24.92s/it] 80%|████████  | 8/10 [03:06<00:46, 23.28s/it] 60%|██████    | 6/10 [03:12<02:08, 32.03s/it] 50%|█████     | 5/10 [03:12<03:12, 38.51s/it] 80%|████████  | 8/10 [03:19<00:49, 24.91s/it] 70%|███████   | 7/10 [03:23<01:27, 29.10s/it] 90%|█████████ | 9/10 [03:29<00:23, 23.28s/it] 50%|█████     | 5/10 [03:32<03:32, 42.47s/it] 30%|███       | 3/10 [03:41<08:37, 73.87s/it] 70%|███████   | 7/10 [03:41<01:34, 31.67s/it] 90%|█████████ | 9/10 [03:43<00:24, 24.82s/it] 60%|██████    | 6/10 [03:51<02:34, 38.66s/it] 80%|████████  | 8/10 [03:52<00:58, 29.08s/it]100%|██████████| 10/10 [03:53<00:00, 23.37s/it]
+100%|██████████| 10/10 [04:06<00:00, 24.63s/it]
+ 80%|████████  | 8/10 [04:09<01:02, 31.14s/it] 60%|██████    | 6/10 [04:11<02:47, 41.99s/it] 90%|█████████ | 9/10 [04:16<00:28, 28.47s/it] 70%|███████   | 7/10 [04:24<01:53, 37.80s/it] 10%|█         | 1/10 [04:28<40:12, 268.04s/it] 10%|█         | 1/10 [04:29<40:24, 269.34s/it] 90%|█████████ | 9/10 [04:30<00:30, 30.11s/it]loading ../data/104-2_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [04:37<00:00, 27.75s/it]
+ 40%|████      | 4/10 [04:43<07:04, 70.78s/it] 70%|███████   | 7/10 [04:44<02:01, 40.60s/it]loading ../data/104-3_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:20<03:03, 20.43s/it] 80%|████████  | 8/10 [04:56<01:14, 37.01s/it]100%|██████████| 10/10 [04:56<00:00, 29.63s/it]
+ 10%|█         | 1/10 [00:24<03:41, 24.62s/it] 20%|██        | 2/10 [00:42<02:48, 21.07s/it]loading ../data/105-1_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 80%|████████  | 8/10 [05:23<01:20, 40.46s/it]loading ../data/105-2_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 90%|█████████ | 9/10 [05:32<00:36, 36.91s/it] 20%|██        | 2/10 [00:51<03:24, 25.60s/it] 30%|███       | 3/10 [01:07<02:36, 22.40s/it] 50%|█████     | 5/10 [05:52<05:52, 70.51s/it] 40%|████      | 4/10 [01:36<02:25, 24.20s/it] 30%|███       | 3/10 [01:24<03:17, 28.19s/it] 90%|█████████ | 9/10 [06:10<00:41, 41.22s/it]100%|██████████| 10/10 [06:15<00:00, 37.54s/it]
+ 50%|█████     | 5/10 [01:58<01:58, 23.70s/it] 40%|████      | 4/10 [01:49<02:43, 27.32s/it]100%|██████████| 10/10 [06:48<00:00, 40.86s/it]
+ 60%|██████    | 6/10 [02:19<01:32, 23.23s/it] 10%|█         | 1/10 [01:32<13:55, 92.88s/it] 50%|█████     | 5/10 [02:12<02:12, 26.44s/it] 10%|█         | 1/10 [01:31<13:39, 91.02s/it] 60%|██████    | 6/10 [07:02<04:41, 70.49s/it]loading ../data/106-1_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 70%|███████   | 7/10 [02:38<01:07, 22.63s/it] 60%|██████    | 6/10 [02:36<01:44, 26.15s/it] 80%|████████  | 8/10 [02:59<00:44, 22.47s/it]loading ../data/106-2_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 70%|███████   | 7/10 [03:08<01:20, 26.87s/it] 90%|█████████ | 9/10 [03:28<00:23, 23.16s/it] 70%|███████   | 7/10 [08:21<03:34, 71.61s/it] 80%|████████  | 8/10 [03:38<00:54, 27.31s/it] 20%|██        | 2/10 [03:07<12:30, 93.86s/it]100%|██████████| 10/10 [03:57<00:00, 23.75s/it]
+ 20%|██        | 2/10 [03:09<12:37, 94.69s/it] 10%|█         | 1/10 [01:36<14:30, 96.70s/it] 10%|█         | 1/10 [08:43<1:18:31, 523.52s/it] 90%|█████████ | 9/10 [04:01<00:26, 26.78s/it] 20%|██        | 2/10 [08:49<35:17, 264.75s/it] 20%|██        | 2/10 [08:53<35:32, 266.58s/it] 10%|█         | 1/10 [01:32<13:53, 92.59s/it]loading ../data/106-3_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [04:24<00:00, 26.46s/it]
+ 80%|████████  | 8/10 [09:24<02:21, 70.60s/it]loading ../data/107-1_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 30%|███       | 3/10 [04:33<10:37, 91.01s/it] 30%|███       | 3/10 [04:36<10:44, 92.12s/it] 20%|██        | 2/10 [03:03<12:14, 91.75s/it] 20%|██        | 2/10 [03:06<12:24, 93.04s/it] 10%|█         | 1/10 [01:32<13:55, 92.84s/it] 90%|█████████ | 9/10 [10:40<01:11, 71.14s/it] 10%|█         | 1/10 [01:37<14:40, 97.87s/it] 40%|████      | 4/10 [06:09<09:14, 92.41s/it] 40%|████      | 4/10 [06:11<09:17, 92.99s/it] 30%|███       | 3/10 [04:38<10:49, 92.79s/it]100%|██████████| 10/10 [11:53<00:00, 71.35s/it]
+ 30%|███       | 3/10 [04:38<10:49, 92.83s/it] 20%|██        | 2/10 [03:04<12:17, 92.13s/it]loading ../data/107-2_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 20%|██        | 2/10 [03:06<12:26, 93.34s/it] 50%|█████     | 5/10 [07:38<07:38, 91.64s/it] 50%|█████     | 5/10 [07:40<07:40, 92.08s/it] 40%|████      | 4/10 [06:06<09:09, 91.63s/it] 30%|███       | 3/10 [13:16<30:58, 265.50s/it] 30%|███       | 3/10 [13:23<31:15, 267.87s/it] 40%|████      | 4/10 [06:19<09:28, 94.79s/it] 30%|███       | 3/10 [04:44<11:04, 94.91s/it] 10%|█         | 1/10 [01:44<15:36, 104.08s/it] 30%|███       | 3/10 [04:51<11:19, 97.07s/it] 60%|██████    | 6/10 [09:20<06:13, 93.40s/it] 60%|██████    | 6/10 [09:23<06:15, 93.97s/it] 50%|█████     | 5/10 [07:49<07:49, 93.81s/it] 50%|█████     | 5/10 [07:54<07:54, 94.86s/it] 40%|████      | 4/10 [06:20<09:30, 95.13s/it] 20%|██        | 2/10 [03:19<13:16, 99.50s/it]  40%|████      | 4/10 [06:27<09:41, 96.87s/it] 70%|███████   | 7/10 [10:53<04:39, 93.30s/it] 70%|███████   | 7/10 [10:57<04:41, 93.94s/it] 60%|██████    | 6/10 [09:23<06:15, 93.85s/it] 60%|██████    | 6/10 [09:28<06:18, 94.67s/it] 50%|█████     | 5/10 [07:54<07:54, 94.88s/it] 30%|███       | 3/10 [04:54<11:26, 98.06s/it] 20%|██        | 2/10 [17:43<1:10:55, 531.94s/it] 50%|█████     | 5/10 [07:59<07:59, 95.94s/it] 80%|████████  | 8/10 [12:25<03:06, 93.14s/it] 80%|████████  | 8/10 [12:30<03:07, 93.79s/it] 70%|███████   | 7/10 [10:56<04:41, 93.78s/it] 40%|████      | 4/10 [18:00<27:01, 270.18s/it] 40%|████      | 4/10 [18:01<27:02, 270.37s/it] 70%|███████   | 7/10 [11:00<04:43, 94.35s/it] 60%|██████    | 6/10 [09:26<06:17, 94.35s/it] 40%|████      | 4/10 [06:25<09:38, 96.45s/it] 90%|█████████ | 9/10 [13:57<01:33, 93.01s/it] 60%|██████    | 6/10 [09:33<06:22, 95.65s/it] 90%|█████████ | 9/10 [14:02<01:33, 93.66s/it] 80%|████████  | 8/10 [12:29<03:07, 93.68s/it] 80%|████████  | 8/10 [12:33<03:08, 94.21s/it] 70%|███████   | 7/10 [11:01<04:43, 94.52s/it] 50%|█████     | 5/10 [08:00<08:00, 96.15s/it]100%|██████████| 10/10 [15:29<00:00, 92.99s/it]
+ 70%|███████   | 7/10 [11:06<04:45, 95.27s/it]100%|██████████| 10/10 [15:35<00:00, 93.56s/it]
+ 90%|█████████ | 9/10 [14:01<01:33, 93.53s/it] 90%|█████████ | 9/10 [13:58<01:33, 93.16s/it] 80%|████████  | 8/10 [12:26<03:06, 93.27s/it]loading ../data/108-1_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s]loading ../data/108-2_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 60%|██████    | 6/10 [09:22<06:14, 93.67s/it] 80%|████████  | 8/10 [12:28<03:07, 93.62s/it] 50%|█████     | 5/10 [22:25<22:25, 269.13s/it] 50%|█████     | 5/10 [22:27<22:27, 269.47s/it]100%|██████████| 10/10 [15:39<00:00, 93.99s/it]
+100%|██████████| 10/10 [15:50<00:00, 95.10s/it]
+ 90%|█████████ | 9/10 [14:18<01:35, 95.42s/it] 10%|█         | 1/10 [01:50<16:38, 110.96s/it]loading ../data/108-3_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [01:49<16:27, 109.69s/it] 70%|███████   | 7/10 [11:10<04:47, 95.81s/it] 90%|█████████ | 9/10 [14:18<01:35, 95.38s/it]loading ../data/109-1_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:30<04:38, 30.90s/it] 20%|██        | 2/10 [01:04<04:16, 32.07s/it]100%|██████████| 10/10 [16:12<00:00, 97.21s/it]
+ 20%|██        | 2/10 [03:43<14:55, 111.93s/it] 10%|█         | 1/10 [01:54<17:06, 114.09s/it] 30%|███       | 3/10 [01:23<03:13, 27.70s/it] 20%|██        | 2/10 [03:44<14:58, 112.34s/it] 80%|████████  | 8/10 [13:05<03:16, 98.21s/it] 40%|████      | 4/10 [01:42<02:33, 25.63s/it]100%|██████████| 10/10 [16:14<00:00, 97.42s/it]
+loading ../data/109-2_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 50%|█████     | 5/10 [01:59<01:59, 23.94s/it] 10%|█         | 1/10 [00:22<03:21, 22.42s/it] 60%|██████    | 6/10 [02:18<01:32, 23.16s/it]loading ../data/109-3_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 30%|███       | 3/10 [05:17<12:19, 105.69s/it] 30%|███       | 3/10 [27:01<1:03:04, 540.61s/it] 70%|███████   | 7/10 [02:49<01:12, 24.24s/it] 20%|██        | 2/10 [03:29<13:59, 104.96s/it] 20%|██        | 2/10 [00:57<03:51, 28.99s/it] 30%|███       | 3/10 [05:22<12:32, 107.49s/it] 10%|█         | 1/10 [00:29<04:26, 29.59s/it] 80%|████████  | 8/10 [03:10<00:47, 23.85s/it] 90%|█████████ | 9/10 [14:43<01:38, 98.19s/it] 60%|██████    | 6/10 [27:33<18:22, 275.63s/it] 60%|██████    | 6/10 [27:35<18:23, 275.96s/it] 30%|███       | 3/10 [01:31<03:34, 30.65s/it] 90%|█████████ | 9/10 [03:43<00:24, 24.89s/it] 20%|██        | 2/10 [01:05<04:22, 32.77s/it] 40%|████      | 4/10 [02:02<03:03, 30.50s/it]100%|██████████| 10/10 [04:05<00:00, 24.52s/it]
+ 30%|███       | 3/10 [01:29<03:29, 29.89s/it] 50%|█████     | 5/10 [02:25<02:25, 29.11s/it] 40%|████      | 4/10 [07:04<10:36, 106.09s/it] 40%|████      | 4/10 [01:51<02:46, 27.76s/it] 30%|███       | 3/10 [05:14<12:13, 104.79s/it]loading ../data/109-4_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 60%|██████    | 6/10 [02:47<01:51, 27.91s/it] 40%|████      | 4/10 [07:04<10:36, 106.09s/it]100%|██████████| 10/10 [16:24<00:00, 98.43s/it]
+ 50%|█████     | 5/10 [02:14<02:14, 26.89s/it] 10%|█         | 1/10 [00:25<03:46, 25.16s/it] 70%|███████   | 7/10 [03:11<01:22, 27.38s/it] 60%|██████    | 6/10 [02:37<01:45, 26.32s/it] 80%|████████  | 8/10 [03:35<00:53, 26.99s/it] 20%|██        | 2/10 [00:51<03:26, 25.82s/it] 70%|███████   | 7/10 [02:59<01:16, 25.66s/it]loading ../data/109-5_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 90%|█████████ | 9/10 [04:01<00:26, 26.79s/it] 30%|███       | 3/10 [01:17<03:00, 25.80s/it] 50%|█████     | 5/10 [08:33<08:33, 102.74s/it] 40%|████      | 4/10 [06:43<10:05, 100.93s/it] 80%|████████  | 8/10 [03:23<00:50, 25.41s/it] 10%|█         | 1/10 [00:21<03:17, 21.94s/it] 50%|█████     | 5/10 [08:36<08:36, 103.30s/it]100%|██████████| 10/10 [04:36<00:00, 27.62s/it]
+ 40%|████      | 4/10 [01:56<02:54, 29.03s/it] 20%|██        | 2/10 [00:54<03:38, 27.30s/it] 90%|█████████ | 9/10 [03:59<00:26, 26.59s/it] 30%|███       | 3/10 [01:13<02:52, 24.63s/it] 50%|█████     | 5/10 [02:20<02:20, 28.01s/it]100%|██████████| 10/10 [04:21<00:00, 26.14s/it]
+loading ../data/109-6_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 40%|████      | 4/10 [01:32<02:18, 23.08s/it] 60%|██████    | 6/10 [02:42<01:48, 27.15s/it] 10%|█         | 1/10 [00:24<03:43, 24.80s/it] 50%|█████     | 5/10 [01:51<01:51, 22.27s/it] 50%|█████     | 5/10 [08:19<08:19, 99.80s/it]  60%|██████    | 6/10 [10:12<06:48, 102.05s/it]loading ../data/109-7_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 70%|███████   | 7/10 [03:09<01:21, 27.01s/it] 60%|██████    | 6/10 [10:14<06:49, 102.37s/it] 60%|██████    | 6/10 [02:13<01:29, 22.28s/it] 20%|██        | 2/10 [00:49<03:18, 24.87s/it] 70%|███████   | 7/10 [32:14<13:49, 276.37s/it] 70%|███████   | 7/10 [32:16<13:49, 276.59s/it] 10%|█         | 1/10 [00:24<03:39, 24.36s/it] 80%|████████  | 8/10 [03:36<00:54, 27.05s/it] 70%|███████   | 7/10 [02:36<01:07, 22.41s/it] 30%|███       | 3/10 [01:16<02:58, 25.54s/it] 20%|██        | 2/10 [00:48<03:13, 24.21s/it] 80%|████████  | 8/10 [02:57<00:44, 22.23s/it] 90%|█████████ | 9/10 [04:03<00:27, 27.03s/it] 40%|████      | 4/10 [01:41<02:32, 25.47s/it] 30%|███       | 3/10 [01:10<02:44, 23.56s/it] 90%|█████████ | 9/10 [03:19<00:22, 22.19s/it]100%|██████████| 10/10 [04:30<00:00, 27.08s/it]
+ 40%|████      | 4/10 [01:32<02:18, 23.10s/it] 50%|█████     | 5/10 [02:06<02:06, 25.35s/it] 60%|██████    | 6/10 [09:56<06:37, 99.50s/it] 70%|███████   | 7/10 [11:50<05:04, 101.53s/it]100%|██████████| 10/10 [03:39<00:00, 22.00s/it]
+ 70%|███████   | 7/10 [11:48<05:03, 101.19s/it] 50%|█████     | 5/10 [01:50<01:50, 22.10s/it] 60%|██████    | 6/10 [02:26<01:37, 24.45s/it] 60%|██████    | 6/10 [02:08<01:25, 21.36s/it]loading ../data/109-8_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 70%|███████   | 7/10 [02:47<01:11, 23.87s/it]loading ../data/109-9_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 70%|███████   | 7/10 [02:28<01:03, 21.15s/it] 10%|█         | 1/10 [00:20<03:06, 20.74s/it] 10%|█         | 1/10 [00:20<03:00, 20.04s/it] 80%|████████  | 8/10 [03:12<00:48, 24.01s/it] 80%|████████  | 8/10 [02:52<00:43, 21.56s/it] 20%|██        | 2/10 [00:45<03:03, 22.91s/it] 20%|██        | 2/10 [00:45<03:01, 22.67s/it] 70%|███████   | 7/10 [11:29<04:55, 98.43s/it] 80%|████████  | 8/10 [13:22<03:20, 100.35s/it] 90%|█████████ | 9/10 [03:41<00:24, 24.60s/it] 90%|█████████ | 9/10 [03:16<00:21, 21.82s/it] 30%|███       | 3/10 [01:05<02:33, 21.96s/it] 80%|████████  | 8/10 [13:22<03:20, 100.28s/it] 30%|███       | 3/10 [01:05<02:33, 21.94s/it]100%|██████████| 10/10 [04:06<00:00, 24.61s/it]
+100%|██████████| 10/10 [03:37<00:00, 21.76s/it]
+ 40%|████      | 4/10 [01:25<02:07, 21.26s/it] 40%|████      | 4/10 [01:24<02:06, 21.13s/it] 50%|█████     | 5/10 [01:40<01:40, 20.18s/it] 50%|█████     | 5/10 [01:40<01:40, 20.17s/it] 40%|████      | 4/10 [36:01<54:02, 540.46s/it]  loading ../data/110-1_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 60%|██████    | 6/10 [01:55<01:17, 19.32s/it]loading ../data/110-2_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 60%|██████    | 6/10 [01:56<01:17, 19.49s/it] 70%|███████   | 7/10 [02:14<00:57, 19.26s/it] 80%|████████  | 8/10 [12:52<03:13, 96.61s/it] 90%|█████████ | 9/10 [14:47<01:38, 98.62s/it]  70%|███████   | 7/10 [02:17<00:58, 19.64s/it] 80%|████████  | 8/10 [36:35<09:08, 274.49s/it] 80%|████████  | 8/10 [36:37<09:09, 274.70s/it] 90%|█████████ | 9/10 [14:46<01:38, 98.53s/it]  80%|████████  | 8/10 [02:37<00:39, 19.70s/it] 80%|████████  | 8/10 [02:41<00:40, 20.21s/it] 90%|█████████ | 9/10 [02:58<00:19, 19.79s/it] 90%|█████████ | 9/10 [03:03<00:20, 20.34s/it]100%|██████████| 10/10 [03:18<00:00, 19.88s/it]
+100%|██████████| 10/10 [03:22<00:00, 20.20s/it]
+loading ../data/110-3_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 90%|█████████ | 9/10 [14:24<01:36, 96.04s/it]100%|██████████| 10/10 [16:17<00:00, 97.77s/it]
+100%|██████████| 10/10 [16:12<00:00, 97.27s/it]
+loading ../data/110-4_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s]loading ../data/111-1_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:39<05:56, 39.59s/it]loading ../data/111-2_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [15:50<00:00, 95.00s/it]
+ 20%|██        | 2/10 [01:39<06:38, 49.84s/it]loading ../data/111-3_train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [01:32<13:54, 92.74s/it] 10%|█         | 1/10 [04:28<40:15, 268.40s/it] 10%|█         | 1/10 [01:34<14:12, 94.72s/it] 30%|███       | 3/10 [02:25<05:39, 48.49s/it] 10%|█         | 1/10 [04:32<40:55, 272.85s/it] 90%|█████████ | 9/10 [41:28<04:36, 276.54s/it] 90%|█████████ | 9/10 [41:30<04:36, 276.76s/it] 40%|████      | 4/10 [03:20<05:00, 50.13s/it] 20%|██        | 2/10 [02:55<11:40, 87.60s/it] 10%|█         | 1/10 [01:35<14:22, 95.88s/it] 20%|██        | 2/10 [02:58<11:54, 89.33s/it] 50%|█████     | 5/10 [04:03<04:03, 48.61s/it] 30%|███       | 3/10 [04:08<09:39, 82.78s/it] 60%|██████    | 6/10 [04:46<03:10, 47.72s/it] 10%|█         | 1/10 [05:08<46:16, 308.46s/it] 30%|███       | 3/10 [04:10<09:45, 83.59s/it] 20%|██        | 2/10 [03:01<12:04, 90.55s/it] 70%|███████   | 7/10 [05:29<02:21, 47.07s/it] 40%|████      | 4/10 [05:23<08:05, 80.96s/it] 80%|████████  | 8/10 [06:13<01:33, 46.67s/it] 40%|████      | 4/10 [05:28<08:13, 82.20s/it] 30%|███       | 3/10 [04:30<10:31, 90.14s/it] 20%|██        | 2/10 [09:05<36:22, 272.84s/it] 90%|█████████ | 9/10 [06:56<00:46, 46.31s/it] 20%|██        | 2/10 [09:12<36:48, 276.09s/it] 50%|█████     | 5/10 [45:22<45:22, 544.51s/it] 50%|█████     | 5/10 [06:35<06:35, 79.06s/it] 50%|█████     | 5/10 [06:39<06:39, 80.00s/it]100%|██████████| 10/10 [07:39<00:00, 45.90s/it]
+100%|██████████| 10/10 [46:03<00:00, 276.38s/it]
+100%|██████████| 10/10 [46:06<00:00, 276.63s/it]
+ 40%|████      | 4/10 [05:51<08:47, 87.86s/it] 60%|██████    | 6/10 [07:36<05:04, 76.00s/it]loading ../data/train/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 60%|██████    | 6/10 [07:35<05:03, 75.95s/it] 10%|█         | 1/10 [00:31<04:40, 31.22s/it] 50%|█████     | 5/10 [07:00<07:00, 84.17s/it] 70%|███████   | 7/10 [08:40<03:43, 74.34s/it] 20%|██        | 2/10 [09:36<38:24, 288.10s/it] 20%|██        | 2/10 [01:06<04:25, 33.22s/it] 70%|███████   | 7/10 [08:38<03:42, 74.05s/it] 30%|███       | 3/10 [01:38<03:50, 32.88s/it] 60%|██████    | 6/10 [08:13<05:29, 82.26s/it] 80%|████████  | 8/10 [09:43<02:25, 72.93s/it] 80%|████████  | 8/10 [09:55<02:28, 74.46s/it] 40%|████      | 4/10 [02:31<03:47, 37.95s/it] 30%|███       | 3/10 [13:10<30:44, 263.51s/it] 30%|███       | 3/10 [13:37<31:47, 272.43s/it] 50%|█████     | 5/10 [03:56<03:56, 47.30s/it] 90%|█████████ | 9/10 [11:52<01:19, 79.15s/it] 90%|█████████ | 9/10 [11:47<01:18, 78.64s/it] 70%|███████   | 7/10 [10:32<04:31, 90.42s/it] 60%|██████    | 6/10 [04:27<02:58, 44.61s/it] 70%|███████   | 7/10 [04:58<02:07, 42.61s/it]100%|██████████| 10/10 [12:48<00:00, 76.86s/it]
+100%|██████████| 10/10 [12:42<00:00, 76.30s/it]
+ 80%|████████  | 8/10 [05:24<01:21, 40.59s/it] 80%|████████  | 8/10 [11:36<02:54, 87.07s/it] 90%|█████████ | 9/10 [05:47<00:38, 38.57s/it] 30%|███       | 3/10 [14:24<33:36, 288.09s/it]100%|██████████| 10/10 [06:09<00:00, 36.98s/it]
+ 90%|█████████ | 9/10 [12:24<01:22, 82.76s/it] 40%|████      | 4/10 [16:50<25:16, 252.74s/it] 40%|████      | 4/10 [16:55<25:22, 253.79s/it] 60%|██████    | 6/10 [53:14<35:29, 532.41s/it]100%|██████████| 10/10 [13:10<00:00, 79.04s/it]
+ 40%|████      | 4/10 [16:49<25:14, 252.38s/it] 50%|█████     | 5/10 [18:56<18:56, 227.29s/it] 50%|█████     | 5/10 [19:00<19:00, 228.16s/it] 50%|█████     | 5/10 [18:44<18:44, 224.94s/it] 60%|██████    | 6/10 [20:43<13:48, 207.22s/it] 60%|██████    | 6/10 [20:55<13:57, 209.28s/it] 70%|███████   | 7/10 [57:11<24:30, 490.24s/it] 70%|███████   | 7/10 [22:17<09:33, 191.11s/it] 60%|██████    | 6/10 [20:28<13:38, 204.70s/it] 70%|███████   | 7/10 [22:35<09:40, 193.62s/it] 80%|████████  | 8/10 [23:55<05:58, 179.42s/it] 70%|███████   | 7/10 [22:15<09:32, 190.78s/it] 80%|████████  | 8/10 [24:14<06:03, 181.76s/it] 80%|████████  | 8/10 [1:00:32<15:08, 454.07s/it] 90%|█████████ | 9/10 [25:30<02:50, 170.10s/it] 80%|████████  | 8/10 [23:58<05:59, 179.79s/it] 90%|█████████ | 9/10 [25:52<02:52, 172.45s/it]100%|██████████| 10/10 [27:08<00:00, 162.88s/it]
+100%|██████████| 10/10 [27:26<00:00, 164.60s/it]
+ 90%|█████████ | 9/10 [25:40<02:51, 171.15s/it] 90%|█████████ | 9/10 [1:03:44<07:04, 424.89s/it]100%|██████████| 10/10 [26:36<00:00, 159.67s/it]
+100%|██████████| 10/10 [1:05:13<00:00, 391.36s/it]
+concat train
+X.isnull().sum().sum(): 0
+X.shape: (18369840, 747)
+Index(['day', 'hour', 'hour_min', 'timestamp', 'count_app-channel',
+       'count_app-device-channel', 'count_app-device-os-channel',
+       'count_app-device-os', 'count_app-device', 'count_app-os-channel',
+       ...
+       'nunique_ip-app-channel_app-channel', 'nunique_ip-app-channel_ip-app',
+       'nunique_ip-app-channel_ip-channel', 'nunique_ip-app-device_app-device',
+       'nunique_ip-app-device_ip-app', 'nunique_ip-app-device_ip-device',
+       'nunique_ip-app-os_app-os', 'nunique_ip-app-os_ip-app',
+       'nunique_ip-app-os_ip-os', 'nunique_ip-device-os_ip-device'],
+      dtype='object', length=744)
+y/all: 45551/18369840(0.25%)
+building... 1/5 of 1/1
+[LightGBM] [Info] Number of positive: 36352, number of negative: 14659520
+[LightGBM] [Info] Total Bins 79444
+[LightGBM] [Info] Number of data: 14695872, number of used features: 744
+Training until validation scores don't improve for 50 rounds.
+[10]	train's auc: 0.98028	valid's auc: 0.976727
+[20]	train's auc: 0.985666	valid's auc: 0.979202
+[30]	train's auc: 0.988932	valid's auc: 0.98091
+[40]	train's auc: 0.990197	valid's auc: 0.981746
+[50]	train's auc: 0.99132	valid's auc: 0.982134
+[60]	train's auc: 0.991992	valid's auc: 0.982333
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[70]	train's auc: 0.992432	valid's auc: 0.982555
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[80]	train's auc: 0.992791	valid's auc: 0.982606
+[90]	train's auc: 0.993098	valid's auc: 0.982659
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[100]	train's auc: 0.993299	valid's auc: 0.982506
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[110]	train's auc: 0.993632	valid's auc: 0.982516
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[120]	train's auc: 0.993805	valid's auc: 0.982509
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[130]	train's auc: 0.993934	valid's auc: 0.982349
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+Early stopping, best iteration is:
+[88]	train's auc: 0.993042	valid's auc: 0.982692
+building... 2/5 of 1/1
+Training until validation scores don't improve for 50 rounds.
+[10]	train's auc: 0.979755	valid's auc: 0.977147
+[20]	train's auc: 0.985179	valid's auc: 0.979939
+[30]	train's auc: 0.988538	valid's auc: 0.98151
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[40]	train's auc: 0.990067	valid's auc: 0.98207
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[50]	train's auc: 0.991063	valid's auc: 0.982645
+[60]	train's auc: 0.99172	valid's auc: 0.982852
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[70]	train's auc: 0.992135	valid's auc: 0.982967
+[80]	train's auc: 0.992434	valid's auc: 0.983082
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[90]	train's auc: 0.99276	valid's auc: 0.983087
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[100]	train's auc: 0.993004	valid's auc: 0.983169
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[110]	train's auc: 0.993318	valid's auc: 0.98314
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[120]	train's auc: 0.993542	valid's auc: 0.983167
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[130]	train's auc: 0.993763	valid's auc: 0.983077
+[140]	train's auc: 0.993991	valid's auc: 0.983061
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[150]	train's auc: 0.99413	valid's auc: 0.983007
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[160]	train's auc: 0.994293	valid's auc: 0.983121
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+Early stopping, best iteration is:
+[115]	train's auc: 0.993424	valid's auc: 0.983217
+building... 3/5 of 1/1
+Training until validation scores don't improve for 50 rounds.
+[10]	train's auc: 0.979488	valid's auc: 0.978157
+[20]	train's auc: 0.98519	valid's auc: 0.98049
+[30]	train's auc: 0.988605	valid's auc: 0.982469
+[40]	train's auc: 0.990001	valid's auc: 0.98323
+[50]	train's auc: 0.990989	valid's auc: 0.983694
+[60]	train's auc: 0.991611	valid's auc: 0.983872
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[70]	train's auc: 0.992084	valid's auc: 0.983998
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[80]	train's auc: 0.99239	valid's auc: 0.984108
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[90]	train's auc: 0.99276	valid's auc: 0.984131
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[100]	train's auc: 0.993044	valid's auc: 0.984183
+[110]	train's auc: 0.993302	valid's auc: 0.984213
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[120]	train's auc: 0.993589	valid's auc: 0.984357
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[130]	train's auc: 0.993777	valid's auc: 0.984336
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[140]	train's auc: 0.993958	valid's auc: 0.984276
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[150]	train's auc: 0.994131	valid's auc: 0.984203
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[160]	train's auc: 0.994252	valid's auc: 0.983988
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+Early stopping, best iteration is:
+[119]	train's auc: 0.993576	valid's auc: 0.984379
+building... 4/5 of 1/1
+Training until validation scores don't improve for 50 rounds.
+[10]	train's auc: 0.979883	valid's auc: 0.975785
+[20]	train's auc: 0.985859	valid's auc: 0.978658
+[30]	train's auc: 0.988904	valid's auc: 0.980412
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[40]	train's auc: 0.990432	valid's auc: 0.981417
+[50]	train's auc: 0.991227	valid's auc: 0.981828
+[60]	train's auc: 0.991809	valid's auc: 0.981945
+[70]	train's auc: 0.992241	valid's auc: 0.982138
+[80]	train's auc: 0.992623	valid's auc: 0.982166
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[90]	train's auc: 0.993066	valid's auc: 0.982327
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[100]	train's auc: 0.993304	valid's auc: 0.982368
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[110]	train's auc: 0.993503	valid's auc: 0.982295
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[120]	train's auc: 0.993724	valid's auc: 0.982373
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[130]	train's auc: 0.994042	valid's auc: 0.982444
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[140]	train's auc: 0.994238	valid's auc: 0.982473
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[150]	train's auc: 0.994343	valid's auc: 0.982394
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[160]	train's auc: 0.99446	valid's auc: 0.982316
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[170]	train's auc: 0.994573	valid's auc: 0.982248
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[180]	train's auc: 0.994772	valid's auc: 0.982344
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+Early stopping, best iteration is:
+[133]	train's auc: 0.994162	valid's auc: 0.982542
+building... 5/5 of 1/1
+Training until validation scores don't improve for 50 rounds.
+[10]	train's auc: 0.97958	valid's auc: 0.9752
+[20]	train's auc: 0.985879	valid's auc: 0.978464
+[30]	train's auc: 0.989194	valid's auc: 0.980582
+[40]	train's auc: 0.990621	valid's auc: 0.98121
+[50]	train's auc: 0.991482	valid's auc: 0.981659
+[60]	train's auc: 0.992018	valid's auc: 0.981822
+[70]	train's auc: 0.99239	valid's auc: 0.981886
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[80]	train's auc: 0.99268	valid's auc: 0.981886
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[90]	train's auc: 0.993001	valid's auc: 0.982049
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[100]	train's auc: 0.993229	valid's auc: 0.982068
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[110]	train's auc: 0.993499	valid's auc: 0.982045
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[120]	train's auc: 0.993683	valid's auc: 0.982118
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[130]	train's auc: 0.993791	valid's auc: 0.982
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[140]	train's auc: 0.993945	valid's auc: 0.982066
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[150]	train's auc: 0.994113	valid's auc: 0.981984
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[160]	train's auc: 0.994197	valid's auc: 0.981893
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+Early stopping, best iteration is:
+[118]	train's auc: 0.993656	valid's auc: 0.982138
+finish all fold
+finish all loop
+mk ret
+
+#==============================================================================
+# SUCCESS !!! 801_holdout_421-2.py
+#==============================================================================
+
+time: 171.88min
