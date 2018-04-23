@@ -104,6 +104,7 @@ del trte; gc.collect()
 # train
 df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/005__*_train.p'))], axis=1).reset_index(drop=True)
 utils.to_pickles(df, '../data/005_train', 10)
+print(df.columns)
 
 # test
 df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/005__*_test.p'))], axis=1).reset_index(drop=True)
