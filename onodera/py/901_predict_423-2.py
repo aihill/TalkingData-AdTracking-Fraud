@@ -23,7 +23,7 @@ utils.start(__file__)
 SEED = np.random.randint(9999) #int(sys.argv[1])
 NROUND = 500
 LOOP = 3
-SUBMIT_FILE_PATH = '../output/423-1.csv.gz'
+SUBMIT_FILE_PATH = '../output/423-2.csv.gz'
 COMMENT = F"r{NROUND} ['app', 'channel', 'dayvar_app-channel', 'dayvar_app-device', 'dayvar_app-device-os', 'dayvar_app-os-channel', 'hour', 'ip', 'is_attributed', 'nunique_app-device-channel_app', 'nunique_app-device-os_app-device', 'nunique_app-device-os_device-os', 'nunique_app-os-channel_app-channel', 'nunique_app-os-day_app', 'nunique_app-os-hour_app-hour', 'nunique_ip-app-channel_app-channel', 'nunique_ip-app-channel_ip-app', 'nunique_ip-app-day_ip', 'nunique_ip-app-device-channel_ip-app', 'nunique_ip-app-device-os_app-device', 'nunique_ip-app-device-os_ip-device-os', 'nunique_ip-app-device-os_ip-os', 'nunique_ip-app-device_ip-device', 'nunique_ip-app-hour_app-hour', 'nunique_ip-app-hour_ip', 'nunique_ip-app-hour_ip-hour', 'nunique_ip-app-os_app', 'nunique_ip-app-os_ip-os', 'nunique_ip-app_ip', 'nunique_ip-channel-day_ip-day', 'nunique_ip-channel_ip', 'nunique_ip-device-os_ip-os', 'nunique_ip-device_ip', 'nunique_ip-os-day_ip-day', 'nunique_ip-os-hour_os-hour', 'os', 'pre_att_time_app-os', 'pre_att_time_app-os-channel', 'pre_att_time_ip', 'pre_att_time_ip-app-device', 'pre_att_time_ip-app-os', 'timedelta_rev_ip', 'timedelta_rev_ip-app', 'timedelta_rev_ip-app-device', 'timedelta_rev_ip-app-device-os', 'timedelta_rev_ip-app-device-os-channel', 'timedelta_rev_ip-app-os', 'timedelta_rev_ip-app-os-channel', 'timediff-meadian_app', 'timediff-minmax_app-channel', 'timemean_app-device-os', 'timeskew_ip-device', 'timeskew_ip-os', 'timevar_device-os', 'totalcount_app', 'totalcount_app-channel', 'totalcount_app-device', 'totalcount_device-os', 'totalcount_ip', 'totalcount_ip-device', 'totalcount_ip-device-os']"
 
 EXE_SUBMIT = True
@@ -57,8 +57,8 @@ param = {
          'objective': 'binary',
          'metric': 'auc',
          'learning_rate': 0.1,
-         'max_depth': 3,
-         'num_leaves': 2**3-1,
+         'max_depth': 4,
+         'num_leaves': 2**4-1,
          'max_bin': 100,
          'min_child_samples': 300,
          'min_child_weight': 0,
