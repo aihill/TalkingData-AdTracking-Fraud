@@ -139,7 +139,7 @@ sub = utils.read_pickles('../data/test_old', ['click_id'])
 load_folders = sorted(glob('../data/*_test/')) + ['../data/test_old/']
 args = list(zip(load_folders, range(len(load_folders))))
 
-pool = Pool(10)
+pool = Pool(14)
 pool.map(multi_test, args)
 pool.close()
 
