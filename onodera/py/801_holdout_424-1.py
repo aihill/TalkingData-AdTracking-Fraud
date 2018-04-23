@@ -66,7 +66,7 @@ pool.close()
 
 print('concat train')
 load_files = sorted(glob('../data/*_sampled.p'))
-X = pd.concat([pd.read_pickle(f) for f in load_files], axis=1)
+X = pd.concat([pd.read_pickle(f) for f in load_files], axis=1).sample(frac=0.5, random_state=SEED)
 print('X.isnull().sum().sum():', X.isnull().sum().sum())
 print('X.shape:', X.shape )
 
