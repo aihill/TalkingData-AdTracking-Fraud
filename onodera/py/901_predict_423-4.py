@@ -21,9 +21,9 @@ import utils
 utils.start(__file__)
 
 SEED = np.random.randint(9999) #int(sys.argv[1])
-NROUND = 300
+NROUND = 600
 LOOP = 3
-SUBMIT_FILE_PATH = '../output/423-3.csv.gz'
+SUBMIT_FILE_PATH = '../output/423-4.csv.gz'
 COMMENT = F"r{NROUND} 421"
 
 EXE_SUBMIT = True
@@ -56,9 +56,9 @@ gc.collect()
 param = {
          'objective': 'binary',
          'metric': 'auc',
-         'learning_rate': 0.1,
-         'max_depth': 3,
-         'num_leaves': 2**3-1,
+         'learning_rate': 0.05,
+         'max_depth': 4,
+         'num_leaves': 2**4-1,
          'max_bin': 100,
          'min_child_samples': 300,
          'min_child_weight': 0,
