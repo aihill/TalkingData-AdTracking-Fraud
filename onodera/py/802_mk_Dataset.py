@@ -65,10 +65,10 @@ def multi_train(args):
     print('loading {} ...'.format(load_folder))
     df = pd.read_pickle(load_folder + '/0.p')
     col = list(set(df.columns) & usecols)
-    df = pd.concat([pd.read_pickle(load_folder + '/{}.p'.format(j))[col] for j in range(0, 10)])
     if len(col)>0:
+        df = pd.concat([pd.read_pickle(load_folder + '/{}.p'.format(j))[col] for j in range(0, 10)])
         gc.collect()
-        df[col].reset_index(drop=True).fillna(-1).to_pickle('../data/802_tmp{}.p'.format(i))
+        df[col].reset_index(drop=True).fillna(-1).to_pickle(f'../data/802_tmp{i}.p')
 
 def multi_test(args):
     load_folder, i = args
@@ -89,7 +89,7 @@ def multi_test(args):
         df = df[~df.click_id.isnull()]
         df.drop_duplicates('click_id', keep='last', inplace=True) # last?
         print(load_folder, df.shape)
-        df[col].reset_index(drop=True).fillna(-1).to_pickle('../data/802_tmp{}.p'.format(i))
+        df[col].reset_index(drop=True).fillna(-1).to_pickle(f'../data/802_tmp{i}.p')
 
 
 # =============================================================================
@@ -111,6 +111,8 @@ print('concat train')
 load_files = sorted(glob('../data/802_tmp*.p'))
 X = pd.concat([pd.read_pickle(f) for f in load_files], axis=1)
 print('X.isnull().sum().sum():', X.isnull().sum().sum())
+
+system('rm ../data/dtrain.mt')
 
 lgb.Dataset(X.drop('is_attributed', axis=1), label=X.is_attributed,
             categorical_feature=categorical_feature).save_binary('../data/dtrain.mt')
