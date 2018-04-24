@@ -63,12 +63,12 @@ del trte; gc.collect()
 
 # train
 df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/002__*_train.p'))], axis=1).reset_index(drop=True)
-utils.to_pickles(df, '../data/002_train', 10)
+utils.to_pickles(df, '../data/002_train', utils.SPLIT_SIZE)
 
 
 # test
 df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/002__*_test.p'))], axis=1).reset_index(drop=True)
-utils.to_pickles(df, '../data/002_test', 10)
+utils.to_pickles(df, '../data/002_test', utils.SPLIT_SIZE)
 
 os.system('rm -rf ../data/002__*.p')
 
