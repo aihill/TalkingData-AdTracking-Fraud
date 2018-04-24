@@ -53,10 +53,10 @@ def multi(p):
         test_old.drop('click_id', axis=1, inplace=True)
         test_old = pd.merge(test_old, test[merge_key+['click_id']], on=merge_key, how='left')
         
-        utils.to_pickles(test_old,  '../data/test_old',  10)
+        utils.to_pickles(test_old,  '../data/test_old',  utils.SPLIT_SIZE)
 #        utils.to_pickles(test_old.sort_values(utils.sort_keys, ascending=False),
 #                         '../data/test_old_rev',  10)
-        utils.to_pickles(test,  '../data/test',  10)
+        utils.to_pickles(test,  '../data/test',  utils.SPLIT_SIZE)
         
         del test_old, test; gc.collect()
     
@@ -70,10 +70,10 @@ def multi(p):
                             parse_dates=['click_time', 'attributed_time']).sort_values(utils.sort_keys) # be sure to sort by this keys
         print('finish loading!')
         
-        print('drop os; 607, 748, 866')
-        train = train[~train.os.isin([607, 748, 866])].reset_index(drop=True)
+#        print('drop os; 607, 748, 866')
+#        train = train[~train.os.isin([607, 748, 866])].reset_index(drop=True)
         print('train.shape', train.shape)
-        utils.to_pickles(train, '../data/train', 10)
+        utils.to_pickles(train, '../data/train', utils.SPLIT_SIZE)
 #        utils.to_pickles(train.sort_values(utils.sort_keys, ascending=False), 
 #                         '../data/train_rev', 10)
         
