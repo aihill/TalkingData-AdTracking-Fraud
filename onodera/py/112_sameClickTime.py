@@ -24,6 +24,7 @@ trte = pd.concat([utils.read_pickles('../data/train',    ['ip', 'app', 'device',
 def multi(keys):
     gc.collect()
     print(keys)
+    keys = list(keys)
     
     keys_ = '-'.join(keys)
     c = 'sameClickTimeCount_' + keys_
