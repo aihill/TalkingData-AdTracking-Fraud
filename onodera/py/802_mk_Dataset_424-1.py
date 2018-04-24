@@ -29,6 +29,29 @@ system('rm ../data/802_tmp*.p')
 system('rm SUCCESS_802')
 
 categorical_feature = ['ip', 'app', 'device', 'os', 'channel', 'day', 'hour']
+categorical_feature += ['preChannel_app-device-os', 'nextChannel_app-device-os',
+                       'preChannel_app-device', 'nextChannel_app-device', 'preChannel_app-os',
+                       'nextChannel_app-os', 'preChannel_app', 'nextChannel_app',
+                       'preApp_channel', 'nextApp_channel', 'preApp_device-channel',
+                       'nextApp_device-channel', 'preApp_device-os-channel',
+                       'nextApp_device-os-channel', 'preApp_device-os', 'nextApp_device-os',
+                       'preChannel_device-os', 'nextChannel_device-os', 'preApp_device',
+                       'nextApp_device', 'preChannel_device', 'nextChannel_device',
+                       'preChannel_ip-app-device-os', 'nextChannel_ip-app-device-os',
+                       'preChannel_ip-app-device', 'nextChannel_ip-app-device',
+                       'preChannel_ip-app-os', 'nextChannel_ip-app-os', 'preChannel_ip-app',
+                       'nextChannel_ip-app', 'preApp_ip-channel', 'nextApp_ip-channel',
+                       'preApp_ip-device-channel', 'nextApp_ip-device-channel',
+                       'preApp_ip-device-os-channel', 'nextApp_ip-device-os-channel',
+                       'preApp_ip-device-os', 'nextApp_ip-device-os',
+                       'preChannel_ip-device-os', 'nextChannel_ip-device-os',
+                       'preApp_ip-device', 'nextApp_ip-device', 'preChannel_ip-device',
+                       'nextChannel_ip-device', 'preApp_ip-os-channel',
+                       'nextApp_ip-os-channel', 'preApp_ip-os', 'nextApp_ip-os',
+                       'preChannel_ip-os', 'nextChannel_ip-os', 'preApp_ip', 'nextApp_ip',
+                       'preChannel_ip', 'nextChannel_ip', 'preApp_os-channel',
+                       'nextApp_os-channel', 'preApp_os', 'nextApp_os', 'preChannel_os',
+                       'nextChannel_os']
 
 # =============================================================================
 # wait
