@@ -25,7 +25,8 @@ def multi(keys):
     print(keys)
     
     keys_ = '-'.join(keys)
-    df = trte.groupby(keys).size().rank(method='dense')
+#    df = trte.groupby(keys).size().rank(method='dense')
+    df = trte.groupby(keys).size()
     df.name = 'totalcount_' + keys_
     df = df.reset_index()
     utils.reduce_memory(df, ix_start=-1)
