@@ -18,6 +18,7 @@ utils.start(__file__)
 
 
 nthread = 5
+threshold = 300
 
 os.system('rm -rf ../data/201__*.p')
 
@@ -46,8 +47,8 @@ def multi(keys):
     df.columns = ['a', 'b']
     df[c] = df.a/df.b
     
-    df_upper = df[df['b']>=300]
-    df_lower = df[df['b']<300]
+    df_upper = df[df['b']>=threshold]
+    df_lower = df[df['b']<threshold]
     df_lower[c] = df_lower.a.sum() / df_lower.b.sum()
     
     df = pd.concat([df_upper, df_lower])[c].reset_index()
