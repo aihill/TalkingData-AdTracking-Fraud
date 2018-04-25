@@ -13,11 +13,11 @@ argv = sys.argv
 
 file = argv[1]
 if len(argv)>2:
-    minutes = 60 * int(argv[2])
-    print('wait {} sec'.format(minutes))
+    sec = 60 * int(argv[2])
+    print(f'wait {sec} sec')
 else:
-    minutes = 0
+    sec = 0
 
-sleep(minutes)
-os.system('nohup python -u {0} > LOG/log_{0}.txt &'.format(file))
+sleep(sec)
+os.system(f'nohup python -u {file} > LOG/log_{file}.txt &')
 

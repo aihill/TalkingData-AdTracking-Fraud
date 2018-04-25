@@ -55,7 +55,7 @@ def multi(ix):
     
     df[col].to_pickle(f'../data/701_test/{ix:03d}.p')
     
-    del df; gc.collect()
+    print(f'Finish {ix}')
 
 # =============================================================================
 # main
