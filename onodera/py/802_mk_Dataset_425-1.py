@@ -67,7 +67,7 @@ print(sorted(usecols))
 def multi_train(args):
     load_folder, i = args
     gc.collect()
-    print('loading {} ...'.format(load_folder))
+    print('loading {load_folder} ...')
     df = pd.read_pickle(load_folder + '/000.p')
     col = list(set(df.columns) & usecols)
     if len(col)>0:
@@ -78,12 +78,12 @@ def multi_train(args):
 def multi_test(args):
     load_folder, i = args
     gc.collect()
-    print('loading {} ...'.format(load_folder))
+    print(f'loading {load_folder} ...')
     if load_folder=='../data/test_old/':
         df = utils.read_pickles(load_folder)
         
     else:
-        df = pd.read_pickle(load_folder + '/0.p')
+        df = pd.read_pickle(load_folder + '/000.p')
         col = list(set(df.columns) & usecols)
         if len(col)==0:
             return
