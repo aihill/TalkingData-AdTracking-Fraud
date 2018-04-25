@@ -20,9 +20,7 @@ utils.start(__file__)
 
 # setting
 useimp = 60
-#filepath = 'imp_2018-04-24-00h.csv'
-filepath = sorted(glob('imp*.csv'))[-1]
-print(f'use imp: {filepath}')
+filepath = None
 
 
 system('rm ../data/802_tmp*.p')
@@ -45,7 +43,11 @@ utils.send_line('START {}'.format(__file__))
 # =============================================================================
 # imp
 # =============================================================================
-print(filepath)
+if filepath is None:
+    filepath = sorted(glob('imp*.csv'))[-1]
+
+print(f'use imp: {filepath}')
+
 imp = pd.read_csv(filepath)
 
 imp.set_index('index', inplace=True)
