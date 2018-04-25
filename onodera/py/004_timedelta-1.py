@@ -64,23 +64,6 @@ pool = Pool(nthread)
 callback = pool.map(multi, utils.comb)
 pool.close()
 
-del trte; gc.collect()
-
-# =============================================================================
-# concat
-# =============================================================================
-
-# train
-df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/004__*_train.p'))], axis=1).reset_index(drop=True)
-utils.to_pickles(df, '../data/004_train', utils.SPLIT_SIZE)
-
-# test
-df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/004__*_test.p'))], axis=1).reset_index(drop=True)
-utils.to_pickles(df, '../data/004_test', utils.SPLIT_SIZE)
-
-os.system('rm -rf ../data/004__*.p')
-
-
 
 #==============================================================================
 utils.end(__file__)
