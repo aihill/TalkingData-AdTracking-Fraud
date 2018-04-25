@@ -68,10 +68,10 @@ def multi_train(args):
     load_folder, i = args
     gc.collect()
     print('loading {} ...'.format(load_folder))
-    df = pd.read_pickle(load_folder + '/0.p')
+    df = pd.read_pickle(load_folder + '/000.p')
     col = list(set(df.columns) & usecols)
     if len(col)>0:
-        df = pd.concat([pd.read_pickle(load_folder + '/{}.p'.format(j))[col] for j in range(0, 100)])
+        df = pd.concat([pd.read_pickle(load_folder + f'/{j:03d}.p')[col] for j in range(0, 100)])
         gc.collect()
         df[col].reset_index(drop=True).fillna(-1).to_pickle(f'../data/802_tmp{i}.p')
 
