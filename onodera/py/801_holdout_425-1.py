@@ -50,7 +50,7 @@ def multi_train(args):
         print(f'{out_file} exist')
         return
     print(f'loading {load_folder} ...')
-    df = pd.concat([ pd.read_pickle(f'{load_folder}/{j}.p') for j in load_files])
+    df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p') for j in load_files])
 #    df = utils.read_pickles(load_folder).sample(frac=FRAC, random_state=SEED)
     print(f'writing {out_file} ...')
     df.reset_index(drop=True).fillna(-1).to_pickle(out_file)
