@@ -62,6 +62,10 @@ def multi(ix):
 # =============================================================================
 
 pool = Pool(nthread)
-callback = pool.map(multi, utils.comb)
+callback = pool.map(multi, range(utils.SPLIT_SIZE))
 pool.close()
 
+
+
+#==============================================================================
+utils.end(__file__)

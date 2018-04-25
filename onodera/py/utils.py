@@ -46,6 +46,8 @@ def start(fname):
 #==============================================================================
 """.format( fname, os.getpid(), datetime.today() ))
     
+    send_line(f'START {fname}  time: {elapsed_minute():.2f}min')
+    
     return
 
 def end(fname):
@@ -57,7 +59,7 @@ def end(fname):
 """.format(fname))
     print('time: {:.2f}min'.format( elapsed_minute() ))
     
-    send_line('FINISH {}  time: {:.2f}min'.format( fname, elapsed_minute() ))
+    send_line(f'FINISH {fname}  time: {elapsed_minute():.2f}min')
     
     return
 
