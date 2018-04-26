@@ -22,11 +22,8 @@ threshold = 300
 
 os.system('rm -rf ../data/201__*.p')
 
-train = utils.read_pickles('../data/train')
-
-trte = pd.concat([train, 
-                  utils.read_pickles('../data/test_old')])
-
+trte = pd.concat([utils.read_pickles('../data/train',    ['ip', 'app', 'device', 'os', 'channel']), 
+                  utils.read_pickles('../data/test_old', ['ip', 'app', 'device', 'os', 'channel'])])
 
 def multi(keys):
     """
@@ -40,12 +37,7 @@ def multi(keys):
     keys_ = '-'.join(keys)
     c = f'targetEncoding_{keys_}'
     
-    gr = train.groupby(keys)
-    sum_ = gr['is_attributed'].sum()
-    size = gr.size()
-    df = pd.concat([sum_, size], axis=1)
-    df.columns = ['a', 'b']
-    df[c] = df.a/df.b
+    df = pd.read_pickle(f'../data/{c}.p')
     
     df_upper = df[df['b']>=threshold]
     df_lower = df[df['b']<threshold]
@@ -64,6 +56,7 @@ def multi(keys):
 # =============================================================================
 # 
 # =============================================================================
+
 pool = Pool(nthread)
 callback = pool.map(multi, utils.comb)
 pool.close()
