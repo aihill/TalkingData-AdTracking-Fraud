@@ -16,7 +16,7 @@ sys.path.append('/home/kazuki_onodera/Python')
 import lgbmextension as ex
 #import lightgbm as lgb
 import gc
-#from time import sleep
+from tqdm import tqdm
 from multiprocessing import Pool
 from glob import glob
 import utils
@@ -67,7 +67,7 @@ pool.close()
 
 print('concat train')
 load_files = sorted(glob('../data/*_sampled.p'))
-X = pd.concat([pd.read_pickle(f) for f in load_files], axis=1).sample(frac=0.5, random_state=SEED)
+X = pd.concat([pd.read_pickle(f).sample(frac=0.5, random_state=SEED) for f in tqdm(load_files)], axis=1)
 print('X.isnull().sum().sum():', X.isnull().sum().sum())
 print('X.shape:', X.shape )
 

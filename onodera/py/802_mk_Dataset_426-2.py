@@ -87,7 +87,7 @@ def multi_test(args):
         col = list(set(df.columns) & usecols)
         if len(col)==0:
             return
-        df = pd.concat([sub, utils.read_pickles(load_folder)],
+        df = pd.concat([sub, utils.read_pickles(load_folder, col)],
                         axis=1)
     col = list(set(df.columns) & usecols)
     if len(col)>0:
