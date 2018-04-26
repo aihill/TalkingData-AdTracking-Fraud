@@ -34,7 +34,8 @@ def multi(keys):
     c1 = 'totalCountByDay_' + keys_
     c2 = 'totalRatioByDay_' + keys_
     
-    df = trte.groupby(keys+['day']).size()
+    keys +=['day']
+    df = trte.groupby(keys).size()
     df.name = c1
     df = pd.merge(df.reset_index(), day_tbl, on='day', how='left')
     df[c2] = df[c1] / df['day_freq']
@@ -48,7 +49,7 @@ def multi(keys):
     result.iloc[utils.TRAIN_SHAPE:][[c1, c2]].to_pickle('../data/113__{}_test.p'.format(keys_))
     gc.collect()
     
-pool = Pool(3)
+pool = Pool(10)
 callback = pool.map(multi, utils.comb)
 pool.close()
 
