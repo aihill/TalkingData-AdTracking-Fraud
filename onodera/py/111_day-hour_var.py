@@ -27,6 +27,7 @@ os.system('rm -rf ../data/111__*.p')
 trte = pd.concat([utils.read_pickles('../data/train'), 
                   utils.read_pickles('../data/test_old')])
 
+trte.click_time += pd.offsets.Hour(8)
 trte['day']  = trte.click_time.dt.day
 trte['hour'] = trte.click_time.dt.hour
 
