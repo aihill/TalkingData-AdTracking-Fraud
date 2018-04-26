@@ -117,13 +117,13 @@ for pt in range(1, 10):
     
     # train
     df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/110__*_train.p'))], axis=1).reset_index(drop=True)
-    utils.to_pickles(df, '../data/110-{}_train'.format(pt), 10)
+    utils.to_pickles(df, '../data/110-{}_train'.format(pt), utils.SPLIT_SIZE)
     
     del df; gc.collect()
     
     # test
     df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/110__*_test.p'))], axis=1).reset_index(drop=True)
-    utils.to_pickles(df, '../data/110-{}_test'.format(pt), 10)
+    utils.to_pickles(df, '../data/110-{}_test'.format(pt), utils.SPLIT_SIZE)
     
     os.system('rm -rf ../data/110__*.p')
     
