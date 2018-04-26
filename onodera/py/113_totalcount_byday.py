@@ -48,7 +48,7 @@ def multi(keys):
     result.iloc[utils.TRAIN_SHAPE:][[c1, c2]].to_pickle('../data/113__{}_test.p'.format(keys_))
     gc.collect()
     
-pool = Pool(10)
+pool = Pool(3)
 callback = pool.map(multi, utils.comb)
 pool.close()
 

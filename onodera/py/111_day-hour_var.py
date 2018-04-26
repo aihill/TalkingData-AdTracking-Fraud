@@ -18,7 +18,6 @@ import gc
 from glob import glob
 from multiprocessing import Pool
 proc = 5
-from itertools import combinations
 import utils
 utils.start(__file__)
 
