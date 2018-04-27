@@ -55,6 +55,7 @@ def multi_train_sampling(args):
         return
     print(f'loading {load_folder} ...')
     df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p') for j in train_files])
+#    df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p').sample(frac=FRAC, random_state=SEED) for j in train_files])
     print(f'writing {out_file} ...')
     df.reset_index(drop=True).fillna(-1).to_pickle(out_file)
 
@@ -67,6 +68,7 @@ def multi_valid_sampling(args):
         return
     print(f'loading {load_folder} ...')
     df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p') for j in valid_files])
+#    df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p').sample(frac=FRAC, random_state=SEED) for j in valid_files])
     print(f'writing {out_file} ...')
     df.reset_index(drop=True).fillna(-1).to_pickle(out_file)
 
