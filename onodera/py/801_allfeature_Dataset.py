@@ -24,8 +24,8 @@ utils.start(__file__)
 
 SEED = 71 #np.random.randint(9999) #int(sys.argv[1])
 NROUND = 9999
+is_sampling = True
 FRAC = 0.7
-LOAD_SIZE = 10
 
 train_files = [45, 46, 47, 48, 53, 54, 55, 56, 60, 61, 62, 63, 64, 65]
 valid_files = [78, 79, 80, 81, 82, 88, 89, 90, 91, 95, 96, 97, 98]
@@ -54,8 +54,12 @@ def multi_train_sampling(args):
         print(f'{out_file} exist')
         return
     print(f'loading {load_folder} ...')
-    df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p') for j in train_files])
-#    df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p').sample(frac=FRAC, random_state=SEED) for j in train_files])
+    
+    if is_sampling==False:
+        df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p') for j in train_files])
+    else:
+        df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p').sample(frac=FRAC, random_state=SEED) for j in train_files])
+    
     print(f'writing {out_file} ...')
     df.reset_index(drop=True).fillna(-1).to_pickle(out_file)
 
@@ -67,8 +71,12 @@ def multi_valid_sampling(args):
         print(f'{out_file} exist')
         return
     print(f'loading {load_folder} ...')
-    df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p') for j in valid_files])
-#    df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p').sample(frac=FRAC, random_state=SEED) for j in valid_files])
+    
+    if is_sampling==False:
+        df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p') for j in valid_files])
+    else:
+        df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p').sample(frac=FRAC, random_state=SEED) for j in valid_files])
+        
     print(f'writing {out_file} ...')
     df.reset_index(drop=True).fillna(-1).to_pickle(out_file)
 
