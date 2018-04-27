@@ -78,3 +78,6 @@ utils.to_pickles(df, '../data/201_test', utils.SPLIT_SIZE)
 
 os.system('rm -rf ../data/201__*.p')
 
+
+#==============================================================================
+utils.end(__file__)
