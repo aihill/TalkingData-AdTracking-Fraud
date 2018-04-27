@@ -1,0 +1,16 @@
+
+#==============================================================================
+# START!!! 003_cumcount_rev.py    PID: 37710    time: 2018-04-25 01:47:33.342496
+#==============================================================================
+
+0it [00:00, ?it/s]
+Traceback (most recent call last):
+  File "003_cumcount_rev.py", line 24, in <module>
+    trte = pd.concat([utils.read_pickles('../data/test_old_rev', ['ip', 'app', 'device', 'os', 'channel', 'click_time']),
+  File "/home/kazuki_onodera/TalkingData-AdTracking-Fraud/onodera/py/utils.py", line 99, in read_pickles
+    df = pd.concat([pd.read_pickle(f)[col] for f in tqdm(sorted(glob(path+'/*')))])
+  File "/home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/pandas/core/reshape/concat.py", line 206, in concat
+    copy=copy)
+  File "/home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/pandas/core/reshape/concat.py", line 239, in __init__
+    raise ValueError('No objects to concatenate')
+ValueError: No objects to concatenate

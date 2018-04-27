@@ -1,0 +1,168 @@
+
+#==============================================================================
+# START!!! 802_mk_Dataset_424-1.py    PID: 19915    time: 2018-04-24 01:05:23.969415
+#==============================================================================
+
+rm: cannot remove '../data/802_tmp*.p': No such file or directory
+rm: cannot remove 'SUCCESS_802': No such file or directory
+imp_2018-04-24-00h.csv
+['app', 'channel', 'hour', 'hourvar_app-device-os', 'ip', 'is_attributed', 'nextApp_device-channel', 'nextApp_ip-channel', 'nextApp_ip-device-channel', 'nextChannel_app', 'nextChannel_app-device', 'nextChannel_app-device-os', 'nextChannel_app-os', 'nextChannel_device', 'nextChannel_device-os', 'nextChannel_ip', 'nextChannel_ip-app', 'nextChannel_ip-app-device', 'nextChannel_ip-app-device-os', 'nextChannel_ip-app-os', 'nextChannel_ip-device', 'nextChannel_ip-device-os', 'nextChannel_ip-os', 'nextChannel_os', 'nunique_app-device-os_app-device', 'nunique_app-os-channel_app-channel', 'nunique_ip-app-device_ip-device', 'nunique_ip-app-hour_app-hour', 'nunique_ip-app-hour_ip-hour', 'nunique_ip-app-os_app', 'nunique_ip-app_ip', 'nunique_ip-os-day_ip-day', 'nunique_ip-os-hour_os-hour', 'os', 'preApp_channel', 'preChannel_app', 'preChannel_app-device', 'preChannel_app-device-os', 'preChannel_app-os', 'preChannel_device', 'preChannel_device-os', 'preChannel_ip', 'preChannel_ip-app', 'preChannel_ip-app-device', 'preChannel_ip-app-device-os', 'preChannel_ip-app-os', 'preChannel_ip-device', 'preChannel_ip-device-os', 'preChannel_ip-os', 'preChannel_os', 'timedelta_rev_ip-app', 'timedelta_rev_ip-app-device-os', 'timedelta_rev_ip-app-device-os-channel', 'timedelta_rev_ip-app-os', 'timedelta_rev_ip-app-os-channel', 'timediff-meadian_app', 'timevar_device-os', 'totalcount_app', 'totalcount_app-channel', 'totalcount_ip-device', 'totalcount_ip-device-os']
+loading ../data/003_train/ ...
+loading ../data/103-2_train/ ...
+loading ../data/002_train/ ...
+loading ../data/103-3_train/ ...
+loading ../data/102_train/ ...
+loading ../data/005_train/ ...
+loading ../data/004_train/ ...
+loading ../data/101_train/ ...
+loading ../data/103-1_train/ ...
+loading ../data/001_train/ ...
+loading ../data/104-1_train/ ...
+loading ../data/104-2_train/ ...
+loading ../data/104-3_train/ ...
+loading ../data/105-1_train/ ...
+loading ../data/105-2_train/ ...
+loading ../data/106-1_train/ ...
+loading ../data/106-2_train/ ...
+loading ../data/106-3_train/ ...
+loading ../data/107-1_train/ ...
+loading ../data/107-2_train/ ...
+loading ../data/108-1_train/ ...
+loading ../data/108-2_train/ ...
+loading ../data/108-3_train/ ...
+loading ../data/109-1_train/ ...
+loading ../data/109-2_train/ ...
+loading ../data/109-3_train/ ...
+loading ../data/109-4_train/ ...
+loading ../data/109-5_train/ ...
+loading ../data/109-6_train/ ...
+loading ../data/109-7_train/ ...
+loading ../data/109-8_train/ ...
+loading ../data/109-9_train/ ...
+loading ../data/110-1_train/ ...
+loading ../data/110-2_train/ ...
+loading ../data/110-3_train/ ...
+loading ../data/110-4_train/ ...
+loading ../data/111-1_train/ ...
+loading ../data/111-2_train/ ...
+loading ../data/111-3_train/ ...
+loading ../data/train/ ...
+concat train
+X.isnull().sum().sum(): 0
+rm: cannot remove '../data/dtrain.mt': No such file or directory
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] [LightGBM] [Warning] [LightGBM] [Warning] Met negative value in categorical features, will convert it to NaNMet negative value in categorical features, will convert it to NaN
+
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Warning] Met negative value in categorical features, will convert it to NaN
+[LightGBM] [Info] Saving data to binary file ../data/dtrain.mt
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:18,  2.09s/it] 20%|██        | 2/10 [00:04<00:16,  2.04s/it] 30%|███       | 3/10 [00:06<00:14,  2.06s/it] 40%|████      | 4/10 [00:07<00:11,  1.99s/it] 50%|█████     | 5/10 [00:09<00:09,  1.99s/it] 60%|██████    | 6/10 [00:11<00:07,  1.99s/it] 70%|███████   | 7/10 [00:14<00:06,  2.03s/it] 80%|████████  | 8/10 [00:16<00:04,  2.06s/it] 90%|█████████ | 9/10 [00:20<00:02,  2.32s/it]100%|██████████| 10/10 [00:36<00:00,  3.69s/it]
+loading ../data/104-2_test/ ...
+loading ../data/004_test/ ...
+loading ../data/102_test/ ...
+loading ../data/003_test/ ...
+loading ../data/104-3_test/ ...
+loading ../data/005_test/ ...
+loading ../data/001_test/ ...
+loading ../data/002_test/ ...
+loading ../data/103-3_test/ ...
+loading ../data/101_test/ ...
+loading ../data/104-1_test/ ...
+loading ../data/103-1_test/ ...
+loading ../data/105-1_test/ ...
+loading ../data/103-2_test/ ...
+  0%|          | 0/10 [00:00<?, ?it/s]  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:00<00:01,  4.88it/s] 10%|█         | 1/10 [00:00<00:01,  4.94it/s]  0%|          | 0/10 [00:00<?, ?it/s]loading ../data/105-2_test/ ...
+ 10%|█         | 1/10 [00:00<00:01,  4.52it/s]loading ../data/106-1_test/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:00<00:02,  3.73it/s]  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:00<00:03,  2.87it/s]  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:00<00:03,  2.55it/s] 20%|██        | 2/10 [00:19<01:16,  9.55s/it] 20%|██        | 2/10 [00:19<01:17,  9.67s/it] 20%|██        | 2/10 [00:21<01:26, 10.81s/it] 20%|██        | 2/10 [00:25<01:40, 12.57s/it] 30%|███       | 3/10 [00:38<01:29, 12.83s/it] 30%|███       | 3/10 [00:39<01:31, 13.03s/it]  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:00<00:06,  1.46it/s] 30%|███       | 3/10 [00:43<01:42, 14.61s/it] 20%|██        | 2/10 [00:33<02:14, 16.80s/it] 20%|██        | 2/10 [00:37<02:31, 18.93s/it] 30%|███       | 3/10 [00:51<02:00, 17.15s/it] 40%|████      | 4/10 [00:58<01:27, 14.56s/it] 40%|████      | 4/10 [00:59<01:28, 14.77s/it]loading ../data/106-2_test/ ...
+ 40%|████      | 4/10 [01:04<01:36, 16.14s/it] 50%|█████     | 5/10 [01:17<01:17, 15.41s/it] 50%|█████     | 5/10 [01:17<01:17, 15.57s/it] 30%|███       | 3/10 [01:06<02:34, 22.01s/it]loading ../data/106-3_test/ ...
+ 40%|████      | 4/10 [01:16<01:54, 19.15s/it]loading ../data/107-1_test/ ...
+ 50%|█████     | 5/10 [01:26<01:26, 17.29s/it] 30%|███       | 3/10 [01:13<02:52, 24.65s/it] 60%|██████    | 6/10 [01:36<01:04, 16.15s/it] 60%|██████    | 6/10 [01:37<01:04, 16.17s/it] 50%|█████     | 5/10 [01:41<01:41, 20.32s/it] 20%|██        | 2/10 [01:03<04:15, 31.92s/it] 60%|██████    | 6/10 [01:47<01:11, 17.87s/it] 40%|████      | 4/10 [01:39<02:29, 24.91s/it] 70%|███████   | 7/10 [01:55<00:49, 16.52s/it] 70%|███████   | 7/10 [01:56<00:49, 16.60s/it] 40%|████      | 4/10 [01:51<02:46, 27.80s/it] 70%|███████   | 7/10 [02:08<00:54, 18.29s/it] 60%|██████    | 6/10 [02:07<01:24, 21.17s/it] 80%|████████  | 8/10 [02:14<00:33, 16.84s/it] 80%|████████  | 8/10 [02:15<00:33, 16.98s/it]loading ../data/107-2_test/ ...
+ 50%|█████     | 5/10 [02:12<02:12, 26.50s/it] 80%|████████  | 8/10 [02:27<00:36, 18.44s/it] 90%|█████████ | 9/10 [02:30<00:16, 16.73s/it] 90%|█████████ | 9/10 [02:31<00:16, 16.87s/it] 70%|███████   | 7/10 [02:27<01:03, 21.06s/it]loading ../data/108-1_test/ ...
+ 50%|█████     | 5/10 [02:19<02:19, 27.85s/it]loading ../data/108-2_test/ ...
+ 30%|███       | 3/10 [01:55<04:29, 38.56s/it] 90%|█████████ | 9/10 [02:38<00:17, 17.60s/it]100%|██████████| 10/10 [02:40<00:00, 16.07s/it]
+100%|██████████| 10/10 [02:41<00:00, 16.19s/it]
+ 60%|██████    | 6/10 [02:30<01:40, 25.06s/it] 80%|████████  | 8/10 [02:40<00:40, 20.04s/it]100%|██████████| 10/10 [02:48<00:00, 16.88s/it]
+ 60%|██████    | 6/10 [02:36<01:44, 26.15s/it] 70%|███████   | 7/10 [02:44<01:10, 23.43s/it] 90%|█████████ | 9/10 [02:51<00:19, 19.04s/it]../data/104-3_test/ (18790469, 11)
+loading ../data/108-3_test/ ...
+loading ../data/109-1_test/ ...
+loading ../data/109-2_test/ ...
+../data/104-1_test/ (18790469, 11)
+loading ../data/109-3_test/ ...
+loading ../data/109-4_test/ ...
+ 40%|████      | 4/10 [02:23<03:35, 35.93s/it]loading ../data/109-5_test/ ...
+../data/104-2_test/ (18790469, 11)
+100%|██████████| 10/10 [03:02<00:00, 18.29s/it]
+loading ../data/109-6_test/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:00<00:02,  4.27it/s]  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:00<00:02,  4.31it/s] 70%|███████   | 7/10 [02:54<01:14, 24.87s/it]loading ../data/109-7_test/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:00<00:02,  3.98it/s] 80%|████████  | 8/10 [03:00<00:45, 22.55s/it]loading ../data/109-8_test/ ...
+loading ../data/109-9_test/ ...
+loading ../data/110-1_test/ ...
+ 20%|██        | 2/10 [00:10<00:41,  5.20s/it] 20%|██        | 2/10 [00:11<00:44,  5.58s/it]loading ../data/110-2_test/ ...
+../data/103-1_test/ (18790469, 11)
+ 20%|██        | 2/10 [00:11<00:46,  5.80s/it]loading ../data/110-3_test/ ...
+loading ../data/110-4_test/ ...
+loading ../data/111-1_test/ ...
+ 80%|████████  | 8/10 [03:13<00:48, 24.14s/it] 90%|█████████ | 9/10 [03:17<00:21, 21.93s/it] 30%|███       | 3/10 [00:20<00:48,  6.88s/it] 30%|███       | 3/10 [00:22<00:52,  7.47s/it] 30%|███       | 3/10 [00:24<00:56,  8.03s/it]loading ../data/111-2_test/ ...
+ 50%|█████     | 5/10 [02:57<02:57, 35.43s/it] 40%|████      | 4/10 [00:32<00:49,  8.24s/it] 40%|████      | 4/10 [00:35<00:52,  8.80s/it]loading ../data/111-3_test/ ...
+ 40%|████      | 4/10 [00:36<00:54,  9.02s/it]100%|██████████| 10/10 [03:36<00:00, 21.64s/it]
+ 90%|█████████ | 9/10 [03:33<00:23, 23.73s/it] 50%|█████     | 5/10 [00:44<00:44,  8.80s/it] 50%|█████     | 5/10 [00:46<00:46,  9.31s/it] 50%|█████     | 5/10 [00:47<00:47,  9.51s/it]loading ../data/test_old/ ...
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:00<00:03,  2.60it/s] 20%|██        | 2/10 [00:00<00:02,  2.68it/s] 30%|███       | 3/10 [00:01<00:02,  2.72it/s] 40%|████      | 4/10 [00:01<00:02,  2.75it/s] 50%|█████     | 5/10 [00:01<00:01,  2.78it/s] 60%|██████    | 6/10 [00:02<00:01,  2.80it/s] 70%|███████   | 7/10 [00:02<00:01,  2.80it/s] 80%|████████  | 8/10 [00:02<00:00,  2.81it/s] 90%|█████████ | 9/10 [00:03<00:00,  2.81it/s]100%|██████████| 10/10 [00:03<00:00,  2.81it/s]
+ 60%|██████    | 6/10 [00:54<00:36,  9.06s/it] 60%|██████    | 6/10 [00:56<00:37,  9.43s/it]100%|██████████| 10/10 [03:51<00:00, 23.16s/it]
+../data/102_test/ (18790469, 21)
+ 60%|██████    | 6/10 [00:58<00:38,  9.67s/it] 60%|██████    | 6/10 [03:27<02:18, 34.57s/it] 70%|███████   | 7/10 [01:02<00:26,  9.00s/it] 70%|███████   | 7/10 [01:04<00:27,  9.27s/it]../data/test_old/ (18790469, 7)
+  0%|          | 0/10 [00:00<?, ?it/s] 70%|███████   | 7/10 [01:06<00:28,  9.52s/it] 10%|█         | 1/10 [00:00<00:07,  1.25it/s] 80%|████████  | 8/10 [01:10<00:17,  8.85s/it] 80%|████████  | 8/10 [01:12<00:18,  9.06s/it] 80%|████████  | 8/10 [01:15<00:18,  9.38s/it] 90%|█████████ | 9/10 [01:18<00:08,  8.77s/it] 90%|█████████ | 9/10 [01:20<00:08,  8.94s/it]../data/001_test/ (18790469, 5)
+ 70%|███████   | 7/10 [03:50<01:38, 32.99s/it] 90%|█████████ | 9/10 [01:23<00:09,  9.24s/it]100%|██████████| 10/10 [01:26<00:00,  8.64s/it]
+  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [01:27<00:00,  8.78s/it]
+  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [01:28<00:00,  8.88s/it]
+ 10%|█         | 1/10 [00:05<00:45,  5.01s/it] 20%|██        | 2/10 [00:24<01:36, 12.02s/it] 10%|█         | 1/10 [00:05<00:47,  5.33s/it]  0%|          | 0/10 [00:00<?, ?it/s] 80%|████████  | 8/10 [04:06<01:01, 30.75s/it]  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:23,  2.65s/it] 10%|█         | 1/10 [00:02<00:23,  2.63s/it]../data/109-3_test/ (18790469, 11)
+../data/109-2_test/ (18790469, 11)
+ 30%|███       | 3/10 [00:41<01:35, 13.67s/it]../data/109-4_test/ (18790469, 11)
+ 90%|█████████ | 9/10 [04:21<00:29, 29.07s/it] 40%|████      | 4/10 [00:58<01:27, 14.57s/it]100%|██████████| 10/10 [04:35<00:00, 27.59s/it]
+ 50%|█████     | 5/10 [01:12<01:12, 14.55s/it] 20%|██        | 2/10 [00:51<03:24, 25.54s/it] 20%|██        | 2/10 [00:51<03:24, 25.50s/it]../data/101_test/ (18790469, 32)
+ 60%|██████    | 6/10 [01:25<00:57, 14.27s/it] 70%|███████   | 7/10 [01:38<00:42, 14.04s/it] 20%|██        | 2/10 [01:32<06:09, 46.18s/it] 80%|████████  | 8/10 [01:51<00:27, 13.88s/it] 20%|██        | 2/10 [01:34<06:19, 47.48s/it] 30%|███       | 3/10 [01:29<03:29, 29.98s/it] 30%|███       | 3/10 [01:29<03:29, 29.97s/it] 90%|█████████ | 9/10 [02:05<00:13, 13.91s/it]100%|██████████| 10/10 [02:17<00:00, 13.78s/it]
+ 40%|████      | 4/10 [02:04<03:07, 31.23s/it] 40%|████      | 4/10 [02:05<03:08, 31.33s/it] 30%|███       | 3/10 [02:40<06:15, 53.63s/it]../data/111-3_test/ (18790469, 23)
+ 30%|███       | 3/10 [02:42<06:19, 54.24s/it] 50%|█████     | 5/10 [02:35<02:35, 31.19s/it] 50%|█████     | 5/10 [02:34<02:34, 30.97s/it] 60%|██████    | 6/10 [03:08<02:05, 31.44s/it] 60%|██████    | 6/10 [03:07<02:05, 31.28s/it] 40%|████      | 4/10 [03:39<05:29, 54.87s/it] 40%|████      | 4/10 [03:46<05:40, 56.71s/it] 70%|███████   | 7/10 [03:38<01:33, 31.21s/it] 70%|███████   | 7/10 [03:37<01:33, 31.06s/it] 80%|████████  | 8/10 [04:10<01:02, 31.32s/it] 80%|████████  | 8/10 [04:10<01:02, 31.32s/it] 50%|█████     | 5/10 [04:39<04:39, 55.86s/it] 90%|█████████ | 9/10 [04:40<00:31, 31.20s/it] 90%|█████████ | 9/10 [04:41<00:31, 31.25s/it] 50%|█████     | 5/10 [04:52<04:52, 58.44s/it]100%|██████████| 10/10 [05:11<00:00, 31.18s/it]
+100%|██████████| 10/10 [05:11<00:00, 31.18s/it]
+ 60%|██████    | 6/10 [05:32<03:41, 55.49s/it] 60%|██████    | 6/10 [05:39<03:46, 56.59s/it] 70%|███████   | 7/10 [06:05<02:36, 52.26s/it] 70%|███████   | 7/10 [06:11<02:39, 53.14s/it]../data/110-1_test/ (18790469, 81)
+ 80%|████████  | 8/10 [06:40<01:40, 50.03s/it]../data/110-2_test/ (18790469, 81)
+ 80%|████████  | 8/10 [06:45<01:41, 50.71s/it] 90%|█████████ | 9/10 [07:14<00:48, 48.23s/it] 90%|█████████ | 9/10 [07:20<00:48, 48.92s/it]100%|██████████| 10/10 [07:45<00:00, 46.57s/it]
+100%|██████████| 10/10 [07:51<00:00, 47.15s/it]
+../data/005_test/ (18790469, 61)
+../data/004_test/ (18790469, 63)
+concat test
+test.shape should be 18790469: (18790469, 60)
+X.isnull().sum().sum(): 0
+0it [00:00, ?it/s]1it [00:03,  3.06s/it]2it [00:05,  2.89s/it]3it [00:08,  2.84s/it]4it [00:11,  2.80s/it]5it [00:13,  2.79s/it]6it [00:16,  2.77s/it]7it [00:19,  2.76s/it]8it [00:22,  2.77s/it]9it [00:24,  2.76s/it]10it [00:27,  2.76s/it]
+
+#==============================================================================
+# SUCCESS !!! 802_mk_Dataset_424-1.py
+#==============================================================================
+
+time: 91.75min

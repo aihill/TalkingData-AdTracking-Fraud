@@ -1,0 +1,60 @@
+
+#==============================================================================
+# START!!! 901_predict_424-1.py    PID: 21571    time: 2018-04-24 03:42:59.105837
+#==============================================================================
+
+seed : 4441
+[LightGBM] [Info] Number of positive: 454359, number of negative: 183244038
+[LightGBM] [Info] Total Bins 28896
+[LightGBM] [Info] Number of data: 183698397, number of used features: 60
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Info] Number of positive: 454359, number of negative: 183244038
+[LightGBM] [Info] Total Bins 28896
+[LightGBM] [Info] Number of data: 183698397, number of used features: 60
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Info] Number of positive: 454359, number of negative: 183244038
+[LightGBM] [Info] Total Bins 28896
+[LightGBM] [Info] Number of data: 183698397, number of used features: 60
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:05<00:53,  5.97s/it] 20%|██        | 2/10 [00:11<00:47,  5.94s/it] 30%|███       | 3/10 [00:17<00:40,  5.83s/it] 40%|████      | 4/10 [00:22<00:34,  5.68s/it] 50%|█████     | 5/10 [00:28<00:28,  5.63s/it] 60%|██████    | 6/10 [00:33<00:22,  5.60s/it] 70%|███████   | 7/10 [00:38<00:16,  5.55s/it] 80%|████████  | 8/10 [00:44<00:11,  5.52s/it] 90%|█████████ | 9/10 [00:49<00:05,  5.52s/it]100%|██████████| 10/10 [00:55<00:00,  5.54s/it]
+submit
+Successfully submitted to TalkingData AdTracking Fraud Detection Challenge
+#==============================================================================
+# SUCCESS !!! 901_predict_424-1.py
+#==============================================================================
+
+time: 67.72min

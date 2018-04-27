@@ -1,0 +1,111 @@
+
+#==============================================================================
+# START!!! 701_countratio.py    PID: 47110    time: 2018-04-25 16:29:04.164767
+#==============================================================================
+
+Finish 14
+Finish 6
+Finish 28
+Finish 18
+Finish 8
+Finish 26
+Finish 24
+Finish 16
+Finish 22
+Finish 4
+Finish 12
+Finish 0
+Finish 20
+Finish 2
+Finish 10
+Finish 15
+Finish 7
+Finish 29
+Finish 19
+Finish 9
+Finish 27
+Finish 17
+Finish 25
+Finish 3
+Finish 11
+Finish 5
+Finish 23
+Finish 1
+Finish 13
+Finish 21
+Finish 30
+Finish 32
+Finish 34
+Finish 36
+Finish 38
+Finish 40
+Finish 42
+Finish 52
+Finish 48
+Finish 44
+Finish 58
+Finish 50
+Finish 56
+Finish 46
+Finish 54
+Finish 31
+Finish 33
+Finish 35
+Finish 37
+Finish 39
+Finish 41
+Finish 43
+Finish 47
+Finish 53
+Finish 49
+Finish 57
+Finish 55
+Finish 45
+Finish 51
+Finish 59
+Finish 60
+Finish 62
+Finish 64
+Finish 66
+Finish 68
+Finish 70
+Finish 72
+Finish 78
+Finish 76
+Finish 74
+Finish 80
+Finish 88
+Finish 84
+Finish 86
+Finish 82
+Finish 61
+Finish 63
+Finish 65
+Finish 67
+Finish 69
+Finish 73
+Finish 71
+Finish 79
+Finish 89
+Finish 77
+Finish 81
+Finish 75
+Finish 87
+Finish 83
+Finish 85
+Finish 90
+Finish 92
+Finish 94
+Finish 96
+Finish 98
+Finish 91
+Finish 93
+Finish 95
+Finish 97
+Finish 99
+
+#==============================================================================
+# SUCCESS !!! 701_countratio.py
+#==============================================================================
+
+time: 15.70min

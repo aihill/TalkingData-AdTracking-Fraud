@@ -1,60 +1,0 @@
-
-#==============================================================================
-# START!!! 201_last_attdelta.py    PID: 5054    time: 2018-04-22 14:50:49.153226
-#==============================================================================
-
-  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:05<00:45,  5.03s/it] 20%|██        | 2/10 [00:10<00:40,  5.12s/it] 30%|███       | 3/10 [00:15<00:35,  5.13s/it] 40%|████      | 4/10 [00:20<00:30,  5.15s/it] 50%|█████     | 5/10 [00:26<00:26,  5.24s/it] 60%|██████    | 6/10 [00:31<00:20,  5.20s/it] 70%|███████   | 7/10 [00:36<00:15,  5.15s/it] 80%|████████  | 8/10 [00:40<00:10,  5.12s/it] 90%|█████████ | 9/10 [00:46<00:05,  5.16s/it]100%|██████████| 10/10 [00:51<00:00,  5.17s/it]
-  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:19,  2.14s/it] 20%|██        | 2/10 [00:03<00:15,  1.92s/it] 30%|███       | 3/10 [00:05<00:12,  1.82s/it] 40%|████      | 4/10 [00:07<00:10,  1.81s/it] 50%|█████     | 5/10 [00:09<00:09,  1.80s/it] 60%|██████    | 6/10 [00:10<00:06,  1.75s/it] 70%|███████   | 7/10 [00:12<00:05,  1.74s/it] 80%|████████  | 8/10 [00:13<00:03,  1.73s/it] 90%|█████████ | 9/10 [00:15<00:01,  1.73s/it]100%|██████████| 10/10 [00:17<00:00,  1.74s/it]
-('device',)
-('ip', 'channel')
-('ip', 'device')
-('channel',)
-('ip',)
-Finished ['device'] 32.597 min
-('os',)
-Finished ['channel'] 33.832 min
-('ip', 'app')
-Finished ['ip'] 36.345 min
-('app',)
-Finished ['ip', 'device'] 37.649 min
-('ip', 'os')
-Finished ['ip', 'channel'] 54.348 min
-('app', 'device')
-Finished ['os'] 33.480 min
-('app', 'os')
-Finished ['app'] 33.531 min
-('device', 'os')
-Finished ['ip', 'app'] 38.814 min
-('os', 'channel')
-Finished ['ip', 'os'] 38.220 min
-('ip', 'app', 'os')
-Finished ['app', 'device'] 33.865 min
-('ip', 'device', 'os')
-Finished ['app', 'os'] 34.540 min
-('app', 'channel')
-Finished ['device', 'os'] 33.912 min
-('device', 'channel')
-Finished ['os', 'channel'] 34.998 min
-('ip', 'app', 'device')
-Finished ['ip', 'device', 'os'] 38.654 min
-('ip', 'device', 'channel')
-Finished ['app', 'channel'] 34.437 min
-('ip', 'os', 'channel')
-Finished ['device', 'channel'] 34.238 min
-('app', 'device', 'channel')
-Finished ['ip', 'app', 'device'] 40.789 min
-('device', 'os', 'channel')
-Finished ['app', 'device', 'channel'] 34.644 min
-('app', 'os', 'channel')
-Finished ['device', 'os', 'channel'] 34.036 min
-('ip', 'app', 'device', 'os')
-Finished ['ip', 'device', 'channel'] 59.119 min
-('ip', 'app', 'device', 'channel')
-Finished ['ip', 'app', 'os'] 122.264 min
-('ip', 'app', 'channel')
-Finished ['app', 'os', 'channel'] 34.263 min
-('ip', 'device', 'os', 'channel')
-Finished ['ip', 'app', 'device', 'channel'] 81.119 min
-('ip', 'app', 'os', 'channel')
-Finished ['ip', 'app', 'channel'] 75.675 min
-('ip', 'app', 'device', 'os', 'channel')

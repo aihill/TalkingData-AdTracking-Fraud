@@ -1,50 +1,0 @@
-
-#==============================================================================
-# START!!! 801_holdout_424-1.py    PID: 18487    time: 2018-04-23 22:30:34.880479
-#==============================================================================
-
-seed : 71
-../data/001_train_sampled.p exist
-../data/104-3_train_sampled.p exist
-../data/103-2_train_sampled.p exist
-../data/106-2_train_sampled.p exist
-../data/102_train_sampled.p exist
-../data/104-1_train_sampled.p exist
-../data/107-1_train_sampled.p exist
-../data/003_train_sampled.p exist
-../data/105-2_train_sampled.p exist
-loading ../data/005_train/ ...
-../data/106-3_train_sampled.p exist
-../data/002_train_sampled.p exist
-../data/105-1_train_sampled.p exist
-../data/103-1_train_sampled.p exist
-../data/104-2_train_sampled.p exist
-../data/103-3_train_sampled.p exist
-../data/107-2_train_sampled.p exist
-../data/004_train_sampled.p exist
-../data/106-1_train_sampled.p exist
-  0%|          | 0/10 [00:00<?, ?it/s]../data/108-3_train_sampled.p exist
-../data/108-1_train_sampled.p exist
-../data/109-8_train_sampled.p exist
-../data/109-4_train_sampled.p exist
-../data/109-6_train_sampled.p exist
-../data/109-2_train_sampled.p exist
-../data/110-3_train_sampled.p exist
-../data/110-1_train_sampled.p exist
-../data/111-1_train_sampled.p exist
-../data/109-1_train_sampled.p exist
-../data/109-5_train_sampled.p exist
-../data/109-7_train_sampled.p exist
-../data/108-2_train_sampled.p exist
-../data/109-3_train_sampled.p exist
-../data/109-9_train_sampled.p exist
-../data/110-4_train_sampled.p exist
-../data/111-2_train_sampled.p exist
-../data/110-2_train_sampled.p exist
-../data/111-3_train_sampled.p exist
-../data/train_sampled.p exist
-../data/201_train_sampled.p exist
- 10%|█         | 1/10 [01:22<12:21, 82.34s/it] 20%|██        | 2/10 [02:42<10:51, 81.44s/it] 30%|███       | 3/10 [03:55<09:10, 78.58s/it] 40%|████      | 4/10 [05:14<07:52, 78.73s/it] 50%|█████     | 5/10 [06:29<06:29, 77.85s/it] 60%|██████    | 6/10 [07:46<05:10, 77.73s/it] 70%|███████   | 7/10 [09:06<03:54, 78.07s/it] 80%|████████  | 8/10 [10:23<02:35, 77.90s/it] 90%|█████████ | 9/10 [11:40<01:17, 77.79s/it]100%|██████████| 10/10 [12:56<00:00, 77.70s/it]
-writing ../data/005_train_sampled.p ...
-../data/101_train_sampled.p exist
-concat train
