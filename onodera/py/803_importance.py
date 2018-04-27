@@ -28,64 +28,64 @@ NROUND = 9999
 np.random.seed(SEED)
 print('seed :', SEED)
 
-system('rm SUCCESS_802')
+system('rm SUCCESS_803')
 
 categorical_feature = ['ip', 'app', 'device', 'os', 'channel', 'day', 'hour']
 
 # =============================================================================
 # load
 # =============================================================================
-dtrain = lgb.Dataset('../data/dtrain.mt')
-gc.collect()
-
-
-dvalid = lgb.Dataset('../data/dvalid.mt')
-gc.collect()
+#dtrain = lgb.Dataset('../data/dtrain.mt')
+#gc.collect()
+#
+#
+#dvalid = lgb.Dataset('../data/dvalid.mt')
+#gc.collect()
 
 # =============================================================================
 # load
 # =============================================================================
 
-#print('concat train')
-#load_files = sorted(glob('../data/*_train_sampling.p'))
-#X = pd.concat([pd.read_pickle(f) for f in tqdm(load_files)], axis=1)
-#print('X.isnull().sum().sum():', X.isnull().sum().sum())
-#drop_feature = ['click_time', 'attributed_time']
-#X.drop(drop_feature, axis=1, inplace=True)
-#X.fillna(-1, inplace=True)
-#
-#print('train.shape:', X.shape )
-#
-#
-#y = X.is_attributed
-#del X['is_attributed']; gc.collect()
-#
-#dtrain = lgb.Dataset(X, label=y, categorical_feature=categorical_feature)
-#X_head = X.head()
-#
-#del X; gc.collect()
-#
-#
-#
-#
-#
-#print('concat valid')
-#load_files = sorted(glob('../data/*_valid_sampling.p'))
-#X = pd.concat([pd.read_pickle(f) for f in tqdm(load_files)], axis=1)
-#print('X.isnull().sum().sum():', X.isnull().sum().sum())
-#drop_feature = ['click_time', 'attributed_time']
-#X.drop(drop_feature, axis=1, inplace=True)
-#X.fillna(-1, inplace=True)
-#
-#print('valid.shape:', X.shape )
-#
-#
-#y = X.is_attributed
-#del X['is_attributed']; gc.collect()
-#
-#dvalid = lgb.Dataset(X[X_head.columns], label=y, categorical_feature=categorical_feature)
-#
-#del X; gc.collect()
+print('concat train')
+load_files = sorted(glob('../data/*_train_sampling.p'))
+X = pd.concat([pd.read_pickle(f) for f in tqdm(load_files)], axis=1)
+print('X.isnull().sum().sum():', X.isnull().sum().sum())
+drop_feature = ['click_time', 'attributed_time']
+X.drop(drop_feature, axis=1, inplace=True)
+X.fillna(-1, inplace=True)
+
+print('train.shape:', X.shape )
+
+
+y = X.is_attributed
+del X['is_attributed']; gc.collect()
+
+dtrain = lgb.Dataset(X, label=y, categorical_feature=categorical_feature)
+X_head = X.head()
+
+del X; gc.collect()
+
+
+
+
+
+print('concat valid')
+load_files = sorted(glob('../data/*_valid_sampling.p'))
+X = pd.concat([pd.read_pickle(f) for f in tqdm(load_files)], axis=1)
+print('X.isnull().sum().sum():', X.isnull().sum().sum())
+drop_feature = ['click_time', 'attributed_time']
+X.drop(drop_feature, axis=1, inplace=True)
+X.fillna(-1, inplace=True)
+
+print('valid.shape:', X.shape )
+
+
+y = X.is_attributed
+del X['is_attributed']; gc.collect()
+
+dvalid = lgb.Dataset(X[X_head.columns], label=y, categorical_feature=categorical_feature)
+
+del X; gc.collect()
 
 
 # =============================================================================
@@ -134,7 +134,7 @@ hour = t.hour
 imp.to_csv(f'imp_{date}-{hour:02d}h.csv', index=False)
 
 
-system('touch SUCCESS_802')
+system('touch SUCCESS_803')
 
 
 
