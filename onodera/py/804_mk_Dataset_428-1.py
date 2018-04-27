@@ -34,7 +34,7 @@ categorical_feature = ['ip', 'app', 'device', 'os', 'channel', 'day', 'hour']
 # wait
 # =============================================================================
 while True:
-    if os.path.isfile('SUCCESS_801'):
+    if os.path.isfile('SUCCESS_803'):
         break
     else:
         sleep(60*1)
