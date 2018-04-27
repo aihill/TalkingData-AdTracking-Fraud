@@ -117,7 +117,8 @@ model = lgb.train(params=param, train_set=dtrain, num_boost_round=NROUND,
                   valid_names=['train','valid'], 
                   early_stopping_rounds=50, 
                   evals_result=evals_result, 
-                  verbose_eval=10
+                  verbose_eval=10,
+                  categorical_feature=categorical_feature
                   )
 
 
@@ -151,7 +152,8 @@ model = lgb.train(params=param, train_set=dtrain, num_boost_round=NROUND,
                   valid_names=['train','valid'], 
                   early_stopping_rounds=50, 
                   evals_result=evals_result, 
-                  verbose_eval=10
+                  verbose_eval=10,
+                  categorical_feature=categorical_feature
                   )
 
 
