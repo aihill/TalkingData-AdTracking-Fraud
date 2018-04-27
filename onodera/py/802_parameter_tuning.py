@@ -28,6 +28,8 @@ NROUND = 9999
 np.random.seed(SEED)
 print('seed :', SEED)
 
+system('rm SUCCESS_802')
+
 # =============================================================================
 # load
 # =============================================================================
@@ -110,6 +112,7 @@ model = lgb.train(params=param, train_set=dtrain, num_boost_round=NROUND,
 
 
 
+system('touch SUCCESS_802')
 
 
 
