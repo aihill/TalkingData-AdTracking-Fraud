@@ -104,8 +104,20 @@ print('X.shape:', X.shape )
 
 system('rm ../data/dtrain.mt')
 
-lgb.Dataset(X.drop('is_attributed', axis=1), label=X.is_attributed,
+y = X.is_attributed
+del X['is_attributed']; gc.collect()
+
+lgb.Dataset(X, label=y,
             categorical_feature=categorical_feature).save_binary('../data/dtrain.mt')
+
+X_head = X.head()
+X_head.to_pickle('X_head.p')
+
+"""
+
+X_head = pd.read_pickle('X_head.p')
+
+"""
 
 del X; gc.collect()
 
@@ -133,7 +145,10 @@ print('X.shape:', X.shape )
 
 system('rm ../data/dvalid.mt')
 
-lgb.Dataset(X.drop('is_attributed', axis=1), label=X.is_attributed,
+y = X.is_attributed
+del X['is_attributed']; gc.collect()
+
+lgb.Dataset(X[X_head.columns], label=y,
             categorical_feature=categorical_feature).save_binary('../data/dvalid.mt')
 
 del X; gc.collect()
