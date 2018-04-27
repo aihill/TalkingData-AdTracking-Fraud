@@ -88,6 +88,10 @@ print('concat train')
 load_files = sorted(glob('../data/*_train_sampling.p'))
 X = pd.concat([pd.read_pickle(f) for f in tqdm(load_files)], axis=1)
 print('X.isnull().sum().sum():', X.isnull().sum().sum())
+drop_feature = ['is_attributed', 'click_time', 'attributed_time']
+X.drop(drop_feature, axis=1, inplace=True)
+X.fillna(-1, inplace=True)
+
 print('X.shape:', X.shape )
 
 system('rm ../data/dtrain.mt')
@@ -113,6 +117,10 @@ print('concat train')
 load_files = sorted(glob('../data/*_valid_sampling.p'))
 X = pd.concat([pd.read_pickle(f) for f in tqdm(load_files)], axis=1)
 print('X.isnull().sum().sum():', X.isnull().sum().sum())
+drop_feature = ['is_attributed', 'click_time', 'attributed_time']
+X.drop(drop_feature, axis=1, inplace=True)
+X.fillna(-1, inplace=True)
+
 print('X.shape:', X.shape )
 
 system('rm ../data/dvalid.mt')
