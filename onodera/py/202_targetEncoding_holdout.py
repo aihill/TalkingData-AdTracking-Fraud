@@ -92,7 +92,7 @@ def multi_merge(keys):
     
     df = pd.read_pickle(f'../data/202__{c}.p')
     
-    result = pd.merge(trte, df, on=keys, how='left')
+    result = pd.merge(trte, df, on=keys+['fold'], how='left')
     
     result.iloc[0:utils.TRAIN_SHAPE][c].to_pickle(f'../data/202__{keys_}_train.p')
     result.iloc[utils.TRAIN_SHAPE:][c].to_pickle(f'../data/202__{keys_}_test.p')
