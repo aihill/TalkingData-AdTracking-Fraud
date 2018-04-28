@@ -36,13 +36,13 @@ categorical_feature = ['ip', 'app', 'device', 'os', 'channel', 'day', 'hour']
 # load
 # =============================================================================
 dtrain = lgb.Dataset(pd.read_feather('../data/X_train.f'),
-                     pd.read_feather('../data/y_train.f'),
+                     label=pd.read_feather('../data/y_train.f').values,
                      categorical_feature=categorical_feature)
 gc.collect()
 
 
 dvalid = lgb.Dataset(pd.read_feather('../data/X_valid.f'),
-                     pd.read_feather('../data/y_valid.f'),
+                     label=pd.read_feather('../data/y_train.f').values,
                      categorical_feature=categorical_feature)
 gc.collect()
 
