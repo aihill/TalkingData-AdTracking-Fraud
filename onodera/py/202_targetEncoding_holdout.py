@@ -65,8 +65,6 @@ pool = Pool(nthread)
 callback = pool.map(multi_mk202, utils.comb)
 pool.close()
 
-del train; gc.collect()
-
 
 print("""
 # =============================================================================
@@ -74,8 +72,11 @@ print("""
 # =============================================================================
 """)
 
-trte = pd.concat([utils.read_pickles('../data/train',    ['ip', 'app', 'device', 'os', 'channel']), 
-                  utils.read_pickles('../data/test_old', ['ip', 'app', 'device', 'os', 'channel'])])
+test = utils.read_pickles('../data/test_old', ['ip', 'app', 'device', 'os', 'channel'])
+test['fold'] = np.random.randint(5, size=test.shape[0])
+
+trte = pd.concat([train[['ip', 'app', 'device', 'os', 'channel']], test],
+                 ignore_index=True)
 
 def multi_merge(keys):
     """
