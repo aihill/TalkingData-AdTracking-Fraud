@@ -57,7 +57,7 @@ def multi_mk202(keys):
     df_lower[c] = df_lower.groupby('fold')[c].transform('mean')
     df_lower['target_mean'] = df[c]
     
-    df = pd.concat([df_upper, df_lower]).reset_index()
+    df = pd.concat([df_upper, df_lower])[[c]].reset_index()
     
     df.to_pickle(f'../data/202__{c}.p')
 
