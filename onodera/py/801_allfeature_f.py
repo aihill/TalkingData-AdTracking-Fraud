@@ -49,7 +49,7 @@ categorical_feature = ['ip', 'app', 'device', 'os', 'channel', 'day', 'hour']
 
 def multi_train_sampling(args):
     load_folder, i = args
-    out_file = f'{load_folder[:-1]}_train_sampling.p'
+    out_file = f'{load_folder[:-1]}_train_sampling.f'
     gc.collect()
     if os.path.isfile(out_file):
         print(f'{out_file} exist')
@@ -62,11 +62,11 @@ def multi_train_sampling(args):
         df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p').sample(frac=FRAC, random_state=SEED) for j in train_files])
     
     print(f'writing {out_file} ...')
-    df.reset_index(drop=True).fillna(-1).to_pickle(out_file)
+    df.reset_index(drop=True).fillna(-1).to_feather(out_file)
 
 def multi_valid_sampling(args):
     load_folder, i = args
-    out_file = f'{load_folder[:-1]}_valid_sampling.p'
+    out_file = f'{load_folder[:-1]}_valid_sampling.f'
     gc.collect()
     if os.path.isfile(out_file):
         print(f'{out_file} exist')
@@ -79,7 +79,7 @@ def multi_valid_sampling(args):
         df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p').sample(frac=FRAC, random_state=SEED) for j in valid_files])
         
     print(f'writing {out_file} ...')
-    df.reset_index(drop=True).fillna(-1).to_pickle(out_file)
+    df.reset_index(drop=True).fillna(-1).to_feather(out_file)
 
 # =============================================================================
 # load train
@@ -94,8 +94,8 @@ pool.close()
 
 
 print('concat train')
-load_files = sorted(glob('../data/*_train_sampling.p'))
-X = pd.concat([pd.read_pickle(f) for f in tqdm(load_files)], axis=1)
+load_files = sorted(glob('../data/*_train_sampling.f'))
+X = pd.concat([pd.read_feather(f) for f in tqdm(load_files)], axis=1)
 print('X.isnull().sum().sum():', X.isnull().sum().sum())
 drop_feature = ['click_time', 'attributed_time']
 X.drop(drop_feature, axis=1, inplace=True)
@@ -137,8 +137,8 @@ pool.close()
 
 
 print('concat valid')
-load_files = sorted(glob('../data/*_valid_sampling.p'))
-X = pd.concat([pd.read_pickle(f) for f in tqdm(load_files)], axis=1)
+load_files = sorted(glob('../data/*_valid_sampling.f'))
+X = pd.concat([pd.read_feather(f) for f in tqdm(load_files)], axis=1)
 print('X.isnull().sum().sum():', X.isnull().sum().sum())
 drop_feature = ['click_time', 'attributed_time']
 X.drop(drop_feature, axis=1, inplace=True)
