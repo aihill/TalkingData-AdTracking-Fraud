@@ -136,7 +136,7 @@ pool.map(multi_valid_sampling, args)
 pool.close()
 
 
-print('concat train')
+print('concat valid')
 load_files = sorted(glob('../data/*_valid_sampling.p'))
 X = pd.concat([pd.read_pickle(f) for f in tqdm(load_files)], axis=1)
 print('X.isnull().sum().sum():', X.isnull().sum().sum())
@@ -147,7 +147,7 @@ X.fillna(-1, inplace=True)
 print('X.shape:', X.shape )
 
 
-y = X.is_attributed
+y = X[['is_attributed']]
 X.drop('is_attributed', axis=1, inplace=True); gc.collect()
 
 #lgb.Dataset(X[X_head.columns], label=y,
