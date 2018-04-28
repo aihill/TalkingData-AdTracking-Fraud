@@ -101,6 +101,34 @@ def read_pickles(path, col=None):
         df = pd.concat([pd.read_pickle(f)[col] for f in tqdm(sorted(glob(path+'/*')))])
     return df
 
+def to_feathers(df, path, split_size=3, inplace=True):
+    """
+    path = '../output/mydf'
+    
+    wirte '../output/mydf/0.f'
+          '../output/mydf/1.f'
+          '../output/mydf/2.f'
+    
+    """
+    if inplace==True:
+        df.reset_index(drop=True, inplace=True)
+    else:
+        df = df.reset_index(drop=True)
+    gc.collect()
+    mkdir_p(path)
+    
+    kf = KFold(n_splits=split_size)
+    for i, (train_index, val_index) in enumerate(tqdm(kf.split(df))):
+        df.iloc[val_index].to_feather(f'{path}/{i:03d}.f')
+    return
+
+def read_feathers(path, col=None):
+    if col is None:
+        df = pd.concat([pd.read_feather(f) for f in tqdm(sorted(glob(path+'/*')))])
+    else:
+        df = pd.concat([pd.read_feather(f)[col] for f in tqdm(sorted(glob(path+'/*')))])
+    return df
+
 def reduce_memory(df, ix_start=0):
     df.fillna(-1, inplace=True)
     if df.shape[0]>9999:
