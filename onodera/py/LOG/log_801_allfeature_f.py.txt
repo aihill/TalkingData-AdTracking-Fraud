@@ -1,0 +1,90 @@
+
+#==============================================================================
+# START!!! 801_allfeature_f.py    PID: 18441    time: 2018-04-28 05:41:16.721633
+#==============================================================================
+
+train_files: [45, 46, 47, 48, 53, 54, 55, 56, 60, 61, 62, 63, 64, 65]
+valid_files: [78, 79, 80, 81, 82, 88, 89, 90, 91, 95, 96, 97, 98]
+seed : 71
+rm: cannot remove 'SUCCESS_801': No such file or directory
+../data/102_train_train_sampling.p exist
+../data/001_train_train_sampling.p exist
+../data/004_train_train_sampling.p exist
+../data/104-1_train_train_sampling.p exist
+../data/002_train_train_sampling.p exist
+../data/104-2_train_train_sampling.p exist
+../data/103-1_train_train_sampling.p exist
+../data/103-3_train_train_sampling.p exist
+../data/101_train_train_sampling.p exist
+../data/103-2_train_train_sampling.p exist
+../data/104-3_train_train_sampling.p exist
+../data/105-1_train_train_sampling.p exist
+../data/108-3_train_train_sampling.p exist
+../data/110-1_train_train_sampling.p exist
+../data/105-2_train_train_sampling.p exist
+../data/106-3_train_train_sampling.p exist
+../data/106-1_train_train_sampling.p exist
+../data/106-2_train_train_sampling.p exist
+../data/107-1_train_train_sampling.p exist
+../data/108-1_train_train_sampling.p exist
+../data/107-2_train_train_sampling.p exist
+../data/108-2_train_train_sampling.p exist
+../data/110-2_train_train_sampling.p exist
+../data/110-3_train_train_sampling.p exist
+../data/111-2_train_train_sampling.p exist
+../data/110-4_train_train_sampling.p exist
+../data/111-1_train_train_sampling.p exist
+../data/112_train_train_sampling.p exist
+../data/202_train_train_sampling.p exist
+../data/113_train_train_sampling.p exist
+../data/111-3_train_train_sampling.p exist
+../data/train_train_sampling.p exist
+../data/701_train_train_sampling.p exist
+concat train
+  0%|          | 0/33 [00:00<?, ?it/s]  3%|▎         | 1/33 [00:05<03:01,  5.69s/it]  6%|▌         | 2/33 [00:38<09:52, 19.10s/it]  9%|▉         | 3/33 [01:34<15:48, 31.62s/it] 12%|█▏        | 4/33 [01:47<13:02, 26.99s/it] 15%|█▌        | 5/33 [01:52<10:28, 22.44s/it] 18%|█▊        | 6/33 [01:55<08:37, 19.18s/it] 21%|██        | 7/33 [01:57<07:17, 16.82s/it] 24%|██▍       | 8/33 [01:59<06:14, 14.99s/it] 27%|██▋       | 9/33 [02:01<05:25, 13.55s/it] 30%|███       | 10/33 [02:03<04:44, 12.38s/it] 33%|███▎      | 11/33 [02:05<04:11, 11.42s/it] 36%|███▋      | 12/33 [02:09<03:46, 10.78s/it] 39%|███▉      | 13/33 [02:12<03:23, 10.16s/it] 42%|████▏     | 14/33 [02:14<03:02,  9.63s/it] 45%|████▌     | 15/33 [02:17<02:44,  9.15s/it] 48%|████▊     | 16/33 [02:19<02:28,  8.74s/it] 52%|█████▏    | 17/33 [02:21<02:12,  8.30s/it] 55%|█████▍    | 18/33 [02:23<01:59,  7.95s/it] 58%|█████▊    | 19/33 [02:25<01:47,  7.66s/it] 61%|██████    | 20/33 [02:27<01:36,  7.39s/it] 64%|██████▎   | 21/33 [02:29<01:25,  7.12s/it] 67%|██████▋   | 22/33 [03:00<01:30,  8.20s/it] 70%|██████▉   | 23/33 [03:34<01:33,  9.31s/it] 73%|███████▎  | 24/33 [04:09<01:33, 10.40s/it] 76%|███████▌  | 25/33 [04:14<01:21, 10.17s/it] 79%|███████▉  | 26/33 [04:22<01:10, 10.10s/it] 82%|████████▏ | 27/33 [04:31<01:00, 10.04s/it] 85%|████████▍ | 28/33 [04:40<00:50, 10.00s/it] 88%|████████▊ | 29/33 [04:44<00:39,  9.81s/it] 91%|█████████ | 30/33 [05:14<00:31, 10.47s/it] 94%|█████████▍| 31/33 [05:44<00:22, 11.10s/it] 97%|█████████▋| 32/33 [06:17<00:11, 11.80s/it]100%|██████████| 33/33 [06:21<00:00, 11.55s/it]
+X.isnull().sum().sum(): 0
+X.shape: (18120578, 773)
+../data/102_train_valid_sampling.p exist
+../data/004_train_valid_sampling.p exist
+../data/103-2_train_valid_sampling.p exist
+../data/104-1_train_valid_sampling.p exist
+../data/103-3_train_valid_sampling.p exist
+../data/103-1_train_valid_sampling.p exist
+../data/101_train_valid_sampling.p exist
+../data/002_train_valid_sampling.p exist
+../data/001_train_valid_sampling.p exist
+../data/104-2_train_valid_sampling.p exist
+../data/104-3_train_valid_sampling.p exist
+../data/105-2_train_valid_sampling.p exist
+../data/105-1_train_valid_sampling.p exist
+../data/106-2_train_valid_sampling.p exist
+../data/106-1_train_valid_sampling.p exist
+../data/106-3_train_valid_sampling.p exist
+../data/107-1_train_valid_sampling.p exist
+../data/108-2_train_valid_sampling.p exist
+../data/108-1_train_valid_sampling.p exist
+../data/107-2_train_valid_sampling.p exist
+../data/108-3_train_valid_sampling.p exist
+../data/110-2_train_valid_sampling.p exist
+../data/110-1_train_valid_sampling.p exist
+../data/110-4_train_valid_sampling.p exist
+../data/112_train_valid_sampling.p exist
+../data/111-1_train_valid_sampling.p exist
+../data/110-3_train_valid_sampling.p exist
+../data/111-2_train_valid_sampling.p exist
+../data/113_train_valid_sampling.p exist
+../data/111-3_train_valid_sampling.p exist
+loading ../data/202_train/ ...
+../data/train_valid_sampling.p exist
+../data/701_train_valid_sampling.p exist
+writing ../data/202_train_valid_sampling.p ...
+concat train
+  0%|          | 0/33 [00:00<?, ?it/s]  3%|▎         | 1/33 [00:04<02:33,  4.81s/it]  6%|▌         | 2/33 [00:49<12:52, 24.92s/it]  9%|▉         | 3/33 [01:54<19:08, 38.28s/it] 12%|█▏        | 4/33 [02:08<15:28, 32.00s/it] 15%|█▌        | 5/33 [02:11<12:17, 26.34s/it] 18%|█▊        | 6/33 [02:15<10:07, 22.51s/it] 21%|██        | 7/33 [02:17<08:31, 19.67s/it] 24%|██▍       | 8/33 [02:19<07:16, 17.46s/it] 27%|██▋       | 9/33 [02:21<06:17, 15.73s/it] 30%|███       | 10/33 [02:23<05:30, 14.36s/it] 33%|███▎      | 11/33 [02:25<04:50, 13.22s/it] 36%|███▋      | 12/33 [02:28<04:19, 12.34s/it] 39%|███▉      | 13/33 [02:30<03:51, 11.59s/it] 42%|████▏     | 14/33 [02:33<03:27, 10.94s/it] 45%|████▌     | 15/33 [02:36<03:07, 10.43s/it] 48%|████▊     | 16/33 [02:39<02:49,  9.95s/it] 52%|█████▏    | 17/33 [02:40<02:31,  9.47s/it] 55%|█████▍    | 18/33 [02:43<02:15,  9.06s/it] 58%|█████▊    | 19/33 [02:45<02:02,  8.72s/it] 61%|██████    | 20/33 [02:48<01:49,  8.41s/it] 64%|██████▎   | 21/33 [02:50<01:37,  8.11s/it] 67%|██████▋   | 22/33 [03:20<01:40,  9.11s/it] 70%|██████▉   | 23/33 [03:51<01:40, 10.05s/it] 73%|███████▎  | 24/33 [04:24<01:39, 11.03s/it] 76%|███████▌  | 25/33 [04:29<01:26, 10.78s/it] 79%|███████▉  | 26/33 [04:38<01:15, 10.72s/it] 82%|████████▏ | 27/33 [04:46<01:03, 10.60s/it] 85%|████████▍ | 28/33 [04:54<00:52, 10.52s/it] 88%|████████▊ | 29/33 [04:58<00:41, 10.30s/it] 91%|█████████ | 30/33 [05:27<00:32, 10.91s/it] 94%|█████████▍| 31/33 [05:34<00:21, 10.78s/it] 97%|█████████▋| 32/33 [06:05<00:11, 11.43s/it]100%|██████████| 33/33 [06:10<00:00, 11.22s/it]
+X.isnull().sum().sum(): 0
+X.shape: (16826251, 773)
+Traceback (most recent call last):
+  File "801_allfeature_f.py", line 157, in <module>
+    y.to_feather('../data/y_valid.f')
+  File "/home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/pandas/core/generic.py", line 3081, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'Series' object has no attribute 'to_feather'

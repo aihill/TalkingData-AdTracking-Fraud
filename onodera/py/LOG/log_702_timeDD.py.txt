@@ -1,0 +1,52 @@
+
+#==============================================================================
+# START!!! 702_timeDD.py    PID: 25524    time: 2018-04-28 17:22:49.899250
+#==============================================================================
+
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/pandas/core/indexes/base.py", line 2442, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 132, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 154, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1210, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1218, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'timedelta_ip'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kazuki_onodera/anaconda3/lib/python3.6/multiprocessing/pool.py", line 119, in worker
+    result = (True, func(*args, **kwds))
+  File "/home/kazuki_onodera/anaconda3/lib/python3.6/multiprocessing/pool.py", line 44, in mapstar
+    return list(map(*args))
+  File "702_timeDD.py", line 38, in multi
+    df[k] = df[k1] - df[k2] # TODO: consider -1
+  File "/home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/pandas/core/frame.py", line 1964, in __getitem__
+    return self._getitem_column(key)
+  File "/home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/pandas/core/frame.py", line 1971, in _getitem_column
+    return self._get_item_cache(key)
+  File "/home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/pandas/core/generic.py", line 1645, in _get_item_cache
+    values = self._data.get(item)
+  File "/home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/pandas/core/internals.py", line 3590, in get
+    loc = self.items.get_loc(item)
+  File "/home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/pandas/core/indexes/base.py", line 2444, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 132, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 154, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1210, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1218, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'timedelta_ip'
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "702_timeDD.py", line 78, in <module>
+    callback = pool.map(multi, range(utils.SPLIT_SIZE))
+  File "/home/kazuki_onodera/anaconda3/lib/python3.6/multiprocessing/pool.py", line 266, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+  File "/home/kazuki_onodera/anaconda3/lib/python3.6/multiprocessing/pool.py", line 644, in get
+    raise self._value
+KeyError: 'timedelta_ip'
