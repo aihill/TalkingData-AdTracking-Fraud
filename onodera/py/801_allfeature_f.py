@@ -153,7 +153,7 @@ X.drop('is_attributed', axis=1, inplace=True); gc.collect()
 #lgb.Dataset(X[X_head.columns], label=y,
 #            categorical_feature=categorical_feature).save_binary('../data/dvalid.mt')
 
-X.to_feather('../data/X_valid.f')
+X[X_head.columns].to_feather('../data/X_valid.f')
 y.to_feather('../data/y_valid.f')
 
 del X; gc.collect()
