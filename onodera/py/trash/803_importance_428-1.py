@@ -128,10 +128,10 @@ for i in range(3):
 
 imp = ex.getImp(models)
 
-t = datetime.today()
-date = t.date()
-hour = t.hour
-imp.to_csv(f'imp_{date}-{hour:02d}h.csv', index=False)
+#t = datetime.today()
+#date = t.date()
+#hour = t.hour
+imp.to_csv(f'imp_{__file__}.csv', index=False)
 
 
 system('touch SUCCESS_803')

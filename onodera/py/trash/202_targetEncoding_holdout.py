@@ -47,15 +47,21 @@ def multi_mk202(keys):
     gc.collect()
     df = pd.concat([sum_, size], axis=1)
     df.columns = ['a', 'b']
-    df[c] = df.a/df.b
-    df['target_mean'] = df[c]
+    df['total_a'] = df.groupby(keys)['a'].transform('sum')
+    df['total_b'] = df.groupby(keys)['b'].transform('sum')
+    df['a_'] = df['total_a'] - df['a']
+    df['b_'] = df['total_b'] - df['b'] 
+    df[c] = df.a_ /df.b_
     
-    df['totalsize'] = df.groupby(keys)['b'].transform('sum')
+    df_upper = df[df.total_b>=threshold]
+    df_lower = df[df.total_b<threshold]
     
-    df_upper = df[df.totalsize>=threshold]
-    df_lower = df[df.totalsize<threshold]
-    df_lower[c] = df_lower.groupby('fold')[c].transform('mean')
-    df_lower['target_mean'] = df[c]
+    df_lower['total_a'] = df_lower.groupby('fold')['a'].transform('sum')
+    df_lower['total_b'] = df_lower.groupby('fold')['b'].transform('sum')
+    df_lower['a_'] = df_lower['total_a'] - df_lower['a']
+    df_lower['b_'] = df_lower['total_b'] - df_lower['b'] 
+    df_lower[c] = df_lower.a_ /df_lower.b_
+    
     
     df = pd.concat([df_upper, df_lower])[[c]].reset_index()
     
