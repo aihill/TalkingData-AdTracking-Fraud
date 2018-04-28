@@ -56,8 +56,8 @@ def multi(count_keys):
     df.sort_index(inplace=True)
     
     gc.collect()
-    df.iloc[0:utils.TRAIN_SHAPE][[c1, c2]].to_feather('../data/004__{}_train.f'.format(count_keys_))
-    df.iloc[utils.TRAIN_SHAPE:][[c1, c2]].to_feather('../data/004__{}_test.f'.format(count_keys_))
+    df.iloc[0:utils.TRAIN_SHAPE][[c1, c2]].to_pickle('../data/004__{}_train.p'.format(count_keys_))
+    df.iloc[utils.TRAIN_SHAPE:][[c1, c2]].to_pickle('../data/004__{}_test.p'.format(count_keys_))
 
 
 pool = Pool(nthread)
@@ -70,13 +70,13 @@ pool.close()
 # =============================================================================
 
 # train
-df = pd.concat([pd.read_feather(f) for f in sorted(glob('../data/004__*_train.f'))], axis=1).reset_index(drop=True)
+df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/004__*_train.p'))], axis=1).reset_index(drop=True)
 utils.to_pickles(df, '../data/004_train', utils.SPLIT_SIZE)
 
 del df; gc.collect()
 
 # test
-df = pd.concat([pd.read_feather(f) for f in sorted(glob('../data/004__*_test.f'))], axis=1).reset_index(drop=True)
+df = pd.concat([pd.read_pickle(f) for f in sorted(glob('../data/004__*_test.p'))], axis=1).reset_index(drop=True)
 utils.to_pickles(df, '../data/004_test', utils.SPLIT_SIZE)
 
 os.system('rm -rf ../data/004__*.f')
