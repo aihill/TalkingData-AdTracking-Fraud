@@ -22,24 +22,27 @@ from multiprocessing import Pool
 from glob import glob
 import utils
 utils.start(__file__)
+# =============================================================================
+NTHREAD = 2
 
 SEED = 71 #np.random.randint(9999) #int(sys.argv[1])
 NROUND = 9999
-is_sampling = True
+DO_SAMPLING = True
 FRAC = 0.7
+
+DO_CONCAT = False
+
+# =============================================================================
+np.random.seed(SEED)
+print('seed :', SEED)
+
+#system('rm ../data/*sampling.f')
+system('rm SUCCESS_801')
 
 train_files = [45, 46, 47, 48, 53, 54, 55, 56, 60, 61, 62, 63, 64, 65]
 valid_files = [78, 79, 80, 81, 82, 88, 89, 90, 91, 95, 96, 97, 98]
 print(f'train_files: {train_files}')
 print(f'valid_files: {valid_files}')
-
-
-np.random.seed(SEED)
-print('seed :', SEED)
-
-
-#system('rm ../data/*sampling.p')
-system('rm SUCCESS_801')
 
 categorical_feature = ['ip', 'app', 'device', 'os', 'channel', 'day', 'hour']
 
@@ -56,7 +59,7 @@ def multi_train_sampling(args):
         return
     print(f'loading {load_folder} ...')
     
-    if is_sampling==False:
+    if DO_SAMPLING==False:
         df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p') for j in train_files])
     else:
         df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p').sample(frac=FRAC, random_state=SEED) for j in train_files])
@@ -73,7 +76,7 @@ def multi_valid_sampling(args):
         return
     print(f'loading {load_folder} ...')
     
-    if is_sampling==False:
+    if DO_SAMPLING==False:
         df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p') for j in valid_files])
     else:
         df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p').sample(frac=FRAC, random_state=SEED) for j in valid_files])
@@ -92,37 +95,37 @@ pool = Pool(10)
 pool.map(multi_train_sampling, args)
 pool.close()
 
+if DO_CONCAT:
+    print('concat train')
+    load_files = sorted(glob('../data/*_train_sampling.f'))
+    X = pd.concat([pd.read_feather(f) for f in tqdm(load_files)], axis=1)
+    print('X.isnull().sum().sum():', X.isnull().sum().sum())
+    drop_feature = ['click_time', 'attributed_time']
+    X.drop(drop_feature, axis=1, inplace=True)
+    X.fillna(-1, inplace=True)
+    
+    print('X.shape:', X.shape )
+    
+    
+    y = X[['is_attributed']]
+    X.drop('is_attributed', axis=1, inplace=True); gc.collect()
+    
+    #lgb.Dataset(X, label=y,
+    #            categorical_feature=categorical_feature).save_binary('../data/dtrain.mt')
+    
+    X.to_feather('../data/X_train.f')
+    y.to_feather('../data/y_train.f')
+    
+    X_head = X.head()
+    X_head.to_pickle('X_head.p')
+    
+    """
+    
+    X_head = pd.read_pickle('X_head.p')
+    
+    """
 
-print('concat train')
-load_files = sorted(glob('../data/*_train_sampling.f'))
-X = pd.concat([pd.read_feather(f) for f in tqdm(load_files)], axis=1)
-print('X.isnull().sum().sum():', X.isnull().sum().sum())
-drop_feature = ['click_time', 'attributed_time']
-X.drop(drop_feature, axis=1, inplace=True)
-X.fillna(-1, inplace=True)
-
-print('X.shape:', X.shape )
-
-
-y = X[['is_attributed']]
-X.drop('is_attributed', axis=1, inplace=True); gc.collect()
-
-#lgb.Dataset(X, label=y,
-#            categorical_feature=categorical_feature).save_binary('../data/dtrain.mt')
-
-X.to_feather('../data/X_train.f')
-y.to_feather('../data/y_train.f')
-
-X_head = X.head()
-X_head.to_pickle('X_head.p')
-
-"""
-
-X_head = pd.read_pickle('X_head.p')
-
-"""
-
-del X; gc.collect()
+    del X; gc.collect()
 
 # =============================================================================
 # load valid
@@ -135,30 +138,30 @@ pool = Pool(10)
 pool.map(multi_valid_sampling, args)
 pool.close()
 
-
-print('concat valid')
-load_files = sorted(glob('../data/*_valid_sampling.f'))
-X = pd.concat([pd.read_feather(f) for f in tqdm(load_files)], axis=1)
-print('X.isnull().sum().sum():', X.isnull().sum().sum())
-drop_feature = ['click_time', 'attributed_time']
-X.drop(drop_feature, axis=1, inplace=True)
-X.fillna(-1, inplace=True)
-
-print('X.shape:', X.shape )
-
-
-y = X[['is_attributed']]
-X.drop('is_attributed', axis=1, inplace=True); gc.collect()
-
-#lgb.Dataset(X[X_head.columns], label=y,
-#            categorical_feature=categorical_feature).save_binary('../data/dvalid.mt')
-
-X[X_head.columns].to_feather('../data/X_valid.f')
-y.to_feather('../data/y_valid.f')
-
-del X; gc.collect()
-
-system('touch SUCCESS_801')
+if DO_CONCAT:
+    print('concat valid')
+    load_files = sorted(glob('../data/*_valid_sampling.f'))
+    X = pd.concat([pd.read_feather(f) for f in tqdm(load_files)], axis=1)
+    print('X.isnull().sum().sum():', X.isnull().sum().sum())
+    drop_feature = ['click_time', 'attributed_time']
+    X.drop(drop_feature, axis=1, inplace=True)
+    X.fillna(-1, inplace=True)
+    
+    print('X.shape:', X.shape )
+    
+    
+    y = X[['is_attributed']]
+    X.drop('is_attributed', axis=1, inplace=True); gc.collect()
+    
+    #lgb.Dataset(X[X_head.columns], label=y,
+    #            categorical_feature=categorical_feature).save_binary('../data/dvalid.mt')
+    
+    X[X_head.columns].to_feather('../data/X_valid.f')
+    y.to_feather('../data/y_valid.f')
+    
+    del X; gc.collect()
+    
+    system('touch SUCCESS_801')
 
 #==============================================================================
 utils.end(__file__)
