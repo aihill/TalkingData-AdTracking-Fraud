@@ -23,7 +23,7 @@ from glob import glob
 import utils
 utils.start(__file__)
 # =============================================================================
-NTHREAD = 2
+NTHREAD = 16
 
 SEED = 71 #np.random.randint(9999) #int(sys.argv[1])
 NROUND = 9999
