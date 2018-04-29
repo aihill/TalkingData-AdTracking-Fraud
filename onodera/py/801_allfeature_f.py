@@ -30,7 +30,7 @@ NROUND = 9999
 DO_SAMPLING = True
 FRAC = 0.7
 
-DO_CONCAT = False
+DO_CONCAT = True
 
 # =============================================================================
 np.random.seed(SEED)
