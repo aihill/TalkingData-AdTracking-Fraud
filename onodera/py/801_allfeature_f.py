@@ -91,7 +91,7 @@ load_folders = sorted(glob('../data/*train/'))
 
 args = list(zip(load_folders, range(len(load_folders))))
 
-pool = Pool(10)
+pool = Pool(NTHREAD)
 pool.map(multi_train_sampling, args)
 pool.close()
 
@@ -134,7 +134,7 @@ load_folders = sorted(glob('../data/*train/'))
 
 args = list(zip(load_folders, range(len(load_folders))))
 
-pool = Pool(10)
+pool = Pool(NTHREAD)
 pool.map(multi_valid_sampling, args)
 pool.close()
 
