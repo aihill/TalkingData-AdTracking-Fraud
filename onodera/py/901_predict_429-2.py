@@ -35,7 +35,7 @@ print('seed :', SEED)
 # wait
 # =============================================================================
 while True:
-    if os.path.isfile('SUCCESS_804'):
+    if os.path.isfile('SUCCESS_803'):
         break
     else:
         sleep(60*1)
