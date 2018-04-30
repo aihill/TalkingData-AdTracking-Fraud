@@ -41,10 +41,11 @@ train = utils.read_pickles('../data/dtrain')
 for c in categorical_feature:
     col = ['is_attributed', c]
     filepath = f'../data/dtrain_drop_{c}.mt'
-    system(f'rm {filepath}')
+    
     categorical_feature_ = list( set(categorical_feature) - set([c]) )
     
     print(f'writing {filepath}...')
+    system(f'rm {filepath}')
     lgb.Dataset(train.drop(col, axis=1), label=train.is_attributed,
                 categorical_feature=categorical_feature_
                 ).save_binary(filepath)
@@ -58,17 +59,17 @@ del train; gc.collect()
 # test
 # =============================================================================
 test = utils.read_pickles('../data/dtest')
+X_head = pd.read_pickle('X_head.p')
 
 for c in categorical_feature:
     col = c
     filepath = f'../data/dtest_drop_{c}.mt'
-    system(f'rm {filepath}')
+    
     categorical_feature_ = list( set(categorical_feature) - set([c]) )
     
     print(f'writing {filepath}...')
-    lgb.Dataset(test.drop(col, axis=1),
-                categorical_feature=categorical_feature_
-                ).save_binary(filepath)
+    system(f'rm -rf {filepath}')
+    utils.to_pickles(test[X_head.columns], filepath, utils.SPLIT_SIZE)
     
     gc.collect()
 
