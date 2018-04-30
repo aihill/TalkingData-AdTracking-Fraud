@@ -78,7 +78,7 @@ for drop_c in drop_col:
     # =============================================================================
     print(f'===================== LGB drop {drop_c} =====================')
     # =============================================================================
-    categorical_feature_ = list( set(categorical_feature) - set(drop_c))
+    categorical_feature_ = list( set(categorical_feature) - set([drop_c]))
     
     dtrain = lgb.Dataset(X_train.drop(drop_c, axis=1),
                          label=pd.read_feather('../data/y_train_mini.f').is_attributed,
