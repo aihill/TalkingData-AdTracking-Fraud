@@ -78,16 +78,17 @@ for drop_c in drop_col:
     # =============================================================================
     print(f'===================== LGB drop {drop_c} =====================')
     # =============================================================================
+    categorical_feature_ = list( set(categorical_feature) - set(drop_c))
     
     dtrain = lgb.Dataset(X_train.drop(drop_c, axis=1),
                          label=pd.read_feather('../data/y_train.f').is_attributed,
-                         categorical_feature=categorical_feature)
+                         categorical_feature=categorical_feature_)
     
     gc.collect()
     
     dvalid = lgb.Dataset(X_valid.drop(drop_c, axis=1),
                          label=pd.read_feather('../data/y_valid.f').is_attributed,
-                         categorical_feature=categorical_feature)
+                         categorical_feature=categorical_feature_)
     
     gc.collect()
     
@@ -104,7 +105,7 @@ for drop_c in drop_col:
                           early_stopping_rounds=50, 
                           evals_result=evals_result, 
                           verbose_eval=10,
-                          categorical_feature=categorical_feature
+                          categorical_feature=categorical_feature_
                           )
         models.append(model)
     
