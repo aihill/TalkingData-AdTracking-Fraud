@@ -51,13 +51,13 @@ param = {
 # =============================================================================
 # wait
 # =============================================================================
-#while True:
-#    if os.path.isfile('SUCCESS_801'):
-#        break
-#    else:
-#        sleep(60*1)
-#
-#utils.send_line('START {}'.format(__file__))
+while True:
+    if os.path.isfile('SUCCESS_801'):
+        break
+    else:
+        sleep(60*1)
+
+utils.send_line('START {}'.format(__file__))
 
 # =============================================================================
 # load
@@ -65,11 +65,11 @@ param = {
 imp = pd.read_csv('imp_802_importance_430-1.py.csv').set_index('index')
 usecols = imp[imp.weight!=0].index.tolist()
 
-X_train = pd.read_feather('../data/X_train.f')[usecols]
+X_train = pd.read_feather('../data/X_train_mini.f')[usecols]
 
 gc.collect()
 
-X_valid = pd.read_feather('../data/X_valid.f')[usecols]
+X_valid = pd.read_feather('../data/X_valid_mini.f')[usecols]
 gc.collect()
 
 
@@ -97,7 +97,7 @@ for drop_c in drop_col:
     
     np.random.seed(SEED)
     models = []
-    for i in range(3):
+    for i in range(1):
         param.update({'seed':np.random.randint(9999)})
         model = lgb.train(params=param, train_set=dtrain, num_boost_round=NROUND, 
                           valid_sets=[dtrain, dvalid], 
