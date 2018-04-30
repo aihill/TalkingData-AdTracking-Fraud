@@ -115,10 +115,8 @@ for drop_col in comb:
     
     imp = ex.getImp(model)
     
-    #t = datetime.today()
-    #date = t.date()
-    #hour = t.hour
-    imp.to_csv(f'imp_{__file__}_{drop_c}.csv', index=False)
+    drop_col = '-'.join(drop_col)
+    imp.to_csv(f'imp_{__file__}_drop_{drop_col}.csv', index=False)
 
 
 
