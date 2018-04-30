@@ -63,7 +63,7 @@ X_head = pd.read_pickle('X_head.p')
 
 for c in categorical_feature:
     col = c
-    filepath = f'../data/dtest_drop_{c}.mt'
+    filepath = f'../data/dtest_drop_{c}'
     
     categorical_feature_ = list( set(categorical_feature) - set([c]) )
     
