@@ -20,7 +20,7 @@ utils.start(__file__)
 
 system('rm SUCCESS_804')
 
-categorical_feature = ['ip', 'app', 'device', 'os', 'channel', 'day', 'hour']
+categorical_feature = ['ip', 'app', 'device', 'os', 'channel', 'hour']
 
 # =============================================================================
 # wait
@@ -44,8 +44,8 @@ for c in categorical_feature:
     
     categorical_feature_ = list( set(categorical_feature) - set([c]) )
     
-    print(f'writing {filepath}...')
     system(f'rm {filepath}')
+    print(f'writing {filepath}...')
     lgb.Dataset(train.drop(col, axis=1), label=train.is_attributed,
                 categorical_feature=categorical_feature_
                 ).save_binary(filepath)
@@ -67,8 +67,8 @@ for c in categorical_feature:
     
     categorical_feature_ = list( set(categorical_feature) - set([c]) )
     
-    print(f'writing {filepath}...')
     system(f'rm -rf {filepath}')
+    print(f'writing {filepath}...')
     utils.to_pickles(test[X_head.columns], filepath, utils.SPLIT_SIZE)
     
     gc.collect()
