@@ -68,6 +68,8 @@ print(sorted(usecols))
 def multi_train(args):
     load_folder, i = args
     gc.collect()
+    if load_folder == '../data/dtrain/':
+        return
     print(f'loading {load_folder} ...')
     df = pd.read_pickle(load_folder + '/000.p')
     col = list(set(df.columns) & usecols)
