@@ -1,52 +1,111 @@
 
 #==============================================================================
-# START!!! 702_timeDD.py    PID: 25524    time: 2018-04-28 17:22:49.899250
+# START!!! 702_timeDD.py    PID: 31737    time: 2018-04-29 04:07:35.341331
 #==============================================================================
 
-multiprocessing.pool.RemoteTraceback: 
-"""
-Traceback (most recent call last):
-  File "/home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/pandas/core/indexes/base.py", line 2442, in get_loc
-    return self._engine.get_loc(key)
-  File "pandas/_libs/index.pyx", line 132, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/index.pyx", line 154, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/hashtable_class_helper.pxi", line 1210, in pandas._libs.hashtable.PyObjectHashTable.get_item
-  File "pandas/_libs/hashtable_class_helper.pxi", line 1218, in pandas._libs.hashtable.PyObjectHashTable.get_item
-KeyError: 'timedelta_ip'
+Finish 20
+Finish 6
+Finish 14
+Finish 2
+Finish 24
+Finish 26
+Finish 12
+Finish 28
+Finish 16
+Finish 18
+Finish 10
+Finish 4
+Finish 0
+Finish 8
+Finish 22
+Finish 21
+Finish 7
+Finish 15
+Finish 25
+Finish 3
+Finish 27
+Finish 13
+Finish 29
+Finish 19
+Finish 9
+Finish 17
+Finish 11
+Finish 1
+Finish 5
+Finish 23
+Finish 30
+Finish 32
+Finish 34
+Finish 36
+Finish 38
+Finish 40
+Finish 42
+Finish 44
+Finish 46
+Finish 54
+Finish 48
+Finish 50
+Finish 52
+Finish 58
+Finish 56
+Finish 31
+Finish 35
+Finish 33
+Finish 37
+Finish 39
+Finish 41
+Finish 43
+Finish 45
+Finish 47
+Finish 51
+Finish 53
+Finish 59
+Finish 55
+Finish 57
+Finish 49
+Finish 60
+Finish 62
+Finish 64
+Finish 66
+Finish 68
+Finish 70
+Finish 72
+Finish 74
+Finish 76
+Finish 78
+Finish 80
+Finish 86
+Finish 82
+Finish 88
+Finish 84
+Finish 61
+Finish 63
+Finish 65
+Finish 67
+Finish 69
+Finish 71
+Finish 73
+Finish 75
+Finish 77
+Finish 79
+Finish 87
+Finish 81
+Finish 89
+Finish 85
+Finish 83
+Finish 90
+Finish 92
+Finish 94
+Finish 98
+Finish 96
+Finish 93
+Finish 91
+Finish 95
+Finish 97
+Finish 99
 
-During handling of the above exception, another exception occurred:
+#==============================================================================
+# SUCCESS !!! 702_timeDD.py
+#==============================================================================
 
-Traceback (most recent call last):
-  File "/home/kazuki_onodera/anaconda3/lib/python3.6/multiprocessing/pool.py", line 119, in worker
-    result = (True, func(*args, **kwds))
-  File "/home/kazuki_onodera/anaconda3/lib/python3.6/multiprocessing/pool.py", line 44, in mapstar
-    return list(map(*args))
-  File "702_timeDD.py", line 38, in multi
-    df[k] = df[k1] - df[k2] # TODO: consider -1
-  File "/home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/pandas/core/frame.py", line 1964, in __getitem__
-    return self._getitem_column(key)
-  File "/home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/pandas/core/frame.py", line 1971, in _getitem_column
-    return self._get_item_cache(key)
-  File "/home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/pandas/core/generic.py", line 1645, in _get_item_cache
-    values = self._data.get(item)
-  File "/home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/pandas/core/internals.py", line 3590, in get
-    loc = self.items.get_loc(item)
-  File "/home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/pandas/core/indexes/base.py", line 2444, in get_loc
-    return self._engine.get_loc(self._maybe_cast_indexer(key))
-  File "pandas/_libs/index.pyx", line 132, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/index.pyx", line 154, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/hashtable_class_helper.pxi", line 1210, in pandas._libs.hashtable.PyObjectHashTable.get_item
-  File "pandas/_libs/hashtable_class_helper.pxi", line 1218, in pandas._libs.hashtable.PyObjectHashTable.get_item
-KeyError: 'timedelta_ip'
-"""
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "702_timeDD.py", line 78, in <module>
-    callback = pool.map(multi, range(utils.SPLIT_SIZE))
-  File "/home/kazuki_onodera/anaconda3/lib/python3.6/multiprocessing/pool.py", line 266, in map
-    return self._map_async(func, iterable, mapstar, chunksize).get()
-  File "/home/kazuki_onodera/anaconda3/lib/python3.6/multiprocessing/pool.py", line 644, in get
-    raise self._value
-KeyError: 'timedelta_ip'
+time: 40.21min

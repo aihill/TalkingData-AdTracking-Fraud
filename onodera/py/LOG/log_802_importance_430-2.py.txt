@@ -1,0 +1,68 @@
+
+#==============================================================================
+# START!!! 802_importance_430-2.py    PID: 11624    time: 2018-04-30 05:10:59.736684
+#==============================================================================
+
+seed : 71
+rm: cannot remove 'SUCCESS_802': No such file or directory
+===================== LGB drop ip =====================
+[LightGBM] [Info] Number of positive: 6155, number of negative: 2582501
+[LightGBM] [Info] Total Bins 51077
+[LightGBM] [Info] Number of data: 2588656, number of used features: 575
+Training until validation scores don't improve for 50 rounds.
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[10]	train's auc: 0.978608	valid's auc: 0.965767
+[20]	train's auc: 0.986094	valid's auc: 0.97164
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[30]	train's auc: 0.990705	valid's auc: 0.974141
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[40]	train's auc: 0.992861	valid's auc: 0.975071
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[50]	train's auc: 0.993958	valid's auc: 0.975636
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[60]	train's auc: 0.994928	valid's auc: 0.975688
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[70]	train's auc: 0.995995	valid's auc: 0.975065
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[80]	train's auc: 0.996632	valid's auc: 0.974807
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[90]	train's auc: 0.997161	valid's auc: 0.974545
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[100]	train's auc: 0.997639	valid's auc: 0.974339
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+[110]	train's auc: 0.997851	valid's auc: 0.973786
+Early stopping, best iteration is:
+[60]	train's auc: 0.994928	valid's auc: 0.975688
+===================== LGB drop app =====================
+Traceback (most recent call last):
+  File "802_importance_430-2.py", line 108, in <module>
+    categorical_feature=categorical_feature_
+  File "/home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/lightgbm/engine.py", line 180, in train
+    booster = Booster(params=params, train_set=train_set)
+  File "/home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/lightgbm/basic.py", line 1303, in __init__
+    train_set.construct().handle,
+  File "/home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/lightgbm/basic.py", line 857, in construct
+    categorical_feature=self.categorical_feature, params=self.params)
+  File "/home/kazuki_onodera/anaconda3/lib/python3.6/site-packages/lightgbm/basic.py", line 679, in _lazy_init
+    .format(type(name).__name__, name))
+TypeError: Wrong type(str) or unknown name(app) in categorical_feature
