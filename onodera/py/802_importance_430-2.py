@@ -16,6 +16,7 @@ sys.path.append('/home/kazuki_onodera/Python')
 import lgbmextension as ex
 import lightgbm as lgb
 import gc
+from itertools import combinations
 from time import sleep
 import utils
 utils.start(__file__)
@@ -28,13 +29,13 @@ print('seed :', SEED)
 
 system('rm SUCCESS_802')
 
-categorical_feature = [ 'app', 'device', 'os', 'channel', 'hour']
+categorical_feature = ['ip', 'app', 'device', 'os', 'channel', 'hour']
 
 
 param = {
          'objective': 'binary',
          'metric': 'auc',
-         'learning_rate': 0.2,
+         'learning_rate': 0.1,
          'max_depth': 4,
          'num_leaves': 2**4-1,
          'max_bin': 100,
@@ -46,6 +47,8 @@ param = {
          'scale_pos_weight': 100,
 #         'lambda_l1': 3,
 #         'lambda_l2': 3,
+         
+         'seed': SEED
          }
 
 # =============================================================================
@@ -72,21 +75,26 @@ gc.collect()
 X_valid = pd.read_feather('../data/X_valid_mini.f')[usecols]
 gc.collect()
 
+comb = []
+for i in range(1, 6):
+    comb += list(combinations(['ip', 'app', 'device', 'os', 'channel', 'hour'], i))
 
-drop_col = ['ip', 'app', 'device', 'os', 'channel', 'hour']
-for drop_c in drop_col:
+for drop_col in comb:
     # =============================================================================
-    print(f'===================== LGB drop {drop_c} =====================')
+#    print(f'===================== LGB drop {drop_col} =====================')
     # =============================================================================
-    categorical_feature_ = list( set(categorical_feature) - set([drop_c]))
+    categorical_feature_ = list( set(categorical_feature) - set(drop_col))
+    drop_col = list(drop_col)
+    print(f'===================== categorical_feature: {categorical_feature_} =====================')
+    print(f'===================== drop_col: {drop_col} =====================')
     
-    dtrain = lgb.Dataset(X_train.drop(drop_c, axis=1),
+    dtrain = lgb.Dataset(X_train.drop(drop_col, axis=1),
                          label=pd.read_feather('../data/y_train_mini.f').is_attributed,
                          categorical_feature=categorical_feature_)
     
     gc.collect()
     
-    dvalid = lgb.Dataset(X_valid.drop(drop_c, axis=1),
+    dvalid = lgb.Dataset(X_valid.drop(drop_col, axis=1),
                          label=pd.read_feather('../data/y_valid_mini.f').is_attributed,
                          categorical_feature=categorical_feature_)
     
@@ -96,20 +104,16 @@ for drop_c in drop_col:
     evals_result = {}
     
     np.random.seed(SEED)
-    models = []
-    for i in range(1):
-        param.update({'seed':np.random.randint(9999)})
-        model = lgb.train(params=param, train_set=dtrain, num_boost_round=NROUND, 
-                          valid_sets=[dtrain, dvalid], 
-                          valid_names=['train','valid'], 
-                          early_stopping_rounds=50, 
-                          evals_result=evals_result, 
-                          verbose_eval=10,
-                          categorical_feature=categorical_feature_
-                          )
-        models.append(model)
+    model = lgb.train(params=param, train_set=dtrain, num_boost_round=NROUND, 
+                      valid_sets=[dtrain, dvalid], 
+                      valid_names=['train','valid'], 
+                      early_stopping_rounds=50, 
+                      evals_result=evals_result, 
+                      verbose_eval=10,
+                      categorical_feature=categorical_feature_
+                      )
     
-    imp = ex.getImp(models)
+    imp = ex.getImp(model)
     
     #t = datetime.today()
     #date = t.date()
