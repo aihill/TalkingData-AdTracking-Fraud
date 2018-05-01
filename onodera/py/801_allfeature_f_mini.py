@@ -28,7 +28,7 @@ NTHREAD = 16
 SEED = 71 #np.random.randint(9999) #int(sys.argv[1])
 NROUND = 9999
 DO_SAMPLING = True
-FRAC = 0.1
+FRAC = 0.08
 
 DO_CONCAT = True
 
@@ -39,7 +39,7 @@ print('seed :', SEED)
 #system('rm ../data/*sampling.f')
 system('rm SUCCESS_801')
 
-train_files = [45, 46, 47, 48, 53, 54, 55, 56, 60, 61, 62, 63, 64, 65]
+train_files = [12, 13, 14, 21, 22, 23, 28, 29, 30, 45, 46, 47, 48, 53, 54, 55, 56, 60, 61, 62, 63, 64, 65]
 valid_files = [78, 79, 80, 81, 82, 88, 89, 90, 91, 95, 96, 97, 98]
 print(f'train_files: {train_files}')
 print(f'valid_files: {valid_files}')
