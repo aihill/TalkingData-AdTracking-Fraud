@@ -164,7 +164,7 @@ sub.drop_duplicates('click_id', keep='last', inplace=True) # last?
 sub['click_id'] = sub['click_id'].map(int)
 sub.reset_index(drop=True, inplace=True)
 
-sub.to_pickle('../data/sub.p')
+sub.to_pickle('../data/sub_429-2.p')
 system('rm ../data/803_tmp*.p')
 
 system('touch SUCCESS_803')
