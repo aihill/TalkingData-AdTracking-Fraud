@@ -39,7 +39,7 @@ param = {
          'scale_pos_weight': 100,
          'seed': SEED}
 
-SUBMIT_FILE_PATH = f'../output/501-1_drop_{DROP_FEATURE}.csv.gz'
+SUBMIT_FILE_PATH = f'../output/501-1_drop_{DROP_FEATURE}2.csv.gz'
 COMMENT = f"r{NROUND} drop {DROP_FEATURE}"
 
 EXE_SUBMIT = True

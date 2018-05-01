@@ -45,6 +45,7 @@ for c in categorical_feature:
     categorical_feature_ = list( set(categorical_feature) - set([c]) )
     
     system(f'rm {filepath}')
+    print(f'categorical_feature {categorical_feature_}')
     print(f'writing {filepath}...')
     lgb.Dataset(train.drop(col, axis=1), label=train.is_attributed,
                 categorical_feature=categorical_feature_
@@ -59,7 +60,7 @@ del train; gc.collect()
 # test
 # =============================================================================
 test = utils.read_pickles('../data/dtest')
-X_head = pd.read_pickle('X_head.p')
+#X_head = pd.read_pickle('X_head.p')
 
 for c in categorical_feature:
     col = c
@@ -68,8 +69,9 @@ for c in categorical_feature:
     categorical_feature_ = list( set(categorical_feature) - set([c]) )
     
     system(f'rm -rf {filepath}')
+    print(f'categorical_feature {categorical_feature_}')
     print(f'writing {filepath}...')
-    utils.to_pickles(test[X_head.columns], filepath, utils.SPLIT_SIZE)
+    utils.to_pickles(test.drop(col, axis=1), filepath, utils.SPLIT_SIZE)
     
     gc.collect()
 

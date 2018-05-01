@@ -118,20 +118,21 @@ load_files = sorted(glob('../data/803_tmp*.p'))
 X = pd.concat([pd.read_pickle(f) for f in load_files], axis=1)
 print('X.isnull().sum().sum():', X.isnull().sum().sum())
 
-system('rm ../data/dtrain.mt')
+system('rm ../data/dtrain_429-2.mt')
 
 lgb.Dataset(X.drop('is_attributed', axis=1), label=X.is_attributed,
-            categorical_feature=categorical_feature).save_binary('../data/dtrain.mt')
+            categorical_feature=categorical_feature).save_binary('../data/dtrain_429-2.mt')
+utils.to_pickles(X, '../data/dtrain_429-2', utils.SPLIT_SIZE)
 
 X_head = X.head().drop('is_attributed', axis=1)
-X_head.to_pickle('X_head.p')
+X_head.to_pickle('X_head_429-2.p')
 
 del X; gc.collect()
 system('rm ../data/803_tmp*.p')
 
 """
 
-X_head = pd.read_pickle('X_head.p')
+X_head = pd.read_pickle('X_head_429-2.p')
 
 """
 
@@ -153,7 +154,7 @@ X = pd.concat([pd.read_pickle(f) for f in load_files], axis=1)
 print('test.shape should be 18790469:', X[X_head.columns].shape)
 print('X.isnull().sum().sum():', X.isnull().sum().sum())
 
-utils.to_pickles(X[X_head.columns], '../data/dtest', 10)
+utils.to_pickles(X[X_head.columns], '../data/dtest_429-2', 10)
 
 del X; gc.collect()
 
