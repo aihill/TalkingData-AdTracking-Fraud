@@ -34,6 +34,47 @@ TRAIN_SHAPE = 184903890
 
 SPLIT_SIZE = 100
 
+# 429-2
+BEST_FEATURES = ['app', 'channel', 'count_app-device', 'count_device', 
+                 'count_device-channel', 'count_ip', 'count_ip-app-device', 
+                 'count_ip-app-device-os', 'count_ip-device', 'count_ip-device-os', 
+                 'countratio_app', 'countratio_app-device', 'countratio_app-os', 
+                 'countratio_channel', 'countratio_device', 'countratio_os', 
+                 'dayvar_app-os', 'dayvar_device-os', 'device', 'hour', 'hour_min',
+                 'hourvar_ip', 'is_attributed', 'nunique_app-device-os-channel_app-channel',
+                 'nunique_device-channel_channel', 'nunique_ip-app-channel_app-channel', 
+                 'nunique_ip-app-device-channel_ip-device', 'nunique_ip-app-device-os_app-device', 
+                 'nunique_ip-app-device-os_ip-os', 'nunique_ip-app-device_ip', 
+                 'nunique_ip-app-device_ip-device', 'nunique_ip-app-os_app', 
+                 'nunique_ip-app-os_ip', 'nunique_ip-app-os_ip-os', 'nunique_ip-app_ip',
+                 'nunique_ip-device-channel_ip', 'nunique_ip-device-channel_ip-channel', 
+                 'nunique_ip-device-os-channel_ip-os', 'nunique_ip-device-os_ip-device', 
+                 'nunique_ip-device-os_ip-os', 'nunique_ip-device_ip', 'nunique_ip-os_ip', 
+                 'os', 'sameClickTimeCount_app-channel', 'timeDD_rev_ip-app', 'timeDD_rev_ip-app-device', 
+                 'timeDD_rev_ip-app-device-os', 'timeDD_rev_ip-app-os', 'timeDD_rev_ip-device', 
+                 'timedelta2_rev_ip', 'timedelta2_rev_ip-app-device-os', 'timedelta2_rev_ip-app-os',
+                 'timedelta2_rev_ip-app-os-channel', 'timedelta2_rev_ip-device', 
+                 'timedelta2_rev_ip-device-os-channel', 'timedelta_rev_ip-app', 
+                 'timedelta_rev_ip-app-device', 'timedelta_rev_ip-app-device-os', 
+                 'timedelta_rev_ip-app-device-os-channel', 'timedelta_rev_ip-app-os', 
+                 'timedelta_rev_ip-app-os-channel', 'timedelta_rev_ip-device', 
+                 'timedelta_rev_ip-device-os', 'timedelta_rev_ip-os', 'timediff-meadian_app', 
+                 'timediff-meadian_channel', 'timediff-minmax_app-channel', 'timeskew_ip', 
+                 'totalCountByDay_app', 'totalCountByDay_app-channel', 'totalCountByDay_app-device-channel', 
+                 'totalCountByDay_app-device-os', 'totalCountByDay_ip', 'totalCountByDay_ip-app', 
+                 'totalRatioByDay_ip', 'totalcount_app', 'totalcount_app-device', 'totalcount_app-device-os',
+                 'totalcount_device-os', 'totalcount_ip-device', 'totalcount_ip-device-os']
+
+
+
+
+
+
+
+
+
+
+
 # =============================================================================
 # def
 # =============================================================================
