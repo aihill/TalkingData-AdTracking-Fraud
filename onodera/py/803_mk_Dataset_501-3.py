@@ -178,17 +178,17 @@ print('X.isnull().sum().sum():', X.isnull().sum().sum())
 
 system('rm -rf ../data/dtest_501-3_top30')
 usecols_ = usecols[:30]
-utils.to_pickles(X[X_head.columns], '../data/dtest_501-3_top30', utils.SPLIT_SIZE)
+utils.to_pickles(X[usecols_], '../data/dtest_501-3_top30', utils.SPLIT_SIZE)
 gc.collect()
 
 system('rm -rf ../data/dtest_501-3_top50')
 usecols_ = usecols[:50]
-utils.to_pickles(X[X_head.columns], '../data/dtest_501-3_top50', utils.SPLIT_SIZE)
+utils.to_pickles(X[usecols_], '../data/dtest_501-3_top50', utils.SPLIT_SIZE)
 gc.collect()
 
 system('rm -rf ../data/dtest_501-3_top80')
 usecols_ = usecols[:80]
-utils.to_pickles(X[X_head.columns], '../data/dtest_501-3_top80', utils.SPLIT_SIZE)
+utils.to_pickles(X[usecols_], '../data/dtest_501-3_top80', utils.SPLIT_SIZE)
 gc.collect()
 
 

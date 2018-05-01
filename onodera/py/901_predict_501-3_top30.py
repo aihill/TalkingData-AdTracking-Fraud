@@ -23,7 +23,7 @@ SEED = np.random.randint(9999) #int(sys.argv[1])
 NROUND = 300
 LOOP = 3
 SUBMIT_FILE_PATH = '../output/501-3_top30.csv.gz'
-COMMENT = F"reproduce 429-2"
+COMMENT = F"501 top30"
 
 EXE_SUBMIT = True
 
