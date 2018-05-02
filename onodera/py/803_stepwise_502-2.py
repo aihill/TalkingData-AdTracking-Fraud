@@ -126,7 +126,7 @@ while True:
     for feature in feature_all:
         
         drop_features.append(feature)
-        use_features = set(X_train.columns) - set(drop_features)
+        use_features = list(set(X_train.columns) - set(drop_features))
         
         print(f'TRY DROP {drop_features}')
         score = do_lgb(use_features)
