@@ -65,14 +65,14 @@ utils.send_line('START {}'.format(__file__))
 # load
 # =============================================================================
 imp = pd.read_csv('imp_802_importance_502-2.py.csv').set_index('index')
-usecols = imp[imp.weight!=0].index.tolist()
+feature_all = imp[imp.weight!=0].index.tolist()
 
-X_train = pd.read_feather('../data/X_train_mini.f')[usecols]
+X_train = pd.read_feather('../data/X_train_mini.f')[feature_all]
 y_train = pd.read_feather('../data/y_train_mini.f').is_attributed
 
 gc.collect()
 
-X_valid = pd.read_feather('../data/X_valid_mini.f')[usecols]
+X_valid = pd.read_feather('../data/X_valid_mini.f')[feature_all]
 y_valid = pd.read_feather('../data/y_valid_mini.f').is_attributed
 gc.collect()
 
@@ -81,7 +81,6 @@ gc.collect()
 # =============================================================================
 
 def do_lgb(features):
-    
     categorical_feature_ = list( set(categorical_feature) & set(features) )
     
     dtrain = lgb.Dataset(X_train[features], label=y_train,
@@ -119,24 +118,37 @@ def do_lgb(features):
 best_score = 0
 max_feature_length = 80
 index = 0
-features = []
+drop_features = []
+use_features_bk = []
 
-for feature in usecols:
+while True:
     
-    features.append(feature)
-    print(f'TRY {features} (added {feature})')
-    score = do_lgb(features)
+    for feature in feature_all:
+        
+        drop_features.append(feature)
+        use_features = set(X_train.columns) - set(drop_features)
+        
+        print(f'TRY DROP {drop_features}')
+        score = do_lgb(use_features)
+        
+        diff_score = score - best_score
+        if best_score < score:
+            best_score = score
+            print(f'UPDATE! DIFF:{diff_score}    SCORE:{best_score}')
+        else:
+            drop_features.remove(feature)
+            print(f'FAILED! DIFF:{diff_score}    SCORE:{best_score}')
     
-    diff_score = score - best_score
-    if best_score < score:
-        best_score = score
-        print(f'UPDATE! DIFF:{diff_score}    SCORE:{best_score}')
-    else:
-        features.remove(usecols[index])
-        print(f'FAILED! DIFF:{diff_score}    SCORE:{best_score}')
+        gc.collect()
     
-    if len(features)>=max_feature_length:
+    if len(use_features)<=max_feature_length:
+        print(f'break! coz len(use_features)<=max_feature_length')
         break
+    elif use_features == use_features_bk:
+        print(f'break! coz cannt improve')
+        break
+    
+    use_features_bk = use_features[:]
 
 
 
