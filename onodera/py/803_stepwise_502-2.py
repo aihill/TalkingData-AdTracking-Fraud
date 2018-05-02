@@ -118,19 +118,23 @@ def do_lgb(features):
 best_score = do_lgb(feature_all)
 print(f'benchmark {best_score}')
 
-max_feature_length = 80
+max_feature_length = 100
 index = 0
 drop_features = []
+use_features = feature_all[:5]
 use_features_bk = []
 
 while True:
     
     for feature in feature_all[::-1]:
         
-        drop_features.append(feature)
-        use_features = list(set(X_train.columns) - set(drop_features))
+#        drop_features.append(feature)
+#        use_features = list(set(X_train.columns) - set(drop_features))
+#        print(f'\nTRY to DROP {drop_features}')
         
-        print(f'\nTRY to DROP {drop_features}')
+        use_features.append(feature)
+        print(f'\n\nTRY to USE {use_features}')
+        
         score = do_lgb(use_features)
         
         diff_score = score - best_score
@@ -138,13 +142,14 @@ while True:
             best_score = score
             print(f'UPDATE!    DIFF:{diff_score:+.5f}    SCORE:{best_score:+.5f}')
         else:
-            drop_features.remove(feature)
+#            drop_features.remove(feature)
+            use_features.remove(feature)
             print(f'Failed.    DIFF:{diff_score:+.5f}    SCORE:{best_score:+.5f}')
     
         gc.collect()
     
-    if len(use_features)<=max_feature_length:
-        print(f'break! coz len(use_features)<=max_feature_length')
+    if len(use_features) >= max_feature_length:
+        print(f'break! coz len(use_features) >= max_feature_length')
         break
     elif use_features == use_features_bk:
         print(f'break! coz cannt improve')
