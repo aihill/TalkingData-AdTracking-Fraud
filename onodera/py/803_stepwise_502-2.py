@@ -116,6 +116,8 @@ def do_lgb(features):
 # =============================================================================
 
 best_score = do_lgb(feature_all)
+print(f'benchmark {best_score}')
+
 max_feature_length = 80
 index = 0
 drop_features = []
@@ -128,7 +130,7 @@ while True:
         drop_features.append(feature)
         use_features = list(set(X_train.columns) - set(drop_features))
         
-        print(f'TRY DROP {drop_features}')
+        print(f'\nTRY to DROP {drop_features}')
         score = do_lgb(use_features)
         
         diff_score = score - best_score
