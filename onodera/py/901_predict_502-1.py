@@ -51,10 +51,12 @@ utils.send_line(f'START {__file__}')
 # load train
 # =============================================================================
 train = utils.read_pickles('../data/dtrain_429-2').drop(['device', 'os', 'channel'], axis=1)
+gc.collect()
 dtrain = lgb.Dataset(train.drop('is_attributed', axis=1), label=train.is_attributed,
                      categorical_feature=['app', 'hour'])
 gc.collect()
 
+del train; gc.collect()
 
 # =============================================================================
 # xgboost
