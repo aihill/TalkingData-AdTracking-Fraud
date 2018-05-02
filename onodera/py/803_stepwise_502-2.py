@@ -35,8 +35,8 @@ param = {
          'objective': 'binary',
          'metric': 'auc',
          'learning_rate': 0.1,
-         'max_depth': 4,
-         'num_leaves': 2**4-1,
+         'max_depth': 3, # 4?
+         'num_leaves': 2**3-1,
          'max_bin': 100,
          'min_child_samples': 300,
          'min_child_weight': 0,
@@ -115,7 +115,7 @@ def do_lgb(features):
 # main
 # =============================================================================
 
-best_score = 0
+best_score = do_lgb(feature_all)
 max_feature_length = 80
 index = 0
 drop_features = []
@@ -123,7 +123,7 @@ use_features_bk = []
 
 while True:
     
-    for feature in feature_all:
+    for feature in feature_all[::-1]:
         
         drop_features.append(feature)
         use_features = list(set(X_train.columns) - set(drop_features))
@@ -134,10 +134,10 @@ while True:
         diff_score = score - best_score
         if best_score < score:
             best_score = score
-            print(f'UPDATE! DIFF:{diff_score}    SCORE:{best_score}')
+            print(f'UPDATE!    DIFF:{diff_score:+.5f}    SCORE:{best_score:+.5f}')
         else:
             drop_features.remove(feature)
-            print(f'FAILED! DIFF:{diff_score}    SCORE:{best_score}')
+            print(f'Failed.    DIFF:{diff_score:+.5f}    SCORE:{best_score:+.5f}')
     
         gc.collect()
     
