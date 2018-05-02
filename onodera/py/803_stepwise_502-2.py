@@ -26,7 +26,7 @@ NROUND = 9999
 np.random.seed(SEED)
 print('seed :', SEED)
 
-system('rm SUCCESS_802')
+system('rm SUCCESS_803')
 
 categorical_feature = ['ip', 'app', 'device', 'os', 'channel', 'day', 'hour']
 
@@ -144,7 +144,7 @@ for feature in usecols:
 
 
 #==============================================================================
-system('touch SUCCESS_802')
+system('touch SUCCESS_803')
 utils.end(__file__)
 
 
