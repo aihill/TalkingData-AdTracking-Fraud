@@ -68,43 +68,78 @@ imp = pd.read_csv('imp_802_importance_502-2.py.csv').set_index('index')
 usecols = imp[imp.weight!=0].index.tolist()
 
 X_train = pd.read_feather('../data/X_train_mini.f')[usecols]
+y_train = pd.read_feather('../data/y_train_mini.f').is_attributed
 
 gc.collect()
 
 X_valid = pd.read_feather('../data/X_valid_mini.f')[usecols]
+y_valid = pd.read_feather('../data/y_valid_mini.f').is_attributed
 gc.collect()
 
 # =============================================================================
-# lgb
+# def
 # =============================================================================
-dtrain = lgb.Dataset(pd.read_feather('../data/X_train_mini.f'),
-                     label=pd.read_feather('../data/y_train_mini.f').is_attributed,
-                     categorical_feature=categorical_feature)
 
-gc.collect()
+def do_lgb(features):
+    
+    categorical_feature_ = list( set(categorical_feature) & set(features) )
+    
+    dtrain = lgb.Dataset(X_train[features], label=y_train,
+                         categorical_feature=categorical_feature_)
+    
+    gc.collect()
+    
+    dvalid = lgb.Dataset(X_valid[features], label=y_valid,
+                         categorical_feature=categorical_feature_)
+    evals_result = {}
+    gc.collect()
+    
+    model = lgb.train(params=param, train_set=dtrain, num_boost_round=NROUND, 
+                      valid_sets=[dtrain, dvalid], 
+                      valid_names=['train', 'valid'], 
+                      early_stopping_rounds=50, 
+                      evals_result=evals_result, 
+                      verbose_eval=False,
+#                      categorical_feature=categorical_feature_
+                      )
+    
+    train_score = model.best_score['train']['auc']
+    valid_score = model.best_score['valid']['auc']
+    
+    print(f'train auc:{train_score}  valid auc:{valid_score}')
+    
+    return valid_score
 
-dvalid = lgb.Dataset(pd.read_feather('../data/X_valid_mini.f'),
-                     label=pd.read_feather('../data/y_valid_mini.f').is_attributed,
-                     categorical_feature=categorical_feature)
-
-gc.collect()
 
 
-evals_result = {}
+# =============================================================================
+# main
+# =============================================================================
 
-np.random.seed(SEED)
-model = lgb.train(params=param, train_set=dtrain, num_boost_round=NROUND, 
-                  valid_sets=[dtrain, dvalid], 
-                  valid_names=['train','valid'], 
-                  early_stopping_rounds=50, 
-                  evals_result=evals_result, 
-                  verbose_eval=10,
-                  categorical_feature=categorical_feature
-                  )
+best_score = 0
+max_feature_length = 80
+index = 0
+features = []
 
-imp = ex.getImp(model)
+for feature in usecols:
+    
+    features.append(feature)
+    print(f'TRY {features} (added {feature})')
+    score = do_lgb(features)
+    
+    diff_score = score - best_score
+    if best_score < score:
+        best_score = score
+        print(f'UPDATE! DIFF:{diff_score}    SCORE:{best_score}')
+    else:
+        features.remove(usecols[index])
+        print(f'FAILED! DIFF:{diff_score}    SCORE:{best_score}')
+    
+    if len(features)>=max_feature_length:
+        break
 
-imp.to_csv(f'imp_{__file__}.csv', index=False)
+
+
 
 
 
