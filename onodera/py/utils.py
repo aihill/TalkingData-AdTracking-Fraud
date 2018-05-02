@@ -35,7 +35,7 @@ TRAIN_SHAPE = 184903890
 SPLIT_SIZE = 100
 
 # 429-2
-BEST_FEATURES = ['app', 'channel', 'count_app-device', 'count_device', 
+BEST_FEATURES_429 = ['app', 'channel', 'count_app-device', 'count_device', 
                  'count_device-channel', 'count_ip', 'count_ip-app-device', 
                  'count_ip-app-device-os', 'count_ip-device', 'count_ip-device-os', 
                  'countratio_app', 'countratio_app-device', 'countratio_app-os', 
@@ -64,6 +64,16 @@ BEST_FEATURES = ['app', 'channel', 'count_app-device', 'count_device',
                  'totalCountByDay_app-device-os', 'totalCountByDay_ip', 'totalCountByDay_ip-app', 
                  'totalRatioByDay_ip', 'totalcount_app', 'totalcount_app-device', 'totalcount_app-device-os',
                  'totalcount_device-os', 'totalcount_ip-device', 'totalcount_ip-device-os']
+
+BEST_FEATURES_502 = ['ip', 'channel', 'app', 'os', 'timedelta_rev_ip-app-device-os', 
+                'timedelta_rev_ip-app-os', 'hour_min', 'device', 'timeDD_rev_ip-app-device-os', 
+                'nunique_ip-app-device-channel_ip-device', 'nunique_ip-app_ip', 
+                'nunique_ip-app-device-os_ip-os', 'nunique_ip-os_ip', 'timediff-minmax_app-channel', 
+                'totalcount_app', 'nunique_app-device-os-channel_app-channel', 'timeskew_ip', 
+                'nunique_device-os-channel_channel', 'totalcount_ip-app', 
+                'nunique_ip-app-device-channel_ip-channel', 'timevar_app-os-channel', 
+                'timedelta2_app-device-os-channel', 'timediff-meadian_ip-app-device-channel', 
+                'timeDD_device-os', 'timeDD_rev_ip-app-device-os-channel']
 
 
 
