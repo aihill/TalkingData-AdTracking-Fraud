@@ -68,13 +68,13 @@ utils.send_line('START {}'.format(__file__))
 imp = pd.read_csv('imp_802_importance_504-1.py.csv').set_index('index')
 feature_all = imp[imp.weight!=0].index.tolist()
 
-X_train = pd.read_feather('../data/X_train_mini_s{TARGET_SEED}.f')[feature_all]
-y_train = pd.read_feather('../data/y_train_mini_s{TARGET_SEED}.f').is_attributed
+X_train = pd.read_feather(f'../data/X_train_mini_s{TARGET_SEED}.f')[feature_all]
+y_train = pd.read_feather(f'../data/y_train_mini_s{TARGET_SEED}.f').is_attributed
 
 gc.collect()
 
-X_valid = pd.read_feather('../data/X_valid_mini_s{TARGET_SEED}.f')[feature_all]
-y_valid = pd.read_feather('../data/y_valid_mini_s{TARGET_SEED}.f').is_attributed
+X_valid = pd.read_feather(f'../data/X_valid_mini_s{TARGET_SEED}.f')[feature_all]
+y_valid = pd.read_feather(f'../data/y_valid_mini_s{TARGET_SEED}.f').is_attributed
 gc.collect()
 
 # =============================================================================
