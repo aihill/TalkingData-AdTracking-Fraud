@@ -74,6 +74,7 @@ def multi(p):
 #        train = train[~train.os.isin([607, 748, 866])].reset_index(drop=True)
         print('train.shape', train.shape)
         utils.to_pickles(train, '../data/train', utils.SPLIT_SIZE)
+        utils.to_pickles(train.is_attributed, '../data/is_attributed', utils.SPLIT_SIZE)
 #        utils.to_pickles(train.sort_values(utils.sort_keys, ascending=False), 
 #                         '../data/train_rev', 10)
         

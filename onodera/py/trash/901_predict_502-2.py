@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Wed May  2 10:14:03 2018
+Created on Thu May  3 18:52:39 2018
 
 @author: Kazuki
 """
@@ -22,8 +22,8 @@ utils.start(__file__)
 SEED = np.random.randint(9999) #int(sys.argv[1])
 NROUND = 300
 LOOP = 3
-SUBMIT_FILE_PATH = '../output/429-2_drop_ip-device-os-channel.csv.gz'
-COMMENT = F"reproduce 429-2 and drop_ip-device-os-channel"
+SUBMIT_FILE_PATH = '../output/502-2.csv.gz'
+COMMENT = f"r{NROUND} local SCORE:+0.98006"
 
 EXE_SUBMIT = True
 
@@ -34,7 +34,7 @@ print('seed :', SEED)
 # wait
 # =============================================================================
 while True:
-    if os.path.isfile('SUCCESS_803'):
+    if os.path.isfile('SUCCESS_805'):
         break
     else:
         sleep(60*1)
@@ -43,13 +43,10 @@ utils.send_line(f'START {__file__}')
 # =============================================================================
 # load train
 # =============================================================================
-train = utils.read_pickles('../data/dtrain_429-2').drop(['device', 'os', 'channel'], axis=1)
-gc.collect()
-dtrain = lgb.Dataset(train.drop('is_attributed', axis=1), label=train.is_attributed,
-                     categorical_feature=['app', 'hour'])
+
+dtrain = lgb.Dataset('../data/dtrain.mt')
 gc.collect()
 
-del train; gc.collect()
 
 # =============================================================================
 # xgboost
@@ -96,8 +93,8 @@ imp = ex.getImp(models)
 # test
 # =============================================================================
 
-sub = pd.read_pickle('../data/sub_429-2.p')
-dtest = utils.read_pickles('../data/dtest_429-2').drop(['device', 'os', 'channel'], axis=1)
+sub = pd.read_pickle('../data/sub.p')
+dtest = utils.read_pickles('../data/dtest')
 gc.collect()
 
 sub['is_attributed'] = 0

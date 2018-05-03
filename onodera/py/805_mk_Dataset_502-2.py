@@ -34,12 +34,13 @@ usecols = ['app', 'os', 'timedelta_rev_ip-app-device-os', 'hour_min', 'device',
            'timemedian_app', 'nunique_app-os_app', 'totalCountByDay_app-device-os-channel', 'timedelta2_ip-app-device-os']
 
 usecols_set = set(usecols)
+print(sorted(usecols))
 
 system('rm ../data/805_tmp*.p')
 #system('rm ../data/*.mt')
 system('rm SUCCESS_805')
 
-categorical_feature = ['ip', 'app', 'device', 'os', 'channel', 'day', 'hour']
+categorical_feature = list( set(['ip', 'app', 'device', 'os', 'channel', 'day', 'hour']) & usecols_set)
 
 # =============================================================================
 # wait
@@ -51,9 +52,6 @@ while True:
         sleep(60*1)
 
 utils.send_line('START {}'.format(__file__))
-
-
-print(sorted(usecols))
 
 # =============================================================================
 # def
@@ -70,6 +68,7 @@ def multi_train(args):
     if len(col)>0:
         df = pd.concat([pd.read_pickle(load_folder + f'/{j:03d}.p')[col] for j in range(0, 100)])
         gc.collect()
+        print(f'writing ../data/805_tmp{i}.p ...')
         df[col].reset_index(drop=True).fillna(-1).to_pickle(f'../data/805_tmp{i}.p')
 
 def multi_test(args):
@@ -117,15 +116,16 @@ print('X.isnull().sum().sum():', X.isnull().sum().sum())
 system('rm ../data/dtrain.mt')
 system('rm -rf ../data/dtrain')
 
-lgb.Dataset(X.drop('is_attributed', axis=1), label=X.is_attributed,
+y = utils.read_pickles('../data/is_attributed')
+lgb.Dataset(X, label=y,
             categorical_feature=categorical_feature).save_binary('../data/dtrain.mt')
 utils.to_pickles(X, '../data/dtrain', utils.SPLIT_SIZE)
 
 
-X_head = X.head().drop('is_attributed', axis=1)
+X_head = X.head()
 X_head.to_pickle('X_head.p')
 
-del X; gc.collect()
+del X, y; gc.collect()
 system('rm ../data/805_tmp*.p')
 
 """
