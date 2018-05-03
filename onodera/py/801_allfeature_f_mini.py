@@ -25,7 +25,7 @@ utils.start(__file__)
 # =============================================================================
 NTHREAD = 16
 
-SEED = 71 #np.random.randint(9999) #int(sys.argv[1])
+SEED = np.random.randint(9999) #int(sys.argv[1])
 NROUND = 9999
 DO_SAMPLING = True
 FRAC = 0.08
@@ -36,7 +36,7 @@ DO_CONCAT = True
 np.random.seed(SEED)
 print('seed :', SEED)
 
-#system('rm ../data/*sampling.f')
+system('rm ../data/*sampling.f')
 system('rm SUCCESS_801')
 
 train_files = [12, 13, 14, 21, 22, 23, 28, 29, 30, 45, 46, 47, 48, 53, 54, 55, 56, 60, 61, 62, 63, 64, 65]
@@ -113,8 +113,8 @@ if DO_CONCAT:
     #lgb.Dataset(X, label=y,
     #            categorical_feature=categorical_feature).save_binary('../data/dtrain.mt')
     
-    X.to_feather('../data/X_train_mini.f')
-    y.to_feather('../data/y_train_mini.f')
+    X.to_feather(f'../data/X_train_mini_s{SEED}.f')
+    y.to_feather(f'../data/y_train_mini_s{SEED}.f')
     
     X_head = X.head()
     X_head.to_pickle('X_head.p')
@@ -156,8 +156,8 @@ if DO_CONCAT:
     #lgb.Dataset(X[X_head.columns], label=y,
     #            categorical_feature=categorical_feature).save_binary('../data/dvalid.mt')
     
-    X[X_head.columns].to_feather('../data/X_valid_mini.f')
-    y.to_feather('../data/y_valid_mini.f')
+    X[X_head.columns].to_feather(f'../data/X_valid_mini_s{SEED}.f')
+    y.to_feather(f'../data/y_valid_mini_s{SEED}.f')
     
     del X; gc.collect()
     
