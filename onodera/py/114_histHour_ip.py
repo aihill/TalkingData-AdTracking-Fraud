@@ -29,12 +29,12 @@ def multi(k):
     print(k)
     
     df = pd.crosstab(trte[k], trte.hour, normalize='index')
-    df = df.add_prefix(f'histHour_{k}_')
+    df = df.add_prefix(f'histHourNorm_{k}_')
     
     utils.reduce_memory(df)
     col = df.columns.tolist()
     
-    result = pd.merge(trte, df, on=k, how='left')
+    result = pd.merge(trte, df.reset_index(), on=k, how='left')
     gc.collect()
     
 #    result.iloc[0:utils.TRAIN_SHAPE][col].to_pickle(f'../data/114__{k}_train.p')
