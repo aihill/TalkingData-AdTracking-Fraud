@@ -38,14 +38,14 @@ categorical_feature = ['ip', 'app', 'device', 'os', 'channel', 'day', 'hour']
 param = {
          'objective': 'binary',
          'metric': 'auc',
-         'learning_rate': 0.1,
+         'learning_rate': 0.05,
          'max_depth': 4,
          'num_leaves': 2**4-1,
          'max_bin': 100,
          'min_child_samples': 300,
          'min_child_weight': 0,
-         'colsample_bytree': 1,
-         'subsample': 1,
+         'colsample_bytree': 0.1,
+         'subsample': 0.1,
          'nthread': 64,
          'scale_pos_weight': 100,
 #         'lambda_l1': 3,
@@ -93,20 +93,21 @@ dvalid = lgb.Dataset(pd.read_feather(f'../data/X_valid_mini_s{TARGET_SEED}.f'),
 
 gc.collect()
 
+models = []
+for i in range(3):
+    evals_result = {}
+    np.random.seed(SEED)
+    model = lgb.train(params=param, train_set=dtrain, num_boost_round=NROUND, 
+                      valid_sets=[dtrain, dvalid], 
+                      valid_names=['train','valid'], 
+                      early_stopping_rounds=50, 
+                      evals_result=evals_result, 
+                      verbose_eval=10,
+                      categorical_feature=categorical_feature
+                      )
+    models.append(model)
 
-evals_result = {}
-
-np.random.seed(SEED)
-model = lgb.train(params=param, train_set=dtrain, num_boost_round=NROUND, 
-                  valid_sets=[dtrain, dvalid], 
-                  valid_names=['train','valid'], 
-                  early_stopping_rounds=50, 
-                  evals_result=evals_result, 
-                  verbose_eval=10,
-                  categorical_feature=categorical_feature
-                  )
-
-imp = ex.getImp(model)
+imp = ex.getImp(models)
 
 imp.to_csv(f'imp_{__file__}.csv', index=False)
 
