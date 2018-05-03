@@ -96,7 +96,7 @@ gc.collect()
 models = []
 for i in range(3):
     evals_result = {}
-    np.random.seed(SEED)
+    param.update({'seed': np.random.randint(9999)})
     model = lgb.train(params=param, train_set=dtrain, num_boost_round=NROUND, 
                       valid_sets=[dtrain, dvalid], 
                       valid_names=['train','valid'], 
