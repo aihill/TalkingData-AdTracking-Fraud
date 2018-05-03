@@ -87,7 +87,7 @@ def multi_valid_sampling(args):
 # =============================================================================
 # load train
 # =============================================================================    
-load_folders = sorted(glob('../data/*train/'))
+load_folders = sorted(glob('../data/*_train/')) + ['../data/train/']
 
 args = list(zip(load_folders, range(len(load_folders))))
 
@@ -130,7 +130,7 @@ if DO_CONCAT:
 # =============================================================================
 # load valid
 # =============================================================================    
-load_folders = sorted(glob('../data/*train/'))
+load_folders = sorted(glob('../data/*_train/')) + ['../data/train/']
 
 args = list(zip(load_folders, range(len(load_folders))))
 
