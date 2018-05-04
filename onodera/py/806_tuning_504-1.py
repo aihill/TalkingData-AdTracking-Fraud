@@ -18,19 +18,16 @@ from GA import GA
 import lightgbm as lgb
 import gc
 from tqdm import tqdm
-from multiprocessing import Pool
 from glob import glob
 import utils
 utils.start(__file__)
 # =============================================================================
-NTHREAD = 16
 
 SEED = np.random.randint(9999) #int(sys.argv[1])
 NROUND = 9999
 #DO_SAMPLING = True
 #FRAC = 0.08
 
-DO_CONCAT = True
 
 # =============================================================================
 np.random.seed(SEED)
@@ -91,7 +88,7 @@ def get_fitness(gtype):
              'nthread': 64,
              'bagging_fraction': 1,
              'bagging_freq': 1,
-             'is_unbalance': True,
+#             'is_unbalance': True,
              
              # optimize
              'max_depth':        gtype[0],
@@ -108,6 +105,7 @@ def get_fitness(gtype):
              'seed': np.random.randint(9999)
              }
     
+    print(f'\n')
     print(param)
     evals_result = {}
     model = lgb.train(params=param, train_set=dtrain, num_boost_round=NROUND, 
