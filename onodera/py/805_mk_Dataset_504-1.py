@@ -20,7 +20,7 @@ import utils
 utils.start(__file__)
 
 # setting
-usecols = utils.BEST_FEATURES_504[:]
+usecols = len(set(utils.BEST_FEATURES_502 + utils.BEST_FEATURES_504))
 usecols_set = set(usecols)
 print(sorted(usecols))
 
