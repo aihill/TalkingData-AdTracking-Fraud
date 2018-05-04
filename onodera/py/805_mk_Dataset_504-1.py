@@ -50,13 +50,12 @@ def multi_train(args):
     gc.collect()
 #    if load_folder == '../data/dtrain/':
 #        return
-    print(f'loading {load_folder} ...')
     df = pd.read_pickle(load_folder + '/000.p')
     col = list(set(df.columns) & usecols_set)
     if len(col)>0:
         df = pd.concat([pd.read_pickle(load_folder + f'/{j:03d}.p')[col] for j in range(0, 100)])
         gc.collect()
-        print(f'writing ../data/805_tmp{i}.p ...')
+        print(f'colsample {load_folder}  ->  ../data/805_tmp{i}.p')
         df[col].reset_index(drop=True).fillna(-1).to_pickle(f'../data/805_tmp{i}.p')
 
 def multi_test(args):
@@ -77,7 +76,8 @@ def multi_test(args):
     if len(col)>0:
         df = df[~df.click_id.isnull()]
         df.drop_duplicates('click_id', keep='last', inplace=True) # last?
-        print(load_folder, df.shape)
+        gc.collect()
+        print(f'colsample {load_folder}  ->  ../data/805_tmp{i}.p')
         df[col].reset_index(drop=True).fillna(-1).to_pickle(f'../data/805_tmp{i}.p')
 
 
