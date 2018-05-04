@@ -22,7 +22,7 @@ utils.start(__file__)
 SEED = np.random.randint(9999) #int(sys.argv[1])
 NROUND = 300
 LOOP = 3
-SUBMIT_FILE_PATH = '../output/504-1.csv.gz'
+SUBMIT_FILE_PATH = '../output/504-4.csv.gz'
 COMMENT = f"r{NROUND} min_child_weight:0.001->100"
 
 EXE_SUBMIT = True
