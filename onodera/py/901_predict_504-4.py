@@ -23,7 +23,7 @@ SEED = np.random.randint(9999) #int(sys.argv[1])
 NROUND = 300
 LOOP = 3
 SUBMIT_FILE_PATH = '../output/504-1.csv.gz'
-COMMENT = f"r{NROUND}"
+COMMENT = f"r{NROUND} min_child_weight:0.001->100"
 
 EXE_SUBMIT = True
 
@@ -62,7 +62,7 @@ param = {
          'max_depth': 4,
          'num_leaves': 2**4-1,
          'min_child_samples': 300,
-         'min_child_weight': 0.001,
+         'min_child_weight': 100,
          'scale_pos_weight': 100,
          'colsample_bytree': 0.8,
          'subsample': 0.1,
