@@ -83,10 +83,10 @@ def get_fitness(gtype):
              # fixed
              'objective': 'binary',
              'metric': 'auc',
-             'learning_rate': 0.1,
+             'learning_rate': 0.2,
              'max_bin': 100,
              'nthread': 64,
-             'bagging_fraction': 1,
+#             'bagging_fraction': 1,
              'bagging_freq': 1,
 #             'is_unbalance': True,
              
