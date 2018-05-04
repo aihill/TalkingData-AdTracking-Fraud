@@ -25,8 +25,8 @@ utils.start(__file__)
 
 SEED = np.random.randint(9999) #int(sys.argv[1])
 NROUND = 9999
-#DO_SAMPLING = True
-#FRAC = 0.08
+DO_SAMPLING = True
+FRAC = 0.3
 
 
 # =============================================================================
@@ -46,16 +46,27 @@ categorical_feature = ['ip', 'app', 'device', 'os', 'channel', 'day', 'hour']
 # =============================================================================
 # load
 # =============================================================================
+if DO_SAMPLING:
+    X_train = pd.concat([ pd.read_pickle(f'../data/dtrain/{j:03d}.p').sample(frac=FRAC, random_state=SEED) for j in train_files ], 
+                         ignore_index=True)
+    y_train = pd.concat([ pd.read_pickle(f'../data/is_attributed/{j:03d}.p').sample(frac=FRAC, random_state=SEED) for j in train_files ], 
+                         ignore_index=True)
+    
+    X_valid = pd.concat([ pd.read_pickle(f'../data/dtrain/{j:03d}.p') for j in valid_files ], 
+                         ignore_index=True)
+    y_valid = pd.concat([ pd.read_pickle(f'../data/is_attributed/{j:03d}.p') for j in valid_files ], 
+                         ignore_index=True)
 
-X_train = pd.concat([ pd.read_pickle(f'../data/dtrain/{j:03d}.p') for j in train_files ], 
-                     ignore_index=True)
-y_train = pd.concat([ pd.read_pickle(f'../data/is_attributed/{j:03d}.p') for j in train_files ], 
-                     ignore_index=True)
-
-X_valid = pd.concat([ pd.read_pickle(f'../data/dtrain/{j:03d}.p') for j in valid_files ], 
-                     ignore_index=True)
-y_valid = pd.concat([ pd.read_pickle(f'../data/is_attributed/{j:03d}.p') for j in valid_files ], 
-                     ignore_index=True)
+else:
+    X_train = pd.concat([ pd.read_pickle(f'../data/dtrain/{j:03d}.p') for j in train_files ], 
+                         ignore_index=True)
+    y_train = pd.concat([ pd.read_pickle(f'../data/is_attributed/{j:03d}.p') for j in train_files ], 
+                         ignore_index=True)
+    
+    X_valid = pd.concat([ pd.read_pickle(f'../data/dtrain/{j:03d}.p') for j in valid_files ], 
+                         ignore_index=True)
+    y_valid = pd.concat([ pd.read_pickle(f'../data/is_attributed/{j:03d}.p') for j in valid_files ], 
+                         ignore_index=True)
 
 
 categorical_feature_ = list( set(categorical_feature) & set(X_train.columns) )
