@@ -130,7 +130,7 @@ params = [
          'learning_rate': 0.2,
          'max_bin': 100,
          'nthread': 64,
-         'bagging_freq': 1,
+         'bagging_freq': 10,
          
          # optimize
          'max_depth':        3,
@@ -154,7 +154,7 @@ params = [
          'learning_rate': 0.2,
          'max_bin': 100,
          'nthread': 64,
-         'bagging_freq': 1,
+         'bagging_freq': 10,
          
          # optimize
          'max_depth':        3,
@@ -178,7 +178,7 @@ params = [
          'learning_rate': 0.2,
          'max_bin': 100,
          'nthread': 64,
-         'bagging_freq': 1,
+         'bagging_freq': 10,
          
          # optimize
          'max_depth':        3,
@@ -202,7 +202,7 @@ params = [
          'learning_rate': 0.2,
          'max_bin': 100,
          'nthread': 64,
-         'bagging_freq': 1,
+         'bagging_freq': 10,
          
          # optimize
          'max_depth':        3,
@@ -226,7 +226,7 @@ params = [
          'learning_rate': 0.2,
          'max_bin': 100,
          'nthread': 64,
-         'bagging_freq': 1,
+         'bagging_freq': 10,
          
          # optimize
          'max_depth':        3,
@@ -237,6 +237,54 @@ params = [
          'colsample_bytree': 0.5,
          'lambda_l1':        0,
          'lambda_l2':        0,
+         
+         # fixed?
+         'min_child_samples': 300,
+         'seed': np.random.randint(9999)
+         },
+        
+        {
+         # fixed
+         'objective': 'binary',
+         'metric': 'auc',
+         'learning_rate': 0.2,
+         'max_bin': 100,
+         'nthread': 64,
+         'bagging_freq': 10,
+         
+         # optimize
+         'max_depth':        3,
+         'num_leaves':       2**3-1,
+         'scale_pos_weight': 100,
+         'min_child_weight': 0.001,
+         'subsample':        0.1,
+         'colsample_bytree': 0.5,
+         'lambda_l1':        5,
+         'lambda_l2':        0,
+         
+         # fixed?
+         'min_child_samples': 300,
+         'seed': np.random.randint(9999)
+         },
+        
+        {
+         # fixed
+         'objective': 'binary',
+         'metric': 'auc',
+         'learning_rate': 0.2,
+         'max_bin': 100,
+         'nthread': 64,
+         'bagging_freq': 10,
+         
+         # optimize
+         'max_depth':        3,
+         'num_leaves':       2**3-1,
+         'scale_pos_weight': 100,
+         'min_child_weight': 0.001,
+         'subsample':        0.1,
+         'colsample_bytree': 0.5,
+         'lambda_l1':        0,
+         'lambda_l2':        5,
          
          # fixed?
          'min_child_samples': 300,
