@@ -135,7 +135,7 @@ while True:
         else:
             use_features2.append(feature)
         
-        print(f'\n\nTRY to USE {feature_all.index(feature} {use_features2}')
+        print(f'\n\nTRY to USE {feature_all.index(feature)} {use_features2}')
         
         score = do_lgb(use_features2)
         
