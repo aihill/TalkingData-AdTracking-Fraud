@@ -71,7 +71,7 @@ utils.send_line('START {}'.format(__file__))
 # =============================================================================
 # load
 # =============================================================================
-imp = pd.read_csv('imp_802_importance_505-1.py.csv').set_index('index')
+imp = pd.read_csv('imp_802_importance_506-1.py.csv').set_index('index')
 feature_all = imp[imp.weight!=0].index.tolist()
 
 X_train = pd.read_feather(f'../data/X_train_mini_s{TARGET_SEED}.f')[feature_all]
