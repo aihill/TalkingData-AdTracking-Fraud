@@ -51,6 +51,7 @@ param = {
          'subsample': 0.5,
          'nthread': 64,
          'scale_pos_weight': 100,
+         'bagging_freq': 1,
 #         'lambda_l1': 3,
 #         'lambda_l2': 3,
          
