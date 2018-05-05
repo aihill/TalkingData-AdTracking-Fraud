@@ -121,14 +121,14 @@ def do_lgb(features):
 # =============================================================================
 # main
 # =============================================================================
+use_features = list( set(utils.BEST_FEATURES_504) & set(feature_all) )
 
-best_score = do_lgb(utils.BEST_FEATURES_504)
+best_score = do_lgb(use_features)
 print(f'benchmark {best_score}')
 
 max_feature_length = 100
 index = 0
 drop_features = []
-use_features = utils.BEST_FEATURES_504[:]
 use_features_bk = []
 
 while True:
