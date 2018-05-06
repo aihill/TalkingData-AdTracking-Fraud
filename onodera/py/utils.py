@@ -99,7 +99,7 @@ BEST_FEATURES_504 = ['app', 'timedelta_rev_ip-app-device-os', 'hour_min', 'devic
                      'timevar_ip', 'nunique_ip-device-os_ip-os', 'timedelta_rev_ip-os-channel', 
                      'totalRatioByDay_ip-device',]
 
-
+BEST_FEATURES_506 = ['nunique_ip-device-os_os', 'timeDD_rev_ip-app-device-os-channel', 'timediff-minmax_app-channel', 'totalCountByDay_app-device-os-channel', 'timevar_app-os-channel', 'timedelta2_app-device-os-channel', 'timedelta_rev_ip-app-os', 'nunique_app-os_app', 'timedelta_ip', 'timedelta2_ip-app-device-os', 'timedelta_rev_ip-app-device-os', 'totalCountByDay_app-os-channel', 'timedelta2_rev_ip-app-device-os-channel', 'totalcount_app', 'device', 'hour_min', 'nunique_ip-app-device-os_ip-os', 'timeskew_ip', 'timeDD_rev_ip-app-device-os', 'timedelta_rev_ip-app-device', 'totalCountByDay_ip-app-device', 'timevar_ip', 'nunique_ip-os_ip', 'app', 'timeskew_app-device', 'totalcount_ip-app', 'nunique_ip-app_ip', 'nunique_ip-device-os_ip-os', 'nunique_ip-app-device-channel_ip-app', 'totalRatioByDay_ip-device', 'nunique_device-channel_channel', 'totalcount_ip-device', 'nunique_ip-app-device_ip-device', 'nunique_ip-app-device-channel_ip-channel', 'timedelta_rev_ip-app-device-os-channel', 'nunique_app-device-os-channel_app-channel', 'sameClickTimeCount_device-os', 'timemedian_app', 'timedelta_rev_ip-os-channel', 'nunique_device-os-channel_channel', 'timedelta_rev_ip-app-os-channel', 'hour', 'nunique_ip-device-channel_ip', 'nunique_ip-app-device-channel_ip-device']
 
 
 
