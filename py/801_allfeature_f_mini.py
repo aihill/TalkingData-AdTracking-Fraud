@@ -64,6 +64,9 @@ def multi_train_sampling(args):
     else:
         df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p').sample(frac=FRAC, random_state=SEED) for j in train_files])
     
+    if load_folder=='../data/train/':
+        df.drop(['click_time', 'attributed_time'], axis=True, inplace=True)
+        
     print(f'writing {out_file} ...')
     df.reset_index(drop=True).fillna(-1).to_feather(out_file)
 
@@ -80,6 +83,9 @@ def multi_valid_sampling(args):
         df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p') for j in valid_files])
     else:
         df = pd.concat([ pd.read_pickle(f'{load_folder}/{j:03d}.p').sample(frac=FRAC, random_state=SEED) for j in valid_files])
+        
+    if load_folder=='../data/train/':
+        df.drop(['click_time', 'attributed_time'], axis=True, inplace=True)
         
     print(f'writing {out_file} ...')
     df.reset_index(drop=True).fillna(-1).to_feather(out_file)
