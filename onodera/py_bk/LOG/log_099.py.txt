@@ -1,70 +1,0 @@
-
-#==============================================================================
-# START !!! 099.py PID: 10010
-#==============================================================================
-
-  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<00:54,  6.03s/it] 20%|██        | 2/10 [00:12<00:49,  6.15s/it] 30%|███       | 3/10 [00:18<00:43,  6.19s/it] 40%|████      | 4/10 [00:26<00:39,  6.53s/it] 50%|█████     | 5/10 [00:33<00:33,  6.68s/it] 60%|██████    | 6/10 [00:42<00:28,  7.14s/it] 70%|███████   | 7/10 [00:50<00:21,  7.25s/it] 80%|████████  | 8/10 [00:57<00:14,  7.24s/it] 90%|█████████ | 9/10 [01:04<00:07,  7.22s/it]100%|██████████| 10/10 [01:13<00:00,  7.32s/it]
-  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:27,  3.01s/it] 20%|██        | 2/10 [00:06<00:24,  3.10s/it] 30%|███       | 3/10 [00:09<00:21,  3.11s/it] 40%|████      | 4/10 [00:12<00:18,  3.06s/it] 50%|█████     | 5/10 [00:14<00:14,  2.93s/it] 60%|██████    | 6/10 [00:17<00:11,  2.89s/it] 70%|███████   | 7/10 [00:19<00:08,  2.84s/it] 80%|████████  | 8/10 [00:22<00:05,  2.82s/it] 90%|█████████ | 9/10 [00:24<00:02,  2.76s/it]100%|██████████| 10/10 [00:27<00:00,  2.72s/it]
-('ip',)
-('device',)
-('channel',)
-('ip', 'device')
-('ip', 'channel')
-('app', 'os')
-couldnt find ../data/app-os_binary.p
-couldnt find ../data/ip-device_binary.p
-couldnt find ../data/ip-channel_binary.p
-('ip', 'os')
-('app', 'device')
-('app', 'channel')
-couldnt find ../data/app-device_binary.p
-couldnt find ../data/app-channel_binary.p
-couldnt find ../data/ip-os_binary.p
-('ip', 'app')
-couldnt find ../data/ip-app_binary.p
-('os',)
-('app',)
-('device', 'os')
-couldnt find ../data/device-os_binary.p
-('os', 'channel')
-couldnt find ../data/os-channel_binary.p
-('ip', 'app', 'os')
-('ip', 'device', 'os')
-couldnt find ../data/ip-device-os_binary.p
-('ip', 'os', 'channel')
-('app', 'device', 'channel')
-couldnt find ../data/app-device-channel_binary.p
-couldnt find ../data/ip-app-os_binary.p
-('device', 'channel')
-couldnt find ../data/device-channel_binary.p
-('ip', 'app', 'device')
-('ip', 'device', 'channel')
-couldnt find ../data/ip-app-device_binary.p
-couldnt find ../data/ip-device-channel_binary.p
-('app', 'os', 'channel')
-couldnt find ../data/app-os-channel_binary.p
-('ip', 'app', 'channel')
-('device', 'os', 'channel')
-couldnt find ../data/device-os-channel_binary.p
-('ip', 'app', 'device', 'channel')
-couldnt find ../data/ip-app-channel_binary.p
-couldnt find ../data/ip-os-channel_binary.p
-('ip', 'device', 'os', 'channel')
-('ip', 'app', 'device', 'os', 'channel')
-couldnt find ../data/ip-app-device-channel_binary.p
-('ip', 'app', 'device', 'os')
-('app', 'device', 'os')
-couldnt find ../data/app-device-os_binary.p
-couldnt find ../data/ip-app-device-os_binary.p
-('ip', 'app', 'os', 'channel')
-couldnt find ../data/ip-device-os-channel_binary.p
-couldnt find ../data/ip-app-device-os-channel_binary.p
-couldnt find ../data/ip-app-os-channel_binary.p
-('app', 'device', 'os', 'channel')
-couldnt find ../data/app-device-os-channel_binary.p
-
-#==============================================================================
-# SUCCESS !!! 099.py
-#==============================================================================
-
-time: 54.82min

@@ -1,66 +1,0 @@
-
-#==============================================================================
-# START !!! 901_cv_326-1.py PID: 7442
-#==============================================================================
-
-  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<00:54,  6.06s/it] 20%|██        | 2/10 [00:12<00:49,  6.13s/it] 30%|███       | 3/10 [00:18<00:42,  6.10s/it] 40%|████      | 4/10 [00:25<00:37,  6.33s/it] 50%|█████     | 5/10 [00:31<00:31,  6.29s/it] 60%|██████    | 6/10 [00:38<00:25,  6.44s/it] 70%|███████   | 7/10 [00:44<00:19,  6.38s/it] 80%|████████  | 8/10 [00:51<00:12,  6.39s/it] 90%|█████████ | 9/10 [00:56<00:06,  6.33s/it]100%|██████████| 10/10 [01:02<00:00,  6.29s/it]
-  0%|          | 0/31 [00:00<?, ?it/s]  3%|▎         | 1/31 [03:23<1:41:45, 203.52s/it]  6%|▋         | 2/31 [06:36<1:35:47, 198.20s/it] 10%|▉         | 3/31 [09:47<1:31:27, 195.99s/it] 13%|█▎        | 4/31 [12:37<1:25:13, 189.38s/it] 16%|█▌        | 5/31 [16:22<1:25:07, 196.44s/it] 19%|█▉        | 6/31 [20:02<1:23:32, 200.49s/it] 23%|██▎       | 7/31 [23:52<1:21:50, 204.59s/it] 26%|██▌       | 8/31 [27:53<1:20:11, 209.21s/it] 29%|██▉       | 9/31 [31:13<1:16:20, 208.20s/it] 32%|███▏      | 10/31 [35:05<1:13:41, 210.55s/it] 35%|███▌      | 11/31 [38:44<1:10:26, 211.35s/it] 39%|███▊      | 12/31 [41:49<1:06:13, 209.13s/it] 42%|████▏     | 13/31 [44:29<1:01:36, 205.35s/it] 45%|████▌     | 14/31 [46:15<56:10, 198.26s/it]   48%|████▊     | 15/31 [48:33<51:47, 194.21s/it] 52%|█████▏    | 16/31 [51:12<48:00, 192.02s/it] 55%|█████▍    | 17/31 [53:40<44:12, 189.45s/it] 58%|█████▊    | 18/31 [55:40<40:12, 185.56s/it] 61%|██████▏   | 19/31 [58:09<36:44, 183.68s/it] 65%|██████▍   | 20/31 [1:00:20<33:11, 181.03s/it] 68%|██████▊   | 21/31 [1:02:17<29:39, 177.97s/it] 71%|███████   | 22/31 [1:04:52<26:32, 176.95s/it] 74%|███████▍  | 23/31 [1:07:07<23:20, 175.11s/it] 77%|███████▋  | 24/31 [1:09:46<20:21, 174.44s/it] 81%|████████  | 25/31 [1:11:53<17:15, 172.54s/it] 84%|████████▍ | 26/31 [1:14:11<14:15, 171.20s/it] 87%|████████▋ | 27/31 [1:16:48<11:22, 170.69s/it] 90%|█████████ | 28/31 [1:18:09<08:22, 167.50s/it] 94%|█████████▎| 29/31 [1:19:45<05:30, 165.02s/it] 97%|█████████▋| 30/31 [1:21:37<02:43, 163.24s/it]100%|██████████| 31/31 [1:23:30<00:00, 161.64s/it]
-['same_ip-app-device-os-channel_diff', 'hour', 'timestamp', 'ip_count', 'ip_timemin', 'ip_timemax', 'ip_timemean', 'ip_timestd', 'ip_min', 'ip_max', 'ip_mean', 'ip_std', 'app_count', 'app_timemin', 'app_timemax', 'app_timemean', 'app_timestd', 'app_min', 'app_max', 'app_mean', 'app_std', 'device_count', 'device_timemin', 'device_timemax', 'device_timemean', 'device_timestd', 'device_min', 'device_max', 'device_mean', 'device_std', 'os_count', 'os_timemin', 'os_timemax', 'os_timemean', 'os_timestd', 'os_min', 'os_max', 'os_mean', 'os_std', 'channel_count', 'channel_timemin', 'channel_timemax', 'channel_timemean', 'channel_timestd', 'channel_min', 'channel_max', 'channel_mean', 'channel_std', 'ip-app_count', 'ip-app_timemin', 'ip-app_timemax', 'ip-app_timemean', 'ip-app_timestd', 'ip-app_min', 'ip-app_max', 'ip-app_mean', 'ip-app_std', 'ip-device_count', 'ip-device_timemin', 'ip-device_timemax', 'ip-device_timemean', 'ip-device_timestd', 'ip-device_min', 'ip-device_max', 'ip-device_mean', 'ip-device_std', 'ip-os_count', 'ip-os_timemin', 'ip-os_timemax', 'ip-os_timemean', 'ip-os_timestd', 'ip-os_min', 'ip-os_max', 'ip-os_mean', 'ip-os_std', 'ip-channel_count', 'ip-channel_timemin', 'ip-channel_timemax', 'ip-channel_timemean', 'ip-channel_timestd', 'ip-channel_min', 'ip-channel_max', 'ip-channel_mean', 'ip-channel_std', 'app-device_count', 'app-device_timemin', 'app-device_timemax', 'app-device_timemean', 'app-device_timestd', 'app-device_min', 'app-device_max', 'app-device_mean', 'app-device_std', 'app-os_count', 'app-os_timemin', 'app-os_timemax', 'app-os_timemean', 'app-os_timestd', 'app-os_min', 'app-os_max', 'app-os_mean', 'app-os_std', 'app-channel_count', 'app-channel_timemin', 'app-channel_timemax', 'app-channel_timemean', 'app-channel_timestd', 'app-channel_min', 'app-channel_max', 'app-channel_mean', 'app-channel_std', 'device-os_count', 'device-os_timemin', 'device-os_timemax', 'device-os_timemean', 'device-os_timestd', 'device-os_min', 'device-os_max', 'device-os_mean', 'device-os_std', 'device-channel_count', 'device-channel_timemin', 'device-channel_timemax', 'device-channel_timemean', 'device-channel_timestd', 'device-channel_min', 'device-channel_max', 'device-channel_mean', 'device-channel_std', 'os-channel_count', 'os-channel_timemin', 'os-channel_timemax', 'os-channel_timemean', 'os-channel_timestd', 'os-channel_min', 'os-channel_max', 'os-channel_mean', 'os-channel_std', 'ip-app-device_count', 'ip-app-device_timemin', 'ip-app-device_timemax', 'ip-app-device_timemean', 'ip-app-device_timestd', 'ip-app-device_min', 'ip-app-device_max', 'ip-app-device_mean', 'ip-app-device_std', 'ip-app-os_count', 'ip-app-os_timemin', 'ip-app-os_timemax', 'ip-app-os_timemean', 'ip-app-os_timestd', 'ip-app-os_min', 'ip-app-os_max', 'ip-app-os_mean', 'ip-app-os_std', 'ip-app-channel_count', 'ip-app-channel_timemin', 'ip-app-channel_timemax', 'ip-app-channel_timemean', 'ip-app-channel_timestd', 'ip-app-channel_min', 'ip-app-channel_max', 'ip-app-channel_mean', 'ip-app-channel_std', 'ip-device-os_count', 'ip-device-os_timemin', 'ip-device-os_timemax', 'ip-device-os_timemean', 'ip-device-os_timestd', 'ip-device-os_min', 'ip-device-os_max', 'ip-device-os_mean', 'ip-device-os_std', 'ip-device-channel_count', 'ip-device-channel_timemin', 'ip-device-channel_timemax', 'ip-device-channel_timemean', 'ip-device-channel_timestd', 'ip-device-channel_min', 'ip-device-channel_max', 'ip-device-channel_mean', 'ip-device-channel_std', 'ip-os-channel_count', 'ip-os-channel_timemin', 'ip-os-channel_timemax', 'ip-os-channel_timemean', 'ip-os-channel_timestd', 'ip-os-channel_min', 'ip-os-channel_max', 'ip-os-channel_mean', 'ip-os-channel_std', 'app-device-os_count', 'app-device-os_timemin', 'app-device-os_timemax', 'app-device-os_timemean', 'app-device-os_timestd', 'app-device-os_min', 'app-device-os_max', 'app-device-os_mean', 'app-device-os_std', 'app-device-channel_count', 'app-device-channel_timemin', 'app-device-channel_timemax', 'app-device-channel_timemean', 'app-device-channel_timestd', 'app-device-channel_min', 'app-device-channel_max', 'app-device-channel_mean', 'app-device-channel_std', 'app-os-channel_count', 'app-os-channel_timemin', 'app-os-channel_timemax', 'app-os-channel_timemean', 'app-os-channel_timestd', 'app-os-channel_min', 'app-os-channel_max', 'app-os-channel_mean', 'app-os-channel_std', 'device-os-channel_count', 'device-os-channel_timemin', 'device-os-channel_timemax', 'device-os-channel_timemean', 'device-os-channel_timestd', 'device-os-channel_min', 'device-os-channel_max', 'device-os-channel_mean', 'device-os-channel_std', 'ip-app-device-os_count', 'ip-app-device-os_timemin', 'ip-app-device-os_timemax', 'ip-app-device-os_timemean', 'ip-app-device-os_timestd', 'ip-app-device-os_min', 'ip-app-device-os_max', 'ip-app-device-os_mean', 'ip-app-device-os_std', 'ip-app-device-channel_count', 'ip-app-device-channel_timemin', 'ip-app-device-channel_timemax', 'ip-app-device-channel_timemean', 'ip-app-device-channel_timestd', 'ip-app-device-channel_min', 'ip-app-device-channel_max', 'ip-app-device-channel_mean', 'ip-app-device-channel_std', 'ip-app-os-channel_count', 'ip-app-os-channel_timemin', 'ip-app-os-channel_timemax', 'ip-app-os-channel_timemean', 'ip-app-os-channel_timestd', 'ip-app-os-channel_min', 'ip-app-os-channel_max', 'ip-app-os-channel_mean', 'ip-app-os-channel_std', 'ip-device-os-channel_count', 'ip-device-os-channel_timemin', 'ip-device-os-channel_timemax', 'ip-device-os-channel_timemean', 'ip-device-os-channel_timestd', 'ip-device-os-channel_min', 'ip-device-os-channel_max', 'ip-device-os-channel_mean', 'ip-device-os-channel_std', 'app-device-os-channel_count', 'app-device-os-channel_timemin', 'app-device-os-channel_timemax', 'app-device-os-channel_timemean', 'app-device-os-channel_timestd', 'app-device-os-channel_min', 'app-device-os-channel_max', 'app-device-os-channel_mean', 'app-device-os-channel_std', 'ip-app-device-os-channel_count', 'ip-app-device-os-channel_timemin', 'ip-app-device-os-channel_timemax', 'ip-app-device-os-channel_timemean', 'ip-app-device-os-channel_timestd', 'ip-app-device-os-channel_min', 'ip-app-device-os-channel_max', 'ip-app-device-os-channel_mean', 'ip-app-device-os-channel_std']
-[01:51:34] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
-[01:51:46] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
-[01:51:57] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
-[01:52:10] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
-[01:52:22] Tree method is selected to be 'hist', which uses a single updater grow_fast_histmaker.
-[0]	train-auc:0.858697+0.0283477	test-auc:0.858688+0.0373984
-[5]	train-auc:0.919862+0.00147795	test-auc:0.919529+0.00701436
-[10]	train-auc:0.921368+0.00143224	test-auc:0.920905+0.00671316
-[15]	train-auc:0.922038+0.00181495	test-auc:0.921527+0.00650029
-[20]	train-auc:0.936447+0.00807868	test-auc:0.934522+0.0120362
-[25]	train-auc:0.944183+0.00622217	test-auc:0.941935+0.00884948
-[30]	train-auc:0.950066+0.00164874	test-auc:0.949058+0.00423945
-[35]	train-auc:0.950884+0.00142097	test-auc:0.949748+0.00407537
-[40]	train-auc:0.952211+0.00123742	test-auc:0.950597+0.00404065
-[45]	train-auc:0.953713+0.00119054	test-auc:0.951504+0.00457469
-[50]	train-auc:0.954446+0.00118793	test-auc:0.952484+0.00464955
-[55]	train-auc:0.95636+0.00337844	test-auc:0.954017+0.00383614
-[60]	train-auc:0.958998+0.00390382	test-auc:0.956116+0.00564909
-[65]	train-auc:0.963431+0.00158964	test-auc:0.959474+0.00388189
-[70]	train-auc:0.966435+0.000922894	test-auc:0.962651+0.00363805
-[75]	train-auc:0.967869+0.00143849	test-auc:0.963183+0.00342224
-[80]	train-auc:0.969991+0.00159215	test-auc:0.964663+0.00255391
-[85]	train-auc:0.971659+0.00100229	test-auc:0.965506+0.0030453
-[90]	train-auc:0.972817+0.000947206	test-auc:0.966234+0.00349275
-[95]	train-auc:0.974018+0.000867454	test-auc:0.967067+0.00342431
-[100]	train-auc:0.975222+0.000840547	test-auc:0.967394+0.00370908
-[105]	train-auc:0.975977+0.000859231	test-auc:0.967681+0.00363386
-[110]	train-auc:0.976914+0.000983471	test-auc:0.967871+0.00326084
-[115]	train-auc:0.977721+0.00089657	test-auc:0.968229+0.0032368
-[120]	train-auc:0.978396+0.000733854	test-auc:0.968263+0.00328641
-[125]	train-auc:0.979009+0.000772708	test-auc:0.96825+0.00322096
-[130]	train-auc:0.979601+0.000648989	test-auc:0.968526+0.00326415
-[135]	train-auc:0.980206+0.000625163	test-auc:0.968744+0.00313181
-[140]	train-auc:0.98085+0.000585726	test-auc:0.968808+0.00305406
-[145]	train-auc:0.981428+0.000555972	test-auc:0.968918+0.00305587
-[150]	train-auc:0.981819+0.000508249	test-auc:0.968987+0.00314722
-[155]	train-auc:0.98234+0.000492658	test-auc:0.96915+0.00314468
-[160]	train-auc:0.982771+0.000465535	test-auc:0.969235+0.00309678
-[165]	train-auc:0.983195+0.000501472	test-auc:0.969427+0.0030821
-[170]	train-auc:0.983702+0.000438555	test-auc:0.969375+0.00300796
-[175]	train-auc:0.984154+0.000482088	test-auc:0.969362+0.0031445
-[180]	train-auc:0.984604+0.000499014	test-auc:0.969438+0.0031645
-[185]	train-auc:0.985003+0.000411446	test-auc:0.969386+0.00308186
-[190]	train-auc:0.985405+0.000468548	test-auc:0.96939+0.00309246
-[195]	train-auc:0.985709+0.000591398	test-auc:0.969264+0.00316777
-[200]	train-auc:0.986139+0.000488073	test-auc:0.96907+0.00319501
-[205]	train-auc:0.98645+0.000440173	test-auc:0.969033+0.00310241
-[210]	train-auc:0.98678+0.000451182	test-auc:0.969033+0.0032274
-[215]	train-auc:0.987163+0.000322642	test-auc:0.968916+0.00329423
-[220]	train-auc:0.987513+0.000246898	test-auc:0.96894+0.00332571
-[225]	train-auc:0.987709+0.000253032	test-auc:0.968894+0.00330217
-[230]	train-auc:0.988001+0.000256867	test-auc:0.968996+0.00320549
-
-#==============================================================================
-# SUCCESS !!! 901_cv_326-1.py
-#==============================================================================
-
-time: 96.41min
