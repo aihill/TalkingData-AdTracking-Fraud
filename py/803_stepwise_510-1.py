@@ -72,7 +72,7 @@ utils.send_line('START {}'.format(__file__))
 # =============================================================================
 imp = pd.read_csv('imp_802_importance_510-1.py.csv').set_index('index')
 feature_all = imp[imp.weight!=0].index.tolist()
-feature_all = [c for c in feature_all if not c.startswith('timedelta_') or c.startswith('timedelta2_')]
+feature_all = [c for c in feature_all if not c.startswith('timedelta_') and c.startswith('timedelta2_')]
 
 X_train = pd.read_feather(f'../data/X_train_mini_s{TARGET_SEED}.f')[feature_all]
 y_train = pd.read_feather(f'../data/y_train_mini_s{TARGET_SEED}.f').is_attributed
@@ -134,6 +134,8 @@ use_features_bk = []
 while True:
     
     for feature in feature_all:
+        if 'timedeltaV2_' not in feature:
+            continue
         
         use_features2 = use_features[:]
         if feature in use_features2:
