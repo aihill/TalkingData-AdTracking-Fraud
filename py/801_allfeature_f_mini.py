@@ -106,8 +106,6 @@ if DO_CONCAT:
     load_files = sorted(glob('../data/*_train_sampling.f'))
     X = pd.concat([pd.read_feather(f) for f in tqdm(load_files)], axis=1)
     print('X.isnull().sum().sum():', X.isnull().sum().sum())
-    drop_feature = ['click_time', 'attributed_time']
-    X.drop(drop_feature, axis=1, inplace=True)
     X.fillna(-1, inplace=True)
     
     print('X.shape:', X.shape )
@@ -149,8 +147,6 @@ if DO_CONCAT:
     load_files = sorted(glob('../data/*_valid_sampling.f'))
     X = pd.concat([pd.read_feather(f) for f in tqdm(load_files)], axis=1)
     print('X.isnull().sum().sum():', X.isnull().sum().sum())
-    drop_feature = ['click_time', 'attributed_time']
-    X.drop(drop_feature, axis=1, inplace=True)
     X.fillna(-1, inplace=True)
     
     print('X.shape:', X.shape )
