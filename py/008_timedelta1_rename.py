@@ -35,7 +35,7 @@ def multi(ix):
     # test
     df = pd.read_pickle(f'../data/008_test/{ix:03d}.p')
     
-    df.to_pickle(f'../data/008_test/{ix:03d}.p')
+    df.rename(columns=col_di).to_pickle(f'../data/008_test/{ix:03d}.p')
     
     print(f'Finish {ix}')
 
