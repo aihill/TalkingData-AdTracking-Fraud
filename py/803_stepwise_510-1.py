@@ -72,7 +72,7 @@ utils.send_line('START {}'.format(__file__))
 # =============================================================================
 imp = pd.read_csv('imp_802_importance_510-1.py.csv').set_index('index')
 feature_all = imp[imp.weight!=0].index.tolist()
-feature_all = [c for c in feature_all if not (c.startswith('timedelta_') or c.startswith('timedelta2_'))]
+feature_all = [c for c in feature_all if not (c.startswith('timedelta_') or c.startswith('timedelta2_') or c.startwith('timeDD_'))]
 print(f'feature_all {feature_all}')
 
 X_train = pd.read_feather(f'../data/X_train_mini_s{TARGET_SEED}.f')[feature_all]
