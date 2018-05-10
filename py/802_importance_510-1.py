@@ -20,7 +20,7 @@ from time import sleep
 import utils
 utils.start(__file__)
 
-TARGET_SEED = 3833
+TARGET_SEED = 5685
 
 SEED = 71 #np.random.randint(9999) #int(sys.argv[1])
 NROUND = 9999
