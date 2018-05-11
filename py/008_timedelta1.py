@@ -26,6 +26,9 @@ os.system('rm -rf ../data/008*')
 # =============================================================================
 train = utils.read_pickles('../data/train', ['ip', 'app', 'device', 'os', 'channel', 'click_time'])
 
+train['day']  = (train.click_time + pd.offsets.Hour(8)).dt.day
+
+
 def multi_train(count_keys):
     """
     ex:
